@@ -27,11 +27,11 @@ public class CreateKitchenItemTest extends TestBase {
 	}	
 
 	@Test(dependsOnMethods="goToNewKitchenItemPage")
-	public void fillSupplier(){
+	public void fillKitchenItem(){
 		createkitchenitempage.EnterKitchenItemData("PTL Kitchen Item"+ (new Random()).nextInt(5000),"PTL Kitchen Item sinhala"+ (new Random()).nextInt(5000), "PTL Kitchen Item tamil"+ (new Random()).nextInt(5000),"g","5");		
 	}
 
-	@Test(dependsOnMethods="fillSupplier")
+	@Test(dependsOnMethods="fillKitchenItem")
 	public void submitsupplierTest(){
 		
 		kitchenitempage = createkitchenitempage.ClickCreateButton();

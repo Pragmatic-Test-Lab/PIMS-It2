@@ -13,20 +13,20 @@ public class Constants {
 	public static final String Login_password = "//*[@id='login-form-password']";
 	public static final String Login_login = "//*[@id='login-form']/button";
 	public static final String Login_PasswordError = "//*[text()='Password']/following::div[1]";
-	
+
 	// Home Page
 	public static final String Home_MainImage = ".//img[@src='../views/site/prison.jpg']";
 
 	// Top Menu Links
 	public static final String TopMenu_PIMSTopLink = "//a[text()='PIMS']";
 	public static final String TopMenu_LogOut = "//a[contains(text(),'Logout')]";
-	
+
 	//Iteration 2 Pages
 	//
-	
-	
+
+
 	//Meal Management Page 
-	
+
 	public static final String DemandOrderAdd = "//*[text()='Demand Order Add/Update']";
 	public static final String TransactionManagement = ".//a[text()='Transaction Management ']";
 	public static final String MealManagement = ".//a[text()='Meal Management']";
@@ -34,13 +34,13 @@ public class Constants {
 	public static final String CreateDemand = ".//a[text()='Create Demand Order']";
 	public static final String CreateDemandHeader="//*[@class='stock-tranaction-header-create']/h1";
 	public static final String CreateDemandPageHeader="Create Demand Order";
-	
+
 	public static final String Supplier = ".//a[text()='Supplier']";
 	public static final String SupplierAdd = ".//a[text()='Supplier']";
 	public static final String CreateSupplier = "//*[text()='Create Supplier']";
 	public static final String SupplierName = "//*[@id='supplier-sup_name']";
 	public static final String CreateSupplierButton = "//*[@class='btn btn-success']";
-	
+
 	public static final String KitchenItem = ".//a[text()='Kitchen Item']";
 	public static final String KitchenItemName = "//*[@id='kitchenitem-kit_name']";
 	public static final String KitchenItemNameSinhala = "//*[@id='kitchenitem-kit_name_si']";
@@ -49,12 +49,9 @@ public class Constants {
 	public static final String Wastage = "//*[@id='kitchenitem-kit_wastage']";
 	public static final String CreateKitchenItemButton = "//*[@class='btn btn-success']";
 	public static final String CreateKitchenItem="//*[text()='Create Kitchen Item']";
-	
-	
 
-	
-	
-	
+
+
 	//
 	//
 
@@ -81,7 +78,7 @@ public class Constants {
 	public static final String CalendarPopup_HourText_LastPart = "']";
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
-	
-	
+
+
 
 }

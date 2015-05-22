@@ -10,12 +10,12 @@ import com.ptl.PIMS.util.Constants;
 public class KitchenItemPage {
 
 	WebDriver driver;
-	
+
 	@FindBy(xpath = Constants.CreateKitchenItem)
 	WebElement createkitchenitem;
-	
 
-	
+
+
 	public KitchenItemPage(WebDriver dr){
 		driver = dr;
 	}
@@ -24,8 +24,8 @@ public class KitchenItemPage {
 		CreateKitchenItemPage createsupplierPage = PageFactory.initElements(driver, CreateKitchenItemPage.class);
 		return createsupplierPage;	
 	}
-	
-	
-	
-	
+
+
+
+
 }
