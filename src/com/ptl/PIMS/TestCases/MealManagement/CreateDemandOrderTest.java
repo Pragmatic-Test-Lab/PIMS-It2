@@ -16,7 +16,7 @@ public class CreateDemandOrderTest extends TestBase {
 	CreateDemandOrderPage createNewDemandPage;
 	
 	@Test   
-	public void goToNewAdmissionPage(){
+	public void goToNewDemandOrderPage(){
 
 			loginToApplication();		
 			TopMenu topMenu = getTopMenu();
@@ -24,7 +24,7 @@ public class CreateDemandOrderTest extends TestBase {
 		    createNewDemandPage = demandOrderPage.getCreateDemandOrderPage();
 		    
 			Assert.assertTrue(createNewDemandPage.getActualPageTitle().equals(Constants.CreateDemandPageHeader),
-					"Could not go to new admission page.");		
+					"Could not go to new demand order page.");		
 	}	
 	
 }

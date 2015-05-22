@@ -35,6 +35,10 @@ public class Constants {
 	public static final String CreateDemandHeader="//*[@class='stock-tranaction-header-create']/h1";
 	public static final String CreateDemandPageHeader="Create Demand Order";
 	
+	public static final String Supplier = ".//a[text()='Supplier']";
+	public static final String SupplierAdd = ".//a[text()='Supplier']";
+	public static final String CreateSupplier = "//*[text()='Create Supplier']";
+	
 	
 	
 	//
