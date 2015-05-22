@@ -25,8 +25,15 @@ public class Constants {
 	//
 	
 	
+	//Meal Management Page 
 	
-	
+	public static final String DemandOrderAdd = "//*[text()='Demand Order Add/Update']";
+	public static final String TransactionManagement = ".//a[text()='Transaction Management ']";
+	public static final String MealManagement = ".//a[text()='Meal Management']";
+	public static final String DemandOrder = ".//a[text()='Demand Order']";
+	public static final String CreateDemand = ".//a[text()='Create Demand Order']";
+	public static final String CreateDemandHeader="//*[@class='stock-tranaction-header-create']/h1";
+	public static final String CreateDemandPageHeader="Create Demand Order";
 	
 	
 	

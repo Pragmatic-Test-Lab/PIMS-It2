@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.PIMS.TestCases.TestBase;
 import com.ptl.PIMS.util.Constants;
+import com.ptl.PIMS.Pages.MealManagement.DemandOrderPage;
 
 
 public class TopMenu {
@@ -17,6 +18,14 @@ public class TopMenu {
 	WebElement homePageTopLink;
 	@FindBy(xpath = Constants.TopMenu_LogOut)
 	WebElement logOut;
+	@FindBy(xpath = Constants.TransactionManagement)
+	WebElement transactionManagement;
+	@FindBy(xpath = Constants.DemandOrderAdd)
+	WebElement DemandOrderAdd;
+	@FindBy(xpath = Constants.DemandOrder)
+	WebElement demandorder;
+	@FindBy(xpath = Constants.MealManagement)
+	WebElement mealmanagement;
 	
 	
 	
@@ -38,6 +47,14 @@ public class TopMenu {
 		return loginPage;		
 	}
 
+	public DemandOrderPage gotoNewDemandOrderPage(){
+		transactionManagement.click();
+		mealmanagement.click();
+		demandorder.click();
+		DemandOrderAdd.click();
+		DemandOrderPage newdDemandOrderPage = PageFactory.initElements(driver, DemandOrderPage.class);
+		return newdDemandOrderPage;
+	}	
 
 	
 
