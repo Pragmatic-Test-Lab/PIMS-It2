@@ -38,6 +38,9 @@ public class Constants {
 	public static final String Supplier = ".//a[text()='Supplier']";
 	public static final String SupplierAdd = ".//a[text()='Supplier']";
 	public static final String CreateSupplier = "//*[text()='Create Supplier']";
+	public static final String SupplierName = "//*[@id='supplier-sup_name']";
+	public static final String CreateSupplierButton = "//*[@class='btn btn-success']";
+
 	
 	
 	
@@ -67,5 +70,6 @@ public class Constants {
 	public static final String CalendarPopup_HourText_LastPart = "']";
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
+	
 
 }

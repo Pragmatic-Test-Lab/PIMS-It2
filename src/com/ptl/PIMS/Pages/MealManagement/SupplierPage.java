@@ -14,6 +14,7 @@ public class SupplierPage {
 	WebElement DemandOrderAdd;
 	@FindBy(xpath = Constants.CreateSupplier)
 	WebElement createsupplier;
+	
 
 	
 	public SupplierPage(WebDriver dr){
@@ -24,5 +25,7 @@ public class SupplierPage {
 		CreateSupplierPage createsupplierPage = PageFactory.initElements(driver, CreateSupplierPage.class);
 		return createsupplierPage;	
 	}
+	
+	
 	
 }
