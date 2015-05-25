@@ -14,6 +14,9 @@ import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveSendToCourtAppea
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizePostRegInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
+import com.ptl.PIMS.Pages.MealManagement.DemandOrderPage;
+import com.ptl.PIMS.Pages.MealManagement.KitchenItemPage;
+import com.ptl.PIMS.Pages.MealManagement.SupplierPage;
 import com.ptl.PIMS.TestCases.TestBase;
 import com.ptl.PIMS.util.Constants;
 
@@ -40,6 +43,16 @@ public class TopMenu {
 	WebElement postRegAuthorizeSub;
 	@FindBy(xpath = Constants.TopMenu_TransactionManagementTopLink)
 	WebElement transactionManagementTopLink;
+	@FindBy(xpath = Constants.DemandOrderAdd)
+	WebElement DemandOrderAdd;
+	@FindBy(xpath = Constants.DemandOrder)
+	WebElement demandorder;
+	@FindBy(xpath = Constants.MealManagement)
+	WebElement mealmanagement;
+	@FindBy(xpath = Constants.Supplier)
+	WebElement supplier;
+	@FindBy(xpath = Constants.KitchenItem)
+	WebElement kitchenitem;
 	@FindBy(xpath = Constants.TopMenu_AppealTopLink)
 	WebElement appealTopLink;
 	@FindBy(xpath = Constants.TopMenu_AppealAddUpdateLink)
@@ -93,6 +106,34 @@ public class TopMenu {
 		AuthorizePostRegInmatePage postRegAuthorizePage = PageFactory.initElements(driver, AuthorizePostRegInmatePage.class);
 		return postRegAuthorizePage;		
 	}	
+	
+	public DemandOrderPage gotoNewDemandOrderPage(){
+		transactionManagementTopLink.click();
+		mealmanagement.click();
+		demandorder.click();
+		DemandOrderAdd.click();
+		DemandOrderPage newdDemandOrderPage = PageFactory.initElements(driver, DemandOrderPage.class);
+		return newdDemandOrderPage;
+	}	
+
+	public SupplierPage gotoNewSupplierPage(){
+		transactionManagementTopLink.click();
+		mealmanagement.click();
+		supplier.click();
+		SupplierPage newSupplierPage = PageFactory.initElements(driver, SupplierPage.class);
+		return newSupplierPage;
+	}
+
+	public KitchenItemPage gotoNewKitchenItemPage() {
+		// TODO Auto-generated method stub
+		transactionManagementTopLink.click();
+		mealmanagement.click();
+		kitchenitem.click();
+		KitchenItemPage newkitchenitempage = PageFactory.initElements(driver, KitchenItemPage.class);
+		return newkitchenitempage;
+	
+	}		
+	
 	
 	public AppealAddUpdatePage gotoAppealAddUpdate(){
 
