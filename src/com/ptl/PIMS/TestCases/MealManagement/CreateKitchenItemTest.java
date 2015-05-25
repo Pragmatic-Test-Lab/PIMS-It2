@@ -2,12 +2,14 @@ package com.ptl.PIMS.TestCases.MealManagement;
 
 import java.util.Random;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.ptl.PIMS.Pages.TopMenu;
 import com.ptl.PIMS.Pages.MealManagement.CreateKitchenItemPage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenItemPage;
 import com.ptl.PIMS.TestCases.TestBase;
+import com.ptl.PIMS.util.Constants;
 
 public class CreateKitchenItemTest extends TestBase {
 	
@@ -32,10 +34,13 @@ public class CreateKitchenItemTest extends TestBase {
 	}
 
 	@Test(dependsOnMethods="fillKitchenItem")
-	public void submitsupplierTest(){
+	public void submitkitchenitemTest(){
 		
 		kitchenitempage = createkitchenitempage.ClickCreateButton();
 		
+
+		Assert.assertTrue(createkitchenitempage.getSuccessMessage().matches(Constants.CreateKitchenItem_SuccessMessageText),
+					"Kitchen Item not created");				
 	}
 
 }

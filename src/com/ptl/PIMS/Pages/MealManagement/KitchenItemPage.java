@@ -21,8 +21,8 @@ public class KitchenItemPage {
 	}
 	public CreateKitchenItemPage getCreateKitchenItemPage(){
 		createkitchenitem.click();
-		CreateKitchenItemPage createsupplierPage = PageFactory.initElements(driver, CreateKitchenItemPage.class);
-		return createsupplierPage;	
+		CreateKitchenItemPage createkitchenitemPage = PageFactory.initElements(driver, CreateKitchenItemPage.class);
+		return createkitchenitemPage;	
 	}
 
 

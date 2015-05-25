@@ -11,9 +11,8 @@ public class CreateKitchenItemPage {
 
 	WebDriver driver;
 
-	@FindBy(xpath = Constants.SupplierName)
-	WebElement suppliername;
-	@FindBy(xpath = Constants.CreateSupplierButton)
+	
+	@FindBy(xpath = Constants.CreateKitchenItemButton)
 	WebElement create;
 	@FindBy(xpath = Constants.KitchenItemName)
 	WebElement kitchenitemname;
@@ -25,6 +24,8 @@ public class CreateKitchenItemPage {
 	WebElement unit;
 	@FindBy(xpath = Constants.Wastage)
 	WebElement wastage;
+	@FindBy(xpath = Constants.KitchenSuccessMessage)
+	WebElement successMessagekitchen;
 
 	public CreateKitchenItemPage(WebDriver dr){
 		driver = dr;
@@ -42,6 +43,15 @@ public class CreateKitchenItemPage {
 		create.click();
 		KitchenItemPage kitchenitempage = PageFactory.initElements(driver, KitchenItemPage.class);
 		return kitchenitempage;
+	}
+	
+	public String getSuccessMessage(){
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {}
+		
+		return successMessagekitchen.getText();
 	}
 
 }

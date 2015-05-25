@@ -40,6 +40,8 @@ public class Constants {
 	public static final String CreateSupplier = "//*[text()='Create Supplier']";
 	public static final String SupplierName = "//*[@id='supplier-sup_name']";
 	public static final String CreateSupplierButton = "//*[@class='btn btn-success']";
+	public static final String CreateSupplier_SuccessMessageText = "Created .* successfully";
+	public static final String SupplierSuccessMessage = "//*[@class='alert alert-success']";
 
 	public static final String KitchenItem = ".//a[text()='Kitchen Item']";
 	public static final String KitchenItemName = "//*[@id='kitchenitem-kit_name']";
@@ -49,6 +51,8 @@ public class Constants {
 	public static final String Wastage = "//*[@id='kitchenitem-kit_wastage']";
 	public static final String CreateKitchenItemButton = "//*[@class='btn btn-success']";
 	public static final String CreateKitchenItem="//*[text()='Create Kitchen Item']";
+	public static final String CreateKitchenItem_SuccessMessageText = "Created .* successfully";
+	public static final String KitchenSuccessMessage = "//*[@class='alert alert-success']";
 
 
 
@@ -78,6 +82,7 @@ public class Constants {
 	public static final String CalendarPopup_HourText_LastPart = "']";
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
+	
 
 
 

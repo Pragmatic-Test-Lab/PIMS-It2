@@ -38,6 +38,9 @@ public class CreateSupplierTest extends TestBase{
 		
 		supplierPage = createSupplierPage.ClickCreateButton();
 		
+		Assert.assertTrue(createSupplierPage.getSuccessMessage().matches(Constants.CreateSupplier_SuccessMessageText),
+				"Kitchen Item not created");		
+		
 	}
 	
 
