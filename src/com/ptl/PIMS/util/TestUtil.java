@@ -2,6 +2,7 @@ package com.ptl.PIMS.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Hashtable;
 
 import org.apache.commons.io.FileUtils;
@@ -93,5 +94,30 @@ public class TestUtil {
 		return filteredArray;
 		
 	}
+	
+	public static String getTodaysDate(){
+		
+		int year = Calendar.getInstance().get(Calendar.YEAR);
+		int month = Calendar.getInstance().get(Calendar.MONTH);
+		int day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+		
+		String Month = "";
+		
+		switch(month){
+			case 0:Month = "Jan"; break;
+			case 1:Month = "Feb"; break;
+			case 2:Month = "Mar"; break;
+			case 3:Month = "Apr"; break;
+			case 4:Month = "May"; break;
+			case 5:Month = "Jun"; break;
+			case 6:Month = "Jul"; break;
+			case 7:Month = "Aug"; break;
+			case 8:Month = "Sep"; break;
+			case 9:Month = "Oct"; break;
+			case 10:Month = "Nov"; break;
+			case 11:Month = "Dec"; break;		
+		}
+		
+		return year + "-" +  Month + "-" + day;}
 
 }
