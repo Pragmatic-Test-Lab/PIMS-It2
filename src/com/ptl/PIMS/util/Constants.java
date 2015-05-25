@@ -53,6 +53,10 @@ public class Constants {
 	public static final String CreateKitchenItem="//*[text()='Create Kitchen Item']";
 	public static final String CreateKitchenItem_SuccessMessageText = "Created .* successfully";
 	public static final String KitchenSuccessMessage = "//*[@class='alert alert-success']";
+	
+	public static final String Recipe = ".//a[text()='Recipe']";
+	public static final String CreateRecipe="(.//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String KitchenItemName2 = "";
 
 
 
@@ -83,6 +87,7 @@ public class Constants {
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
 	
+
 
 
 

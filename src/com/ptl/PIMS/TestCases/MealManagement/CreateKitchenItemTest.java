@@ -12,7 +12,7 @@ import com.ptl.PIMS.TestCases.TestBase;
 import com.ptl.PIMS.util.Constants;
 
 public class CreateKitchenItemTest extends TestBase {
-	
+
 	KitchenItemPage kitchenitempage;
 	CreateKitchenItemPage createkitchenitempage;
 
@@ -35,12 +35,12 @@ public class CreateKitchenItemTest extends TestBase {
 
 	@Test(dependsOnMethods="fillKitchenItem")
 	public void submitkitchenitemTest(){
-		
+
 		kitchenitempage = createkitchenitempage.ClickCreateButton();
-		
+
 
 		Assert.assertTrue(createkitchenitempage.getSuccessMessage().matches(Constants.CreateKitchenItem_SuccessMessageText),
-					"Kitchen Item not created");				
+				"Kitchen Item not created");				
 	}
 
 }

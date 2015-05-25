@@ -11,7 +11,7 @@ public class CreateKitchenItemPage {
 
 	WebDriver driver;
 
-	
+
 	@FindBy(xpath = Constants.CreateKitchenItemButton)
 	WebElement create;
 	@FindBy(xpath = Constants.KitchenItemName)
@@ -44,13 +44,13 @@ public class CreateKitchenItemPage {
 		KitchenItemPage kitchenitempage = PageFactory.initElements(driver, KitchenItemPage.class);
 		return kitchenitempage;
 	}
-	
+
 	public String getSuccessMessage(){
-		
+
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {}
-		
+
 		return successMessagekitchen.getText();
 	}
 

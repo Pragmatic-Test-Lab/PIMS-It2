@@ -9,6 +9,7 @@ import com.ptl.PIMS.TestCases.TestBase;
 import com.ptl.PIMS.util.Constants;
 import com.ptl.PIMS.Pages.MealManagement.DemandOrderPage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenItemPage;
+import com.ptl.PIMS.Pages.MealManagement.RecipePage;
 import com.ptl.PIMS.Pages.MealManagement.SupplierPage;
 
 
@@ -32,7 +33,8 @@ public class TopMenu {
 	WebElement supplier;
 	@FindBy(xpath = Constants.KitchenItem)
 	WebElement kitchenitem;
-	
+	@FindBy(xpath = Constants.Recipe)
+	WebElement recipe;
 	
 	public TopMenu(WebDriver dr){
 		driver = dr;
@@ -78,6 +80,16 @@ public class TopMenu {
 		return newkitchenitempage;
 	
 	}	
+	
+	public RecipePage gotoNewRecipePage() {
+		// TODO Auto-generated method stub
+		transactionManagement.click();
+		mealmanagement.click();
+		recipe.click();
+		RecipePage newrecipepage = PageFactory.initElements(driver, RecipePage.class);
+		return newrecipepage;
+	
+	}
 	
 
 }
