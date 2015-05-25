@@ -33,15 +33,16 @@ public class CreateRecipeTest extends TestBase {
 		createrecipepage.EnterRecipeData("PTL Kitchen Item"+ (new Random()).nextInt(5000),"PTL Kitchen Item sinhala"+ (new Random()).nextInt(5000), "PTL Kitchen Item tamil"+ (new Random()).nextInt(5000),"g","5");		
 	}
 
-	@Test(dependsOnMethods="fillKitchenItem")
+	@Test(dependsOnMethods="fillRecipe")
 	public void submitRecipeTest(){
 
 		recipepage = createrecipepage.ClickCreateButton();
 
 
-		Assert.assertTrue(createrecipepage.getSuccessMessage().matches(Constants.CreateKitchenItem_SuccessMessageText),
-				"Kitchen Item not created");				
+		Assert.assertTrue(createrecipepage.getSuccessMessage().matches(Constants.CreateRecipe_SuccessMessageText),
+				"Recipe not created");				
 	}
 
+	
 
 }

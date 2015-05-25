@@ -111,27 +111,35 @@ public class TopMenu {
 	}	
 	
 	public DemandOrderPage gotoNewDemandOrderPage(){
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(demandorder).moveToElement(DemandOrderAdd).click().build().perform();
+		/*
 		transactionManagementTopLink.click();
 		mealmanagement.click();
 		demandorder.click();
-		DemandOrderAdd.click();
+		DemandOrderAdd.click();*/
 		DemandOrderPage newdDemandOrderPage = PageFactory.initElements(driver, DemandOrderPage.class);
 		return newdDemandOrderPage;
 	}	
 
 	public SupplierPage gotoNewSupplierPage(){
-		transactionManagementTopLink.click();
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(supplier).click().build().perform();
+		/*transactionManagementTopLink.click();
 		mealmanagement.click();
-		supplier.click();
+		supplier.click();*/
 		SupplierPage newSupplierPage = PageFactory.initElements(driver, SupplierPage.class);
 		return newSupplierPage;
 	}
 
 	public KitchenItemPage gotoNewKitchenItemPage() {
 		// TODO Auto-generated method stub
-		transactionManagementTopLink.click();
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(kitchenitem).click().build().perform();
+		
+		/*transactionManagementTopLink.click();
 		mealmanagement.click();
-		kitchenitem.click();
+		kitchenitem.click();*/
 		KitchenItemPage newkitchenitempage = PageFactory.initElements(driver, KitchenItemPage.class);
 		return newkitchenitempage;
 	
@@ -139,9 +147,12 @@ public class TopMenu {
 	
 	public RecipePage gotoNewRecipePage() {
 		// TODO Auto-generated method stub
-		transactionManagementTopLink.click();
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(recipe).click().build().perform();
+		
+		/*transactionManagementTopLink.click();
 		mealmanagement.click();
-		recipe.click();
+		recipe.click();*/
 		RecipePage newrecipepage = PageFactory.initElements(driver, RecipePage.class);
 		return newrecipepage;
 	

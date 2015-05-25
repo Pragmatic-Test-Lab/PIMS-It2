@@ -146,9 +146,17 @@ public class Constants {
 	public static final String CreateKitchenItem_SuccessMessageText = "Created .* successfully";
 	public static final String KitchenSuccessMessage = "//*[@class='alert alert-success']";
 	
-	public static final String Recipe = ".//a[text()='Recipe']";
+	public static final String Recipe = ".//*[text()='Recipe']";
 	public static final String CreateRecipe="(.//*[@class='glyphicon glyphicon-pencil'])[1]";
 	public static final String KitchenItemName2 = "";
+	public static final String addnewrecipe = "//*[@class='btn btn-success glyphicon glyphicon-plus']";
+	public static final String RecipeTableBody = "//*[@id='recepe_details_grid']/tbody";
+	public static final String RecipeCountitem = "(.//select[contains(@id, '-red_kitchen_item_id')])";
+	public static final String RecipeCountquantity = "(.//input[contains(@id, '-red_quantity')])";
+	public static final String CreateRecipeItemButton = "//*[@class='btn btn-primary']";
+	public static final String CreateRecipe_SuccessMessageText="Saved .* successfully";
+	public static final String RecipeSuccessMessage = "";
+	
 
 
 
@@ -182,6 +190,8 @@ public class Constants {
 	public static final String CalendarPopup_HourText_LastPart = "']";
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
+	
+	
 
 
 
