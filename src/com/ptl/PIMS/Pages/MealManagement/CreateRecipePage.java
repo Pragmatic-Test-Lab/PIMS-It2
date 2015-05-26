@@ -41,13 +41,13 @@ public class CreateRecipePage {
 		driver = dr;
 	}
 
-	public void EnterRecipeData(String kitchenitem2,String kitchenitemsinhala,String kitchenitemtamil, String unit1, String wastage1){
+	public void EnterRecipeData(String kitchenitem2,String quantity){
 		int dataRows = initialRowCount(recipetablebody);
 		
 		addnewrecipe.click();
 		
-		driver.findElement(By.xpath(Constants.RecipeCountitem + "[" + (dataRows) + "]")).sendKeys("Dhal");
-		driver.findElement(By.xpath(Constants.RecipeCountquantity + "[" + (dataRows) + "]")).sendKeys("200");
+		driver.findElement(By.xpath(Constants.RecipeCountitem + "[" + (dataRows) + "]")).sendKeys(kitchenitem2);
+		driver.findElement(By.xpath(Constants.RecipeCountquantity + "[" + (dataRows) + "]")).sendKeys(quantity);
 		//kitchenitemname2.sendKeys(kitchenitem2);
 		
 	}

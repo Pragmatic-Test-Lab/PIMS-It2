@@ -30,7 +30,7 @@ public class CreateRecipeTest extends TestBase {
 
 	@Test(dependsOnMethods="gotoNewRecipePage")
 	public void fillRecipe(){
-		createrecipepage.EnterRecipeData("PTL Kitchen Item"+ (new Random()).nextInt(5000),"PTL Kitchen Item sinhala"+ (new Random()).nextInt(5000), "PTL Kitchen Item tamil"+ (new Random()).nextInt(5000),"g","5");		
+		createrecipepage.EnterRecipeData("Dhal","200");		
 	}
 
 	@Test(dependsOnMethods="fillRecipe")
