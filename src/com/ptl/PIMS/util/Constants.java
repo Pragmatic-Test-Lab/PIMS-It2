@@ -155,7 +155,7 @@ public class Constants {
 	public static final String RecipeCountquantity = "(.//input[contains(@id, '-red_quantity')])";
 	public static final String CreateRecipeItemButton = "//*[@class='btn btn-primary']";
 	public static final String CreateRecipe_SuccessMessageText="Saved .* successfully";
-	public static final String RecipeSuccessMessage = "";
+	public static final String RecipeSuccessMessage = "//*[@class='alert alert-success']";
 	
 
 
