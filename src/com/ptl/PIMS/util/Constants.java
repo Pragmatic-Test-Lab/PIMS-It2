@@ -126,6 +126,9 @@ public class Constants {
 	public static final String CreateDemand = ".//a[text()='Create Demand Order']";
 	public static final String CreateDemandHeader="//*[@class='stock-tranaction-header-create']/h1";
 	public static final String CreateDemandPageHeader="Create Demand Order";
+	public static final String CreateDemandButton = "//*[@class='btn btn-success']";
+	public static final String DemandSuccessMessage="//*[@class='alert alert-success']";
+	public static final String CreateDemandOrder_SuccessMessageText = "Created .* successfully";
 
 	public static final String Supplier = ".//a[text()='Supplier']";
 	public static final String SupplierAdd = ".//a[text()='Supplier']";
@@ -190,6 +193,7 @@ public class Constants {
 	public static final String CalendarPopup_HourText_LastPart = "']";
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
+	
 	
 	
 

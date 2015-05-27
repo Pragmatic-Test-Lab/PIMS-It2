@@ -17,6 +17,10 @@ public class CreateDemandOrderPage {
 	WebElement createdemand;
 	@FindBy(xpath = Constants.CreateDemandHeader)
 	WebElement createdemandheader;
+	@FindBy(xpath = Constants.CreateDemandButton)
+	WebElement create;
+	@FindBy(xpath = Constants.DemandSuccessMessage)
+	WebElement successMessageDemand;
 	
 	
 	public CreateDemandOrderPage(WebDriver dr){
@@ -25,6 +29,20 @@ public class CreateDemandOrderPage {
 	
 	public String getActualPageTitle(){
 		return createdemandheader.getText();
+	}
+	public DemandOrderPage ClickCreateButton(){
+		create.click();
+		DemandOrderPage demandpage = PageFactory.initElements(driver, DemandOrderPage.class);
+		return demandpage;
+	}
+	
+	public String getSuccessMessage(){
+
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {}
+
+		return successMessageDemand.getText();
 	}
 	
 }

@@ -27,4 +27,15 @@ public class CreateDemandOrderTest extends TestBase {
 					"Could not go to new demand order page.");		
 	}	
 	
+	@Test(dependsOnMethods="goToNewDemandOrderPage")
+	public void submitDemandOrderTest(){
+
+		demandOrderPage = createNewDemandPage.ClickCreateButton();
+
+
+		Assert.assertTrue(createNewDemandPage.getSuccessMessage().matches(Constants.CreateDemandOrder_SuccessMessageText),
+				"Demand Order not created");				
+	}
+
+	
 }
