@@ -14,6 +14,7 @@ import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveSendToCourtAppea
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizePostRegInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
+import com.ptl.PIMS.Pages.MealManagement.DemandAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.DemandOrderPage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenItemPage;
 import com.ptl.PIMS.Pages.MealManagement.RecipePage;
@@ -48,6 +49,9 @@ public class TopMenu {
 	WebElement DemandOrderAdd;
 	@FindBy(xpath = Constants.DemandOrder)
 	WebElement demandorder;
+	@FindBy(xpath = Constants.DemandOrderAuthorize)
+	WebElement DemandOrderAuthorize;
+	
 	@FindBy(xpath = Constants.MealManagement)
 	WebElement mealmanagement;
 	@FindBy(xpath = Constants.Supplier)
@@ -121,6 +125,16 @@ public class TopMenu {
 		DemandOrderPage newdDemandOrderPage = PageFactory.initElements(driver, DemandOrderPage.class);
 		return newdDemandOrderPage;
 	}	
+	
+	public DemandAuthorizePage gotoNewDemandAuthorizePage(){
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(demandorder).moveToElement(DemandOrderAuthorize).click().build().perform();
+		DemandAuthorizePage newdDemandauthorizePage = PageFactory.initElements(driver, DemandAuthorizePage.class);
+		return newdDemandauthorizePage;
+	}	
+	
+	
+	
 
 	public SupplierPage gotoNewSupplierPage(){
 		Actions action = new Actions(driver);

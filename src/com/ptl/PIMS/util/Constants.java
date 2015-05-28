@@ -13,12 +13,12 @@ public class Constants {
 	public static final String Login_password = "//*[@id='login-form-password']";
 	public static final String Login_login = "//*[@id='login-form']/button";
 	public static final String Login_PasswordError = "//*[text()='Password']/following::div[1]";
-	
+
 	// Home Page
 	public static final String Home_MainImage = ".//img[@src='../views/site/prison.jpg']";
 
 	// Top Menu Links
-	public static final String TopMenu_PIMSTopLink = "//a[text()='PIMS']";
+	public static final String TopMenu_PIMSTopLink = "//a[text()='HOME']";
 	public static final String TopMenu_RegistrationManagementTopLink = "//a[contains(text(),'Registration Management')]";
 	public static final String TopMenu_RegistrationManagement_AdmissionTopLink = "//*[text() = 'Admission']";
 	public static final String TopMenu_AuthorizeSubLink = "//*[text()='Authorize']";
@@ -33,12 +33,12 @@ public class Constants {
 	public static final String TopMenu_AppealSPApprovalLink = "//a[text()='SP Approval']";
 	public static final String TopMenu_AppealSendToCourtApprovalLink = "//a[text()='Court Approval']";
 	public static final String TopMenu_AppealCourtApprovalLink = "//a[text()='Appeal Response']";
-	
+
 	public static final String TopMenu_LogOut = "//a[contains(text(),'Logout')]";
 
 	//Iteration 1 Pages
 	//
-	
+
 	//Authorize Admission
 	public static final String Admission_InmateCategory = "//*[@id='admission-adm_inmate_category_id']";
 	public static final String Admission_DOAdmission = "//*[@id='admission-adm_date_of_admission']";
@@ -51,18 +51,16 @@ public class Constants {
 	public static final String Admission_InmateCourtDetail_CaseNumber = "(.//input[contains(@name, 'icd_case_number')])";
 	public static final String Admission_InmateCourtDetail_DateConviction = "(.//input[contains(@name, 'icd_date_of_conviction')])";
 	public static final String Admission_InmateCourtDetail_DateSentence = "(.//*[contains(@name, 'icd_date_of_sentence')])";
-	
+
 	public static final String CalendarPopup_AdmissionMonthYearText = "(.//th[contains(@class,'switch')])[3]";
 	public static final String CalendarPopup_AdmissionYearText = "(.//th[contains(@class,'switch')])[4]";
 	public static final String CalendarPopup_AdmissionYearText_FirstPart = ".//span[text()='";
 	public static final String CalendarPopup_AdmissionYearText_LastPart = "' and @class='year active']";
-	
+
 	public static final String AuthorizeButton = "//button[text() = 'Authorize']";
 	//
-	
+
 	//Authorize Registration
-	
-	
 	public static final String Registration_CaseDetailTab = "//a[text() = 'Inmate Case Details']";
 	public static final String Registration_CaseTableBody = "//*[@id='sentence_grid']/tbody";
 	public static final String Registration_CaseDetail_AddNew = "//button[text()='Add New']";	
@@ -74,16 +72,16 @@ public class Constants {
 	public static final String Registration_CaseDetail_Days = "(.//input[contains(@name, '[sen_days]')])";
 	public static final String Registration_CaseDetail_Fine = "(.//input[contains(@name, 'sen_fine_charges')])";		
 	//
-	
+
 	//
 	//
 
-	
+
 	//Iteration 2 Pages
 	//
 	public static final String SuccessMessage = ".//div[@class='alert alert-success']";
 
-	
+
 	//Appeal Management
 	public static final String AppealManagement_RegNoSearch = "//*[@name='AppealSearch[registration_no]']";
 	public static final String AppealManagement_BioIdSearch = "//*[@name='AppealSearch[biometric_id]']";
@@ -92,7 +90,7 @@ public class Constants {
 	public static final String AppealManagement_ReasonSearch = "//*[@name='AppealSearch[app_reason]']";
 	public static final String AppealManagement_NewAppealButton = "//*[@href='/PIMS3/web/appeal/selectadmission']";
 	public static final String AppealManagement_FirstAppeal = "(.//*[contains(@class, 'glyphicon')]//parent::a)[1]";
-	
+
 	public static final String AppealManagement_AppealDate = "//*[@id='appeal-app_date']";
 	public static final String AppealManagement_AppealCase = "//*[@id='appeal-app_case_id']";
 	public static final String AppealManagement_AppealAllAvailableCases = "//select[@id='appeal-app_case_id']/option";	
@@ -106,18 +104,18 @@ public class Constants {
 	public static final String AppealManagement_AppealRequest = "//*[@id='appeal-app_request']";
 	public static final String AppealManagement_AddUpdateButton = "//*[@type='submit']";
 	public static final String AppealManagement_UpdateSuccessMessage = "//*[@type='submit']";
-	
+
 	public static final String AppealManagement_ApproveAppealButton = "//button[text() = 'Authorize']";
 
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	//
-	
-		//Meal Management Page 
+
+	//Meal Management Page 
 
 	public static final String DemandOrderAdd = "//*[text()='Demand Order Add/Update']";
 	public static final String TransactionManagement = ".//a[text()='Transaction Management ']";
@@ -129,6 +127,14 @@ public class Constants {
 	public static final String CreateDemandButton = "//*[@class='btn btn-success']";
 	public static final String DemandSuccessMessage="//*[@class='alert alert-success']";
 	public static final String CreateDemandOrder_SuccessMessageText = "Created .* successfully";
+	public static final String DemandOrderAuthorize = "//*[text()='Demand Order Authorize']";
+	public static final String DemandOrderId = "//*[@id='stocktranactionheader-sth_order_no']";
+	public static final String OrdernoSearch = "//*[@name='StockTranactionHeaderSearch[sth_order_no]']";
+	public static final String SelectDemandOrder = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String AuthorizeDemand = "//*[@class='btn btn-primary']";
+	public static final String AuthorizeDemandSuccess = "//*[@class='alert alert-success']";
+	public static final String AuthorizeDemandOrder_SuccessMessageText = "Saved .* successfully";
+
 
 	public static final String Supplier = ".//a[text()='Supplier']";
 	public static final String SupplierAdd = ".//a[text()='Supplier']";
@@ -148,7 +154,7 @@ public class Constants {
 	public static final String CreateKitchenItem="//*[text()='Create Kitchen Item']";
 	public static final String CreateKitchenItem_SuccessMessageText = "Created .* successfully";
 	public static final String KitchenSuccessMessage = "//*[@class='alert alert-success']";
-	
+
 	public static final String Recipe = ".//*[text()='Recipe']";
 	public static final String CreateRecipe="(.//*[@class='glyphicon glyphicon-pencil'])[1]";
 	public static final String KitchenItemName2 = "";
@@ -159,14 +165,14 @@ public class Constants {
 	public static final String CreateRecipeItemButton = "//*[@class='btn btn-primary']";
 	public static final String CreateRecipe_SuccessMessageText="Saved .* successfully";
 	public static final String RecipeSuccessMessage = "//*[@class='alert alert-success']";
-	
+
 
 
 
 	//
-	
-	
-	
+
+
+
 	//
 	//
 
@@ -196,6 +202,11 @@ public class Constants {
 	
 	
 	
+	
+	
+
+
+
 
 
 

@@ -9,7 +9,7 @@ import com.ptl.PIMS.TestCases.MealManagement.CreateDemandOrderTest;
 import com.ptl.PIMS.util.Constants;
 
 public class CreateDemandOrderPage {
-	
+
 	WebDriver driver;
 	@FindBy(xpath = Constants.DemandOrderAdd)
 	WebElement DemandOrderAdd;
@@ -21,21 +21,32 @@ public class CreateDemandOrderPage {
 	WebElement create;
 	@FindBy(xpath = Constants.DemandSuccessMessage)
 	WebElement successMessageDemand;
-	
-	
+	@FindBy(xpath = Constants.DemandOrderId)
+	WebElement demandorderid;
+
+
+
 	public CreateDemandOrderPage(WebDriver dr){
 		driver = dr;
 	}
-	
+
 	public String getActualPageTitle(){
 		return createdemandheader.getText();
 	}
+	
+	public String getDemandOrderID(){
+
+		
+		return demandorderid.getAttribute("value");
+
+	}
+	
 	public DemandOrderPage ClickCreateButton(){
 		create.click();
 		DemandOrderPage demandpage = PageFactory.initElements(driver, DemandOrderPage.class);
 		return demandpage;
 	}
-	
+
 	public String getSuccessMessage(){
 
 		try {
@@ -44,5 +55,7 @@ public class CreateDemandOrderPage {
 
 		return successMessageDemand.getText();
 	}
-	
+
+
+
 }

@@ -43,6 +43,7 @@ public class TestBase {
 	public static String registrationNo = "";
 	public static String inmateName = "";
 	public static String caseNo = "";
+	public static String id = "";
 
 	@BeforeSuite
 	public void initConfiguration() {
