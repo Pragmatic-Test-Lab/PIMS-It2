@@ -8,6 +8,7 @@ public class Constants {
 	public static String EXCEL_Path = System.getProperty("user.dir")
 			+ "\\src\\com\\ptl\\data\\TestData.xlsx";
 
+
 	//Login Page
 	public static final String Login_username = "//*[@id='login-form-login']";
 	public static final String Login_password = "//*[@id='login-form-password']";
@@ -135,6 +136,18 @@ public class Constants {
 	public static final String AuthorizeDemandSuccess = "//*[@class='alert alert-success']";
 	public static final String AuthorizeDemandOrder_SuccessMessageText = "Saved .* successfully";
 
+	public static final String KitchenSlip = ".//a[text()='Kitchen Slip']";
+	public static final String KitchenSlipAdd = ".//a[text()='Kitchen Slip Add/Update']";
+	public static final String CreateKitchenSlip = "//*[@class='btn btn-success']";
+	public static final String KitchenSlipId = "//*[@id='stocktranactionheader-sth_refference_no']";
+	public static final String CreateKitchenSlipButton = "//*[@class='btn btn-success']";
+	public static final String SuccessMessageKitchen = "//*[@class='alert alert-success']";
+	public static final String CreateKitchenSlip_SuccessMessageText = "Created .* successfully";
+
+
+
+
+
 
 	public static final String Supplier = ".//a[text()='Supplier']";
 	public static final String SupplierAdd = ".//a[text()='Supplier']";
@@ -154,6 +167,12 @@ public class Constants {
 	public static final String CreateKitchenItem="//*[text()='Create Kitchen Item']";
 	public static final String CreateKitchenItem_SuccessMessageText = "Created .* successfully";
 	public static final String KitchenSuccessMessage = "//*[@class='alert alert-success']";
+	public static final String AddNewKitchenItem = "//*[@class='btn btn-success glyphicon glyphicon-plus']";
+	public static final String Kitchenitemline ="//*[@id='stocktranactiondetails-1-std_kitchen_item_id']";
+	public static final String quantityline = "//*[@id='stocktranactiondetails-1-std_quantity']";
+
+
+
 
 	public static final String Recipe = ".//*[text()='Recipe']";
 	public static final String CreateRecipe="(.//*[@class='glyphicon glyphicon-pencil'])[1]";
@@ -199,11 +218,14 @@ public class Constants {
 	public static final String CalendarPopup_HourText_LastPart = "']";
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 
 
 
