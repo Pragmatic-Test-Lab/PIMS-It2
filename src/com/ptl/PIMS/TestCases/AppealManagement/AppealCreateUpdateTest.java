@@ -23,22 +23,26 @@ public class AppealCreateUpdateTest extends TestBase {
 
 	AppealAddUpdatePage appealPage;
 	
-	@Test(dataProvider = "getAppealData")
+	@Test(dataProvider = "getAppealData", groups="AppealCreateUpdateTest")
 	public void createAppealTestData(Hashtable<String, String> data) {
 		
 		loginToApplication();
 		
 		//Authorize Admission with court details
 		AuthorizeAdmissionInmatePage authorizeInmateSelect = getTopMenu().gotoAuthorizeAdmissionPage();
-		AuthorizeAdmissionPage authorizePage = authorizeInmateSelect.clickFirstInmate();		
+		//AuthorizeAdmissionPage authorizePage = authorizeInmateSelect.clickFirstInmate();		
+		
+		AuthorizeAdmissionPage authorizePage = authorizeInmateSelect.selectSencondInmate();
+		
 		authorizePage.fillCase(data.get("courts"), data.get("caseNos"), TestUtil.getTodaysDate(), TestUtil.getTodaysDate());
 		authorizePage.changeInmateCategory("Convicted");
 		authorizePage.changeAdmissionDate(TestUtil.getTodaysDate());
 	    registrationNo = authorizePage.getRegistrationNumber();
+	    
+    
 	    authorizeInmateSelect = authorizePage.doAuthorizeAdmission();
 		
-	    if(!authorizeInmateSelect.successMessageAvaiable())
-	    	Assert.assertTrue(authorizeInmateSelect.successMessageAvaiable(), "Could not find success message element in Admission Page.");
+	    Assert.assertTrue(authorizeInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Admission Page.");
 	    //	    
 	    
 		
@@ -50,27 +54,28 @@ public class AppealCreateUpdateTest extends TestBase {
 				data.get("Months"), data.get("Years"), data.get("Fines"));
 		authorizeRegInmateSelect = authorizeRegPage.authorizeInmate();
 		
-		if(!authorizeRegInmateSelect.successMessageAvaiable())
-	    	Assert.assertTrue(authorizeRegInmateSelect.successMessageAvaiable(), "Could not find success message element in Registration Page.");
+    	Assert.assertTrue(authorizeRegInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Registration Page.");
 
 	}
 	
-	@Test(dataProvider = "getAppealData", dependsOnMethods = "createAppealTestData")
+	@Test(dataProvider = "getAppealData", dependsOnMethods = "createAppealTestData", groups="AppealCreateUpdateTest")
 	public void createAppealTest(Hashtable<String, String> data) {
 		
 		//Create New Appeal
 		appealPage =  getTopMenu().gotoAppealAddUpdate();		
 		NewAppeal_InmateSelect inmateSelectionPage = appealPage.CreateNewAppeal();
 		inmateSelectionPage.doSearch(registrationNo, "", "");
+		
+		try {   Thread.sleep(2000);		} catch (InterruptedException e) {e.printStackTrace();}
+		
 		NewAppeal newAppealPage = inmateSelectionPage.clickFirstInmate();		
 		appealPage = newAppealPage.AddNewAppeal(data.get("caseNos"), data.get("courts"), data.get("Reason"), data.get("Request"));
 		
-		if(!appealPage.successMessageAvaiable())
-	    	Assert.assertTrue(appealPage.successMessageAvaiable(), "Could not find success message element in Appeal Add/Update Page.");
+    	Assert.assertTrue(appealPage.successMessageAvaiable(), "Could not find Success Message element in Appeal Add/Update Page.");
 		//
 	}
 	
-	@Test(dataProvider = "getAppealData", dependsOnMethods = "createAppealTest")
+	@Test(dataProvider = "getAppealData", dependsOnMethods = "createAppealTest", groups="AppealCreateUpdateTest" )
 	public void updateAppealTest(Hashtable<String, String> data) {
 		
 		
@@ -79,8 +84,7 @@ public class AppealCreateUpdateTest extends TestBase {
 		EditAppealPage editAppealPage =  appealPage.SelectFirstAppeal();
 		appealPage = editAppealPage.EditAppealDetails(data.get("caseNos"), data.get("courts"), data.get("Updated Reason"), data.get("Updated Request"));
 		
-		if(!appealPage.successMessageAvaiable())
-	    	Assert.assertTrue(appealPage.successMessageAvaiable(), "Could not find success message element in Appeal Add/Update Page.");
+    	Assert.assertTrue(appealPage.successMessageAvaiable(), "Could not find Success Message element in Appeal Add/Update Page.");
 		//
 	}
 	

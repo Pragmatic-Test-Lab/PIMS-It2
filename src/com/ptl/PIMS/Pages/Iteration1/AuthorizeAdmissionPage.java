@@ -77,7 +77,7 @@ public class AuthorizeAdmissionPage {
 	
 	public AuthorizeAdmissionInmatePage doAuthorizeAdmission(){
 		
-		AuthorizeInamteAdmissionButton.click();
+		AuthorizeInamteAdmissionButton.submit();
 		
 		AuthorizeAdmissionInmatePage authorizeAdmissionSelectPage = PageFactory.initElements(driver, AuthorizeAdmissionInmatePage.class);
 		return authorizeAdmissionSelectPage;

@@ -17,7 +17,6 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import com.ptl.PIMS.Pages.HomePage;
@@ -41,8 +40,7 @@ public class TestBase {
 	
 	//inmate data
 	public static String registrationNo = "";
-	public static String inmateName = "";
-	public static String caseNo = "";
+	public static String progCode = "";
 
 	@BeforeSuite
 	public void initConfiguration() {
