@@ -16,6 +16,7 @@ import com.ptl.PIMS.Pages.Iteration1.AuthorizePostRegInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
 import com.ptl.PIMS.Pages.MealManagement.DemandAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.DemandOrderPage;
+import com.ptl.PIMS.Pages.MealManagement.KitchenAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenItemPage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenSlipPage;
 import com.ptl.PIMS.Pages.MealManagement.RecipePage;
@@ -56,6 +57,8 @@ public class TopMenu {
 	WebElement kitchenslip;
 	@FindBy(xpath = Constants.KitchenSlipAdd)
 	WebElement kitchenslipadd;
+	@FindBy(xpath = Constants.KitchenOrderAuthorize)
+	WebElement KitchenOrderAuthorize;
 	
 	@FindBy(xpath = Constants.MealManagement)
 	WebElement mealmanagement;
@@ -143,6 +146,13 @@ public class TopMenu {
 		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(kitchenslip).moveToElement(kitchenslipadd).click().build().perform();
 		KitchenSlipPage newKitchenSlipPage = PageFactory.initElements(driver, KitchenSlipPage.class);
 		return newKitchenSlipPage;
+	}	
+	
+	public KitchenAuthorizePage gotoNewKitchenAuthorizePage(){
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(kitchenslip).moveToElement(KitchenOrderAuthorize).click().build().perform();
+		KitchenAuthorizePage newKitchenauthorizePage = PageFactory.initElements(driver, KitchenAuthorizePage.class);
+		return newKitchenauthorizePage;
 	}	
 	
 	

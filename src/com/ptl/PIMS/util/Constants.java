@@ -143,10 +143,15 @@ public class Constants {
 	public static final String CreateKitchenSlipButton = "//*[@class='btn btn-success']";
 	public static final String SuccessMessageKitchen = "//*[@class='alert alert-success']";
 	public static final String CreateKitchenSlip_SuccessMessageText = "Created .* successfully";
-
-
-
-
+	public static final String Kitchenitemline ="//*[@id='stocktranactiondetails-1-std_kitchen_item_id']";
+	public static final String AddNewKitchenItem = "//*[@class='btn btn-success glyphicon glyphicon-plus']";
+	public static final String quantityline = "//*[@id='stocktranactiondetails-1-std_quantity']";
+	public static final String KitchenOrderNo = "//*[@name='StockTranactionHeaderSearch[sth_refference_no]']";
+	public static final String SelectKitchenOrder = "(//*[@class='glyphicon glyphicon-ok'])[1]";
+	public static final String KitchenOrderAuthorize = "//*[text()='Kitchen Slip Authorize']";
+	public static final String AuthorizeKitchen = "//*[@class='btn btn-primary']";
+	public static final String SuccessMessageKitchenAuthorize = "//*[@class='alert alert-success']";
+	public static final String AuthorizeKitchen_SuccessMessageText = "Saved .* successfully";
 
 
 	public static final String Supplier = ".//a[text()='Supplier']";
@@ -167,9 +172,8 @@ public class Constants {
 	public static final String CreateKitchenItem="//*[text()='Create Kitchen Item']";
 	public static final String CreateKitchenItem_SuccessMessageText = "Created .* successfully";
 	public static final String KitchenSuccessMessage = "//*[@class='alert alert-success']";
-	public static final String AddNewKitchenItem = "//*[@class='btn btn-success glyphicon glyphicon-plus']";
-	public static final String Kitchenitemline ="//*[@id='stocktranactiondetails-1-std_kitchen_item_id']";
-	public static final String quantityline = "//*[@id='stocktranactiondetails-1-std_quantity']";
+	
+	
 
 
 
@@ -218,6 +222,10 @@ public class Constants {
 	public static final String CalendarPopup_HourText_LastPart = "']";
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
+	
+	
+	
+	
 
 
 

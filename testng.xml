@@ -8,6 +8,9 @@
        <class name="com.ptl.PIMS.TestCases.MealManagement.CreateRecipeTest"/> 
       <class name="com.ptl.PIMS.TestCases.MealManagement.CreateDemandOrderTest"/>
       <class name="com.ptl.PIMS.TestCases.MealManagement.DemandAuthorizeTest"/>
+      <class name="com.ptl.PIMS.TestCases.MealManagement.CreateKitchenSlipTest"/>
+      <class name="com.ptl.PIMS.TestCases.MealManagement.CreateKitchenAuthorizeTest"/>
+            
   
     </classes>
   </test> <!-- Test -->
