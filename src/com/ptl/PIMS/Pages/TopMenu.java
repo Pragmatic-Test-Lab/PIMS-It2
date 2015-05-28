@@ -19,6 +19,7 @@ import com.ptl.PIMS.Pages.MealManagement.DemandOrderPage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenItemPage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenSlipPage;
+import com.ptl.PIMS.Pages.MealManagement.PurchaseOrderPage;
 import com.ptl.PIMS.Pages.MealManagement.RecipePage;
 import com.ptl.PIMS.Pages.MealManagement.SupplierPage;
 import com.ptl.PIMS.TestCases.TestBase;
@@ -59,6 +60,10 @@ public class TopMenu {
 	WebElement kitchenslipadd;
 	@FindBy(xpath = Constants.KitchenOrderAuthorize)
 	WebElement KitchenOrderAuthorize;
+	@FindBy(xpath = Constants.PurchaseOrder)
+	WebElement purchaseorder;
+	@FindBy(xpath = Constants.PurchaseOrderAdd)
+	WebElement purchaseorderadd;
 	
 	@FindBy(xpath = Constants.MealManagement)
 	WebElement mealmanagement;
@@ -155,6 +160,12 @@ public class TopMenu {
 		return newKitchenauthorizePage;
 	}	
 	
+	public PurchaseOrderPage gotoNewPurchaseOrderPage(){
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(purchaseorder).moveToElement(purchaseorderadd).click().build().perform();
+		PurchaseOrderPage newpurchaseorderPage = PageFactory.initElements(driver, PurchaseOrderPage.class);
+		return newpurchaseorderPage;
+	}	
 	
 	
 

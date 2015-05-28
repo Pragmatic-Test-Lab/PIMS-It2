@@ -7,6 +7,7 @@ public class Constants {
 			+ "\\src\\com\\ptl\\config\\config.properties";
 	public static String EXCEL_Path = System.getProperty("user.dir")
 			+ "\\src\\com\\ptl\\data\\TestData.xlsx";
+	
 
 
 	//Login Page
@@ -109,15 +110,9 @@ public class Constants {
 	public static final String AppealManagement_ApproveAppealButton = "//button[text() = 'Authorize']";
 
 
-
-
-
-
-
 	//
 
 	//Meal Management Page 
-
 	public static final String DemandOrderAdd = "//*[text()='Demand Order Add/Update']";
 	public static final String TransactionManagement = ".//a[text()='Transaction Management ']";
 	public static final String MealManagement = ".//a[text()='Meal Management']";
@@ -153,7 +148,6 @@ public class Constants {
 	public static final String SuccessMessageKitchenAuthorize = "//*[@class='alert alert-success']";
 	public static final String AuthorizeKitchen_SuccessMessageText = "Saved .* successfully";
 
-
 	public static final String Supplier = ".//a[text()='Supplier']";
 	public static final String SupplierAdd = ".//a[text()='Supplier']";
 	public static final String CreateSupplier = "//*[text()='Create Supplier']";
@@ -173,11 +167,6 @@ public class Constants {
 	public static final String CreateKitchenItem_SuccessMessageText = "Created .* successfully";
 	public static final String KitchenSuccessMessage = "//*[@class='alert alert-success']";
 	
-	
-
-
-
-
 	public static final String Recipe = ".//*[text()='Recipe']";
 	public static final String CreateRecipe="(.//*[@class='glyphicon glyphicon-pencil'])[1]";
 	public static final String KitchenItemName2 = "";
@@ -188,6 +177,25 @@ public class Constants {
 	public static final String CreateRecipeItemButton = "//*[@class='btn btn-primary']";
 	public static final String CreateRecipe_SuccessMessageText="Saved .* successfully";
 	public static final String RecipeSuccessMessage = "//*[@class='alert alert-success']";
+	
+	public static final String CreatePurchaseOrder = ".//a[text()='Create Purchase Order']";
+	public static final String PurchaseOrder = ".//a[text()='Purchase Order']";
+	public static final String PurchaseOrderAdd = ".//a[text()='Purchase Order Add/Update']";
+	public static final String PurchaseOrderId = "//*[@id='stocktranactionheader-sth_order_no']";
+	public static final String SupplierLine = "//*[@id='stocktranactionheader-sth_supplier_id']";
+	public static final String Kitchenitemline1 = "//*[@id='stocktranactiondetails-1-std_kitchen_item_id']";
+	public static final String quantityline1 = "//*[@id='stocktranactiondetails-1-std_quantity']";
+	public static final String AddNewPurchaseOrder = "//*[@class='btn btn-success glyphicon glyphicon-plus']";
+	public static final String PurchaseOrderCreate = "//*[@class='btn btn-success']";
+	public static final String SuccessMessagePurchaseOrder = "//*[@class='alert alert-success']";
+	public static final String CreatePurchaseOrder_SuccessMessageText = "Created .* successfully";
+
+
+
+
+
+
+
 
 
 
@@ -223,21 +231,4 @@ public class Constants {
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
 	
-	
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
