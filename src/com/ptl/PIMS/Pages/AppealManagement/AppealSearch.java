@@ -30,9 +30,6 @@ public class AppealSearch  extends CommonMethods{
 	@FindBy(xpath = Constants.AppealManagement_FirstAppeal)
 	public WebElement AppealFirstRecord;	
 
-	@FindBy(xpath = Constants.SuccessMessage)
-	public WebElement successMessage;	
-
 	@SuppressWarnings("unchecked")
 	public <T extends AppealSearch>T AppealForSearch (String RegNo,String BioId,
 			String Name,String Date, String Reason){
@@ -49,11 +46,11 @@ public class AppealSearch  extends CommonMethods{
 	
 	public boolean successMessageAvaiable(){
 		
-		return checkElementIsPresent(driver, By.xpath(Constants.InmateSearchPage_SuccessMessage));
+		return checkElementIsPresent(driver, By.xpath(Constants.SearchPage_SuccessMessage));
 	}
 	
 	public String getSuccessMessage(){
 		
-		return successMessage.getText();
+		return driver.findElement(By.xpath(Constants.SearchPage_SuccessMessage)).getText();
 	}
 }

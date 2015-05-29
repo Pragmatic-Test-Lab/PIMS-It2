@@ -70,6 +70,29 @@ public class CalendarPopup extends CommonMethods{
 		driver.findElement(By.xpath(DateToBeSelected_XPath)).click(); //click on the selected date text
 		
 	}
+	
+	public void editDate(WebElement calendarInputField, String wholeDate){
+		
+		String[] splitDate = wholeDate.split("-");
+		
+		String year = splitDate[0];
+		String month = splitDate[1];
+		String day = splitDate[2];
+		
+		calendarInputField.click();
+		driver.findElement(By.xpath(Constants.CalendarPopup_MonthYearText)).click();
+		driver.findElement(By.xpath(Constants.CalendarPopup_YearText)).click(); 
+		
+		YearToBeSelected_XPath = Constants.CalendarPopup_AdmissionYearText_FirstPart + year + Constants.CalendarPopup_AdmissionYearText_LastPart;
+		driver.findElement(By.xpath(YearToBeSelected_XPath)).click();
+		
+		MonthToBeSelected_XPath = MonthText_FirstPart + month + MonthText_LastPart + "[" + NoOfElements(driver, MonthText_FirstPart + month + MonthText_LastPart) + "]";
+		driver.findElement(By.xpath(MonthToBeSelected_XPath)).click();
+		
+		DateToBeSelected_XPath = dateText_FirstPart + day + dateText_LastPart + "[" + NoOfElements(driver, dateText_FirstPart + day + dateText_LastPart) + "]";;
+		driver.findElement(By.xpath(DateToBeSelected_XPath)).click();
+		
+	}
 
 	
 	//created for admission Date

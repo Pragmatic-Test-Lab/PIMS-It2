@@ -17,7 +17,7 @@ public class HomePage extends CommonMethods{
 	public boolean IsMainPageImageShown() {
 
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {}
 		
 		return checkElementIsPresent(driver, By.xpath(Constants.Home_MainImage));

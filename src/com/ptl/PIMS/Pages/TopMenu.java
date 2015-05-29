@@ -23,6 +23,10 @@ import com.ptl.PIMS.Pages.MealManagement.PurchaseOrderAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.PurchaseOrderPage;
 import com.ptl.PIMS.Pages.MealManagement.RecipePage;
 import com.ptl.PIMS.Pages.MealManagement.SupplierPage;
+import com.ptl.PIMS.Pages.VocationalTraining.AddParticipantsVoc_ProgSelect;
+import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVocParticipants_ProgSelect;
+import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVoc_ProgSelect;
+import com.ptl.PIMS.Pages.VocationalTraining.VocationalTrainingAddUpdatePage;
 import com.ptl.PIMS.TestCases.TestBase;
 import com.ptl.PIMS.util.Constants;
 
@@ -88,6 +92,16 @@ public class TopMenu {
 	WebElement appealSendToCourtApprovalLink;
 	@FindBy(xpath = Constants.TopMenu_AppealCourtApprovalLink)
 	WebElement appealCourtApprovalLink;
+	@FindBy(xpath = Constants.TopMenu_VOCTopLink)
+	WebElement vocTopLink;
+	@FindBy(xpath = Constants.TopMenu_VOCAddUpdateLink)
+	WebElement vocAddUpdateLink;
+	@FindBy(xpath = Constants.TopMenu_VOCAuth)
+	WebElement vocAuthLink;
+	@FindBy(xpath = Constants.TopMenu_VOCPart)
+	WebElement vocParticipantsLink;
+	@FindBy(xpath = Constants.TopMenu_VOCAuthPart)
+	WebElement vocAuthParticipantsLink;
 	@FindBy(xpath = Constants.TopMenu_LogOut)
 	WebElement logOut;
 
@@ -259,6 +273,42 @@ public class TopMenu {
 		ApproveByCourtAppealSelect approveAppealPage = PageFactory.initElements(driver, ApproveByCourtAppealSelect.class);
 		return approveAppealPage;	
 	}
+	
+	public VocationalTrainingAddUpdatePage gotoVocationalAddUpdate() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(vocTopLink).moveToElement(vocAddUpdateLink).click().build().perform();
+
+		VocationalTrainingAddUpdatePage gotoNewVoc = PageFactory.initElements(driver, VocationalTrainingAddUpdatePage.class);
+		return gotoNewVoc;
+	}
+	
+	public AuthorizeVoc_ProgSelect gotoVocationalAuthorize() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(vocTopLink).moveToElement(vocAuthLink).click().build().perform();
+
+		AuthorizeVoc_ProgSelect gotoAuthVoc = PageFactory.initElements(driver, AuthorizeVoc_ProgSelect.class);
+		return gotoAuthVoc;
+	}
+	
+	public AddParticipantsVoc_ProgSelect gotoVocationalParticipants() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(vocTopLink).moveToElement(vocParticipantsLink).click().build().perform();
+		
+		AddParticipantsVoc_ProgSelect partVoc = PageFactory.initElements(driver, AddParticipantsVoc_ProgSelect.class);
+		return partVoc;
+	}
+	
+	public AuthorizeVocParticipants_ProgSelect gotoVocationalParticipantsAuthorize() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(vocTopLink).moveToElement(vocAuthParticipantsLink).click().build().perform();
+		
+		AuthorizeVocParticipants_ProgSelect authPartVoc = PageFactory.initElements(driver, AuthorizeVocParticipants_ProgSelect.class);
+		return authPartVoc;
+	}
 
 	
 	public LoginPage doLogout(){
@@ -267,6 +317,8 @@ public class TopMenu {
 		TestBase.isLoggedIn = false;
 		return loginPage;		
 	}
+
+
 
 
 
