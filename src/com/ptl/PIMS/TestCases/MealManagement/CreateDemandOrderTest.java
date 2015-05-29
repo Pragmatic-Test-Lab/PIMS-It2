@@ -14,17 +14,30 @@ public class CreateDemandOrderTest extends TestBase {
 
 	DemandOrderPage demandOrderPage;
 	CreateDemandOrderPage createNewDemandPage;
-	
+
 	@Test   
 	public void goToNewDemandOrderPage(){
 
-			loginToApplication();		
-			TopMenu topMenu = getTopMenu();
-			demandOrderPage = topMenu.gotoNewDemandOrderPage();
-		    createNewDemandPage = demandOrderPage.getCreateDemandOrderPage();
-		    
-			Assert.assertTrue(createNewDemandPage.getActualPageTitle().equals(Constants.CreateDemandPageHeader),
-					"Could not go to new demand order page.");		
+		loginToApplication();		
+		TopMenu topMenu = getTopMenu();
+		demandOrderPage = topMenu.gotoNewDemandOrderPage();
+		createNewDemandPage = demandOrderPage.getCreateDemandOrderPage();
+
+		Assert.assertTrue(createNewDemandPage.getActualPageTitle().equals(Constants.CreateDemandPageHeader),
+				"Could not go to new demand order page.");		
 	}	
-	
+
+	@Test(dependsOnMethods="goToNewDemandOrderPage")
+	public void submitDemandOrderTest() {
+		System.out.println("demand number:"+createNewDemandPage.getDemandOrderID());
+		id=createNewDemandPage.getDemandOrderID();
+		demandOrderPage = createNewDemandPage.ClickCreateButton();
+
+
+		Assert.assertTrue(createNewDemandPage.getSuccessMessage().matches(Constants.CreateDemandOrder_SuccessMessageText),
+				"Demand Order not created");	
+
+	}
+
+
 }

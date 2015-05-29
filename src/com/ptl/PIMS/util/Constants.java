@@ -121,7 +121,7 @@ public class Constants {
 	
 	//
 	
-	//Meal Management Page 
+//Meal Management Page 
 
 	public static final String DemandOrderAdd = "//*[text()='Demand Order Add/Update']";
 	public static final String TransactionManagement = ".//a[text()='Transaction Management ']";
@@ -130,6 +130,34 @@ public class Constants {
 	public static final String CreateDemand = ".//a[text()='Create Demand Order']";
 	public static final String CreateDemandHeader="//*[@class='stock-tranaction-header-create']/h1";
 	public static final String CreateDemandPageHeader="Create Demand Order";
+	public static final String CreateDemandButton = "//*[@class='btn btn-success']";
+	public static final String DemandSuccessMessage="//*[@class='alert alert-success']";
+	public static final String CreateDemandOrder_SuccessMessageText = "Created .* successfully";
+	public static final String DemandOrderAuthorize = "//*[text()='Demand Order Authorize']";
+	public static final String DemandOrderId = "//*[@id='stocktranactionheader-sth_order_no']";
+	public static final String OrdernoSearch = "//*[@name='StockTranactionHeaderSearch[sth_order_no]']";
+	public static final String SelectDemandOrder = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String AuthorizeDemand = "//*[@class='btn btn-primary']";
+	public static final String AuthorizeDemandSuccess = "//*[@class='alert alert-success']";
+	public static final String AuthorizeDemandOrder_SuccessMessageText = "Saved .* successfully";
+
+	public static final String KitchenSlip = ".//a[text()='Kitchen Slip']";
+	public static final String KitchenSlipAdd = ".//a[text()='Kitchen Slip Add/Update']";
+	public static final String CreateKitchenSlip = "//*[@class='btn btn-success']";
+	public static final String KitchenSlipId = "//*[@id='stocktranactionheader-sth_refference_no']";
+	public static final String CreateKitchenSlipButton = "//*[@class='btn btn-success']";
+	public static final String SuccessMessageKitchen = "//*[@class='alert alert-success']";
+	public static final String CreateKitchenSlip_SuccessMessageText = "Created .* successfully";
+	public static final String Kitchenitemline ="//*[@id='stocktranactiondetails-1-std_kitchen_item_id']";
+	public static final String AddNewKitchenItem = "//*[@class='btn btn-success glyphicon glyphicon-plus']";
+	public static final String quantityline = "//*[@id='stocktranactiondetails-1-std_quantity']";
+	public static final String KitchenOrderNo = "//*[@name='StockTranactionHeaderSearch[sth_refference_no]']";
+	public static final String SelectKitchenOrder = "(//*[@class='glyphicon glyphicon-ok'])[1]";
+	public static final String KitchenOrderAuthorize = "//*[text()='Kitchen Slip Authorize']";
+	public static final String AuthorizeKitchen = "//*[@class='btn btn-primary']";
+	public static final String SuccessMessageKitchenAuthorize = "//*[@class='alert alert-success']";
+	public static final String AuthorizeKitchen_SuccessMessageText = "Saved .* successfully";
+
 
 	public static final String Supplier = ".//a[text()='Supplier']";
 	public static final String SupplierAdd = ".//a[text()='Supplier']";
@@ -150,13 +178,19 @@ public class Constants {
 	public static final String CreateKitchenItem_SuccessMessageText = "Created .* successfully";
 	public static final String KitchenSuccessMessage = "//*[@class='alert alert-success']";
 	
-	public static final String Recipe = ".//a[text()='Recipe']";
+	public static final String Recipe = ".//*[text()='Recipe']";
 	public static final String CreateRecipe="(.//*[@class='glyphicon glyphicon-pencil'])[1]";
 	public static final String KitchenItemName2 = "";
-
-
+	public static final String addnewrecipe = "//*[@class='btn btn-success glyphicon glyphicon-plus']";
+	public static final String RecipeTableBody = "//*[@id='recepe_details_grid']/tbody";
+	public static final String RecipeCountitem = "(.//select[contains(@id, '-red_kitchen_item_id')])";
+	public static final String RecipeCountquantity = "(.//input[contains(@id, '-red_quantity')])";
+	public static final String CreateRecipeItemButton = "//*[@class='btn btn-primary']";
+	public static final String CreateRecipe_SuccessMessageText="Saved .* successfully";
+	public static final String RecipeSuccessMessage = "//*[@class='alert alert-success']";
 
 	//
+
 	
 	//Vocational Management Page
 	public static final String VOCManagement_SearchProgCode = "//input[@name='VocationalTrainingProgramSearch[vtp_program_code]']";

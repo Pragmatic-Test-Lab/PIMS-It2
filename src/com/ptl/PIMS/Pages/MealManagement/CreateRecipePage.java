@@ -1,5 +1,8 @@
 package com.ptl.PIMS.Pages.MealManagement;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,7 +15,7 @@ public class CreateRecipePage {
 	WebDriver driver;
 
 
-	@FindBy(xpath = Constants.CreateKitchenItemButton)
+	@FindBy(xpath = Constants.CreateRecipeItemButton)
 	WebElement create;
 	@FindBy(xpath = Constants.KitchenItemName2)
 	WebElement kitchenitemname2;
@@ -26,17 +29,27 @@ public class CreateRecipePage {
 	WebElement wastage;
 	@FindBy(xpath = Constants.KitchenSuccessMessage)
 	WebElement successMessagekitchen;
+	@FindBy(xpath = Constants.addnewrecipe)
+	WebElement addnewrecipe;
+	@FindBy(xpath = Constants.RecipeTableBody)
+	WebElement recipetablebody;
+	@FindBy(xpath = Constants.RecipeSuccessMessage)
+	WebElement successMessageRecipe;
+	
 
 	public CreateRecipePage(WebDriver dr){
 		driver = dr;
 	}
 
-	public void EnterRecipeData(String kitchenitem2,String kitchenitemsinhala,String kitchenitemtamil, String unit1, String wastage1){
-		kitchenitemname2.sendKeys(kitchenitem2);
-		kitchenitemnamesinhala.sendKeys(kitchenitemsinhala);
-		kitchenitemnametamil.sendKeys(kitchenitemtamil);
-		unit.sendKeys(unit1);
-		wastage.sendKeys(wastage1);
+	public void EnterRecipeData(String kitchenitem2,String quantity){
+		int dataRows = initialRowCount(recipetablebody);
+		
+		addnewrecipe.click();
+		
+		driver.findElement(By.xpath(Constants.RecipeCountitem + "[" + (dataRows) + "]")).sendKeys(kitchenitem2);
+		driver.findElement(By.xpath(Constants.RecipeCountquantity + "[" + (dataRows) + "]")).sendKeys(quantity);
+		//kitchenitemname2.sendKeys(kitchenitem2);
+		
 	}
 
 	public RecipePage ClickCreateButton(){
@@ -51,7 +64,14 @@ public class CreateRecipePage {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {}
 
-		return successMessagekitchen.getText();
+		return successMessageRecipe.getText();
 	}
 
+	private int initialRowCount(WebElement element) {
+		List<WebElement> rows = element.findElements(By.tagName("tr"));	
+		
+		int size = rows.size();		
+		return size;
+	}
+	
 }

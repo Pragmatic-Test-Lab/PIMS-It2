@@ -1,4 +1,4 @@
-package com.ptl.PIMS.TestCases.MealManagement;
+	package com.ptl.PIMS.TestCases.MealManagement;
 
 import java.util.Random;
 
@@ -30,18 +30,19 @@ public class CreateRecipeTest extends TestBase {
 
 	@Test(dependsOnMethods="gotoNewRecipePage")
 	public void fillRecipe(){
-		createrecipepage.EnterRecipeData("PTL Kitchen Item"+ (new Random()).nextInt(5000),"PTL Kitchen Item sinhala"+ (new Random()).nextInt(5000), "PTL Kitchen Item tamil"+ (new Random()).nextInt(5000),"g","5");		
+		createrecipepage.EnterRecipeData("Dhal","200");		
 	}
 
-	@Test(dependsOnMethods="fillKitchenItem")
+	@Test(dependsOnMethods="fillRecipe")
 	public void submitRecipeTest(){
 
 		recipepage = createrecipepage.ClickCreateButton();
 
 
-		Assert.assertTrue(createrecipepage.getSuccessMessage().matches(Constants.CreateKitchenItem_SuccessMessageText),
-				"Kitchen Item not created");				
+		Assert.assertTrue(createrecipepage.getSuccessMessage().matches(Constants.CreateRecipe_SuccessMessageText),
+				"Recipe not created");				
 	}
 
+	
 
 }

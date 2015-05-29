@@ -41,6 +41,7 @@ public class TestBase {
 	//inmate data
 	public static String registrationNo = "";
 	public static String progCode = "";
+	public static String id = "";
 
 	@BeforeSuite
 	public void initConfiguration() {

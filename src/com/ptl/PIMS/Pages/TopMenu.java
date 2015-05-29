@@ -14,8 +14,11 @@ import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveSendToCourtAppea
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizePostRegInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
+import com.ptl.PIMS.Pages.MealManagement.DemandAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.DemandOrderPage;
+import com.ptl.PIMS.Pages.MealManagement.KitchenAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenItemPage;
+import com.ptl.PIMS.Pages.MealManagement.KitchenSlipPage;
 import com.ptl.PIMS.Pages.MealManagement.RecipePage;
 import com.ptl.PIMS.Pages.MealManagement.SupplierPage;
 import com.ptl.PIMS.Pages.VocationalTraining.AddParticipantsVoc_ProgSelect;
@@ -52,6 +55,15 @@ public class TopMenu {
 	WebElement DemandOrderAdd;
 	@FindBy(xpath = Constants.DemandOrder)
 	WebElement demandorder;
+	@FindBy(xpath = Constants.DemandOrderAuthorize)
+	WebElement DemandOrderAuthorize;
+	@FindBy(xpath = Constants.KitchenSlip)
+	WebElement kitchenslip;
+	@FindBy(xpath = Constants.KitchenSlipAdd)
+	WebElement kitchenslipadd;
+	@FindBy(xpath = Constants.KitchenOrderAuthorize)
+	WebElement KitchenOrderAuthorize;
+	
 	@FindBy(xpath = Constants.MealManagement)
 	WebElement mealmanagement;
 	@FindBy(xpath = Constants.Supplier)
@@ -125,27 +137,59 @@ public class TopMenu {
 	}	
 	
 	public DemandOrderPage gotoNewDemandOrderPage(){
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(demandorder).moveToElement(DemandOrderAdd).click().build().perform();
+		/*
 		transactionManagementTopLink.click();
 		mealmanagement.click();
 		demandorder.click();
-		DemandOrderAdd.click();
+		DemandOrderAdd.click();*/
 		DemandOrderPage newdDemandOrderPage = PageFactory.initElements(driver, DemandOrderPage.class);
 		return newdDemandOrderPage;
 	}	
+	
+	public DemandAuthorizePage gotoNewDemandAuthorizePage(){
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(demandorder).moveToElement(DemandOrderAuthorize).click().build().perform();
+		DemandAuthorizePage newdDemandauthorizePage = PageFactory.initElements(driver, DemandAuthorizePage.class);
+		return newdDemandauthorizePage;
+	}	
+	
+	public KitchenSlipPage gotoNewKitchenSlipPage(){
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(kitchenslip).moveToElement(kitchenslipadd).click().build().perform();
+		KitchenSlipPage newKitchenSlipPage = PageFactory.initElements(driver, KitchenSlipPage.class);
+		return newKitchenSlipPage;
+	}	
+	
+	public KitchenAuthorizePage gotoNewKitchenAuthorizePage(){
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(kitchenslip).moveToElement(KitchenOrderAuthorize).click().build().perform();
+		KitchenAuthorizePage newKitchenauthorizePage = PageFactory.initElements(driver, KitchenAuthorizePage.class);
+		return newKitchenauthorizePage;
+	}	
+	
+	
+	
 
 	public SupplierPage gotoNewSupplierPage(){
-		transactionManagementTopLink.click();
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(supplier).click().build().perform();
+		/*transactionManagementTopLink.click();
 		mealmanagement.click();
-		supplier.click();
+		supplier.click();*/
 		SupplierPage newSupplierPage = PageFactory.initElements(driver, SupplierPage.class);
 		return newSupplierPage;
 	}
 
 	public KitchenItemPage gotoNewKitchenItemPage() {
 		// TODO Auto-generated method stub
-		transactionManagementTopLink.click();
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(kitchenitem).click().build().perform();
+		
+		/*transactionManagementTopLink.click();
 		mealmanagement.click();
-		kitchenitem.click();
+		kitchenitem.click();*/
 		KitchenItemPage newkitchenitempage = PageFactory.initElements(driver, KitchenItemPage.class);
 		return newkitchenitempage;
 	
@@ -153,9 +197,12 @@ public class TopMenu {
 	
 	public RecipePage gotoNewRecipePage() {
 		// TODO Auto-generated method stub
-		transactionManagementTopLink.click();
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(recipe).click().build().perform();
+		
+		/*transactionManagementTopLink.click();
 		mealmanagement.click();
-		recipe.click();
+		recipe.click();*/
 		RecipePage newrecipepage = PageFactory.initElements(driver, RecipePage.class);
 		return newrecipepage;
 	
