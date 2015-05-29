@@ -28,7 +28,7 @@ public class CreateKitchenSlipTest extends TestBase {
 	}	
 
 	
-	@Test(dependsOnMethods="fillKitchenSlip")
+	@Test(dependsOnMethods="goToNewKitchenSlipPage")
 	public void submitKitchenSlipTest() {
 		System.out.println("Kitchen Slip:"+createkitchenslippage.getKitchenSlipID());
 		id=createkitchenslippage.getKitchenSlipID();

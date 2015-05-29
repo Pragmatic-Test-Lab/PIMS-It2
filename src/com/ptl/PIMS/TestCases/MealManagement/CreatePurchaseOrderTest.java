@@ -37,7 +37,7 @@ public class CreatePurchaseOrderTest extends TestBase {
 
 
 		Assert.assertTrue(createpurchaseorderpage.getSuccessMessage().matches(Constants.CreatePurchaseOrder_SuccessMessageText),
-				"Kitchen Slip not created");	
+				"Purchase Order not created");	
 
 	}
 

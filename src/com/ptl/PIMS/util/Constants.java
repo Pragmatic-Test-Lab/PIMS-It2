@@ -189,6 +189,13 @@ public class Constants {
 	public static final String PurchaseOrderCreate = "//*[@class='btn btn-success']";
 	public static final String SuccessMessagePurchaseOrder = "//*[@class='alert alert-success']";
 	public static final String CreatePurchaseOrder_SuccessMessageText = "Created .* successfully";
+	public static final String PurchaseOrderNo = "//*[@name='StockTranactionHeaderSearch[sth_order_no]']";
+	public static final String SelectPurchaseOrder ="(//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String AuthorizePurchase="//*[@class='btn btn-primary']";
+	public static final String SuccessMessagePurchaseAuthorize ="//*[@class='alert alert-success']";
+	public static final String PurchaseOrderAuthorize = "//*[text()='Purchase Order Authorize']";
+	public static final String AuthorizePurchase_SuccessMessageText = "Saved .* successfully";
+
 
 
 

@@ -16,20 +16,20 @@ public class CreateKitchenAuthorizeTest extends TestBase {
 	CreateKitchenAuthorizePage createkitchenauthorizePage;
 
 	@Test   
-	public void goToNewDemandAuthorizePage(){
+	public void goToNewKitchenAuthorizePage(){
 
 		loginToApplication();		
 		TopMenu topMenu = getTopMenu();
 		kitchenauthorizePage = topMenu.gotoNewKitchenAuthorizePage();
-		//createdemandauthorizePage = demandauthorizePage.getCreateDemandOrderPage();
+		
 		createkitchenauthorizePage=kitchenauthorizePage.SearchKitchenOrder(id);
 		
 	/*	Assert.assertTrue(createdemandauthorizePage.getActualPageTitle().equals(Constants.CreateDemandPageHeader),
 				"Could not go to new demand order page.");		
 		*/
 	}
-	@Test(dependsOnMethods="goToNewDemandAuthorizePage")
-	public void submitDemandAuthorizeTest(){
+	@Test(dependsOnMethods="goToNewKitchenAuthorizePage")
+	public void submitKitchenAuthorizeTest(){
 
 		kitchenauthorizePage = createkitchenauthorizePage.ClickAuthorizeButton();
 
