@@ -12,6 +12,7 @@
       <class name="com.ptl.PIMS.TestCases.MealManagement.CreateKitchenAuthorizeTest"/>
       <class name="com.ptl.PIMS.TestCases.MealManagement.CreatePurchaseOrderTest"/>
       <class name="com.ptl.PIMS.TestCases.MealManagement.CreatePurchaseAuthorizeTest"/>
+      <class name="com.ptl.PIMS.TestCases.MealManagement.CreateGoodReceivedTest"/>
             
             
   

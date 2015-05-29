@@ -16,6 +16,7 @@ import com.ptl.PIMS.Pages.Iteration1.AuthorizePostRegInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
 import com.ptl.PIMS.Pages.MealManagement.DemandAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.DemandOrderPage;
+import com.ptl.PIMS.Pages.MealManagement.GoodReceivedPage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenItemPage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenSlipPage;
@@ -71,6 +72,10 @@ public class TopMenu {
 	WebElement purchaseorderadd;
 	@FindBy(xpath = Constants.PurchaseOrderAuthorize)
 	WebElement purchaseorderauthorize;
+	@FindBy(xpath = Constants.GoodReceived)
+	WebElement goodreceived;
+	@FindBy(xpath = Constants.GoodReceivedAdd)
+	WebElement goodreceivedadd;
 	
 	@FindBy(xpath = Constants.MealManagement)
 	WebElement mealmanagement;
@@ -190,6 +195,12 @@ public class TopMenu {
 		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(purchaseorder).moveToElement(purchaseorderauthorize).click().build().perform();
 		PurchaseOrderAuthorizePage newpurchaseorderauthorizePage = PageFactory.initElements(driver, PurchaseOrderAuthorizePage.class);
 		return newpurchaseorderauthorizePage;
+	}	
+	public GoodReceivedPage gotogoodreceivedPage(){
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(goodreceived).moveToElement(goodreceivedadd).click().build().perform();
+		GoodReceivedPage newgoodreceivedPage = PageFactory.initElements(driver, GoodReceivedPage.class);
+		return newgoodreceivedPage;
 	}	
 	
 

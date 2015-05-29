@@ -201,6 +201,21 @@ public class Constants {
 	public static final String SuccessMessagePurchaseAuthorize ="//*[@class='alert alert-success']";
 	public static final String PurchaseOrderAuthorize = "//*[text()='Purchase Order Authorize']";
 	public static final String AuthorizePurchase_SuccessMessageText = "Saved .* successfully";
+	
+	public static final String GoodReceivedNo = "//*[@name='StockTranactionHeaderSearch[sth_order_no]']";
+	public static final String SelectGoodReceived = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String GoodReceivedQuantity = ".//*[@name='StockTranactionDetails[0][std_issued_quantity]']";
+	public static final String CreateGoodReceivedButton = "//*[@class='btn btn-primary']";
+	public static final String SuccessMessageGoodReceived = "//*[@class='alert alert-success']";
+	public static final String GoodReceived = ".//a[text()='Good Received Note']";
+	public static final String GoodReceivedAdd = ".//a[text()='Good Received Note Add/Update']";
+	public static final String AuthorizeGoodReceived_SuccessMessageText = "Saved .* successfully";
+
+
+
+
+
+
 
 
 
@@ -271,6 +286,8 @@ public class Constants {
 	public static final String CalendarPopup_HourText_LastPart = "']";
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
+	
+
 
 
 
