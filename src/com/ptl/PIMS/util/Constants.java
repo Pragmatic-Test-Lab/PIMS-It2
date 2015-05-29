@@ -210,16 +210,9 @@ public class Constants {
 	public static final String GoodReceived = ".//a[text()='Good Received Note']";
 	public static final String GoodReceivedAdd = ".//a[text()='Good Received Note Add/Update']";
 	public static final String AuthorizeGoodReceived_SuccessMessageText = "Saved .* successfully";
-
-
-
-
-
-
-
-
-
-
+	public static final String SuccessMessageGoodReceivedAuthorize = ".//div[@class='alert alert-success']";
+	public static final String AuthorizeGoodReceived = "//*[@class='btn btn-primary']";
+	public static final String GoodReceivedAuthorized = ".//a[text()='Good Received Note Authorize']";
 
 
 
@@ -286,6 +279,7 @@ public class Constants {
 	public static final String CalendarPopup_HourText_LastPart = "']";
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
+	public static final String GoodReceivedAuthorize = null;
 	
 
 

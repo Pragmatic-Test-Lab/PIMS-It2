@@ -24,7 +24,7 @@ public class CreateGoodReceivedPage {
 
 	public void EnterGoodReceivedData(String receivedquantity){
 		quantity.sendKeys(receivedquantity);
-		}
+	}
 
 	public GoodReceivedPage ClickCreateButton(){
 		create.click();

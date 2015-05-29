@@ -8,21 +8,21 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.PIMS.util.Constants;
 
-public class GoodReceivedPage {
+public class GoodReceivedAuthorizePage {
+	public GoodReceivedAuthorizePage(WebDriver dr){
+		driver = dr;
+	}
 	WebDriver driver;
 	@FindBy(xpath = Constants.GoodReceivedNo)
 	WebElement ordernosearch;
 	@FindBy(xpath = Constants.SelectGoodReceived)
 	WebElement selectgoodreceived;
-
-	public GoodReceivedPage(WebDriver dr){
-		driver = dr;
-	}
-	public CreateGoodReceivedPage SearchGoodReceived(String id){
+	
+	public CreateGoodAuthorizePage SearchGoodReceived(String id){
 		ordernosearch.sendKeys(id);
 		ordernosearch.sendKeys(Keys.ENTER);
 		selectgoodreceived.click();
-		CreateGoodReceivedPage creategoodreceivedPage = PageFactory.initElements(driver, CreateGoodReceivedPage.class);
-		return creategoodreceivedPage;	
+		CreateGoodAuthorizePage createNewGoodauthorizePage = PageFactory.initElements(driver, CreateGoodAuthorizePage.class);
+		return createNewGoodauthorizePage;	
 	}
 }
