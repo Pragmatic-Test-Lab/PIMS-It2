@@ -280,7 +280,24 @@ public class Constants {
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
 	public static final String GoodReceivedAuthorize = null;
+
+	//Industrial Management
 	
+	public static final String IndustrialManagement = ".//a[text()='Industrial Training']";
+	public static final String IndustrialManagementMorning = ".//a[text()='Industrial Attendance Morning']";
+	public static final String CreateMorningButton = "(//*[@class='btn btn-success'])";
+	public static final String attendancebox1 = "//*[@id='industrialattendance-0-ina_morning_attendance']";
+	public static final String attendanceline1 = "//*[@id='industrialattendance-0-ina_remarks']";
+	public static final String attendancebox3 = "//*[@id='industrialattendance-2-ina_morning_attendance']";
+	public static final String attendanceline3 = "//*[@id='industrialattendance-2-ina_remarks']";
+	public static final String attendancebox5 = "//*[@id='industrialattendance-4-ina_morning_attendance']";
+	public static final String attendanceline5 = "//*[@id='industrialattendance-4-ina_remarks']";
+	public static final String GoToIndustry = "(//*[@class='glyphicon glyphicon-ok'])[1]";
+	public static final String SuccessMessageMorning = "(//*[@class='alert alert-success'])";
+	public static final String CreateIndustrialMorningSuccessMessageText = "Created .* successfully";
+	
+
+
 
 
 

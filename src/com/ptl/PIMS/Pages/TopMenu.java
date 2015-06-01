@@ -11,6 +11,8 @@ import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveByCourtAppealSel
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveByJailorAppealSelect;
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveBySPAppealSelect;
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveSendToCourtAppealSelect;
+import com.ptl.PIMS.Pages.IndustrialManagement.CreateIndustrialMorningPage;
+import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialMorningPage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizePostRegInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
@@ -79,7 +81,6 @@ public class TopMenu {
 	WebElement goodreceivedadd;
 	@FindBy(xpath = Constants.GoodReceivedAuthorized)
 	WebElement goodreceivedauthorize;
-	
 	@FindBy(xpath = Constants.MealManagement)
 	WebElement mealmanagement;
 	@FindBy(xpath = Constants.Supplier)
@@ -88,6 +89,10 @@ public class TopMenu {
 	WebElement kitchenitem;
 	@FindBy(xpath = Constants.Recipe)
 	WebElement recipe;
+	@FindBy(xpath = Constants.IndustrialManagement)
+	WebElement industrialmanagement;
+	@FindBy(xpath = Constants.IndustrialManagementMorning)
+	WebElement industrialmanagementmorning;
 	@FindBy(xpath = Constants.TopMenu_AppealTopLink)
 	WebElement appealTopLink;
 	@FindBy(xpath = Constants.TopMenu_AppealAddUpdateLink)
@@ -247,6 +252,20 @@ public class TopMenu {
 		recipe.click();*/
 		RecipePage newrecipepage = PageFactory.initElements(driver, RecipePage.class);
 		return newrecipepage;
+	
+	}
+	
+
+	public IndustrialMorningPage gotoNewIndustrialMorning() {
+		// TODO Auto-generated method stub
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(industrialmanagementmorning).click().build().perform();
+		
+		/*transactionManagementTopLink.click();
+		mealmanagement.click();
+		recipe.click();*/
+		IndustrialMorningPage newindustrialmorningpage = PageFactory.initElements(driver, IndustrialMorningPage.class);
+		return newindustrialmorningpage;
 	
 	}
 	
