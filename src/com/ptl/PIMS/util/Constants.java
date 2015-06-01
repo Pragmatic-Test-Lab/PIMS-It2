@@ -50,6 +50,10 @@ public class Constants {
 	public static final String TopMenu_RehabSheduleParticipantsTop = "//a[text()='Rehabilitation Participants']";
 	public static final String TopMenu_RehabSheduleParticipants = "//a[text()='Rehabilitation Participants Add/Update']";
 	public static final String TopMenu_RehabSheduleParticipantAuth = "//a[text()='Rehabilitation Participants Authorizations']";
+	public static final String TopMenu_DisciplineTopLink = "//a[text()='Discipline Management']";
+	public static final String TopMenu_DisciplineAddUpdateLink = "//a[text()='Discipline Add/Update']";
+	public static final String TopMenu_DisciplineAuthorizeLink = "//a[text()='Discipline Authorize']";
+	
 	public static final String TopMenu_LogOut = "//a[contains(text(),'Logout')]";
 
 	//Iteration 1 Pages
@@ -305,6 +309,42 @@ public class Constants {
 
 	
 	//
+	
+	//Discipline Management
+	
+	public static final String DisciplineManagement_NewDiscButton = "//a[@href='/PIMS3/web/discipline/selectadmission']";
+	public static final String DisciplineManagement_FirstPencil = "(.//span[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String DisciplineManagement_FirstOk = "(.//span[@class='glyphicon glyphicon-ok'])[1]";
+	public static final String DisciplineManagement_SearchComId = "//input[@name='DisciplineSearch[dis_id]']";
+	public static final String DisciplineManagement_SearchRegNo = "//input[@name='DisciplineSearch[registration_no]']";
+	public static final String DisciplineManagement_SearchDOIncident = "//input[@name='DisciplineSearch[dis_date_of_incident]']";
+	public static final String DisciplineManagement_SearchDOInquiry = "//input[@name='DisciplineSearch[dis_date_of_inquiry]']";
+	
+	public static final String DisciplineManagement_ComplaintTab = "//a[text()='Complaint']";
+	public static final String DisciplineManagement_ComplaintDOInquiry = "//*[@id='discipline-dis_date_of_inquiry']";
+	public static final String DisciplineManagement_ComplaintDOIncident = "//*[@id='discipline-dis_date_of_incident']";
+	public static final String DisciplineManagement_ComplaintReoprtedByInmate = "//*[@id='discipline-dis_is_reported_by_inmate']";
+	public static final String DisciplineManagement_ComplaintReoprtedByInmateRegNo = "//input[@id='discipline-dis_reported_by_reg_no']";
+	public static final String DisciplineManagement_ComplaintReoprtedByOfficer = "//*[@id='discipline-dis_is_reported_by_officer']";
+	public static final String DisciplineManagement_ComplaintReoprtedByOfficerName = "//input[@id='discipline-dis_reported_by_officer_name']";
+	public static final String DisciplineManagement_ComplaintPlace = "//input[@id='discipline-dis_place']";
+	public static final String DisciplineManagement_ComplaintComplaint = "//input[@id='discipline-dis_complaint']";
+	public static final String DisciplineManagement_ComplaintInquiryBy = "//input[@id='discipline-dis_inquiry_by']";
+	
+	public static final String DisciplineManagement_JudgementTab = "//a[text()='Judgement']";
+	public static final String DisciplineManagement_JudgementDate = "//*[@id='discipline-dis_judgement_date']";
+	public static final String DisciplineManagement_JudgementGuilty = "//*[@id='discipline-dis_decision']";
+	public static final String DisciplineManagement_JudgementText = "//*[@id='discipline-dis_judgement']";
+	public static final String DisciplineManagement_JudgementDeductedRemision = "//*[@id='discipline-dis_deducted_remision_marks']";
+	public static final String DisciplineManagement_JudgementGoodConduct = "//*[@id='discipline-dis_added_remision_marks']";
+	public static final String DisciplineManagement_JudgementDOGoodConduct = "//*[@id='discipline-dis_added_date_of_remision_marks']";
+
+	public static final String DisciplineManagement_CreateButton = "//button[text()='Create']";
+	public static final String DisciplineManagement_UpdateButton = "//button[text()='Update']";
+	public static final String DisciplineManagement_AuthorizeButton = "//button[text()='Authorize']";	
+	
+	//
+	
 	//
 
 	// Inmate Search Pages

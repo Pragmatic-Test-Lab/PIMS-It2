@@ -11,7 +11,8 @@ import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveByCourtAppealSel
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveByJailorAppealSelect;
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveBySPAppealSelect;
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveSendToCourtAppealSelect;
-import com.ptl.PIMS.Pages.IndustrialManagement.CreateIndustrialMorningPage;
+import com.ptl.PIMS.Pages.DisciplineManagement.AuthorizeDiscipline_SelectRecordPage;
+import com.ptl.PIMS.Pages.DisciplineManagement.EditAddDisciplinePage;
 import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialEveningPage;
 import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialMorningPage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
@@ -152,6 +153,13 @@ public class TopMenu {
 	WebElement rehabShedulePartAdd;
 	@FindBy(xpath = Constants.TopMenu_RehabSheduleParticipantAuth)
 	WebElement rehabShedulePartAuth;
+	
+	@FindBy(xpath = Constants.TopMenu_DisciplineTopLink)
+	WebElement discTopLink;
+	@FindBy(xpath = Constants.TopMenu_DisciplineAddUpdateLink)
+	WebElement discAddUpdateLink;
+	@FindBy(xpath = Constants.TopMenu_DisciplineAuthorizeLink)
+	WebElement discAuthorizeLink;
 	
 	@FindBy(xpath = Constants.TopMenu_LogOut)
 	WebElement logOut;
@@ -447,6 +455,22 @@ public class TopMenu {
 		action.moveToElement(transactionManagementTopLink).moveToElement(rehabTopLink).moveToElement(rehabShedulePartTop).moveToElement(rehabShedulePartAuth).click().build().perform();
 		return PageFactory.initElements(driver, AuthorizeSheduleParticipantsSelectProg.class);
 	}
+	
+	
+	public EditAddDisciplinePage gotoAddUpdateDiscipline() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(discTopLink).moveToElement(discAddUpdateLink).click().build().perform();
+		return PageFactory.initElements(driver, EditAddDisciplinePage.class);
+	}
+	
+	public AuthorizeDiscipline_SelectRecordPage gotoAuthorizeDiscipline() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(discTopLink).moveToElement(discAuthorizeLink).click().build().perform();
+		return PageFactory.initElements(driver, AuthorizeDiscipline_SelectRecordPage.class);
+	}
+
 
 	
 	public LoginPage doLogout(){
