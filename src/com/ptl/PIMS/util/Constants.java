@@ -317,7 +317,33 @@ public class Constants {
 	public static final String CreateWagesSuccessMessageText = "Saved .* successfully";
 	public static final String IndustrialWages = ".//a[text()='Wages']";
 	
+	public static final String TrainingRecord = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String SuccessMessageTraining = "(//*[@class='alert alert-success'])";
+	public static final String industrialtrainingperformances = ".//a[text()='Industrial Daily Performances']";
+	public static final String Addtrainingitem1 = "(.//*[@class='btn btn-success glyphicon glyphicon-plus'])[1]";
+	public static final String Addtrainingitem2 = "(.//*[@class='btn btn-success glyphicon glyphicon-plus'])[2]";
+	public static final String Addtrainingitem3 = "(.//*[@class='btn btn-success glyphicon glyphicon-plus'])[3]";
+	public static final String industrialproduct = "(.//input[contains(@id,'-idp_product_name')])";
+	public static final String noofpieces = "(.//input[contains(@id,'-idp_quantity')])";
+	public static final String industrialworkpromotions = ".//a[text()='Industrial Work Promotions']";
+	public static final String industrialgrade = "(.//select[contains(@id,'-iwp_grade_id')])";
+	public static final String industrialtradedivisions = "//a[text()='Industrial Trade Divisions']";
+	public static final String industrytype = "(.//select[contains(@id,'-itd_industry_type_id')])";
+	public static final String tradedivision = "(.//select[contains(@id,'-itd_trade_division_id')])";
+	public static final String IndustrialTraining = ".//a[text()='Industrial Training Add/Update']";
+	public static final String IndustrialTrainingTable1 = "//*[@id='industrial_daily_performance_grid']/tbody";
+	public static final String IndustrialTrainingTable2 = "//*[@id='industrial_work_promotion_grid']/tbody";
+	public static final String IndustrialTrainingTable3 = "//*[@id='industrial_trade_division_grid']/tbody";
+	public static final String IndustrialPerformanceDate = "(.//input[contains(@id,'-idp_date')])";
+	public static final String IndustrialPromotionDate = "(.//input[contains(@id,'-iwp_date')])";
+	public static final String IndustrialTradeDate = "(.//input[contains(@id,'-itd_date')])";
+	public static final String CreateIndustrialTrainingSuccessMessageText = "Saved .* successfully";
 
+
+	
+	
+	/*public static final String RecipeCountitem = "(.//select[contains(@id, '-red_kitchen_item_id')])";
+	public static final String RecipeCountquantity = "(.//input[contains(@id, '-red_quantity')])";*/
 
 
 
