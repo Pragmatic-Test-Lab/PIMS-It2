@@ -295,6 +295,18 @@ public class Constants {
 	public static final String GoToIndustry = "(//*[@class='glyphicon glyphicon-ok'])[1]";
 	public static final String SuccessMessageMorning = "(//*[@class='alert alert-success'])";
 	public static final String CreateIndustrialMorningSuccessMessageText = "Created .* successfully";
+	public static final String EveningRecord = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String eveningattendancebox1 = "//*[@id='industrialattendance-0-ina_evening_attendance']";
+	public static final String salarybox1 = "//*[@id='industrialattendance-0-ina_salary_approved']";
+	public static final String eveningattendanceline1 = "//*[@id='industrialattendance-0-ina_remarks']";
+	public static final String eveningattendancebox5 = "//*[@id='industrialattendance-3-ina_evening_attendance']";
+	public static final String salarybox5 = "//*[@id='industrialattendance-3-ina_salary_approved']";
+	public static final String eveningattendanceline5 = "//*[@id='industrialattendance-3-ina_remarks']";
+	public static final String CreateEveningButton = "(//*[@class='btn btn-primary'])";
+	public static final String SuccessMessageEvening = "(//*[@class='alert alert-success'])";
+	public static final String IndustrialManagementEvening = ".//a[text()='Industrial Attendance Evening']";
+	public static final String CreateIndustrialEveningSuccessMessageText = "Saved .* successfully";
+	
 	
 
 

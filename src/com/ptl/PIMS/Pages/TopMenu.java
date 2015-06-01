@@ -12,6 +12,7 @@ import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveByJailorAppealSe
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveBySPAppealSelect;
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveSendToCourtAppealSelect;
 import com.ptl.PIMS.Pages.IndustrialManagement.CreateIndustrialMorningPage;
+import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialEveningPage;
 import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialMorningPage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizePostRegInmatePage;
@@ -93,6 +94,8 @@ public class TopMenu {
 	WebElement industrialmanagement;
 	@FindBy(xpath = Constants.IndustrialManagementMorning)
 	WebElement industrialmanagementmorning;
+	@FindBy(xpath = Constants.IndustrialManagementEvening)
+	WebElement industrialmanagementevening;
 	@FindBy(xpath = Constants.TopMenu_AppealTopLink)
 	WebElement appealTopLink;
 	@FindBy(xpath = Constants.TopMenu_AppealAddUpdateLink)
@@ -260,12 +263,18 @@ public class TopMenu {
 		// TODO Auto-generated method stub
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(industrialmanagementmorning).click().build().perform();
-		
-		/*transactionManagementTopLink.click();
-		mealmanagement.click();
-		recipe.click();*/
 		IndustrialMorningPage newindustrialmorningpage = PageFactory.initElements(driver, IndustrialMorningPage.class);
 		return newindustrialmorningpage;
+	
+	}
+	
+	
+	public IndustrialEveningPage gotoNewIndustrialEvening() {
+		// TODO Auto-generated method stub
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(industrialmanagementevening).click().build().perform();
+		IndustrialEveningPage newindustrialeveningpage = PageFactory.initElements(driver, IndustrialEveningPage.class);
+		return newindustrialeveningpage;
 	
 	}
 	
