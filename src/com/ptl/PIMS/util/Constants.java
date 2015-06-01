@@ -7,14 +7,14 @@ public class Constants {
 			+ "\\src\\com\\ptl\\config\\config.properties";
 	public static String EXCEL_Path = System.getProperty("user.dir")
 			+ "\\src\\com\\ptl\\data\\TestData.xlsx";
-	
+
 
 	//Login Page
 	public static final String Login_username = "//*[@id='login-form-login']";
 	public static final String Login_password = "//*[@id='login-form-password']";
 	public static final String Login_login = "//*[@id='login-form']/button";
 	public static final String Login_PasswordError = "//*[text()='Password']/following::div[1]";
-	
+
 	// Home Page
 	public static final String Home_MainImage = ".//img[@src='../views/site/prison.jpg']";
 
@@ -43,7 +43,7 @@ public class Constants {
 
 	//Iteration 1 Pages
 	//
-	
+
 	//Authorize Admission
 	public static final String Admission_InmateCategory = "//*[@id='admission-adm_inmate_category_id']";
 	public static final String Admission_DOAdmission = "//*[@id='admission-adm_date_of_admission']";
@@ -56,18 +56,18 @@ public class Constants {
 	public static final String Admission_InmateCourtDetail_CaseNumber = "(.//input[contains(@name, 'icd_case_number')])";
 	public static final String Admission_InmateCourtDetail_DateConviction = "(.//input[contains(@name, 'icd_date_of_conviction')])";
 	public static final String Admission_InmateCourtDetail_DateSentence = "(.//*[contains(@name, 'icd_date_of_sentence')])";
-	
+
 	public static final String CalendarPopup_AdmissionMonthYearText = "(.//th[contains(@class,'switch')])[3]";
 	public static final String CalendarPopup_AdmissionYearText = "(.//th[contains(@class,'switch')])[4]";
 	public static final String CalendarPopup_AdmissionYearText_FirstPart = ".//span[text()='";
 	public static final String CalendarPopup_AdmissionYearText_LastPart = "' and @class='year active']";
-	
+
 	public static final String AuthorizeButton = "//button[text() = 'Authorize']";
 	//
-	
+
 	//Authorize Registration
-	
-	
+
+
 	public static final String Registration_CaseDetailTab = "//a[text() = 'Inmate Case Details']";
 	public static final String Registration_CaseTableBody = "//*[@id='sentence_grid']/tbody";
 	public static final String Registration_CaseDetail_AddNew = "//button[text()='Add New']";	
@@ -79,16 +79,16 @@ public class Constants {
 	public static final String Registration_CaseDetail_Days = "(.//input[contains(@name, '[sen_days]')])";
 	public static final String Registration_CaseDetail_Fine = "(.//input[contains(@name, 'sen_fine_charges')])";		
 	//
-	
+
 	//
 	//
 
-	
+
 	//Iteration 2 Pages
 	//
 	public static final String SuccessMessage = ".//div[@class='alert alert-success']";
 
-	
+
 	//Appeal Management
 	public static final String AppealManagement_RegNoSearch = "//*[@name='AppealSearch[registration_no]']";
 	public static final String AppealManagement_BioIdSearch = "//*[@name='AppealSearch[biometric_id]']";
@@ -97,7 +97,7 @@ public class Constants {
 	public static final String AppealManagement_ReasonSearch = "//*[@name='AppealSearch[app_reason]']";
 	public static final String AppealManagement_NewAppealButton = "//*[@href='/PIMS3/web/appeal/selectadmission']";
 	public static final String AppealManagement_FirstAppeal = "(.//*[contains(@class, 'glyphicon')]//parent::a)[1]";
-	
+
 	public static final String AppealManagement_AppealDate = "//*[@id='appeal-app_date']";
 	public static final String AppealManagement_AppealCase = "//*[@id='appeal-app_case_id']";
 	public static final String AppealManagement_AppealAllAvailableCases = "//select[@id='appeal-app_case_id']/option";	
@@ -111,13 +111,13 @@ public class Constants {
 	public static final String AppealManagement_AppealRequest = "//*[@id='appeal-app_request']";
 	public static final String AppealManagement_AddUpdateButton = "//*[@type='submit']";
 	public static final String AppealManagement_UpdateSuccessMessage = "//*[@type='submit']";
-	
+
 	public static final String AppealManagement_ApproveAppealButton = "//button[text() = 'Authorize']";
 
 
 	//Meal Management Page 
 
-//Meal Management Page 
+	//Meal Management Page 
 
 	public static final String DemandOrderAdd = "//*[text()='Demand Order Add/Update']";
 	public static final String TransactionManagement = ".//a[text()='Transaction Management ']";
@@ -172,7 +172,7 @@ public class Constants {
 	public static final String CreateKitchenItem="//*[text()='Create Kitchen Item']";
 	public static final String CreateKitchenItem_SuccessMessageText = "Created .* successfully";
 	public static final String KitchenSuccessMessage = "//*[@class='alert alert-success']";
-	
+
 	public static final String Recipe = ".//*[text()='Recipe']";
 	public static final String CreateRecipe="(.//*[@class='glyphicon glyphicon-pencil'])[1]";
 	public static final String KitchenItemName2 = "";
@@ -183,7 +183,7 @@ public class Constants {
 	public static final String CreateRecipeItemButton = "//*[@class='btn btn-primary']";
 	public static final String CreateRecipe_SuccessMessageText="Saved .* successfully";
 	public static final String RecipeSuccessMessage = "//*[@class='alert alert-success']";
-	
+
 	public static final String CreatePurchaseOrder = ".//a[text()='Create Purchase Order']";
 	public static final String PurchaseOrder = ".//a[text()='Purchase Order']";
 	public static final String PurchaseOrderAdd = ".//a[text()='Purchase Order Add/Update']";
@@ -201,7 +201,7 @@ public class Constants {
 	public static final String SuccessMessagePurchaseAuthorize ="//*[@class='alert alert-success']";
 	public static final String PurchaseOrderAuthorize = "//*[text()='Purchase Order Authorize']";
 	public static final String AuthorizePurchase_SuccessMessageText = "Saved .* successfully";
-	
+
 	public static final String GoodReceivedNo = "//*[@name='StockTranactionHeaderSearch[sth_order_no]']";
 	public static final String SelectGoodReceived = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
 	public static final String GoodReceivedQuantity = ".//*[@name='StockTranactionDetails[0][std_issued_quantity]']";
@@ -220,13 +220,13 @@ public class Constants {
 
 	//
 
-	
+
 	//Vocational Management Page
 	public static final String VOCManagement_SearchProgCode = "//input[@name='VocationalTrainingProgramSearch[vtp_program_code]']";
 	public static final String VOCManagement_SearchProgName = "//input[@name='VocationalTrainingProgramSearch[vtp_program_name]']";
 	public static final String VOCManagement_SearchProgDuration = "//input[@name='VocationalTrainingProgramSearch[vtp_duration]']";
 	public static final String VOCManagement_NewVOCProgButton = "//a[@href='/PIMS3/web/vocational-training-program/create']";
-	
+
 	public static final String VOC_ProgCode = "//input[@name='VocationalTrainingProgram[vtp_program_code]']";
 	public static final String VOC_ProgName = "//input[@name='VocationalTrainingProgram[vtp_program_name]']";
 	public static final String VOC_ProgDuration = "//input[@name='VocationalTrainingProgram[vtp_duration]']";
@@ -240,7 +240,7 @@ public class Constants {
 	public static final String NewVOC_CreateButton = "//button[text()='Create']";
 	public static final String UpdateVOC_UpdateButton = "//button[text()='Update']";
 	public static final String AuthVOC_AuthorizeButton = "//button[text()='Authorize']";
-	
+
 	public static final String VOCParticipants_Table = "//*[@id='vocational_training_details_grid']/tbody";
 	public static final String VOCParticipants_AddNew = "//button[text()='Add New']";
 	public static final String VOCParticipants_RegNo = "(.//*[contains(@id,'-vtd_admission_id')])";
@@ -251,7 +251,7 @@ public class Constants {
 	public static final String VOCParticipantsAuth_AuthorizeButton = "//button[text()='Authorize']";
 
 	//
-	
+
 	//
 	//
 
@@ -282,7 +282,7 @@ public class Constants {
 	public static final String GoodReceivedAuthorize = null;
 
 	//Industrial Management
-	
+
 	public static final String IndustrialManagement = ".//a[text()='Industrial Training']";
 	public static final String IndustrialManagementMorning = ".//a[text()='Industrial Attendance Morning']";
 	public static final String CreateMorningButton = "(//*[@class='btn btn-success'])";
@@ -295,6 +295,7 @@ public class Constants {
 	public static final String GoToIndustry = "(//*[@class='glyphicon glyphicon-ok'])[1]";
 	public static final String SuccessMessageMorning = "(//*[@class='alert alert-success'])";
 	public static final String CreateIndustrialMorningSuccessMessageText = "Created .* successfully";
+	
 	public static final String EveningRecord = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
 	public static final String eveningattendancebox1 = "//*[@id='industrialattendance-0-ina_evening_attendance']";
 	public static final String salarybox1 = "//*[@id='industrialattendance-0-ina_salary_approved']";
@@ -307,7 +308,17 @@ public class Constants {
 	public static final String IndustrialManagementEvening = ".//a[text()='Industrial Attendance Evening']";
 	public static final String CreateIndustrialEveningSuccessMessageText = "Saved .* successfully";
 	
+	public static final String CreateWage = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String wagesduration = "//*[@id='industrialwages-inw_duration']";
+	public static final String wagesdailyrate = ".//*[@id='industrialwages-inw_daily_rate']";
+	public static final String wagesSavings = ".//*[@id='industrialwages-inw_savings']";
+	public static final String UpdateWages = "(//*[@class='btn btn-primary'])";
+	public static final String SuccessMessageWages = "(//*[@class='alert alert-success'])";
+	public static final String CreateWagesSuccessMessageText = "Saved .* successfully";
+	public static final String IndustrialWages = ".//a[text()='Wages']";
 	
+
+
 
 
 

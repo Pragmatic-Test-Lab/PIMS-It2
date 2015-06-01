@@ -20,7 +20,7 @@ public class IndustrialEveningTest extends TestBase{
 		TopMenu topMenu = getTopMenu();
 		industrialevening = topMenu.gotoNewIndustrialEvening();
 		createevening = industrialevening.ClickEveningRecordButton();
-		
+
 	}	
 
 	@Test(dependsOnMethods="goToIndustrialEveningPage")

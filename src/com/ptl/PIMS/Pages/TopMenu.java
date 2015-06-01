@@ -14,6 +14,7 @@ import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveSendToCourtAppea
 import com.ptl.PIMS.Pages.IndustrialManagement.CreateIndustrialMorningPage;
 import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialEveningPage;
 import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialMorningPage;
+import com.ptl.PIMS.Pages.IndustrialManagement.WagesPage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizePostRegInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
@@ -96,6 +97,8 @@ public class TopMenu {
 	WebElement industrialmanagementmorning;
 	@FindBy(xpath = Constants.IndustrialManagementEvening)
 	WebElement industrialmanagementevening;
+	@FindBy(xpath = Constants.IndustrialWages)
+	WebElement wages;
 	@FindBy(xpath = Constants.TopMenu_AppealTopLink)
 	WebElement appealTopLink;
 	@FindBy(xpath = Constants.TopMenu_AppealAddUpdateLink)
@@ -275,6 +278,15 @@ public class TopMenu {
 		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(industrialmanagementevening).click().build().perform();
 		IndustrialEveningPage newindustrialeveningpage = PageFactory.initElements(driver, IndustrialEveningPage.class);
 		return newindustrialeveningpage;
+	
+	}
+	
+	public WagesPage gotowages() {
+		// TODO Auto-generated method stub
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(wages).click().build().perform();
+		WagesPage wagespage = PageFactory.initElements(driver, WagesPage.class);
+		return wagespage;
 	
 	}
 	

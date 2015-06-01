@@ -14,13 +14,13 @@ public class CreateIndustrialEveningPage {
 	WebElement create;
 	@FindBy(xpath = Constants.SuccessMessageEvening)
 	WebElement successMessageindustrialevening;
-	
+
 	public CreateIndustrialEveningPage(WebDriver dr){
 		driver = dr;
 	}
-	
+
 	public void EnterAttendanceData(String eveningattendance1, String eveningattendance5){
-			
+
 		driver.findElement(By.xpath(Constants.eveningattendancebox1)).click();
 		driver.findElement(By.xpath(Constants.salarybox1)).click();
 		driver.findElement(By.xpath(Constants.eveningattendanceline1)).sendKeys(eveningattendance1);
