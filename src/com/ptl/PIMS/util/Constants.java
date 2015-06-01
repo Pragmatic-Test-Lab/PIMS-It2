@@ -38,6 +38,17 @@ public class Constants {
 	public static final String TopMenu_VOCAuth = "//a[text()='Vocational Training Programs Authorizations']";
 	public static final String TopMenu_VOCPart = "//a[text()='Vocational Training Programe Participants']";
 	public static final String TopMenu_VOCAuthPart = "//a[text()='Vocational Training Program Participants Authorization']";
+	public static final String TopMenu_RehabTopLink = "//a[text()='Rehabilitation Management']";
+	public static final String TopMenu_ActionPlanTop = "//a[text()='Action Plan']";
+	public static final String TopMenu_ActionPlanAdd = "//a[text()='Action Plan Add/Update']";
+	public static final String TopMenu_ActionPlanAuthorize = "//a[text()='Action Plan Authorize']";
+	public static final String TopMenu_RehabProgram = "//a[text()='Rehabilitation Programme']";
+	public static final String TopMenu_RehabSheduleTop = "//a[text()='Schedule Rehabilitation Programs']";
+	public static final String TopMenu_RehabSheduleAdd = "//a[text()='Schedule Rehabilitation Programs Add/Update']";
+	public static final String TopMenu_RehabSheduleAuth = "//a[text()='Schedule Rehabilitation Programs Authorize']";
+	public static final String TopMenu_RehabSheduleParticipantsTop = "//a[text()='Rehabilitation Participants']";
+	public static final String TopMenu_RehabSheduleParticipants = "//a[text()='Rehabilitation Participants Add/Update']";
+	public static final String TopMenu_RehabSheduleParticipantAuth = "//a[text()='Rehabilitation Participants Authorizations']";
 	public static final String TopMenu_LogOut = "//a[contains(text(),'Logout')]";
 
 	//Iteration 1 Pages
@@ -223,6 +234,47 @@ public class Constants {
 
 	//
 	
+	//Rehabilitation Management Page
+	
+	public static final String RehabilitationManagement_APPrisonSearch = "//input[@name='RehabilitationActionPlanHeaderSearch[rph_institute_id]']";
+	public static final String RehabilitationManagement_APYearSearch = "//input[@name='RehabilitationActionPlanHeaderSearch[rph_year]']";
+	public static final String RehabilitationManagement_FirstRecord = "(.//span[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String RehabilitationManagement_NewAPButton = "//a[@href='/PIMS3/web/rehabilitation-action-plan-header/create']";
+	
+	public static final String RehabilitationManagement_APYear = "//*[@id='rehabilitationactionplanheader-rph_year']";
+	public static final String RehabilitationManagement_RehabTable = "//*[@id='rehabilitation_action_plan_grid']/tbody";
+	public static final String RehabilitationManagement_AddNew = "//button[text()='Add New']";
+	public static final String RehabilitationManagement_APRehabProgram = "(.//*[contains(@id,'-rap_rehabilitation_program_id')])";
+	public static final String RehabilitationManagement_APRehabStart = "(.//*[contains(@id,'-rap_start_date')])";
+	public static final String RehabilitationManagement_APRehabEnd = "(.//*[contains(@id,'-rap_end_date')])";
+	public static final String RehabilitationManagement_APRehabCost = "(.//*[contains(@id,'-rap_cost')])";
+	public static final String RehabilitationManagement_CreateButton = "//button[text()='Create']";
+	public static final String RehabilitationManagement_UpdateButton = "//button[text()='Update']";
+	public static final String RehabilitationManagement_AuthorizeButton = "//button[text()='Authorize']";
+	
+	public static final String RehabilitationManagement_searchCode = "//input[@name='RehabilitationProgramSearch[rep_code]']";
+	public static final String RehabilitationManagement_searchName = "//input[@name='RehabilitationProgramSearch[rep_name]']";
+	public static final String RehabilitationManagement_newProgramButton = "//a[@href='/PIMS3/web/rehabilitation-program/create']";
+	public static final String RehabilitationManagement_RehabCode = "//input[@name='RehabilitationProgram[rep_code]']";
+	public static final String RehabilitationManagement_RehabName = "//input[@name='RehabilitationProgram[rep_name]']";
+	public static final String RehabilitationManagement_RehabCategory = "//select[@name='RehabilitationProgram[rep_rehabilitation_program_category_id]']";
+	
+	public static final String RehabilitationManagementSearch_SheProg = "//input[@name='RehabilitationParticipantsSearch[rehabilitation_programe]']";
+	public static final String RehabilitationManagementSearch_SheStart = "//input[@name='RehabilitationParticipantsSearch[rhp_start_date]']";
+	public static final String RehabilitationManagementSearch_SheEnd = "//input[@name='RehabilitationParticipantsSearch[rhp_end_date]']";
+	public static final String RehabilitationManagementSearch_SheOrg = "//input[@name='RehabilitationParticipantsSearch[rhp_conducted_organization]']";
+	public static final String RehabilitationManagement_NewSheduleButton = "//a[@href='/PIMS3/web/shedule-rehabilitation-programe/create']";
+	public static final String RehabilitationManagement_SheduleProgram = "//select[@name='RehabilitationParticipants[rhp_rehabilitation_program_id]']";
+	public static final String RehabilitationManagement_SheduleStart = "//input[@name='RehabilitationParticipants[rhp_start_date]']";
+	public static final String RehabilitationManagement_SheduleEnd = "//input[@name='RehabilitationParticipants[rhp_end_date]']";
+	public static final String RehabilitationManagement_SheduleOrgan = "//input[@name='RehabilitationParticipants[rhp_conducted_organization]']";
+	public static final String RehabilitationManagement_OkFirstRecord = "(.//span[@class='glyphicon glyphicon-ok'])[1]";
+	
+	public static final String RehabilitationManagement_ParticipantTable = "//*[@id='rehabilitation_participants_details_grid']/tbody";
+	public static final String RehabilitationManagement_ParticipantInmate = "(.//select[contains(@id,'rpd_admission_id')])";
+	public static final String RehabilitationManagement_ParticipantRemark = "(.//input[contains(@id,'rpd_remarks')])";
+
+	
 	//
 	//
 
@@ -250,6 +302,7 @@ public class Constants {
 	public static final String CalendarPopup_HourText_LastPart = "']";
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
+
 
 
 

@@ -21,6 +21,13 @@ import com.ptl.PIMS.Pages.MealManagement.KitchenItemPage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenSlipPage;
 import com.ptl.PIMS.Pages.MealManagement.RecipePage;
 import com.ptl.PIMS.Pages.MealManagement.SupplierPage;
+import com.ptl.PIMS.Pages.RehabilitationManagement.ActionPlans.AddUpdateActionPlanPage;
+import com.ptl.PIMS.Pages.RehabilitationManagement.ActionPlans.AuthorizeActionPlanSelectPage;
+import com.ptl.PIMS.Pages.RehabilitationManagement.Participants.AddParticipantsSelectProg;
+import com.ptl.PIMS.Pages.RehabilitationManagement.Participants.AuthorizeSheduleParticipantsSelectProg;
+import com.ptl.PIMS.Pages.RehabilitationManagement.RehabilitationProgram.AddUpdateRehabilitationProgram;
+import com.ptl.PIMS.Pages.RehabilitationManagement.Shedule.AddUpdateRehabShedule;
+import com.ptl.PIMS.Pages.RehabilitationManagement.Shedule.AuthorizeRehabSheduleSelectProg;
 import com.ptl.PIMS.Pages.VocationalTraining.AddParticipantsVoc_ProgSelect;
 import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVocParticipants_ProgSelect;
 import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVoc_ProgSelect;
@@ -49,8 +56,10 @@ public class TopMenu {
 	WebElement postRegMain;
 	@FindBy(xpath = Constants.TopMenu_AuthorizePostRegSubLink)
 	WebElement postRegAuthorizeSub;
+	
 	@FindBy(xpath = Constants.TopMenu_TransactionManagementTopLink)
 	WebElement transactionManagementTopLink;
+	
 	@FindBy(xpath = Constants.DemandOrderAdd)
 	WebElement DemandOrderAdd;
 	@FindBy(xpath = Constants.DemandOrder)
@@ -62,8 +71,7 @@ public class TopMenu {
 	@FindBy(xpath = Constants.KitchenSlipAdd)
 	WebElement kitchenslipadd;
 	@FindBy(xpath = Constants.KitchenOrderAuthorize)
-	WebElement KitchenOrderAuthorize;
-	
+	WebElement KitchenOrderAuthorize;	
 	@FindBy(xpath = Constants.MealManagement)
 	WebElement mealmanagement;
 	@FindBy(xpath = Constants.Supplier)
@@ -72,6 +80,7 @@ public class TopMenu {
 	WebElement kitchenitem;
 	@FindBy(xpath = Constants.Recipe)
 	WebElement recipe;
+	
 	@FindBy(xpath = Constants.TopMenu_AppealTopLink)
 	WebElement appealTopLink;
 	@FindBy(xpath = Constants.TopMenu_AppealAddUpdateLink)
@@ -84,6 +93,7 @@ public class TopMenu {
 	WebElement appealSendToCourtApprovalLink;
 	@FindBy(xpath = Constants.TopMenu_AppealCourtApprovalLink)
 	WebElement appealCourtApprovalLink;
+	
 	@FindBy(xpath = Constants.TopMenu_VOCTopLink)
 	WebElement vocTopLink;
 	@FindBy(xpath = Constants.TopMenu_VOCAddUpdateLink)
@@ -94,8 +104,33 @@ public class TopMenu {
 	WebElement vocParticipantsLink;
 	@FindBy(xpath = Constants.TopMenu_VOCAuthPart)
 	WebElement vocAuthParticipantsLink;
+	
+	@FindBy(xpath = Constants.TopMenu_RehabTopLink)
+	WebElement rehabTopLink;
+	@FindBy(xpath = Constants.TopMenu_ActionPlanTop)
+	WebElement apTopLink;
+	@FindBy(xpath = Constants.TopMenu_ActionPlanAdd)
+	WebElement apAddUpdateLink;
+	@FindBy(xpath = Constants.TopMenu_ActionPlanAuthorize)
+	WebElement apAuthLink;
+	@FindBy(xpath = Constants.TopMenu_RehabProgram)
+	WebElement rehabAddUpdateLink;
+	@FindBy(xpath = Constants.TopMenu_RehabSheduleTop)
+	WebElement rehabSheduleTopLink;
+	@FindBy(xpath = Constants.TopMenu_RehabSheduleAdd)
+	WebElement rehabSheduleAddUpdate;
+	@FindBy(xpath = Constants.TopMenu_RehabSheduleAuth)
+	WebElement rehabSheduleAuth;
+	@FindBy(xpath = Constants.TopMenu_RehabSheduleParticipantsTop)
+	WebElement rehabShedulePartTop;
+	@FindBy(xpath = Constants.TopMenu_RehabSheduleParticipants)
+	WebElement rehabShedulePartAdd;
+	@FindBy(xpath = Constants.TopMenu_RehabSheduleParticipantAuth)
+	WebElement rehabShedulePartAuth;
+	
 	@FindBy(xpath = Constants.TopMenu_LogOut)
 	WebElement logOut;
+
 
 	public TopMenu(WebDriver dr){
 		driver = dr;
@@ -117,7 +152,6 @@ public class TopMenu {
 		return authorizeAdmissionSelectPage;
 	}
 
-
 	public AuthorizeRegInmatePage gotoAuthorizeRegistrationPage() {
 
 		Actions action = new Actions(driver);
@@ -135,6 +169,7 @@ public class TopMenu {
 		AuthorizePostRegInmatePage postRegAuthorizePage = PageFactory.initElements(driver, AuthorizePostRegInmatePage.class);
 		return postRegAuthorizePage;		
 	}	
+	
 	
 	public DemandOrderPage gotoNewDemandOrderPage(){
 		Actions action = new Actions(driver);
@@ -168,9 +203,6 @@ public class TopMenu {
 		KitchenAuthorizePage newKitchenauthorizePage = PageFactory.initElements(driver, KitchenAuthorizePage.class);
 		return newKitchenauthorizePage;
 	}	
-	
-	
-	
 
 	public SupplierPage gotoNewSupplierPage(){
 		Actions action = new Actions(driver);
@@ -207,6 +239,7 @@ public class TopMenu {
 		return newrecipepage;
 	
 	}
+	
 	
 	public AppealAddUpdatePage gotoAppealAddUpdate(){
 
@@ -253,6 +286,7 @@ public class TopMenu {
 		return approveAppealPage;	
 	}
 	
+	
 	public VocationalTrainingAddUpdatePage gotoVocationalAddUpdate() {
 		
 		Actions action = new Actions(driver);
@@ -288,6 +322,56 @@ public class TopMenu {
 		AuthorizeVocParticipants_ProgSelect authPartVoc = PageFactory.initElements(driver, AuthorizeVocParticipants_ProgSelect.class);
 		return authPartVoc;
 	}
+	
+
+	public AddUpdateActionPlanPage gotoActionPlanAddUpdate() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(rehabTopLink).moveToElement(apTopLink).moveToElement(apAddUpdateLink).click().build().perform();
+		return PageFactory.initElements(driver, AddUpdateActionPlanPage.class);
+	}
+	
+	public AuthorizeActionPlanSelectPage gotoActionPlanAuthorize() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(rehabTopLink).moveToElement(apTopLink).moveToElement(apAuthLink).click().build().perform();
+		return PageFactory.initElements(driver, AuthorizeActionPlanSelectPage.class);
+	}
+
+	public AddUpdateRehabilitationProgram gotoRehabilitationProgram() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(rehabTopLink).moveToElement(rehabAddUpdateLink).click().build().perform();
+		return PageFactory.initElements(driver, AddUpdateRehabilitationProgram.class);
+	}
+	
+	public AddUpdateRehabShedule gotoAddUpdateSheduleRehab() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(rehabTopLink).moveToElement(rehabSheduleTopLink).moveToElement(rehabSheduleAddUpdate).click().build().perform();
+		return PageFactory.initElements(driver, AddUpdateRehabShedule.class);
+	}
+	
+	public AuthorizeRehabSheduleSelectProg gotoAuthorizeRehabShedule() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(rehabTopLink).moveToElement(rehabSheduleTopLink).moveToElement(rehabSheduleAuth).click().build().perform();
+		return PageFactory.initElements(driver, AuthorizeRehabSheduleSelectProg.class);
+	}
+	
+	public AddParticipantsSelectProg gotoAddRehabSheduleParticipants() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(rehabTopLink).moveToElement(rehabShedulePartTop).moveToElement(rehabShedulePartAdd).click().build().perform();
+		return PageFactory.initElements(driver, AddParticipantsSelectProg.class);
+	}
+	
+	public AuthorizeSheduleParticipantsSelectProg gotoAuthRehabSheduleParticipants() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(rehabTopLink).moveToElement(rehabShedulePartTop).moveToElement(rehabShedulePartAuth).click().build().perform();
+		return PageFactory.initElements(driver, AuthorizeSheduleParticipantsSelectProg.class);
+	}
 
 	
 	public LoginPage doLogout(){
@@ -296,6 +380,7 @@ public class TopMenu {
 		TestBase.isLoggedIn = false;
 		return loginPage;		
 	}
+
 
 
 
