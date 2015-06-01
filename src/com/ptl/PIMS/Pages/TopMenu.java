@@ -11,14 +11,21 @@ import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveByCourtAppealSel
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveByJailorAppealSelect;
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveBySPAppealSelect;
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveSendToCourtAppealSelect;
+import com.ptl.PIMS.Pages.IndustrialManagement.CreateIndustrialMorningPage;
+import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialEveningPage;
+import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialMorningPage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizePostRegInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
 import com.ptl.PIMS.Pages.MealManagement.DemandAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.DemandOrderPage;
+import com.ptl.PIMS.Pages.MealManagement.GoodReceivedAuthorizePage;
+import com.ptl.PIMS.Pages.MealManagement.GoodReceivedPage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenItemPage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenSlipPage;
+import com.ptl.PIMS.Pages.MealManagement.PurchaseOrderAuthorizePage;
+import com.ptl.PIMS.Pages.MealManagement.PurchaseOrderPage;
 import com.ptl.PIMS.Pages.MealManagement.RecipePage;
 import com.ptl.PIMS.Pages.MealManagement.SupplierPage;
 import com.ptl.PIMS.Pages.RehabilitationManagement.ActionPlans.AddUpdateActionPlanPage;
@@ -72,6 +79,18 @@ public class TopMenu {
 	WebElement kitchenslipadd;
 	@FindBy(xpath = Constants.KitchenOrderAuthorize)
 	WebElement KitchenOrderAuthorize;	
+	@FindBy(xpath = Constants.PurchaseOrder)
+	WebElement purchaseorder;
+	@FindBy(xpath = Constants.PurchaseOrderAdd)
+	WebElement purchaseorderadd;
+	@FindBy(xpath = Constants.PurchaseOrderAuthorize)
+	WebElement purchaseorderauthorize;
+	@FindBy(xpath = Constants.GoodReceived)
+	WebElement goodreceived;
+	@FindBy(xpath = Constants.GoodReceivedAdd)
+	WebElement goodreceivedadd;
+	@FindBy(xpath = Constants.GoodReceivedAuthorized)
+	WebElement goodreceivedauthorize;
 	@FindBy(xpath = Constants.MealManagement)
 	WebElement mealmanagement;
 	@FindBy(xpath = Constants.Supplier)
@@ -81,6 +100,12 @@ public class TopMenu {
 	@FindBy(xpath = Constants.Recipe)
 	WebElement recipe;
 	
+	@FindBy(xpath = Constants.IndustrialManagement)
+	WebElement industrialmanagement;
+	@FindBy(xpath = Constants.IndustrialManagementMorning)
+	WebElement industrialmanagementmorning;
+	@FindBy(xpath = Constants.IndustrialManagementEvening)
+	WebElement industrialmanagementevening;
 	@FindBy(xpath = Constants.TopMenu_AppealTopLink)
 	WebElement appealTopLink;
 	@FindBy(xpath = Constants.TopMenu_AppealAddUpdateLink)
@@ -204,6 +229,36 @@ public class TopMenu {
 		return newKitchenauthorizePage;
 	}	
 
+	
+	public PurchaseOrderPage gotoNewPurchaseOrderPage(){
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(purchaseorder).moveToElement(purchaseorderadd).click().build().perform();
+		PurchaseOrderPage newpurchaseorderPage = PageFactory.initElements(driver, PurchaseOrderPage.class);
+		return newpurchaseorderPage;
+	}	
+	
+	
+	public PurchaseOrderAuthorizePage gotoNewPurchaseAuthorizePage(){
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(purchaseorder).moveToElement(purchaseorderauthorize).click().build().perform();
+		PurchaseOrderAuthorizePage newpurchaseorderauthorizePage = PageFactory.initElements(driver, PurchaseOrderAuthorizePage.class);
+		return newpurchaseorderauthorizePage;
+	}	
+	public GoodReceivedPage gotogoodreceivedPage(){
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(goodreceived).moveToElement(goodreceivedadd).click().build().perform();
+		GoodReceivedPage newgoodreceivedPage = PageFactory.initElements(driver, GoodReceivedPage.class);
+		return newgoodreceivedPage;
+	}	
+	
+	
+	public GoodReceivedAuthorizePage gotoGoodReceivedAuthorizePage(){
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(goodreceived).moveToElement(goodreceivedauthorize).click().build().perform();
+		GoodReceivedAuthorizePage newgoodreceivedauthorizePage = PageFactory.initElements(driver, GoodReceivedAuthorizePage.class);
+		return newgoodreceivedauthorizePage;
+	}	
+
 	public SupplierPage gotoNewSupplierPage(){
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(supplier).click().build().perform();
@@ -240,6 +295,26 @@ public class TopMenu {
 	
 	}
 	
+	
+
+	public IndustrialMorningPage gotoNewIndustrialMorning() {
+		// TODO Auto-generated method stub
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(industrialmanagementmorning).click().build().perform();
+		IndustrialMorningPage newindustrialmorningpage = PageFactory.initElements(driver, IndustrialMorningPage.class);
+		return newindustrialmorningpage;
+	
+	}
+	
+	
+	public IndustrialEveningPage gotoNewIndustrialEvening() {
+		// TODO Auto-generated method stub
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(industrialmanagementevening).click().build().perform();
+		IndustrialEveningPage newindustrialeveningpage = PageFactory.initElements(driver, IndustrialEveningPage.class);
+		return newindustrialeveningpage;
+	
+	}
 	
 	public AppealAddUpdatePage gotoAppealAddUpdate(){
 

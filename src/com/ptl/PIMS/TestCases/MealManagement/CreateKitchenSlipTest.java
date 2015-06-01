@@ -27,12 +27,8 @@ public class CreateKitchenSlipTest extends TestBase {
 				"Could not go to new demand order page.");		*/
 	}	
 
+	
 	@Test(dependsOnMethods="goToNewKitchenSlipPage")
-	public void fillKitchenSlip(){
-
-	}
-
-	@Test(dependsOnMethods="fillKitchenSlip")
 	public void submitKitchenSlipTest() {
 		System.out.println("Kitchen Slip:"+createkitchenslippage.getKitchenSlipID());
 		id=createkitchenslippage.getKitchenSlipID();

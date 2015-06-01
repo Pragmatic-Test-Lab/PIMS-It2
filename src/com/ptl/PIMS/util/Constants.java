@@ -7,6 +7,7 @@ public class Constants {
 			+ "\\src\\com\\ptl\\config\\config.properties";
 	public static String EXCEL_Path = System.getProperty("user.dir")
 			+ "\\src\\com\\ptl\\data\\TestData.xlsx";
+	
 
 	//Login Page
 	public static final String Login_username = "//*[@id='login-form-login']";
@@ -124,14 +125,9 @@ public class Constants {
 	
 	public static final String AppealManagement_ApproveAppealButton = "//button[text() = 'Authorize']";
 
-	
-	
-	
-	
-	
-	
-	//
-	
+
+	//Meal Management Page 
+
 //Meal Management Page 
 
 	public static final String DemandOrderAdd = "//*[text()='Demand Order Add/Update']";
@@ -169,7 +165,6 @@ public class Constants {
 	public static final String SuccessMessageKitchenAuthorize = "//*[@class='alert alert-success']";
 	public static final String AuthorizeKitchen_SuccessMessageText = "Saved .* successfully";
 
-
 	public static final String Supplier = ".//a[text()='Supplier']";
 	public static final String SupplierAdd = ".//a[text()='Supplier']";
 	public static final String CreateSupplier = "//*[text()='Create Supplier']";
@@ -199,6 +194,40 @@ public class Constants {
 	public static final String CreateRecipeItemButton = "//*[@class='btn btn-primary']";
 	public static final String CreateRecipe_SuccessMessageText="Saved .* successfully";
 	public static final String RecipeSuccessMessage = "//*[@class='alert alert-success']";
+	
+	public static final String CreatePurchaseOrder = ".//a[text()='Create Purchase Order']";
+	public static final String PurchaseOrder = ".//a[text()='Purchase Order']";
+	public static final String PurchaseOrderAdd = ".//a[text()='Purchase Order Add/Update']";
+	public static final String PurchaseOrderId = "//*[@id='stocktranactionheader-sth_order_no']";
+	public static final String SupplierLine = "//*[@id='stocktranactionheader-sth_supplier_id']";
+	public static final String Kitchenitemline1 = "//*[@id='stocktranactiondetails-1-std_kitchen_item_id']";
+	public static final String quantityline1 = "//*[@id='stocktranactiondetails-1-std_quantity']";
+	public static final String AddNewPurchaseOrder = "//*[@class='btn btn-success glyphicon glyphicon-plus']";
+	public static final String PurchaseOrderCreate = "//*[@class='btn btn-success']";
+	public static final String SuccessMessagePurchaseOrder = "//*[@class='alert alert-success']";
+	public static final String CreatePurchaseOrder_SuccessMessageText = "Created .* successfully";
+	public static final String PurchaseOrderNo = "//*[@name='StockTranactionHeaderSearch[sth_order_no]']";
+	public static final String SelectPurchaseOrder ="(//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String AuthorizePurchase="//*[@class='btn btn-primary']";
+	public static final String SuccessMessagePurchaseAuthorize ="//*[@class='alert alert-success']";
+	public static final String PurchaseOrderAuthorize = "//*[text()='Purchase Order Authorize']";
+	public static final String AuthorizePurchase_SuccessMessageText = "Saved .* successfully";
+	
+	public static final String GoodReceivedNo = "//*[@name='StockTranactionHeaderSearch[sth_order_no]']";
+	public static final String SelectGoodReceived = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String GoodReceivedQuantity = ".//*[@name='StockTranactionDetails[0][std_issued_quantity]']";
+	public static final String CreateGoodReceivedButton = "//*[@class='btn btn-primary']";
+	public static final String SuccessMessageGoodReceived = "//*[@class='alert alert-success']";
+	public static final String GoodReceived = ".//a[text()='Good Received Note']";
+	public static final String GoodReceivedAdd = ".//a[text()='Good Received Note Add/Update']";
+	public static final String AuthorizeGoodReceived_SuccessMessageText = "Saved .* successfully";
+	public static final String SuccessMessageGoodReceivedAuthorize = ".//div[@class='alert alert-success']";
+	public static final String AuthorizeGoodReceived = "//*[@class='btn btn-primary']";
+	public static final String GoodReceivedAuthorized = ".//a[text()='Good Received Note Authorize']";
+
+
+
+
 
 	//
 
@@ -302,6 +331,38 @@ public class Constants {
 	public static final String CalendarPopup_HourText_LastPart = "']";
 	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
 	public static final String CalendarPopup_MinuteText_LastPart = "']";
+	public static final String GoodReceivedAuthorize = null;
+
+	//Industrial Management
+	
+	public static final String IndustrialManagement = ".//a[text()='Industrial Training']";
+	public static final String IndustrialManagementMorning = ".//a[text()='Industrial Attendance Morning']";
+	public static final String CreateMorningButton = "(//*[@class='btn btn-success'])";
+	public static final String attendancebox1 = "//*[@id='industrialattendance-0-ina_morning_attendance']";
+	public static final String attendanceline1 = "//*[@id='industrialattendance-0-ina_remarks']";
+	public static final String attendancebox3 = "//*[@id='industrialattendance-2-ina_morning_attendance']";
+	public static final String attendanceline3 = "//*[@id='industrialattendance-2-ina_remarks']";
+	public static final String attendancebox5 = "//*[@id='industrialattendance-4-ina_morning_attendance']";
+	public static final String attendanceline5 = "//*[@id='industrialattendance-4-ina_remarks']";
+	public static final String GoToIndustry = "(//*[@class='glyphicon glyphicon-ok'])[1]";
+	public static final String SuccessMessageMorning = "(//*[@class='alert alert-success'])";
+	public static final String CreateIndustrialMorningSuccessMessageText = "Created .* successfully";
+	public static final String EveningRecord = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String eveningattendancebox1 = "//*[@id='industrialattendance-0-ina_evening_attendance']";
+	public static final String salarybox1 = "//*[@id='industrialattendance-0-ina_salary_approved']";
+	public static final String eveningattendanceline1 = "//*[@id='industrialattendance-0-ina_remarks']";
+	public static final String eveningattendancebox5 = "//*[@id='industrialattendance-3-ina_evening_attendance']";
+	public static final String salarybox5 = "//*[@id='industrialattendance-3-ina_salary_approved']";
+	public static final String eveningattendanceline5 = "//*[@id='industrialattendance-3-ina_remarks']";
+	public static final String CreateEveningButton = "(//*[@class='btn btn-primary'])";
+	public static final String SuccessMessageEvening = "(//*[@class='alert alert-success'])";
+	public static final String IndustrialManagementEvening = ".//a[text()='Industrial Attendance Evening']";
+	public static final String CreateIndustrialEveningSuccessMessageText = "Saved .* successfully";
+	
+	
+
+
+
 
 
 
