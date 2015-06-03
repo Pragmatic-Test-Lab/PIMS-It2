@@ -7,6 +7,10 @@
 			
 			<class name="com.ptl.PIMS.TestCases.MovementManagement.CreateMovementOutTest" />
 			<class name="com.ptl.PIMS.TestCases.MovementManagement.CreateMovementAuthorizeTest" />
+			<class name="com.ptl.PIMS.TestCases.MovementManagement.CreateMovementInTest" />
+			<class name="com.ptl.PIMS.TestCases.MovementManagement.CreateMovementInAuthorizeTest" />
+			
+			
 
 
 

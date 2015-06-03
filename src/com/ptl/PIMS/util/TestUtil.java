@@ -128,7 +128,7 @@ public static String getTodaysDateandtime(){
 		int hour= Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 		int minuteTemp= Calendar.getInstance().get(Calendar.MINUTE);
 
-		int minute = minuteTemp - minuteTemp%5;
+		int minute = minuteTemp - (minuteTemp%5)+5;
 		
 		String Month = "";
 		
