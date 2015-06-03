@@ -12,8 +12,6 @@ import com.ptl.PIMS.Pages.AppealManagement.NewAppeal;
 import com.ptl.PIMS.Pages.AppealManagement.NewAppeal_InmateSelect;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionPage;
-import com.ptl.PIMS.Pages.Iteration1.AuthorizePostRegInmatePage;
-import com.ptl.PIMS.Pages.Iteration1.AuthorizePostRegPage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegPage;
 import com.ptl.PIMS.TestCases.TestBase;
@@ -30,9 +28,7 @@ public class AppealCreateUpdateTest extends TestBase {
 		
 		//Authorize Admission with court details
 		AuthorizeAdmissionInmatePage authorizeInmateSelect = getTopMenu().gotoAuthorizeAdmissionPage();
-		//AuthorizeAdmissionPage authorizePage = authorizeInmateSelect.clickFirstInmate();		
-		
-		AuthorizeAdmissionPage authorizePage = authorizeInmateSelect.selectSencondInmate();
+		AuthorizeAdmissionPage authorizePage = authorizeInmateSelect.clickFirstInmate();
 		
 		authorizePage.fillCase(data.get("courts"), data.get("caseNos"), TestUtil.getTodaysDate(), TestUtil.getTodaysDate());
 		authorizePage.changeInmateCategory("Convicted");

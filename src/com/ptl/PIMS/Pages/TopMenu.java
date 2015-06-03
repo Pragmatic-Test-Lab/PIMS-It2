@@ -13,6 +13,12 @@ import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveBySPAppealSelect
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveSendToCourtAppealSelect;
 import com.ptl.PIMS.Pages.DisciplineManagement.AuthorizeDiscipline_SelectRecordPage;
 import com.ptl.PIMS.Pages.DisciplineManagement.EditAddDisciplinePage;
+import com.ptl.PIMS.Pages.EscortManagement.EscortAddUpdatePage;
+import com.ptl.PIMS.Pages.EscortManagement.EscortAuhtorizeSelectPage;
+import com.ptl.PIMS.Pages.EscortManagement.Calendar.CalendarInmateSelectPage;
+import com.ptl.PIMS.Pages.EscortManagement.TimeRecord.EscortOutInAuthorizeSelectPage;
+import com.ptl.PIMS.Pages.EscortManagement.TimeRecord.RecordEscortInSelectPage;
+import com.ptl.PIMS.Pages.EscortManagement.TimeRecord.RecordEscortOutSelectPage;
 import com.ptl.PIMS.Pages.IncidenceManagement.IncidenceAddInmateSelectionPage;
 import com.ptl.PIMS.Pages.IncidenceManagement.IncidenceAuthorizeInmateSelectionPage;
 import com.ptl.PIMS.Pages.IncidenceManagement.Recapture.RecaptureAddInmatePage;
@@ -195,7 +201,22 @@ public class TopMenu {
 	@FindBy(xpath = Constants.TopMenu_IncidenceRecaptureAddUpdateLink)
 	WebElement inciRecapAddUpdateLink;
 	@FindBy(xpath = Constants.TopMenu_IncidenceRecaptureAuthorizeLink)
-	WebElement inciRecapAuthorizeLink;
+	WebElement inciRecapAuthorizeLink;	
+	
+	@FindBy(xpath = Constants.TopMenu_EscortCalendarTopLink)
+	WebElement escortCalendarLink;
+	@FindBy(xpath = Constants.TopMenu_EscortManagementTopLink)
+	WebElement escortTopLink;
+	@FindBy(xpath = Constants.TopMenu_EscortListAddUpdateLink)
+	WebElement escortAddUpdateLink;
+	@FindBy(xpath = Constants.TopMenu_EscortAuthorizeLink)
+	WebElement escortAuthorizeLink;
+	@FindBy(xpath = Constants.TopMenu_EscortOutLink)
+	WebElement escortOutLink;
+	@FindBy(xpath = Constants.TopMenu_EscortInLink)
+	WebElement escortInLink;
+	@FindBy(xpath = Constants.TopMenu_EscortInOutAuthorizeLink)
+	WebElement escortInOutAuthorizeLink;
 	
 	@FindBy(xpath = Constants.TopMenu_LogOut)
 	WebElement logOut;
@@ -243,11 +264,6 @@ public class TopMenu {
 	public DemandOrderPage gotoNewDemandOrderPage(){
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(demandorder).moveToElement(DemandOrderAdd).click().build().perform();
-		/*
-		transactionManagementTopLink.click();
-		mealmanagement.click();
-		demandorder.click();
-		DemandOrderAdd.click();*/
 		DemandOrderPage newdDemandOrderPage = PageFactory.initElements(driver, DemandOrderPage.class);
 		return newdDemandOrderPage;
 	}	
@@ -306,34 +322,21 @@ public class TopMenu {
 	public SupplierPage gotoNewSupplierPage(){
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(supplier).click().build().perform();
-		/*transactionManagementTopLink.click();
-		mealmanagement.click();
-		supplier.click();*/
 		SupplierPage newSupplierPage = PageFactory.initElements(driver, SupplierPage.class);
 		return newSupplierPage;
 	}
 
 	public KitchenItemPage gotoNewKitchenItemPage() {
-		// TODO Auto-generated method stub
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(kitchenitem).click().build().perform();
-		
-		/*transactionManagementTopLink.click();
-		mealmanagement.click();
-		kitchenitem.click();*/
 		KitchenItemPage newkitchenitempage = PageFactory.initElements(driver, KitchenItemPage.class);
 		return newkitchenitempage;
 	
 	}		
 	
 	public RecipePage gotoNewRecipePage() {
-		// TODO Auto-generated method stub
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(mealmanagement).moveToElement(recipe).click().build().perform();
-		
-		/*transactionManagementTopLink.click();
-		mealmanagement.click();
-		recipe.click();*/
 		RecipePage newrecipepage = PageFactory.initElements(driver, RecipePage.class);
 		return newrecipepage;
 	
@@ -342,7 +345,6 @@ public class TopMenu {
 	
 
 	public IndustrialMorningPage gotoNewIndustrialMorning() {
-		// TODO Auto-generated method stub
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(industrialmanagementmorning).click().build().perform();
 		IndustrialMorningPage newindustrialmorningpage = PageFactory.initElements(driver, IndustrialMorningPage.class);
@@ -352,7 +354,6 @@ public class TopMenu {
 	
 	
 	public IndustrialEveningPage gotoNewIndustrialEvening() {
-		// TODO Auto-generated method stub
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(industrialmanagementevening).click().build().perform();
 		IndustrialEveningPage newindustrialeveningpage = PageFactory.initElements(driver, IndustrialEveningPage.class);
@@ -361,7 +362,6 @@ public class TopMenu {
 	}
 	
 	public WagesPage gotowages() {
-		// TODO Auto-generated method stub
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(wages).click().build().perform();
 		WagesPage wagespage = PageFactory.initElements(driver, WagesPage.class);
@@ -370,7 +370,6 @@ public class TopMenu {
 	}
 	
 	public IndustrialTrainingPage gotoNewIndustrialTraining() {
-		// TODO Auto-generated method stub
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(industrialmanagementtraining).click().build().perform();
 		IndustrialTrainingPage newindustrialtrainingpage = PageFactory.initElements(driver, IndustrialTrainingPage.class);
@@ -379,7 +378,6 @@ public class TopMenu {
 	}
 	
 	public MovementOutPage gotoNewMovementOutPage() {
-		// TODO Auto-generated method stub
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(movementmanagement).moveToElement(movementoutmanagement).click().build().perform();
 		MovementOutPage newmovementoutpage = PageFactory.initElements(driver, MovementOutPage.class);
@@ -590,6 +588,47 @@ public class TopMenu {
 	}
 
 
+	public CalendarInmateSelectPage gotoEscortCalendar() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(escortCalendarLink).click().build().perform();
+		return PageFactory.initElements(driver, CalendarInmateSelectPage.class);
+	}
+	
+	public EscortAddUpdatePage gotoEscortAddUpdate() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(escortTopLink).moveToElement(escortAddUpdateLink).click().build().perform();
+		return PageFactory.initElements(driver, EscortAddUpdatePage.class);
+	}
+	
+	public EscortAuhtorizeSelectPage gotoEscortAuthorize() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(escortTopLink).moveToElement(escortAuthorizeLink).click().build().perform();
+		return PageFactory.initElements(driver, EscortAuhtorizeSelectPage.class);
+	}
+	
+	public RecordEscortOutSelectPage gotoEscortOut() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(escortTopLink).moveToElement(escortOutLink).click().build().perform();
+		return PageFactory.initElements(driver, RecordEscortOutSelectPage.class);
+	}
+	
+	public RecordEscortInSelectPage gotoEscortIn() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(escortTopLink).moveToElement(escortInLink).click().build().perform();
+		return PageFactory.initElements(driver, RecordEscortInSelectPage.class);
+	}
+	
+	public EscortOutInAuthorizeSelectPage gotoEscortInOutAuthorize() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(escortTopLink).moveToElement(escortInOutAuthorizeLink).click().build().perform();
+		return PageFactory.initElements(driver, EscortOutInAuthorizeSelectPage.class);
+	}
 	
 	public LoginPage doLogout(){
 		logOut.click();
