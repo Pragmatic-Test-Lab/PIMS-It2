@@ -34,7 +34,7 @@ public class RecaptureAddPage {
 			String eventDescription = driver.findElement(By.xpath(Constants.IncidenceManagement_EventD + "[" + i + "]")).getAttribute("value");
 			String action = driver.findElement(By.xpath(Constants.IncidenceManagement_Action + "[" + i + "]")).getAttribute("value");
 			
-			if(eventDescription.equals(EventD) && action.equals(Action))
+			if(eventDescription.equals(EventD) && action.equals(Action));
 				CLNDR.selectDate(driver.findElement(By.xpath((Constants.IncidenceManagement_RecaptureDate + "[" + i + "]"))), RecapDate);
 		}
 		
@@ -45,10 +45,8 @@ public class RecaptureAddPage {
 	private int initialRowCount(WebElement element) {
 		List<WebElement> rows = element.findElements(By.tagName("tr"));	
 		
-		int size = rows.size();	
-		
-		if(size == 1) return size;
-		else return size - 1;
+		int size = rows.size();			
+		return size;
 	}
 
 }
