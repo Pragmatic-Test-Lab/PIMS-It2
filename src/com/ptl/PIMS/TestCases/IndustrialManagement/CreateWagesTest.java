@@ -30,7 +30,7 @@ public class CreateWagesTest extends TestBase{
 
 
 		Assert.assertTrue(createwages.getSuccessMessage().matches(Constants.CreateWagesSuccessMessageText),
-				"Industrial morning not created");	
+				"Industrial wages not created");	
 
 	}
 
