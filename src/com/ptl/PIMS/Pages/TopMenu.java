@@ -19,6 +19,8 @@ import com.ptl.PIMS.Pages.IncidenceManagement.Recapture.RecaptureAddInmatePage;
 import com.ptl.PIMS.Pages.IncidenceManagement.Recapture.RecaptureAuthorizeSelectionPage;
 import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialEveningPage;
 import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialMorningPage;
+import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialTrainingPage;
+import com.ptl.PIMS.Pages.IndustrialManagement.WagesPage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizePostRegInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
@@ -33,6 +35,7 @@ import com.ptl.PIMS.Pages.MealManagement.PurchaseOrderAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.PurchaseOrderPage;
 import com.ptl.PIMS.Pages.MealManagement.RecipePage;
 import com.ptl.PIMS.Pages.MealManagement.SupplierPage;
+import com.ptl.PIMS.Pages.MovementManagement.MovementOutPage;
 import com.ptl.PIMS.Pages.RehabilitationManagement.ActionPlans.AddUpdateActionPlanPage;
 import com.ptl.PIMS.Pages.RehabilitationManagement.ActionPlans.AuthorizeActionPlanSelectPage;
 import com.ptl.PIMS.Pages.RehabilitationManagement.Participants.AddParticipantsSelectProg;
@@ -111,6 +114,10 @@ public class TopMenu {
 	WebElement industrialmanagementmorning;
 	@FindBy(xpath = Constants.IndustrialManagementEvening)
 	WebElement industrialmanagementevening;
+	@FindBy(xpath = Constants.IndustrialWages)
+	WebElement wages;
+	@FindBy(xpath = Constants.IndustrialTraining)
+	WebElement industrialmanagementtraining;
 	@FindBy(xpath = Constants.TopMenu_AppealTopLink)
 	WebElement appealTopLink;
 	@FindBy(xpath = Constants.TopMenu_AppealAddUpdateLink)
@@ -123,6 +130,11 @@ public class TopMenu {
 	WebElement appealSendToCourtApprovalLink;
 	@FindBy(xpath = Constants.TopMenu_AppealCourtApprovalLink)
 	WebElement appealCourtApprovalLink;
+	
+	@FindBy(xpath = Constants.TopMenu_MovementLink)
+	WebElement movementmanagement;
+	@FindBy(xpath = Constants.TopMenu_MovementOutLink)
+	WebElement movementoutmanagement;
 	
 	@FindBy(xpath = Constants.TopMenu_VOCTopLink)
 	WebElement vocTopLink;
@@ -336,6 +348,33 @@ public class TopMenu {
 		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(industrialmanagementevening).click().build().perform();
 		IndustrialEveningPage newindustrialeveningpage = PageFactory.initElements(driver, IndustrialEveningPage.class);
 		return newindustrialeveningpage;
+	
+	}
+	
+	public WagesPage gotowages() {
+		// TODO Auto-generated method stub
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(wages).click().build().perform();
+		WagesPage wagespage = PageFactory.initElements(driver, WagesPage.class);
+		return wagespage;
+	
+	}
+	
+	public IndustrialTrainingPage gotoNewIndustrialTraining() {
+		// TODO Auto-generated method stub
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(industrialmanagement).moveToElement(industrialmanagementtraining).click().build().perform();
+		IndustrialTrainingPage newindustrialtrainingpage = PageFactory.initElements(driver, IndustrialTrainingPage.class);
+		return newindustrialtrainingpage;
+	
+	}
+	
+	public MovementOutPage gotoNewMovementOutPage() {
+		// TODO Auto-generated method stub
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(movementmanagement).moveToElement(movementoutmanagement).click().build().perform();
+		MovementOutPage newmovementoutpage = PageFactory.initElements(driver, MovementOutPage.class);
+		return newmovementoutpage;
 	
 	}
 	
