@@ -495,6 +495,8 @@ public class Constants {
 	public static final String MovementIn_SuccessMessageText = "Saved .* successfully";
 	public static final String TopMenu_MovementInLink = "//a[contains(text(),'Movement In Add/Update')]";
 	public static final String MovementInDate = "//*[@id='movement-mov_in_time']";
+	public static final String TopMenu_MovementInAuthorizeLink = "//a[contains(text(),'Movement In Authorize')]";
+	public static final String AuthorizeMovementIn_SuccessMessageText = "Saved .* successfully";
 	public static String admissionid="T/10345/2015";
 
 

@@ -4,25 +4,25 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.ptl.PIMS.Pages.TopMenu;
-import com.ptl.PIMS.Pages.MealManagement.CreateKitchenAuthorizePage;
-import com.ptl.PIMS.Pages.MealManagement.KitchenAuthorizePage;
+import com.ptl.PIMS.Pages.MovementManagement.CreateMovementInAuthorize;
 import com.ptl.PIMS.Pages.MovementManagement.CreateMovementOutAuthorizePage;
+import com.ptl.PIMS.Pages.MovementManagement.MovementInAuthorizePage;
 import com.ptl.PIMS.Pages.MovementManagement.MovementOutAuthorizePage;
 import com.ptl.PIMS.TestCases.TestBase;
 import com.ptl.PIMS.util.Constants;
 
-public class CreateMovementAuthorizeTest extends TestBase {
-	MovementOutAuthorizePage movementoutauthorizePage;
-	CreateMovementOutAuthorizePage createmovementoutauthorizePage;
+public class CreateMovementInAuthorizeTest extends TestBase {
+	MovementInAuthorizePage movementinauthorizePage;
+	CreateMovementInAuthorize createmovementinauthorizePage;
 
 	@Test   
 	public void goToMovementOutAuthorizePage(){
 
 		loginToApplication();		
 		TopMenu topMenu = getTopMenu();
-		movementoutauthorizePage = topMenu.gotomovementAuthorizePage();
+		movementinauthorizePage = topMenu.gotomovementinAuthorizePage();
 		
-		createmovementoutauthorizePage=movementoutauthorizePage.getCreateMovementOutAuthorizePage();
+		createmovementinauthorizePage=movementinauthorizePage.getCreateMovementInAuthorizePage();
 		
 	/*	Assert.assertTrue(createdemandauthorizePage.getActualPageTitle().equals(Constants.CreateDemandPageHeader),
 				"Could not go to new demand order page.");		
@@ -31,11 +31,11 @@ public class CreateMovementAuthorizeTest extends TestBase {
 	@Test(dependsOnMethods="goToMovementOutAuthorizePage")
 	public void submitmovementoutAuthorizeTest(){
 
-		movementoutauthorizePage = createmovementoutauthorizePage.ClickAuthorizeButton();
+		movementinauthorizePage = createmovementinauthorizePage.ClickAuthorizeButton();
 
 
-		Assert.assertTrue(createmovementoutauthorizePage.getSuccessMessage().matches(Constants.AuthorizeMovement_SuccessMessageText),
-				"Movement Out not authorised");				
+		Assert.assertTrue(createmovementinauthorizePage.getSuccessMessage().matches(Constants.AuthorizeMovementIn_SuccessMessageText),
+				"Movement In not authorised");				
 	}
 
 }
