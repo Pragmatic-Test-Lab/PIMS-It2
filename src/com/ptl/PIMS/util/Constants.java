@@ -387,8 +387,8 @@ public class Constants {
 	public static final String CalendarPopup_SelectYearLP = "' and contains(@class,'year')]";
 	public static final String CalendarPopup_SelectMonthFP = "//div[@style='display: block;']/descendant::span[text()='";
 	public static final String CalendarPopup_SelectMonthLP = "' and contains(@class,'month')]";
-	public static final String CalendarPopup_SelectDayFP = "(.//div[@style='display: block;']/descendant::td[text()='";
-	public static final String CalendarPopup_SelectDayLP = "' and @class='day'])";
+	public static final String CalendarPopup_SelectDayFP = "(.//div[contains(@style,'display: block;')]/descendant::div[@style='display: block;']/descendant::td[text()='";
+	public static final String CalendarPopup_SelectDayLP = "' and (@class='day' or @class = 'day today active')])";
 	public static final String CalendarPopup_SelectHourFP = ".//div[@style='display: block;']/descendant::span[text()='";
 	public static final String CalendarPopup_SelectHourLP = ":00' and contains(@class,'hour')]";
 	public static final String CalendarPopup_SelectMinuteFP = ".//div[@style='display: block;']/descendant::span[text()='";

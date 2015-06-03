@@ -41,7 +41,7 @@ public class IncidenceAddPage {
 		for (int i = 0; i < dates.length; i++) {
 			addNewButton.click();
 			
-			CLNDR.selectDateTime(driver.findElement(By.xpath(Constants.IncidenceManagement_Date + "[" + (dataRows + i) + "]")), dates[i]);
+			CLNDR.selectDateTimeDefault(driver.findElement(By.xpath(Constants.IncidenceManagement_Date + "[" + (dataRows + i) + "]")), dates[i]);
 
 			driver.findElement(By.xpath(Constants.IncidenceManagement_EventType + "[" + (dataRows + i) + "]")).sendKeys(eventTypes[i]);
 			driver.findElement(By.xpath(Constants.IncidenceManagement_EventD + "[" + (dataRows + i) + "]")).sendKeys(eventDs[i]);
