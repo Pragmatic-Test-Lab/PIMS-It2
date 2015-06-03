@@ -425,6 +425,24 @@ public class Constants {
 	public static final String IndustrialPromotionDate = "(.//input[contains(@id,'-iwp_date')])";
 	public static final String IndustrialTradeDate = "(.//input[contains(@id,'-itd_date')])";
 	public static final String CreateIndustrialTrainingSuccessMessageText = "Saved .* successfully";
+	
+	
+	
+	
+	//Movement Management
+	
+	
+	public static final String MovementOutCreate = "(.//*[@class='btn btn-success'])";
+	public static final String CreateMovementOut = "(.//*[@class='glyphicon glyphicon-user'])[1]";
+	public static final String TopMenu_MovementLink = "//a[contains(text(),'Movement Management')]";
+	public static final String TopMenu_MovementOutLink = "//a[contains(text(),'Movement Out Add/Update')]";
+	public static final String MovementAdmissionId = "//*[@id='w1']/table/tbody/tr[1]/td[2]";
+	public static final String CreateMovementOutButton = "(.//*[@class='btn btn-success'])";
+	public static final String MovementOutSuccessMessage = ".//*[@class='alert alert-success']";
+	public static final String CreateMovementOut_SuccessMessageText = "Created .* successfully";
+	public static final String MovementAdmissionIdSearch = "(.//*[@class='form-control'])[1]";
+	public static final String LocationFrom = "//*[@id='movement-mov_location_from_id']";
+	public static final String LocationTo = "//*[@id='movement-mov_location_to_id']";
 
 
 	
