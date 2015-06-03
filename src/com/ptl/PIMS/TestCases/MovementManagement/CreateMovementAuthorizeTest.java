@@ -16,7 +16,7 @@ public class CreateMovementAuthorizeTest extends TestBase {
 	CreateMovementOutAuthorizePage createmovementoutauthorizePage;
 
 	@Test   
-	public void goToNewKitchenAuthorizePage(){
+	public void goToMovementOutAuthorizePage(){
 
 		loginToApplication();		
 		TopMenu topMenu = getTopMenu();
@@ -28,8 +28,8 @@ public class CreateMovementAuthorizeTest extends TestBase {
 				"Could not go to new demand order page.");		
 		*/
 	}
-	@Test(dependsOnMethods="goToNewKitchenAuthorizePage")
-	public void submitKitchenAuthorizeTest(){
+	@Test(dependsOnMethods="goToMovementOutAuthorizePage")
+	public void submitmovementoutAuthorizeTest(){
 
 		movementoutauthorizePage = createmovementoutauthorizePage.ClickAuthorizeButton();
 

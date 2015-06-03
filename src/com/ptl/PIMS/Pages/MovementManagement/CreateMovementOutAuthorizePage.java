@@ -36,7 +36,4 @@ WebDriver driver;
 		return successMessageMovementOutAuthorize.getText();
 	}
 	
-
-
-
 }

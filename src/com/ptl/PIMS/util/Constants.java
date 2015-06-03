@@ -449,6 +449,12 @@ public class Constants {
 	public static final String CreateMovementOutAuthorizeButton = "(.//*[@class='btn btn-primary'])";
 	public static final String MovementOutAuthorizeSuccessMessage = ".//*[@class='alert alert-success']";
 	public static final String AuthorizeMovement_SuccessMessageText = "Saved .* successfully";
+	public static final String MovementinCreate = "(.//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String CreateMovementInButton = "(.//*[@class='btn btn-primary'])";
+	public static final String MovementInSuccessMessage = "//*[@class='alert alert-success']";
+	public static final String MovementIn_SuccessMessageText = "Saved .* successfully";
+	public static final String TopMenu_MovementInLink = "//a[contains(text(),'Movement In Add/Update')]";
+	public static final String MovementInDate = "//*[@id='movement-mov_in_time']";
 	public static String admissionid="T/10345/2015";
 
 
