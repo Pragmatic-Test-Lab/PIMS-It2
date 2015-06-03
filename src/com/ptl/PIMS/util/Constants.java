@@ -409,8 +409,8 @@ public class Constants {
 	public static final String CalendarPopup_SelectYearLP = "' and contains(@class,'year')]";
 	public static final String CalendarPopup_SelectMonthFP = "//div[@style='display: block;']/descendant::span[text()='";
 	public static final String CalendarPopup_SelectMonthLP = "' and contains(@class,'month')]";
-	public static final String CalendarPopup_SelectDayFP = "(.//div[@style='display: block;']/descendant::td[text()='";
-	public static final String CalendarPopup_SelectDayLP = "' and @class='day'])";
+	public static final String CalendarPopup_SelectDayFP = "(.//div[contains(@style,'display: block;')]/descendant::div[@style='display: block;']/descendant::td[text()='";
+	public static final String CalendarPopup_SelectDayLP = "' and (@class='day' or @class = 'day today active')])";
 	public static final String CalendarPopup_SelectHourFP = ".//div[@style='display: block;']/descendant::span[text()='";
 	public static final String CalendarPopup_SelectHourLP = ":00' and contains(@class,'hour')]";
 	public static final String CalendarPopup_SelectMinuteFP = ".//div[@style='display: block;']/descendant::span[text()='";
@@ -505,6 +505,18 @@ public class Constants {
 	public static final String MovementAdmissionIdSearch = "(.//*[@class='form-control'])[1]";
 	public static final String LocationFrom = "//*[@id='movement-mov_location_from_id']";
 	public static final String LocationTo = "//*[@id='movement-mov_location_to_id']";
+	public static final String AdmisssionIdAuthoriseSearch = "//*[@id='w0-filters']/td[2]/input";
+	public static final String AuthoriseMovementOut = "(//*[@class='glyphicon glyphicon-ok'])[1]";
+	public static final String TopMenu_MovementOutAuthorizeLink = "//a[contains(text(),'Movement Out Authorize')]";
+	public static final String CreateMovementOutAuthorizeButton = "(.//*[@class='btn btn-primary'])";
+	public static final String MovementOutAuthorizeSuccessMessage = ".//*[@class='alert alert-success']";
+	public static final String AuthorizeMovement_SuccessMessageText = "Saved .* successfully";
+	public static final String MovementinCreate = "(.//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String CreateMovementInButton = "(.//*[@class='btn btn-primary'])";
+	public static final String MovementInSuccessMessage = "//*[@class='alert alert-success']";
+	public static final String MovementIn_SuccessMessageText = "Saved .* successfully";
+	public static final String TopMenu_MovementInLink = "//a[contains(text(),'Movement In Add/Update')]";
+	public static final String MovementInDate = "//*[@id='movement-mov_in_time']";
 	public static String admissionid="T/10345/2015";
 
 
