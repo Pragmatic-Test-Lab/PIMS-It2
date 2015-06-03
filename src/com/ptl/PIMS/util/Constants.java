@@ -59,6 +59,13 @@ public class Constants {
 	public static final String TopMenu_IncidenceAuthorizeLink = "//a[text()='Incidence Authorizations']";
 	public static final String TopMenu_IncidenceRecaptureAddUpdateLink = "//a[text()='Re-capture Add']";
 	public static final String TopMenu_IncidenceRecaptureAuthorizeLink = "//a[text()='Re-capture Authorize']";
+	public static final String TopMenu_EscortCalendarTopLink= "//a[text()='Calendar']";
+	public static final String TopMenu_EscortManagementTopLink= "//a[text()='Movement Management']";
+	public static final String TopMenu_EscortListAddUpdateLink= "//a[text()='Movement Out Add/Update']";
+	public static final String TopMenu_EscortAuthorizeLink= "//a[text()='Escort Authorize']";
+	public static final String TopMenu_EscortOutLink= "//a[text()='Escort Out']";
+	public static final String TopMenu_EscortInLink= "//a[text()='Escort In']";
+	public static final String TopMenu_EscortInOutAuthorizeLink= "//a[text()='Escort in/out Authorization']";
 	
 	public static final String TopMenu_LogOut = "//a[contains(text(),'Logout')]";
 
@@ -363,6 +370,21 @@ public class Constants {
 	public static final String IncidenceManagement_EventTypeSearch = ".//input[@name='EventSearch[evt_date]']";
 	public static final String IncidenceManagement_EventDescSearch = ".//input[@name='EventSearch[evt_event_description]']";
 
+	//
+	
+	//Escort Management
+	
+	public static final String EscortManagement_UpdateButton = "//button[text()='Update'']";
+	public static final String EscortManagement_AuthorizeButton = "//button[text()='Authorize'']";
+
+	public static final String EscortManagement_CalendarCaseTable = "//button[text()='Add New']";
+	public static final String EscortManagement_CalendarAddNew = "//button[text()='Add New']";
+	public static final String EscortManagement_CalendarCaseDropdown = "(.//select[contains(@name,'cdt_case_id'])";
+	public static final String EscortManagement_CalendarCaseDate = "(.//input[contains(@name,'cdt_next_case_date'])";
+	public static final String EscortManagement_CalendarCaseIsCompleted = "(.//input[contains(@name,'cdt_is_completed'])";
+
+	
+	
 	//
 	
 	//
