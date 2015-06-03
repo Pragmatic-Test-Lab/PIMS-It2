@@ -67,7 +67,7 @@ public class AuthorizeAdmissionPage {
 		
 		CalendarPopup CLNDR = new CalendarPopup(driver);
 		
-		CLNDR.selectDateOfAdmission(DOAdmission, date);
+		CLNDR.selectDateTime(DOAdmission, date);
 	}
 	
 	public String getRegistrationNumber(){

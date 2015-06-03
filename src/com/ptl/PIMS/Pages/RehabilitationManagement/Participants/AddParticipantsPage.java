@@ -48,7 +48,10 @@ public class AddParticipantsPage {
 	private int initialRowCount(WebElement element) {
 		List<WebElement> rows = element.findElements(By.tagName("tr"));	
 		
-		int size = rows.size();		
-		return size;
+		int size = rows.size();
+		
+		if (size == 1) return size;
+		else return size - 1;
+				
 	}
 }
