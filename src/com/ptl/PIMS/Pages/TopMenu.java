@@ -31,6 +31,7 @@ import com.ptl.PIMS.Pages.MealManagement.PurchaseOrderAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.PurchaseOrderPage;
 import com.ptl.PIMS.Pages.MealManagement.RecipePage;
 import com.ptl.PIMS.Pages.MealManagement.SupplierPage;
+import com.ptl.PIMS.Pages.MovementManagement.MovementOutAuthorizePage;
 import com.ptl.PIMS.Pages.MovementManagement.MovementOutPage;
 import com.ptl.PIMS.Pages.RehabilitationManagement.ActionPlans.AddUpdateActionPlanPage;
 import com.ptl.PIMS.Pages.RehabilitationManagement.ActionPlans.AuthorizeActionPlanSelectPage;
@@ -131,6 +132,8 @@ public class TopMenu {
 	WebElement movementmanagement;
 	@FindBy(xpath = Constants.TopMenu_MovementOutLink)
 	WebElement movementoutmanagement;
+	@FindBy(xpath = Constants.TopMenu_MovementOutAuthorizeLink)
+	WebElement movementoutauthorize;
 	
 	@FindBy(xpath = Constants.TopMenu_VOCTopLink)
 	WebElement vocTopLink;
@@ -360,6 +363,15 @@ public class TopMenu {
 		action.moveToElement(transactionManagementTopLink).moveToElement(movementmanagement).moveToElement(movementoutmanagement).click().build().perform();
 		MovementOutPage newmovementoutpage = PageFactory.initElements(driver, MovementOutPage.class);
 		return newmovementoutpage;
+	
+	}
+	
+	public MovementOutAuthorizePage gotomovementAuthorizePage() {
+		// TODO Auto-generated method stub
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(movementmanagement).moveToElement(movementoutauthorize).click().build().perform();
+		MovementOutAuthorizePage newmovementoutauthorizepage = PageFactory.initElements(driver, MovementOutAuthorizePage.class);
+		return newmovementoutauthorizepage;
 	
 	}
 	

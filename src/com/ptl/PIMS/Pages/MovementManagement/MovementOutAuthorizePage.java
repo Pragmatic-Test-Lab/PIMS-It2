@@ -1,0 +1,30 @@
+package com.ptl.PIMS.Pages.MovementManagement;
+
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.ptl.PIMS.util.Constants;
+
+public class MovementOutAuthorizePage {
+	WebDriver driver;
+	@FindBy(xpath = Constants.MovementOutCreate)
+	WebElement createmovementoutaddmission;
+	@FindBy(xpath = Constants.AdmisssionIdAuthoriseSearch)
+	WebElement admisssionidauthorisesearch;
+	@FindBy(xpath = Constants.AuthoriseMovementOut)
+	WebElement authorisemovementout;
+		
+	public MovementOutAuthorizePage(WebDriver dr){
+		driver = dr;
+	}
+	public CreateMovementOutAuthorizePage getCreateMovementOutAuthorizePage(){
+		admisssionidauthorisesearch.sendKeys(Constants.admissionid+ Keys.ENTER);
+		authorisemovementout.click();
+		CreateMovementOutAuthorizePage createmovementoutauthorize = PageFactory.initElements(driver, CreateMovementOutAuthorizePage.class);
+		return createmovementoutauthorize;	
+	}
+	
+}

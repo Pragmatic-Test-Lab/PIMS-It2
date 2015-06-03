@@ -443,6 +443,12 @@ public class Constants {
 	public static final String MovementAdmissionIdSearch = "(.//*[@class='form-control'])[1]";
 	public static final String LocationFrom = "//*[@id='movement-mov_location_from_id']";
 	public static final String LocationTo = "//*[@id='movement-mov_location_to_id']";
+	public static final String AdmisssionIdAuthoriseSearch = "//*[@id='w0-filters']/td[2]/input";
+	public static final String AuthoriseMovementOut = "(//*[@class='glyphicon glyphicon-ok'])[1]";
+	public static final String TopMenu_MovementOutAuthorizeLink = "//a[contains(text(),'Movement Out Authorize')]";
+	public static final String CreateMovementOutAuthorizeButton = "(.//*[@class='btn btn-primary'])";
+	public static final String MovementOutAuthorizeSuccessMessage = ".//*[@class='alert alert-success']";
+	public static final String AuthorizeMovement_SuccessMessageText = "Saved .* successfully";
 	public static String admissionid="T/10345/2015";
 
 
