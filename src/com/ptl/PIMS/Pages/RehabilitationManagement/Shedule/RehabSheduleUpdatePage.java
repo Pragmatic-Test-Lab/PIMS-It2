@@ -24,8 +24,8 @@ public class RehabSheduleUpdatePage extends SheduleCommonElements{
 
 		CalendarPopup CLNDR = new CalendarPopup(driver);
 
-		CLNDR.editDate(StartDate, start);
-		CLNDR.editDate(EndDate, end);
+		CLNDR.selectDate(StartDate, start);
+		CLNDR.selectDate(EndDate, end);
 
 		editField(Organization,organization);
 

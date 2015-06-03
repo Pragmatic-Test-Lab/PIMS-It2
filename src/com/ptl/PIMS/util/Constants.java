@@ -53,6 +53,11 @@ public class Constants {
 	public static final String TopMenu_DisciplineTopLink = "//a[text()='Discipline Management']";
 	public static final String TopMenu_DisciplineAddUpdateLink = "//a[text()='Discipline Add/Update']";
 	public static final String TopMenu_DisciplineAuthorizeLink = "//a[text()='Discipline Authorize']";
+	public static final String TopMenu_IncidenceTopLink = "//a[text()='Incidence Management']";
+	public static final String TopMenu_IncidenceAddLink = "//a[text()='Incidence Add/Update']";
+	public static final String TopMenu_IncidenceAuthorizeLink = "//a[text()='Incidence Authorizations']";
+	public static final String TopMenu_IncidenceRecaptureAddUpdateLink = "//a[text()='Re-capture Add']";
+	public static final String TopMenu_IncidenceRecaptureAuthorizeLink = "//a[text()='Re-capture Authorize']";
 	
 	public static final String TopMenu_LogOut = "//a[contains(text(),'Logout')]";
 
@@ -345,6 +350,26 @@ public class Constants {
 	
 	//
 	
+	//Incidence Management
+	
+	public static final String IncidenceManagement_IncidenceTable = "//*[@id='event_grid']/tbody";
+	public static final String IncidenceManagement_AddNew = "//button[text()='Add New']";
+	public static final String IncidenceManagement_UpdateButton = "//button[text()='Update']";
+	public static final String IncidenceManagement_AuthorizeButton = "//button[text()='Authorize']";	
+	
+	public static final String IncidenceManagement_Date = "(.//input[contains(@id,'-evt_date')])";
+	public static final String IncidenceManagement_EventType = "(.//select[contains(@id,'evt_event_type_id')])";
+	public static final String IncidenceManagement_EventD = "(.//input[contains(@id,'-evt_event_description')])";
+	public static final String IncidenceManagement_Action = "(.//input[contains(@id,'-evt_action')])";
+	public static final String IncidenceManagement_Place = "(.//input[contains(@id,'-evt_place_occured')])";
+	public static final String IncidenceManagement_RecaptureDate = "(.//input[contains(@id,'-evt_recapture_date')])";
+	
+	public static final String IncidenceManagement_RegNoSearch = ".//input[@name='EventSearch[registration_no]']";
+	public static final String IncidenceManagement_EventTypeSearch = ".//input[@name='EventSearch[evt_date]']";
+	public static final String IncidenceManagement_EventDescSearch = ".//input[@name='EventSearch[evt_event_description]']";
+
+	//
+	
 	//
 
 	// Inmate Search Pages
@@ -359,6 +384,21 @@ public class Constants {
 
 
 	// Calendar Popup
+	public static final String CalendarPopup_GoToMonthSelection = "//div[contains(@class,'picker-dropdown') and contains(@style,'display: block;')]"
+			+ "/div[contains(@class,'picker-days')]/descendant::th[contains(@class,'switch')]";
+	public static final String CalendarPopup_GoToYearSelection = "//div[contains(@class,'picker-dropdown') and contains(@style,'display: block;')]"
+			+ "/div[contains(@class,'picker-months')]/descendant::th[contains(@class,'switch')]";
+	public static final String CalendarPopup_SelectYearFP = "//div[@style='display: block;']/descendant::span[text()='";
+	public static final String CalendarPopup_SelectYearLP = "' and contains(@class,'year')]";
+	public static final String CalendarPopup_SelectMonthFP = "//div[@style='display: block;']/descendant::span[text()='";
+	public static final String CalendarPopup_SelectMonthLP = "' and contains(@class,'month')]";
+	public static final String CalendarPopup_SelectDayFP = "(.//div[@style='display: block;']/descendant::td[text()='";
+	public static final String CalendarPopup_SelectDayLP = "' and @class='day'])";
+	public static final String CalendarPopup_SelectHourFP = ".//div[@style='display: block;']/descendant::span[text()='";
+	public static final String CalendarPopup_SelectHourLP = ":00' and contains(@class,'hour')]";
+	public static final String CalendarPopup_SelectMinuteFP = ".//div[@style='display: block;']/descendant::span[text()='";
+	public static final String CalendarPopup_SelectMinuteLP = "' and contains(@class,'minute')]";
+	
 	public static final String CalendarPopup_MonthYearText = "(.//th[@class='datepicker-switch'])[1]";
 	public static final String CalendarPopup_YearText_FirstPart = ".//span[text()='";
 	public static final String CalendarPopup_YearText_LastPart = "' and @class='year']";

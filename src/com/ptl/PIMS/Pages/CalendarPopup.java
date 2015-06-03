@@ -3,6 +3,7 @@ package com.ptl.PIMS.Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import com.ptl.PIMS.util.Constants;
 
 
@@ -26,27 +27,22 @@ public class CalendarPopup extends CommonMethods{
 	}
 	
 	
-	public void selectDate(WebElement calendarInputField, String Year, String Month, String Date){
+	public void selectDate(WebElement calendarField, String Year, String Month, String Date){
 		
-		calendarInputField.click(); 
-		
-		WebElement monthYearText = driver.findElement(By.xpath(Constants.CalendarPopup_MonthYearText));
-		monthYearText.click(); // click on the month & year text
+		calendarField.click();
+		driver.findElement(By.xpath(Constants.CalendarPopup_GoToMonthSelection)).click();
+		driver.findElement(By.xpath(Constants.CalendarPopup_GoToYearSelection)).click(); 
 
-		WebElement yearText = driver.findElement(By.xpath(Constants.CalendarPopup_YearText));
-		yearText.click(); //click on the top year text
+		driver.findElement(By.xpath(Constants.CalendarPopup_SelectYearFP + Year + Constants.CalendarPopup_SelectYearLP)).click();		
+		driver.findElement(By.xpath(Constants.CalendarPopup_SelectMonthFP + Month + Constants.CalendarPopup_SelectMonthLP)).click();
 		
-		YearToBeSelected_XPath = YearText_FirstPart + Year + MonthText_LastPart;
-		driver.findElement(By.xpath(YearToBeSelected_XPath)).click(); //click on the selected year text
-		MonthToBeSelected_XPath = YearText_FirstPart + Month + MonthText_LastPart;
-		driver.findElement(By.xpath(MonthToBeSelected_XPath)).click(); //click on the selected month text
-		DateToBeSelected_XPath = dateText_FirstPart + Date + dateText_LastPart;
-		driver.findElement(By.xpath(DateToBeSelected_XPath)).click(); //click on the selected date text
-		
+		DateToBeSelected_XPath = Constants.CalendarPopup_SelectDayFP + Date + Constants.CalendarPopup_SelectDayLP + "[" + 
+										NoOfElements(driver, Constants.CalendarPopup_SelectDayFP + Date + Constants.CalendarPopup_SelectDayLP) + "]";;
+		driver.findElement(By.xpath(DateToBeSelected_XPath)).click();
 	}
 	
 	
-	public void selectDate(WebElement calendarInputField, String wholeDate){
+	public void selectDate(WebElement calendarField, String wholeDate){
 		
 		String[] splitDate = wholeDate.split("-");
 		
@@ -54,49 +50,20 @@ public class CalendarPopup extends CommonMethods{
 		String month = splitDate[1];
 		String day = splitDate[2];
 		
-		calendarInputField.click(); // open the calendar popup
-		
-		WebElement monthYearText = driver.findElement(By.xpath(Constants.CalendarPopup_MonthYearText));
-		monthYearText.click(); // click on the month & year text
+		calendarField.click();
+		driver.findElement(By.xpath(Constants.CalendarPopup_GoToMonthSelection)).click();
+		driver.findElement(By.xpath(Constants.CalendarPopup_GoToYearSelection)).click(); 
 
-		WebElement yearText = driver.findElement(By.xpath(Constants.CalendarPopup_YearText));
-		yearText.click(); //click on the top year text
+		driver.findElement(By.xpath(Constants.CalendarPopup_SelectYearFP + year + Constants.CalendarPopup_SelectYearLP)).click();		
+		driver.findElement(By.xpath(Constants.CalendarPopup_SelectMonthFP + month + Constants.CalendarPopup_SelectMonthLP)).click();
 		
-		YearToBeSelected_XPath = YearText_FirstPart + year + YearText_LastPart;
-		driver.findElement(By.xpath(YearToBeSelected_XPath)).click(); //click on the selected year text
-		MonthToBeSelected_XPath = MonthText_FirstPart + month + MonthText_LastPart + "[" + NoOfElements(driver, MonthText_FirstPart + month + MonthText_LastPart) + "]";
-		driver.findElement(By.xpath(MonthToBeSelected_XPath)).click(); //click on the selected month text
-		DateToBeSelected_XPath = dateText_FirstPart + day + dateText_LastPart + "[" + NoOfElements(driver, dateText_FirstPart + day + dateText_LastPart) + "]";;
-		driver.findElement(By.xpath(DateToBeSelected_XPath)).click(); //click on the selected date text
-		
-	}
-	
-	public void editDate(WebElement calendarInputField, String wholeDate){
-		
-		String[] splitDate = wholeDate.split("-");
-		
-		String year = splitDate[0];
-		String month = splitDate[1];
-		String day = splitDate[2];
-		
-		calendarInputField.click();
-		driver.findElement(By.xpath(Constants.CalendarPopup_MonthYearText)).click();
-		driver.findElement(By.xpath(Constants.CalendarPopup_YearText)).click(); 
-		
-		YearToBeSelected_XPath = Constants.CalendarPopup_AdmissionYearText_FirstPart + year + Constants.CalendarPopup_AdmissionYearText_LastPart;
-		driver.findElement(By.xpath(YearToBeSelected_XPath)).click();
-		
-		MonthToBeSelected_XPath = MonthText_FirstPart + month + MonthText_LastPart + "[" + NoOfElements(driver, MonthText_FirstPart + month + MonthText_LastPart) + "]";
-		driver.findElement(By.xpath(MonthToBeSelected_XPath)).click();
-		
-		DateToBeSelected_XPath = dateText_FirstPart + day + dateText_LastPart + "[" + NoOfElements(driver, dateText_FirstPart + day + dateText_LastPart) + "]";;
+		DateToBeSelected_XPath = Constants.CalendarPopup_SelectDayFP + day + Constants.CalendarPopup_SelectDayLP + "[" + 
+										NoOfElements(driver, Constants.CalendarPopup_SelectDayFP + day + Constants.CalendarPopup_SelectDayLP) + "]";;
 		driver.findElement(By.xpath(DateToBeSelected_XPath)).click();
 		
 	}
 
-	
-	//created for admission Date
-	public void selectDateOfAdmission(WebElement calendarInputField, String wholeDate){
+	public void selectDateTime(WebElement calendarField, String wholeDate){
 		
 		String[] splitDate = wholeDate.split("-");
 		
@@ -104,23 +71,23 @@ public class CalendarPopup extends CommonMethods{
 		String month = splitDate[1];
 		String day = splitDate[2];
 		
-		calendarInputField.click();
-		driver.findElement(By.xpath(Constants.CalendarPopup_AdmissionMonthYearText)).click();
-		driver.findElement(By.xpath(Constants.CalendarPopup_AdmissionYearText)).click(); 
+		calendarField.click();
+		driver.findElement(By.xpath(Constants.CalendarPopup_GoToMonthSelection)).click();
+		driver.findElement(By.xpath(Constants.CalendarPopup_GoToYearSelection)).click(); 
+
+		driver.findElement(By.xpath(Constants.CalendarPopup_SelectYearFP + year + Constants.CalendarPopup_SelectYearLP)).click();		
+		driver.findElement(By.xpath(Constants.CalendarPopup_SelectMonthFP + month + Constants.CalendarPopup_SelectMonthLP)).click();
 		
-		YearToBeSelected_XPath = Constants.CalendarPopup_AdmissionYearText_FirstPart + year + Constants.CalendarPopup_AdmissionYearText_LastPart;
-		driver.findElement(By.xpath(YearToBeSelected_XPath)).click();
-		
-		MonthToBeSelected_XPath = MonthText_FirstPart + month + MonthText_LastPart + "[" + NoOfElements(driver, MonthText_FirstPart + month + MonthText_LastPart) + "]";
-		driver.findElement(By.xpath(MonthToBeSelected_XPath)).click();
-		
-		DateToBeSelected_XPath = dateText_FirstPart + day + dateText_LastPart + "[" + NoOfElements(driver, dateText_FirstPart + day + dateText_LastPart) + "]";;
+		DateToBeSelected_XPath = Constants.CalendarPopup_SelectDayFP + day + Constants.CalendarPopup_SelectDayLP + "[" + 
+										NoOfElements(driver, Constants.CalendarPopup_SelectDayFP + day + Constants.CalendarPopup_SelectDayLP) + "]";;
 		driver.findElement(By.xpath(DateToBeSelected_XPath)).click();
 		
-		driver.findElement(By.xpath("//*[@class='hour' and text()='0:00']")).click();
-		driver.findElement(By.xpath("//*[@class='minute' and text()='0:00']")).click();
-
+		String hour = "0";
+		String min = "00";
 		
+		driver.findElement(By.xpath(Constants.CalendarPopup_SelectHourFP + hour + Constants.CalendarPopup_SelectHourLP)).click();
+		driver.findElement(By.xpath(Constants.CalendarPopup_SelectMinuteFP + hour + ":" + min + Constants.CalendarPopup_SelectMinuteLP)).click();
 	}
+
 
 }

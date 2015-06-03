@@ -13,6 +13,10 @@ import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveBySPAppealSelect
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveSendToCourtAppealSelect;
 import com.ptl.PIMS.Pages.DisciplineManagement.AuthorizeDiscipline_SelectRecordPage;
 import com.ptl.PIMS.Pages.DisciplineManagement.EditAddDisciplinePage;
+import com.ptl.PIMS.Pages.IncidenceManagement.IncidenceAddInmateSelectionPage;
+import com.ptl.PIMS.Pages.IncidenceManagement.IncidenceAuthorizeInmateSelectionPage;
+import com.ptl.PIMS.Pages.IncidenceManagement.Recapture.RecaptureAddInmatePage;
+import com.ptl.PIMS.Pages.IncidenceManagement.Recapture.RecaptureAuthorizeSelectionPage;
 import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialEveningPage;
 import com.ptl.PIMS.Pages.IndustrialManagement.IndustrialMorningPage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
@@ -160,6 +164,17 @@ public class TopMenu {
 	WebElement discAddUpdateLink;
 	@FindBy(xpath = Constants.TopMenu_DisciplineAuthorizeLink)
 	WebElement discAuthorizeLink;
+
+	@FindBy(xpath = Constants.TopMenu_IncidenceTopLink)
+	WebElement inciTopLink;
+	@FindBy(xpath = Constants.TopMenu_IncidenceAddLink)
+	WebElement inciAddUpdateLink;
+	@FindBy(xpath = Constants.TopMenu_IncidenceAuthorizeLink)
+	WebElement inciAuthorizeLink;
+	@FindBy(xpath = Constants.TopMenu_IncidenceRecaptureAddUpdateLink)
+	WebElement inciRecapAddUpdateLink;
+	@FindBy(xpath = Constants.TopMenu_IncidenceRecaptureAuthorizeLink)
+	WebElement inciRecapAuthorizeLink;
 	
 	@FindBy(xpath = Constants.TopMenu_LogOut)
 	WebElement logOut;
@@ -470,6 +485,35 @@ public class TopMenu {
 		action.moveToElement(transactionManagementTopLink).moveToElement(discTopLink).moveToElement(discAuthorizeLink).click().build().perform();
 		return PageFactory.initElements(driver, AuthorizeDiscipline_SelectRecordPage.class);
 	}
+	
+	
+	public IncidenceAddInmateSelectionPage gotoAddIncidence() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(inciTopLink).moveToElement(inciAddUpdateLink).click().build().perform();
+		return PageFactory.initElements(driver, IncidenceAddInmateSelectionPage.class);
+	}
+	
+	public IncidenceAuthorizeInmateSelectionPage gotoAuthIncidence() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(inciTopLink).moveToElement(inciAuthorizeLink).click().build().perform();
+		return PageFactory.initElements(driver, IncidenceAuthorizeInmateSelectionPage.class);
+	}
+	
+	public RecaptureAddInmatePage gotoAddRecapIncidence() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(inciTopLink).moveToElement(inciRecapAddUpdateLink).click().build().perform();
+		return PageFactory.initElements(driver, RecaptureAddInmatePage.class);
+	}
+	
+	public RecaptureAuthorizeSelectionPage gotoAuthorizeRecapIncidence() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(inciTopLink).moveToElement(inciRecapAuthorizeLink).click().build().perform();
+		return PageFactory.initElements(driver, RecaptureAuthorizeSelectionPage.class);
+	}
 
 
 	
@@ -479,6 +523,8 @@ public class TopMenu {
 		TestBase.isLoggedIn = false;
 		return loginPage;		
 	}
+
+
 
 
 

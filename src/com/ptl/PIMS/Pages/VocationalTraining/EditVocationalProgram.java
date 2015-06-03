@@ -29,8 +29,8 @@ public class EditVocationalProgram extends VocationalTrainingAddUpdatePageCommon
 		
 		CalendarPopup CLNDR = new CalendarPopup(driver); 
 		
-		CLNDR.editDate(StartDate, vocStartDate);
-		CLNDR.editDate(EndDate, vocEndDate);
+		CLNDR.selectDate(StartDate, vocStartDate);
+		CLNDR.selectDate(EndDate, vocEndDate);
 		
 		UpdateButton.click();
 		

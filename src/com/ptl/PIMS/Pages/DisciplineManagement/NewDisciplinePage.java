@@ -24,7 +24,7 @@ public class NewDisciplinePage extends CommonDisciplineElements{
 		
 		CalendarPopup CLNDR = new CalendarPopup(driver);		
 		CLNDR.selectDate(ComplaintDOIncident, doIncident);
-		CLNDR.editDate(ComplaintDOInquiry, doIncident);
+		CLNDR.selectDate(ComplaintDOInquiry, doIncident);
 		
 		ComplaintReoprtedByOfficer.click();
 		ComplaintReoprtedByOfficerName.sendKeys(officer);
