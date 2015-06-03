@@ -443,6 +443,8 @@ public class Constants {
 	public static final String MovementAdmissionIdSearch = "(.//*[@class='form-control'])[1]";
 	public static final String LocationFrom = "//*[@id='movement-mov_location_from_id']";
 	public static final String LocationTo = "//*[@id='movement-mov_location_to_id']";
+	public static String admissionid="T/10345/2015";
+
 
 
 	

@@ -19,14 +19,14 @@ public class SelectMovementOutAdmissionPage {
 	WebElement movementadmissionid;
 	@FindBy(xpath = Constants.MovementAdmissionIdSearch)
 	WebElement admisssionidsearch;
-
+	
 
 	public SelectMovementOutAdmissionPage(WebDriver dr){
 		driver = dr;
 	}
 		
 	public CreateMovementOutPage SearchAdmissionID(){
-		admisssionidsearch.sendKeys("T/10345/2015"+ Keys.ENTER);
+		admisssionidsearch.sendKeys(Constants.admissionid+ Keys.ENTER);
 		createmovementout.click();
 		CreateMovementOutPage createmovementout = PageFactory.initElements(driver, CreateMovementOutPage.class);
 		return createmovementout;	
