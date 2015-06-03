@@ -17,6 +17,7 @@ public class CommonMethods {
 
 	public boolean checkElementIsPresent(WebDriver driver , By byCondition){
 		try {
+			Thread.sleep(2000);
 		   driver.findElement(byCondition);
 		} catch (Exception e) {
 			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);

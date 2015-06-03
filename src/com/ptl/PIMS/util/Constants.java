@@ -39,6 +39,22 @@ public class Constants {
 	public static final String TopMenu_VOCAuth = "//a[text()='Vocational Training Programs Authorizations']";
 	public static final String TopMenu_VOCPart = "//a[text()='Vocational Training Programe Participants']";
 	public static final String TopMenu_VOCAuthPart = "//a[text()='Vocational Training Program Participants Authorization']";
+	
+	public static final String TopMenu_RehabTopLink = "//a[text()='Rehabilitation Management']";
+	public static final String TopMenu_ActionPlanTop = "//a[text()='Action Plan']";
+	public static final String TopMenu_ActionPlanAdd = "//a[text()='Action Plan Add/Update']";
+	public static final String TopMenu_ActionPlanAuthorize = "//a[text()='Action Plan Authorize']";
+	public static final String TopMenu_RehabProgram = "//a[text()='Rehabilitation Programme']";
+	public static final String TopMenu_RehabSheduleTop = "//a[text()='Schedule Rehabilitation Programs']";
+	public static final String TopMenu_RehabSheduleAdd = "//a[text()='Schedule Rehabilitation Programs Add/Update']";
+	public static final String TopMenu_RehabSheduleAuth = "//a[text()='Schedule Rehabilitation Programs Authorize']";
+	public static final String TopMenu_RehabSheduleParticipantsTop = "//a[text()='Rehabilitation Participants']";
+	public static final String TopMenu_RehabSheduleParticipants = "//a[text()='Rehabilitation Participants Add/Update']";
+	public static final String TopMenu_RehabSheduleParticipantAuth = "//a[text()='Rehabilitation Participants Authorizations']";
+	public static final String TopMenu_DisciplineTopLink = "//a[text()='Discipline Management']";
+	public static final String TopMenu_DisciplineAddUpdateLink = "//a[text()='Discipline Add/Update']";
+	public static final String TopMenu_DisciplineAuthorizeLink = "//a[text()='Discipline Authorize']";
+	
 	public static final String TopMenu_LogOut = "//a[contains(text(),'Logout')]";
 
 	//Iteration 1 Pages
@@ -250,9 +266,80 @@ public class Constants {
 	public static final String VOCParticipants_UpdateButton = "//button[text()='Update']";
 	public static final String VOCParticipantsAuth_AuthorizeButton = "//button[text()='Authorize']";
 
-	//
 
+	public static final String RehabilitationManagement_APPrisonSearch = "//input[@name='RehabilitationActionPlanHeaderSearch[rph_institute_id]']";
+	public static final String RehabilitationManagement_APYearSearch = "//input[@name='RehabilitationActionPlanHeaderSearch[rph_year]']";
+	public static final String RehabilitationManagement_FirstRecord = "(.//span[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String RehabilitationManagement_NewAPButton = "//a[@href='/PIMS3/web/rehabilitation-action-plan-header/create']";
+	
+	public static final String RehabilitationManagement_APYear = "//*[@id='rehabilitationactionplanheader-rph_year']";
+	public static final String RehabilitationManagement_RehabTable = "//*[@id='rehabilitation_action_plan_grid']/tbody";
+	public static final String RehabilitationManagement_AddNew = "//button[text()='Add New']";
+	public static final String RehabilitationManagement_APRehabProgram = "(.//*[contains(@id,'-rap_rehabilitation_program_id')])";
+	public static final String RehabilitationManagement_APRehabStart = "(.//*[contains(@id,'-rap_start_date')])";
+	public static final String RehabilitationManagement_APRehabEnd = "(.//*[contains(@id,'-rap_end_date')])";
+	public static final String RehabilitationManagement_APRehabCost = "(.//*[contains(@id,'-rap_cost')])";
+	public static final String RehabilitationManagement_CreateButton = "//button[text()='Create']";
+	public static final String RehabilitationManagement_UpdateButton = "//button[text()='Update']";
+	public static final String RehabilitationManagement_AuthorizeButton = "//button[text()='Authorize']";
+	
+	public static final String RehabilitationManagement_searchCode = "//input[@name='RehabilitationProgramSearch[rep_code]']";
+	public static final String RehabilitationManagement_searchName = "//input[@name='RehabilitationProgramSearch[rep_name]']";
+	public static final String RehabilitationManagement_newProgramButton = "//a[@href='/PIMS3/web/rehabilitation-program/create']";
+	public static final String RehabilitationManagement_RehabCode = "//input[@name='RehabilitationProgram[rep_code]']";
+	public static final String RehabilitationManagement_RehabName = "//input[@name='RehabilitationProgram[rep_name]']";
+	public static final String RehabilitationManagement_RehabCategory = "//select[@name='RehabilitationProgram[rep_rehabilitation_program_category_id]']";
+	
+	public static final String RehabilitationManagementSearch_SheProg = "//input[@name='RehabilitationParticipantsSearch[rehabilitation_programe]']";
+	public static final String RehabilitationManagementSearch_SheStart = "//input[@name='RehabilitationParticipantsSearch[rhp_start_date]']";
+	public static final String RehabilitationManagementSearch_SheEnd = "//input[@name='RehabilitationParticipantsSearch[rhp_end_date]']";
+	public static final String RehabilitationManagementSearch_SheOrg = "//input[@name='RehabilitationParticipantsSearch[rhp_conducted_organization]']";
+	public static final String RehabilitationManagement_NewSheduleButton = "//a[@href='/PIMS3/web/shedule-rehabilitation-programe/create']";
+	public static final String RehabilitationManagement_SheduleProgram = "//select[@name='RehabilitationParticipants[rhp_rehabilitation_program_id]']";
+	public static final String RehabilitationManagement_SheduleStart = "//input[@name='RehabilitationParticipants[rhp_start_date]']";
+	public static final String RehabilitationManagement_SheduleEnd = "//input[@name='RehabilitationParticipants[rhp_end_date]']";
+	public static final String RehabilitationManagement_SheduleOrgan = "//input[@name='RehabilitationParticipants[rhp_conducted_organization]']";
+	public static final String RehabilitationManagement_OkFirstRecord = "(.//span[@class='glyphicon glyphicon-ok'])[1]";
+	
+	public static final String RehabilitationManagement_ParticipantTable = "//*[@id='rehabilitation_participants_details_grid']/tbody";
+	public static final String RehabilitationManagement_ParticipantInmate = "(.//select[contains(@id,'rpd_admission_id')])";
+	public static final String RehabilitationManagement_ParticipantRemark = "(.//input[contains(@id,'rpd_remarks')])";
+
+
+	
+	public static final String DisciplineManagement_NewDiscButton = "//a[@href='/PIMS3/web/discipline/selectadmission']";
+	public static final String DisciplineManagement_FirstPencil = "(.//span[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String DisciplineManagement_FirstOk = "(.//span[@class='glyphicon glyphicon-ok'])[1]";
+	public static final String DisciplineManagement_SearchComId = "//input[@name='DisciplineSearch[dis_id]']";
+	public static final String DisciplineManagement_SearchRegNo = "//input[@name='DisciplineSearch[registration_no]']";
+	public static final String DisciplineManagement_SearchDOIncident = "//input[@name='DisciplineSearch[dis_date_of_incident]']";
+	public static final String DisciplineManagement_SearchDOInquiry = "//input[@name='DisciplineSearch[dis_date_of_inquiry]']";
+	
+	public static final String DisciplineManagement_ComplaintTab = "//a[text()='Complaint']";
+	public static final String DisciplineManagement_ComplaintDOInquiry = "//*[@id='discipline-dis_date_of_inquiry']";
+	public static final String DisciplineManagement_ComplaintDOIncident = "//*[@id='discipline-dis_date_of_incident']";
+	public static final String DisciplineManagement_ComplaintReoprtedByInmate = "//*[@id='discipline-dis_is_reported_by_inmate']";
+	public static final String DisciplineManagement_ComplaintReoprtedByInmateRegNo = "//input[@id='discipline-dis_reported_by_reg_no']";
+	public static final String DisciplineManagement_ComplaintReoprtedByOfficer = "//*[@id='discipline-dis_is_reported_by_officer']";
+	public static final String DisciplineManagement_ComplaintReoprtedByOfficerName = "//input[@id='discipline-dis_reported_by_officer_name']";
+	public static final String DisciplineManagement_ComplaintPlace = "//input[@id='discipline-dis_place']";
+	public static final String DisciplineManagement_ComplaintComplaint = "//input[@id='discipline-dis_complaint']";
+	public static final String DisciplineManagement_ComplaintInquiryBy = "//input[@id='discipline-dis_inquiry_by']";
+	
+	public static final String DisciplineManagement_JudgementTab = "//a[text()='Judgement']";
+	public static final String DisciplineManagement_JudgementDate = "//*[@id='discipline-dis_judgement_date']";
+	public static final String DisciplineManagement_JudgementGuilty = "//*[@id='discipline-dis_decision']";
+	public static final String DisciplineManagement_JudgementText = "//*[@id='discipline-dis_judgement']";
+	public static final String DisciplineManagement_JudgementDeductedRemision = "//*[@id='discipline-dis_deducted_remision_marks']";
+	public static final String DisciplineManagement_JudgementGoodConduct = "//*[@id='discipline-dis_added_remision_marks']";
+	public static final String DisciplineManagement_JudgementDOGoodConduct = "//*[@id='discipline-dis_added_date_of_remision_marks']";
+
+	public static final String DisciplineManagement_CreateButton = "//button[text()='Create']";
+	public static final String DisciplineManagement_UpdateButton = "//button[text()='Update']";
+	public static final String DisciplineManagement_AuthorizeButton = "//button[text()='Authorize']";	
+	
 	//
+	
 	//
 
 	// Inmate Search Pages
@@ -344,6 +431,7 @@ public class Constants {
 	
 	/*public static final String RecipeCountitem = "(.//select[contains(@id, '-red_kitchen_item_id')])";
 	public static final String RecipeCountquantity = "(.//input[contains(@id, '-red_quantity')])";*/
+
 
 
 
