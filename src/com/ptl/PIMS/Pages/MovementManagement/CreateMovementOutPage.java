@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.ptl.PIMS.Pages.CalendarPopup;
 import com.ptl.PIMS.util.Constants;
+import com.ptl.PIMS.util.TestUtil;
 
 public class CreateMovementOutPage {
 	WebDriver driver;
@@ -45,6 +47,12 @@ public class CreateMovementOutPage {
 		else{
 			locationto.sendKeys("ward1");
 		}
+		
+		
+		CalendarPopup CLNDR = new CalendarPopup(driver);
+		
+		CLNDR.selectDateTime(driver.findElement(By.xpath(Constants.MovementOutDate)), TestUtil.getTodaysDateandtimeOut());	
+	
 		return b;
 	}
 	
