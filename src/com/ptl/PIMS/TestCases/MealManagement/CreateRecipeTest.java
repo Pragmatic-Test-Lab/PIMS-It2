@@ -1,8 +1,5 @@
 	package com.ptl.PIMS.TestCases.MealManagement;
 
-import java.util.Random;
-
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.ptl.PIMS.Pages.TopMenu;
@@ -29,19 +26,15 @@ public class CreateRecipeTest extends TestBase {
 	}	
 
 	@Test(dependsOnMethods="gotoNewRecipePage")
-	public void fillRecipe(){
-		createrecipepage.EnterRecipeData("Dhal","200");		
-	}
-
-	@Test(dependsOnMethods="fillRecipe")
-	public void submitRecipeTest(){
-
+	public void createRecipe(){
+		
+		createrecipepage.EnterRecipeData("Dhal","200");	
 		recipepage = createrecipepage.ClickCreateButton();
 
-
-		Assert.assertTrue(createrecipepage.getSuccessMessage().matches(Constants.CreateRecipe_SuccessMessageText),
-				"Recipe not created");				
+		assertTrue(recipepage.getSuccessMessage().matches(Constants.CreateRecipe_SuccessMessageText),
+				"Recipe not created");
 	}
+
 
 	
 

@@ -2,7 +2,6 @@ package com.ptl.PIMS.TestCases.IncidenceManagement;
 
 import java.util.Hashtable;
 
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -31,7 +30,7 @@ public class IncidenceTest extends TestBase{
 
 		addIncidence = inicidenceAddPage.addIncidences(data.get("Date"), data.get("EventType"), data.get("EventD"), data.get("Action"), data.get("Place"));
 				
-		Assert.assertTrue(addIncidence.successMessageAvaiable(), "Success message was not found in Add Incidence.");		
+		assertTrue(addIncidence.successMessageAvaiable(), "Success message was not found in Add Incidence.");		
 	}
 	
 	@Test(dataProvider = "getIncidenceData", dependsOnMethods = "createIncidence")
@@ -44,7 +43,7 @@ public class IncidenceTest extends TestBase{
 
 		authIncidenceSelect = authIncidence.authorizeRecord();
 				
-		Assert.assertTrue(authIncidenceSelect.successMessageAvaiable(), "Success message was not found in Authorize Incidence.");		
+		assertTrue(authIncidenceSelect.successMessageAvaiable(), "Success message was not found in Authorize Incidence.");		
 	}
 	
 	@Test(dataProvider = "getIncidenceData", dependsOnMethods = "authorizeIncidence")
@@ -57,7 +56,7 @@ public class IncidenceTest extends TestBase{
 
 		recapSelection = recapPage.addRecapture(data.get("EventD"), data.get("Action"), data.get("Recap Date"));
 				
-		Assert.assertTrue(recapSelection.successMessageAvaiable(), "Success message was not found in Add Recapture.");		
+		assertTrue(recapSelection.successMessageAvaiable(), "Success message was not found in Add Recapture.");		
 	}
 	
 	@Test(dataProvider = "getIncidenceData", dependsOnMethods = "recordRecapture")
@@ -70,7 +69,7 @@ public class IncidenceTest extends TestBase{
 
 		authRecapSelect = authRecap.authorizeRecapture();
 				
-		Assert.assertTrue(authRecapSelect.successMessageAvaiable(), "Success message was not found in Authorize Recapture.");		
+		assertTrue(authRecapSelect.successMessageAvaiable(), "Success message was not found in Authorize Recapture.");		
 	}
 	
 	@DataProvider

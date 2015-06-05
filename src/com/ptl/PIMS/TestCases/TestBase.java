@@ -2,10 +2,16 @@ package com.ptl.PIMS.TestCases;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
@@ -26,7 +32,7 @@ import com.ptl.PIMS.util.Constants;
 import com.ptl.PIMS.util.ReadXLS;
 
 
-public class TestBase {
+public class TestBase{
 
 	public static Logger APPLICATION_LOGS = null;
 	public static Properties CONFIG = null;
@@ -41,7 +47,7 @@ public class TestBase {
 	//inmate data
 	public static String registrationNo = "";
 	public static String progCode = "";
-	public static String id = "";
+	public static String mealId = "";
 
 	@BeforeSuite
 	public void initConfiguration() {
@@ -171,6 +177,18 @@ public class TestBase {
 		
 		return homePage;
 
+	}
+	
+	public void assertTrue(boolean condition, String message){		
+
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(scrFile, new File("c:\\Selenium-TestRun\\Failure Screenshots\\Iteration 2\\" 
+							+ (new SimpleDateFormat("yyyy-MM-dd\\HH-mm-ss").format(Calendar.getInstance().getTime())) + " - " + message + ".png"));
+		} catch (IOException e1) {}		
+		
+		Assert.assertTrue(condition, message);
+		
 	}
 	
 	

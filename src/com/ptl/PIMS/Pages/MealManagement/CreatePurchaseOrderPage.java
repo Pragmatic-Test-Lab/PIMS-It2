@@ -8,7 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.PIMS.util.Constants;
 
-public class CreatePurchaseOrderPage {
+public class CreatePurchaseOrderPage{
+	
 	WebDriver driver;
 	@FindBy(xpath = Constants.PurchaseOrderId)
 	WebElement purchaseorderid;
@@ -45,12 +46,5 @@ public class CreatePurchaseOrderPage {
 		PurchaseOrderPage purchaseorderpage = PageFactory.initElements(driver, PurchaseOrderPage.class);
 		return purchaseorderpage;
 	}
-	public String getSuccessMessage(){
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessagePurchaseOrder.getText();
-	}	
+	
 }

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.PIMS.util.Constants;
 
-public class CreateKitchenItemPage {
+public class CreateKitchenItemPage{
 
 	WebDriver driver;
 
@@ -45,13 +45,5 @@ public class CreateKitchenItemPage {
 		return kitchenitempage;
 	}
 
-	public String getSuccessMessage(){
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessagekitchen.getText();
-	}
 
 }

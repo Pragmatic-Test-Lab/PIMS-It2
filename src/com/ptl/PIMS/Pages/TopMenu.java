@@ -14,7 +14,7 @@ import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveSendToCourtAppea
 import com.ptl.PIMS.Pages.DisciplineManagement.AuthorizeDiscipline_SelectRecordPage;
 import com.ptl.PIMS.Pages.DisciplineManagement.EditAddDisciplinePage;
 import com.ptl.PIMS.Pages.EscortManagement.EscortAddUpdatePage;
-import com.ptl.PIMS.Pages.EscortManagement.EscortAuhtorizeSelectPage;
+import com.ptl.PIMS.Pages.EscortManagement.EscortAuthorizeSelectPage;
 import com.ptl.PIMS.Pages.EscortManagement.Calendar.CalendarInmateSelectPage;
 import com.ptl.PIMS.Pages.EscortManagement.TimeRecord.EscortOutInAuthorizeSelectPage;
 import com.ptl.PIMS.Pages.EscortManagement.TimeRecord.RecordEscortInSelectPage;
@@ -602,11 +602,11 @@ public class TopMenu {
 		return PageFactory.initElements(driver, EscortAddUpdatePage.class);
 	}
 	
-	public EscortAuhtorizeSelectPage gotoEscortAuthorize() {
+	public EscortAuthorizeSelectPage gotoEscortAuthorize() {
 		
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(escortTopLink).moveToElement(escortAuthorizeLink).click().build().perform();
-		return PageFactory.initElements(driver, EscortAuhtorizeSelectPage.class);
+		return PageFactory.initElements(driver, EscortAuthorizeSelectPage.class);
 	}
 	
 	public RecordEscortOutSelectPage gotoEscortOut() {

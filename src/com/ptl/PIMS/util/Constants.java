@@ -374,16 +374,27 @@ public class Constants {
 	
 	//Escort Management
 	
+	public static final String EscortManagement_CreateButton = "//button[text()='Create'']";
 	public static final String EscortManagement_UpdateButton = "//button[text()='Update'']";
 	public static final String EscortManagement_AuthorizeButton = "//button[text()='Authorize'']";
-
-	public static final String EscortManagement_CalendarCaseTable = "//button[text()='Add New']";
+	public static final String EscortManagement_SearchID = "//input[@name='EscortHeaderSearch[esh_id]']";
+	public static final String EscortManagement_SearchDate = "//input[@name='EscortHeaderSearch[esh_date]']";
+	public static final String EscortManagement_FirstRecord = "(.//span[@class='glyphicon glyphicon-pencil'])[1]";
+	
+	public static final String EscortManagement_CalendarCaseTable = "//*[@id='case_dates_grid']/tbody";
 	public static final String EscortManagement_CalendarAddNew = "//button[text()='Add New']";
 	public static final String EscortManagement_CalendarCaseDropdown = "(.//select[contains(@name,'cdt_case_id'])";
 	public static final String EscortManagement_CalendarCaseDate = "(.//input[contains(@name,'cdt_next_case_date'])";
 	public static final String EscortManagement_CalendarCaseIsCompleted = "(.//input[contains(@name,'cdt_is_completed'])";
 
-	
+	public static final String EscortManagement_NewEscortButton = "//a[@href='/PIMS3/web/escort-header/create']";
+	public static final String EscortManagement_NewEscortCalendarField = "//*[@id='escortheader-esh_date']";
+	public static final String EscortManagement_EscortTable = "//*[@id='escort_grid']/tbody";
+	public static final String EscortManagement_EscortDetails = "(.//input[contains(@id,'-esc_escort_details')])";
+	public static final String EscortManagement_EscortRegistrationNo = "(.//select[contains(@id,'-esc_admission_id')]/option[@selected=''])";
+	public static final String EscortManagement_EscortCase = "(.//select[contains(@id,'-esc_case_id')]/option[@selected=''])";
+	public static final String EscortManagement_EscortCourt = "(.//input[contains(@id,'court-')])";
+
 	
 	//
 	
@@ -410,25 +421,11 @@ public class Constants {
 	public static final String CalendarPopup_SelectMonthFP = "//div[@style='display: block;']/descendant::span[text()='";
 	public static final String CalendarPopup_SelectMonthLP = "' and contains(@class,'month')]";
 	public static final String CalendarPopup_SelectDayFP = "(.//div[contains(@style,'display: block;')]/descendant::div[@style='display: block;']/descendant::td[text()='";
-	public static final String CalendarPopup_SelectDayLP = "' and (@class='day' or @class = 'day today active')])";
+	public static final String CalendarPopup_SelectDayLP = "' and not(@class='old day' or @class='new day')])";
 	public static final String CalendarPopup_SelectHourFP = ".//div[@style='display: block;']/descendant::span[text()='";
 	public static final String CalendarPopup_SelectHourLP = ":00' and contains(@class,'hour')]";
 	public static final String CalendarPopup_SelectMinuteFP = ".//div[@style='display: block;']/descendant::span[text()='";
 	public static final String CalendarPopup_SelectMinuteLP = "' and contains(@class,'minute')]";
-	
-	public static final String CalendarPopup_MonthYearText = "(.//th[@class='datepicker-switch'])[1]";
-	public static final String CalendarPopup_YearText_FirstPart = ".//span[text()='";
-	public static final String CalendarPopup_YearText_LastPart = "' and @class='year']";
-	public static final String CalendarPopup_MonthText_FirstPart = "(.//span[text()='";
-	public static final String CalendarPopup_MonthText_LastPart = "' and @class='month'])";
-	public static final String CalendarPopup_YearText = "(.//th[@class='datepicker-switch'])[2]";
-	public static final String CalendarPopup_DateText_FirstPart = "(.//td[contains(@class,'day')][text()='";
-	public static final String CalendarPopup_DateText_LastPart = "'])";
-	public static final String CalendarPopup_HourText_FirstPart = "//*[text()='";
-	public static final String CalendarPopup_HourText_LastPart = "']";
-	public static final String CalendarPopup_MinuteText_FirstPart = "//*[text()='";
-	public static final String CalendarPopup_MinuteText_LastPart = "']";
-	public static final String GoodReceivedAuthorize = null;
 
 	//Industrial Management
 

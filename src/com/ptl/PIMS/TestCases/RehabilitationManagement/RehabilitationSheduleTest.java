@@ -3,7 +3,6 @@ package com.ptl.PIMS.TestCases.RehabilitationManagement;
 import java.util.Hashtable;
 import java.util.Random;
 
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -39,7 +38,7 @@ public class RehabilitationSheduleTest extends TestBase{
 		rehabCode = Integer.toString((new Random()).nextInt(99999));
 		
 		rehabPage = newRehabPage.createRehab(rehabCode, data.get("ProgName") + rehabCode, data.get("ProgCat"));
-		Assert.assertTrue(rehabPage.successMessageAvaiable(), "Success message was not found in Create Rehabilitation Program.");		
+		assertTrue(rehabPage.successMessageAvaiable(), "Success message was not found in Create Rehabilitation Program.");		
 	}
 	
 	@Test(dataProvider = "getRehabData", dependsOnMethods = "createRehabilitationProgram")
@@ -51,7 +50,7 @@ public class RehabilitationSheduleTest extends TestBase{
 		rehabCode = "U" + Integer.toString((new Random()).nextInt(9999));
 
 		rehabPage = editRehabPage.editRehab(rehabCode, data.get("ProgName") + rehabCode, data.get("ProgCat"));
-		Assert.assertTrue(rehabPage.successMessageAvaiable(), "Success message was not found in Update Rehabilitation Program.");		
+		assertTrue(rehabPage.successMessageAvaiable(), "Success message was not found in Update Rehabilitation Program.");		
 	}
 	
 	@Test(dataProvider = "getRehabData", dependsOnMethods = "editRehabilitationProgram")
@@ -63,7 +62,7 @@ public class RehabilitationSheduleTest extends TestBase{
 		rehabShedPage = addShedulePage.createRehabShedule(data.get("ProgName") + rehabCode,
 				data.get("start"), data.get("end"), data.get("organization"));
 
-		Assert.assertTrue(rehabShedPage.successMessageAvaiable(), "Success message was not found in Add Rehabilitation Shedule.");		
+		assertTrue(rehabShedPage.successMessageAvaiable(), "Success message was not found in Add Rehabilitation Shedule.");		
 	}
 	
 	@Test(dataProvider = "getRehabData", dependsOnMethods = "createRehabShedule")
@@ -73,7 +72,7 @@ public class RehabilitationSheduleTest extends TestBase{
 		RehabSheduleUpdatePage editShedPage = rehabShedPage.clickFirstShedule();
 		
 		rehabShedPage = editShedPage.editRehabShedule(data.get("ProgName") + rehabCode, data.get("Ustart"), data.get("Uend"), data.get("Uorganization"));
-		Assert.assertTrue(rehabPage.successMessageAvaiable(), "Success message was not found in Update Rehabilitation Shedule.");
+		assertTrue(rehabPage.successMessageAvaiable(), "Success message was not found in Update Rehabilitation Shedule.");
 	}
 	
 	@Test(dataProvider = "getRehabData", dependsOnMethods = "updateRehabShedule")
@@ -84,7 +83,7 @@ public class RehabilitationSheduleTest extends TestBase{
 		AuthorizeRehabShedule authShedPage = authRehabShedPage.clickFirstShedule();
 		
 		authRehabShedPage = authShedPage.authorizeShedule();
-		Assert.assertTrue(authRehabShedPage.successMessageAvaiable(), "Success message was not found in Authorize Rehabilitation Shedule.");
+		assertTrue(authRehabShedPage.successMessageAvaiable(), "Success message was not found in Authorize Rehabilitation Shedule.");
 	}
 	
 	@Test(dataProvider = "getRehabData", dependsOnMethods = "authorizeRehabShedule")
@@ -95,7 +94,7 @@ public class RehabilitationSheduleTest extends TestBase{
 		AddParticipantsPage addPartPage = rehabPartPage.addParticipantsToSchedule();
 		
 		rehabPartPage = addPartPage.addParticipants(data.get("RegNos"), data.get("Remarks"));
-		Assert.assertTrue(rehabPartPage.successMessageAvaiable(), "Success message was not found in Add Shedule Participants.");
+		assertTrue(rehabPartPage.successMessageAvaiable(), "Success message was not found in Add Shedule Participants.");
 	}
 	
 	@Test(dataProvider = "getRehabData", dependsOnMethods = "addParticipantsRehabShedule")
@@ -106,7 +105,7 @@ public class RehabilitationSheduleTest extends TestBase{
 		AuthorizeSheduleParticipants authShedPartPage = authRehabShedPartPage.authParticipants();
 		
 		authRehabShedPartPage = authShedPartPage.authorizeShedule();
-		Assert.assertTrue(authRehabShedPartPage.successMessageAvaiable(), "Success message was not found in Authorize Rehabilitation Shedule Participants.");
+		assertTrue(authRehabShedPartPage.successMessageAvaiable(), "Success message was not found in Authorize Rehabilitation Shedule Participants.");
 	}
 	
 	@DataProvider

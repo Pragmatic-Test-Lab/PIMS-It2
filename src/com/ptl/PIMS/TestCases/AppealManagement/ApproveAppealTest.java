@@ -2,7 +2,6 @@ package com.ptl.PIMS.TestCases.AppealManagement;
 
 import java.util.Hashtable;
 
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -32,7 +31,7 @@ public class ApproveAppealTest extends TestBase{
 		ApproveByJailor JailorApproval =  JApprovePage.SelectFirstAppeal();
 		JApprovePage = JailorApproval.approveAppeal();
 		
-    	Assert.assertTrue(JApprovePage.successMessageAvaiable(), "Could not find success message element in Appeal Jailor Approval Page.");
+    	assertTrue(JApprovePage.successMessageAvaiable(), "Could not find success message element in Appeal Jailor Approval Page.");
 		//
 		
 		
@@ -43,7 +42,7 @@ public class ApproveAppealTest extends TestBase{
 		ApproveBySP SPApproval =  SPApprovePage.SelectFirstAppeal();
 		SPApprovePage = SPApproval.approveAppeal();
 		
-		Assert.assertTrue(SPApprovePage.successMessageAvaiable(), "Could not find success message element in Appeal SP Approval Page.");
+		assertTrue(SPApprovePage.successMessageAvaiable(), "Could not find success message element in Appeal SP Approval Page.");
 		//
 		
 		//Send To Court Approve Appeal
@@ -53,7 +52,7 @@ public class ApproveAppealTest extends TestBase{
 		ApproveSendToCourt STCourtApproval =  STCApprovePage.SelectFirstAppeal();
 		STCApprovePage = STCourtApproval.approveAppeal();
 		
-		Assert.assertTrue(STCApprovePage.successMessageAvaiable(), "Could not find success message element in Appeal Court Approval Page.");
+		assertTrue(STCApprovePage.successMessageAvaiable(), "Could not find success message element in Appeal Court Approval Page.");
 		//		
 		
 		//Court Accept Approve Appeal
@@ -63,7 +62,7 @@ public class ApproveAppealTest extends TestBase{
 		ApproveByCourt CourtApproval =  CApprovePage.SelectFirstAppeal();
 		CApprovePage = CourtApproval.approveAppeal();
 		
-		Assert.assertTrue(CApprovePage.successMessageAvaiable(), "Could not find success message element in Appeal Court Responce Page.");
+		assertTrue(CApprovePage.successMessageAvaiable(), "Could not find success message element in Appeal Court Responce Page.");
 		//
 	}
 	

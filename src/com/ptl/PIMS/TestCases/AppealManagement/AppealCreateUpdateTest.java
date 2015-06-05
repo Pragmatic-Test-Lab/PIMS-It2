@@ -2,7 +2,6 @@ package com.ptl.PIMS.TestCases.AppealManagement;
 
 import java.util.Hashtable;
 
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -38,7 +37,7 @@ public class AppealCreateUpdateTest extends TestBase {
     
 	    authorizeInmateSelect = authorizePage.doAuthorizeAdmission();
 		
-	    Assert.assertTrue(authorizeInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Admission Page.");
+	    assertTrue(authorizeInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Admission Page.");
 	    //	    
 	    
 		
@@ -50,7 +49,7 @@ public class AppealCreateUpdateTest extends TestBase {
 				data.get("Months"), data.get("Years"), data.get("Fines"));
 		authorizeRegInmateSelect = authorizeRegPage.authorizeInmate();
 		
-    	Assert.assertTrue(authorizeRegInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Registration Page.");
+    	assertTrue(authorizeRegInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Registration Page.");
 
 	}
 	
@@ -67,7 +66,7 @@ public class AppealCreateUpdateTest extends TestBase {
 		NewAppeal newAppealPage = inmateSelectionPage.clickFirstInmate();		
 		appealPage = newAppealPage.AddNewAppeal(data.get("caseNos"), data.get("courts"), data.get("Reason"), data.get("Request"));
 		
-    	Assert.assertTrue(appealPage.successMessageAvaiable(), "Could not find Success Message element in Appeal Add/Update Page.");
+    	assertTrue(appealPage.successMessageAvaiable(), "Could not find Success Message element in Appeal Add/Update Page.");
 		//
 	}
 	
@@ -80,7 +79,7 @@ public class AppealCreateUpdateTest extends TestBase {
 		EditAppealPage editAppealPage =  appealPage.SelectFirstAppeal();
 		appealPage = editAppealPage.EditAppealDetails(data.get("caseNos"), data.get("courts"), data.get("Updated Reason"), data.get("Updated Request"));
 		
-    	Assert.assertTrue(appealPage.successMessageAvaiable(), "Could not find Success Message element in Appeal Add/Update Page.");
+    	assertTrue(appealPage.successMessageAvaiable(), "Could not find Success Message element in Appeal Add/Update Page.");
 		//
 	}
 	

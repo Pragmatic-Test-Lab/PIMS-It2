@@ -7,7 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.PIMS.util.Constants;
 
-public class CreateGoodReceivedPage {
+public class CreateGoodReceivedPage{
+	
 	WebDriver driver;
 
 
@@ -32,13 +33,5 @@ public class CreateGoodReceivedPage {
 		return goodreceivedpage;
 	}
 
-	public String getSuccessMessage(){
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessagegoodreceived.getText();
-	}
 
 }

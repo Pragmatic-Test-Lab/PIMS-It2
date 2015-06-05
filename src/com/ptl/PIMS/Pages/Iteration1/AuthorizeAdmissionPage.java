@@ -45,17 +45,16 @@ public class AuthorizeAdmissionPage {
 		int dataRows = initialRowCount(CaseTabTable);
 		CalendarPopup CLNDR = new CalendarPopup(driver);
 		
-		for(int i=0; i< court.length; i++){		
+		for(int i=0; i < court.length; i++){		
 			
 		AddNewCase.click();
 		
 		driver.findElement(By.xpath(Constants.Admission_InmateCourtDetail_Court + "[" + (dataRows + i) + "]")).sendKeys(court[i]);
 		driver.findElement(By.xpath(Constants.Admission_InmateCourtDetail_CaseNumber + "[" + (dataRows + i) + "]")).sendKeys(caseNo[i]);
 		
-		CLNDR.selectDate(driver.findElement(By.xpath(Constants.Admission_InmateCourtDetail_DateConviction + "[" + (dataRows + i) + "]")), conviction[i]);		
+		CLNDR.selectDate(driver.findElement(By.xpath(Constants.Admission_InmateCourtDetail_DateConviction + "[" + (dataRows + i) + "]")), conviction[i]);
 		CLNDR.selectDate(driver.findElement(By.xpath(Constants.Admission_InmateCourtDetail_DateSentence + "[" + (dataRows + i) + "]")), sentence[i]);
-		}		
-	}
+		}	}
 	
 
 	public void changeInmateCategory(String category) {

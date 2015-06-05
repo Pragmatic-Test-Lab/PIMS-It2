@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.ptl.PIMS.Pages.CalendarPopup;
 import com.ptl.PIMS.util.Constants;
 
 public class CalendarPage {
@@ -32,11 +33,12 @@ public class CalendarPage {
 		String[] ncDates = NCDate.split(",");
 		
 		int dataRows = initialRowCount(caseTable);
+		CalendarPopup CLNDR = new CalendarPopup(driver);
 
 		for (int i = 0; i < cases.length; i++) {
 			addNewButton.click();
-			driver.findElement(By.xpath(Constants.RehabilitationManagement_ParticipantInmate + "[" + (dataRows + i) + "]")).sendKeys(cases[i]);
-			driver.findElement(By.xpath(Constants.RehabilitationManagement_ParticipantRemark + "[" + (dataRows + i) + "]")).sendKeys(ncDates[i]);
+			driver.findElement(By.xpath(Constants.EscortManagement_CalendarCaseDropdown + "[" + (dataRows + i) + "]")).sendKeys(cases[i]);
+			CLNDR.selectDate(driver.findElement(By.xpath(Constants.EscortManagement_CalendarCaseDate + "[" + (dataRows + i) + "]")), ncDates[i]);
 		}
 		
 		updateButton.click();		
@@ -45,12 +47,10 @@ public class CalendarPage {
 	
 	
 	private int initialRowCount(WebElement element) {
-		List<WebElement> rows = element.findElements(By.tagName("tr"));	
 		
-		int size = rows.size();
-		
-		if (size == 1) return size;
-		else return size - 1;
+		List<WebElement> rows = element.findElements(By.tagName("tr"));			
+		int size = rows.size();		
+		return size;
 				
 	}
 }

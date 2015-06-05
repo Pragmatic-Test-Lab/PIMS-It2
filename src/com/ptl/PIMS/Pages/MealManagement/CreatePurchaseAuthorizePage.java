@@ -7,7 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.PIMS.util.Constants;
 
-public class CreatePurchaseAuthorizePage {
+public class CreatePurchaseAuthorizePage{
+	
 	public CreatePurchaseAuthorizePage(WebDriver dr){
 		driver = dr;
 	}
@@ -22,12 +23,5 @@ public class CreatePurchaseAuthorizePage {
 		PurchaseOrderAuthorizePage purchaseauthorizepage = PageFactory.initElements(driver, PurchaseOrderAuthorizePage.class);
 		return purchaseauthorizepage;
 	}
-	public String getSuccessMessage(){
 
-		/*try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}*/
-
-		return successMessagepurchaseauthorize.getText();
-	}	
 }

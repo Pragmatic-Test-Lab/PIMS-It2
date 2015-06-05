@@ -29,18 +29,15 @@ public class CreateKitchenItemTest extends TestBase {
 	}	
 
 	@Test(dependsOnMethods="goToNewKitchenItemPage")
-	public void fillKitchenItem(){
-		createkitchenitempage.EnterKitchenItemData("PTL Kitchen Item"+ (new Random()).nextInt(5000),"PTL Kitchen Item sinhala"+ (new Random()).nextInt(5000), "PTL Kitchen Item tamil"+ (new Random()).nextInt(5000),"g","5");		
-	}
-
-	@Test(dependsOnMethods="fillKitchenItem")
-	public void submitkitchenitemTest(){
-
+	public void createKitchenItem(){
+		
+		int rando = (new Random()).nextInt(5000);
+		createkitchenitempage.EnterKitchenItemData("PTL Kitchen Item"+ rando,"PTL Kitchen Item sinhala"+ rando, "PTL Kitchen Item tamil"+ rando,"g","5");
 		kitchenitempage = createkitchenitempage.ClickCreateButton();
 
 
-		Assert.assertTrue(createkitchenitempage.getSuccessMessage().matches(Constants.CreateKitchenItem_SuccessMessageText),
-				"Kitchen Item not created");				
+		assertTrue(kitchenitempage.successMessageAvaiable(), "Success Message Not Found in Create Kitchen Item");
 	}
+
 
 }

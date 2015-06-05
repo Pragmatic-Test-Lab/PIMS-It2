@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.ptl.PIMS.util.Constants;
 
 
-public class CreateSupplierPage {
+public class CreateSupplierPage{
 	WebDriver driver;
 
 	@FindBy(xpath = Constants.SupplierName)
@@ -32,13 +32,5 @@ public class CreateSupplierPage {
 		return supplierpage;
 	}
 
-	public String getSuccessMessage(){
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessagesupplier.getText();
-	}
 
 }

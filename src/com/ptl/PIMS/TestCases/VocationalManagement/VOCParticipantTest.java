@@ -2,7 +2,6 @@ package com.ptl.PIMS.TestCases.VocationalManagement;
 
 import java.util.Hashtable;
 
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -27,7 +26,7 @@ public class VOCParticipantTest extends TestBase{
 		
 		vocPartPage = vocPart.addParticipants(data.get("RegNos"), data.get("Grades"), data.get("Remarks"));
 		
-		Assert.assertTrue(vocPartPage.successMessageAvaiable(), "Success message was not found in Vocational Training Participant Add.");		
+		assertTrue(vocPartPage.successMessageAvaiable(), "Success message was not found in Vocational Training Participant Add.");		
 	}
 	
 	
@@ -40,7 +39,7 @@ public class VOCParticipantTest extends TestBase{
 		
 		vocAuthPartPage = vocAuthPart.doAuthorization();
 		
-		Assert.assertTrue(vocAuthPartPage.successMessageAvaiable(), "Success message was not found in Vocational Training Participant Authorize.");		
+		assertTrue(vocAuthPartPage.successMessageAvaiable(), "Success message was not found in Vocational Training Participant Authorize.");		
 	}
 	
 	@DataProvider

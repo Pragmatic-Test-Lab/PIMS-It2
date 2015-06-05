@@ -2,7 +2,6 @@ package com.ptl.PIMS.TestCases.DisciplineManagement;
 
 import java.util.Hashtable;
 
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -33,7 +32,7 @@ public class DisciplineTest extends TestBase{
 		addUpdateDiscPage = discPage.createDisciplineWithOnlyMandatoryData(data.get("doIncident"), data.get("officer"), data.get("place"), 
 				data.get("complaint"), data.get("inquirer"));
 		
-		Assert.assertTrue(addUpdateDiscPage.successMessageAvaiable(), "Success message was not found in Create Discipline.");		
+		assertTrue(addUpdateDiscPage.successMessageAvaiable(), "Success message was not found in Create Discipline.");		
 	}
 	
 	
@@ -45,7 +44,7 @@ public class DisciplineTest extends TestBase{
 
 		addUpdateDiscPage = editDisc.addJudgementDetails(data.get("doJudgement"), data.get("judgement"), data.get("remissionDeduction"));
 		
-		Assert.assertTrue(addUpdateDiscPage.successMessageAvaiable(), "Success message was not found in Edit Discipline.");		
+		assertTrue(addUpdateDiscPage.successMessageAvaiable(), "Success message was not found in Edit Discipline.");		
 	}
 	
 	@Test(dataProvider = "getDiscData", dependsOnMethods = "editDisciplineRecord")
@@ -57,7 +56,7 @@ public class DisciplineTest extends TestBase{
 
 		authDisc = authDiscPage.authorizeRecord();
 				
-		Assert.assertTrue(authDisc.successMessageAvaiable(), "Success message was not found in Authorize Discipline.");		
+		assertTrue(authDisc.successMessageAvaiable(), "Success message was not found in Authorize Discipline.");		
 	}
 	
 	@DataProvider

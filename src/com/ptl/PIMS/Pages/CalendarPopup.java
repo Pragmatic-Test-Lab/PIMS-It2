@@ -11,16 +11,6 @@ public class CalendarPopup extends CommonMethods{
 
 	WebDriver driver;
 
-	String YearText_FirstPart = Constants.CalendarPopup_YearText_FirstPart;
-	String YearText_LastPart = Constants.CalendarPopup_YearText_LastPart;
-	String MonthText_FirstPart = Constants.CalendarPopup_MonthText_FirstPart;
-	String MonthText_LastPart = Constants.CalendarPopup_MonthText_LastPart;
-	String dateText_FirstPart = Constants.CalendarPopup_DateText_FirstPart;
-	String dateText_LastPart = Constants.CalendarPopup_DateText_LastPart;	
-	String YearToBeSelected_XPath = "";
-	String MonthToBeSelected_XPath = "";
-	String DateToBeSelected_XPath = "";
-
 
 	public CalendarPopup(WebDriver dr){
 		driver = dr;
@@ -35,10 +25,7 @@ public class CalendarPopup extends CommonMethods{
 
 		driver.findElement(By.xpath(Constants.CalendarPopup_SelectYearFP + Year + Constants.CalendarPopup_SelectYearLP)).click();		
 		driver.findElement(By.xpath(Constants.CalendarPopup_SelectMonthFP + Month + Constants.CalendarPopup_SelectMonthLP)).click();
-
-		DateToBeSelected_XPath = Constants.CalendarPopup_SelectDayFP + Date + Constants.CalendarPopup_SelectDayLP + "[" + 
-				NoOfElements(driver, Constants.CalendarPopup_SelectDayFP + Date + Constants.CalendarPopup_SelectDayLP) + "]";;
-				driver.findElement(By.xpath(DateToBeSelected_XPath)).click();
+		driver.findElement(By.xpath(Constants.CalendarPopup_SelectDayFP + Date + Constants.CalendarPopup_SelectDayLP)).click();
 	}
 
 
@@ -56,11 +43,7 @@ public class CalendarPopup extends CommonMethods{
 
 		driver.findElement(By.xpath(Constants.CalendarPopup_SelectYearFP + year + Constants.CalendarPopup_SelectYearLP)).click();		
 		driver.findElement(By.xpath(Constants.CalendarPopup_SelectMonthFP + month + Constants.CalendarPopup_SelectMonthLP)).click();
-
-		DateToBeSelected_XPath = Constants.CalendarPopup_SelectDayFP + day + Constants.CalendarPopup_SelectDayLP + "[" + 
-				NoOfElements(driver, Constants.CalendarPopup_SelectDayFP + day + Constants.CalendarPopup_SelectDayLP) + "]";;
-				driver.findElement(By.xpath(DateToBeSelected_XPath)).click();
-
+		driver.findElement(By.xpath(Constants.CalendarPopup_SelectDayFP + day + Constants.CalendarPopup_SelectDayLP)).click();
 	}
 
 	public void selectDateTimeDefault(WebElement calendarField, String wholeDate){

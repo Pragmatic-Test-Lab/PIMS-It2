@@ -6,13 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.ptl.PIMS.Pages.CommonMethods;
 import com.ptl.PIMS.util.Constants;
 
-public class CreateKitchenSlipPage {
-	public CreateKitchenSlipPage(WebDriver dr){
-		driver = dr;
-	}
+public class CreateKitchenSlipPage{
+	
 	WebDriver driver;
+	
 	@FindBy(xpath = Constants.KitchenSlipId)
 	WebElement kitchenslipid;
 	@FindBy(xpath = Constants.CreateKitchenSlipButton)
@@ -21,6 +21,10 @@ public class CreateKitchenSlipPage {
 	WebElement successMessageKitchen;
 	@FindBy(xpath = Constants.AddNewKitchenItem)
 	WebElement addnewkitchenitem;
+	
+	public CreateKitchenSlipPage(WebDriver dr){
+		driver = dr;
+	}
 
 	public String getKitchenSlipID(){
 
@@ -51,13 +55,5 @@ public class CreateKitchenSlipPage {
 
 	}
 
-	public String getSuccessMessage(){
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessageKitchen.getText();
-	}
 
 }

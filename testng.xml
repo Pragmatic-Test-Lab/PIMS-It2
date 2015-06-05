@@ -1,29 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<test name="Test">
+  	   
+	<test name="Meal Management">
 		<classes>
 			<class name="com.ptl.PIMS.TestCases.MealManagement.CreateSupplierTest" />
 			<class name="com.ptl.PIMS.TestCases.MealManagement.CreateKitchenItemTest" />
 			<class name="com.ptl.PIMS.TestCases.MealManagement.CreateRecipeTest" />
-			<class name="com.ptl.PIMS.TestCases.MealManagement.CreateDemandOrderTest" />
-			<class name="com.ptl.PIMS.TestCases.MealManagement.DemandAuthorizeTest" />
-			<class name="com.ptl.PIMS.TestCases.MealManagement.CreateKitchenSlipTest" />
-			<class
-				name="com.ptl.PIMS.TestCases.MealManagement.CreateKitchenAuthorizeTest" />
-			<class
-				name="com.ptl.PIMS.TestCases.MealManagement.CreatePurchaseOrderTest" />
-			<class
-				name="com.ptl.PIMS.TestCases.MealManagement.CreatePurchaseAuthorizeTest" />
-			<class name="com.ptl.PIMS.TestCases.MealManagement.CreateGoodReceivedTest" />
-			<class
-				name="com.ptl.PIMS.TestCases.MealManagement.CreateGoodAuthorizedTest" />
-			
-			
-
-
-
-
+			<class name="com.ptl.PIMS.TestCases.MealManagement.DemandOrderTest" />
+			<class name="com.ptl.PIMS.TestCases.MealManagement.KitchenSlipTest" />
+			<class name="com.ptl.PIMS.TestCases.MealManagement.PurchaseOrderTest" />
+			<class name="com.ptl.PIMS.TestCases.MealManagement.GoodReceivedTest" />
 		</classes>
-	</test> <!-- Test -->
-</suite> <!-- Suite -->
+	</test>
+
+	<test name="Appeal Management">
+	    <classes>
+	        <class name="com.ptl.PIMS.TestCases.AppealManagement.AppealCreateUpdateTest" />
+	        <class name="com.ptl.PIMS.TestCases.AppealManagement.ApproveAppealTest" />	        			
+	    </classes>	    
+	</test>
+	
+	<test name="Industrial Training">
+	    <classes>
+	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.IndustrialTrainingTest" />
+	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.IndustrialMorningTest" />	        			
+	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.IndustrialEveningTest" />	        			
+	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.CreateWagesTest" />	        			
+	    </classes>	    
+	</test>
+		
+	<test name="Vocational Training">
+	    <classes>
+	        <class name="com.ptl.PIMS.TestCases.VocationalManagement.VOCProgramTest" />
+	        <class name="com.ptl.PIMS.TestCases.VocationalManagement.VOCParticipantTest" />	        			
+	    </classes>	    
+	</test>	
+	
+	<test name="Rehabilitation Management">
+	    <classes>
+	        <class name="com.ptl.PIMS.TestCases.RehabilitationManagement.ActionPlanTest" />
+	        <class name="com.ptl.PIMS.TestCases.RehabilitationManagement.RehabilitationSheduleTest" />	        			
+	    </classes>	    
+	</test>	
+	
+	<test name="Discipline Management">
+	    <classes>
+	        <class name="com.ptl.PIMS.TestCases.DisciplineManagement.DisciplineTest" />	        			
+	    </classes>	    
+	</test>
+	
+	<test name="Incidence Management">
+	    <classes>
+	        <class name="com.ptl.PIMS.TestCases.IncidenceManagement.IncidenceTest" />	        			
+	    </classes>	    
+	</test>
+	
+</suite>

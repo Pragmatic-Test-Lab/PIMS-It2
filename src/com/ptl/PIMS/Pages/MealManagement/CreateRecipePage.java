@@ -8,9 +8,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.ptl.PIMS.Pages.CommonMethods;
 import com.ptl.PIMS.util.Constants;
 
-public class CreateRecipePage {
+public class CreateRecipePage extends CommonMethods{
 	
 	WebDriver driver;
 
@@ -58,14 +59,6 @@ public class CreateRecipePage {
 		return recipepage;
 	}
 
-	public String getSuccessMessage(){
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessageRecipe.getText();
-	}
 
 	private int initialRowCount(WebElement element) {
 		List<WebElement> rows = element.findElements(By.tagName("tr"));	

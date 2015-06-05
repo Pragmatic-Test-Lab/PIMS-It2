@@ -2,7 +2,6 @@ package com.ptl.PIMS.TestCases.RehabilitationManagement;
 
 import java.util.Hashtable;
 
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -19,7 +18,7 @@ public class ActionPlanTest extends TestBase{
 	AddUpdateActionPlanPage apPage;
 	
 	@Test(dataProvider = "getRehabData")
-	public void createVOCProgram(Hashtable<String,String> data) {
+	public void createActionPlan(Hashtable<String,String> data) {
 		
 		loginToApplication();
 		apPage = getTopMenu().gotoActionPlanAddUpdate();
@@ -30,11 +29,11 @@ public class ActionPlanTest extends TestBase{
 				data.get("RehabEnd"), data.get("RehabCost"));
 		apPage = newAP.createActionPlan();
 		
-		Assert.assertTrue(apPage.successMessageAvaiable(), "Success message was not found in Action Plan Add.");		
+		assertTrue(apPage.successMessageAvaiable(), "Success message was not found in Action Plan Add.");		
 	}
 	
 	@Test(dataProvider = "getRehabData", dependsOnMethods= "createVOCProgram")
-	public void editVOCProgram(Hashtable<String,String> data) {
+	public void editActionPlan(Hashtable<String,String> data) {
 		
 		apPage = apPage.ActionPlanForSearch(data.get("year"), "");
 		
@@ -44,11 +43,11 @@ public class ActionPlanTest extends TestBase{
 				data.get("ERehabEnd"), data.get("ERehabCost"));
 		apPage = editAP.updateActionPlan();
 		
-		Assert.assertTrue(apPage.successMessageAvaiable(), "Success message was not found in Action Plan Edit.");		
+		assertTrue(apPage.successMessageAvaiable(), "Success message was not found in Action Plan Edit.");		
 	}
 	
 	@Test(dataProvider = "getRehabData", dependsOnMethods= "editVOCProgram")
-	public void authorizeVOCProgram(Hashtable<String,String> data) {
+	public void authorizeActionPlan(Hashtable<String,String> data) {
 		
 		AuthorizeActionPlanSelectPage authAPPage = getTopMenu().gotoActionPlanAuthorize();
 		authAPPage = authAPPage.ActionPlanForSearch(data.get("Eyear"), "");
@@ -57,7 +56,7 @@ public class ActionPlanTest extends TestBase{
 
 		authAPPage = authAP.AuthorizeAP();
 		
-		Assert.assertTrue(authAPPage.successMessageAvaiable(), "Success message was not found in Action Plan Authorize.");		
+		assertTrue(authAPPage.successMessageAvaiable(), "Success message was not found in Action Plan Authorize.");		
 	}
 	
 	@DataProvider

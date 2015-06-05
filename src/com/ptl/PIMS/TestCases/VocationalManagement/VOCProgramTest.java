@@ -3,7 +3,6 @@ package com.ptl.PIMS.TestCases.VocationalManagement;
 import java.util.Hashtable;
 import java.util.Random;
 
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -32,7 +31,7 @@ public class VOCProgramTest extends TestBase {
 					data.get("vocType"), data.get("vocTInstitute"),data.get("vocStartDate"), data.get("vocEndDate"), data.get("vocVenue"), 
 					data.get("resourcePerson"));
 		
-		Assert.assertTrue(vocPage.successMessageAvaiable(), "Success message was not found in Vocational Training Add.");		
+		assertTrue(vocPage.successMessageAvaiable(), "Success message was not found in Vocational Training Add.");		
 	}
 	
 	@Test(dataProvider = "getVOCData", dependsOnMethods = "createVOCProgram")
@@ -44,7 +43,7 @@ public class VOCProgramTest extends TestBase {
 		vocPage = editVOC.editVOC(data.get("EprogName"), data.get("EprogDuration"), 
 				data.get("EvocType"), data.get("EvocTInstitute"),data.get("EvocStartDate"), data.get("EvocEndDate"));
 		
-		Assert.assertTrue(vocPage.successMessageAvaiable(), "Success message was not found in Vocational Training Edit.");		
+		assertTrue(vocPage.successMessageAvaiable(), "Success message was not found in Vocational Training Edit.");		
 	}
 	
 	@Test(dependsOnMethods="editVOCProgram")
@@ -56,7 +55,7 @@ public class VOCProgramTest extends TestBase {
 		AuthorizeVoc authVOC = vocAuthPage.SelectFirstVOC();	
 		vocAuthPage = authVOC.doAuthorization();		
 		
-		Assert.assertTrue(vocAuthPage.successMessageAvaiable(), "Success message was not found in Vocational Training Authorize.");		
+		assertTrue(vocAuthPage.successMessageAvaiable(), "Success message was not found in Vocational Training Authorize.");		
 	}
 	
 	@DataProvider
