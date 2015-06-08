@@ -20,8 +20,8 @@ public class ApproveAppealTest extends TestBase{
 
 
 	
-	@Test(dataProvider = "getAppealData", dependsOnGroups="AppealCreateUpdateTest")
-	public void approveAppealTest(Hashtable<String, String> data) {
+	@Test(dataProvider = "getAppealData")
+	public void approveJailorTest(Hashtable<String, String> data) {
 			
 		loginToApplication();
 		ApproveByJailorAppealSelect JApprovePage = getTopMenu().gotoAppealApproveByJailor();
@@ -33,8 +33,11 @@ public class ApproveAppealTest extends TestBase{
 		
     	assertTrue(JApprovePage.successMessageAvaiable(), "Could not find success message element in Appeal Jailor Approval Page.");
 		//
-		
-		
+	}
+	
+    @Test(dataProvider = "getAppealData", dependsOnMethods = "approveJailorTest")
+    public void approveSPTest(Hashtable<String, String> data) {
+    	
 		//SP Approve Appeal
 		ApproveBySPAppealSelect SPApprovePage = getTopMenu().gotoAppealApproveBySP();
 
@@ -44,7 +47,11 @@ public class ApproveAppealTest extends TestBase{
 		
 		assertTrue(SPApprovePage.successMessageAvaiable(), "Could not find success message element in Appeal SP Approval Page.");
 		//
-		
+    }
+    
+    @Test(dataProvider = "getAppealData", dependsOnMethods = "approveSPTest")
+	public void approveSendToCourtTest(Hashtable<String, String> data) {
+    	
 		//Send To Court Approve Appeal
 		ApproveSendToCourtAppealSelect STCApprovePage = getTopMenu().gotoAppealApproveSendToCourt();
 
@@ -54,7 +61,11 @@ public class ApproveAppealTest extends TestBase{
 		
 		assertTrue(STCApprovePage.successMessageAvaiable(), "Could not find success message element in Appeal Court Approval Page.");
 		//		
-		
+    }
+    
+    @Test(dataProvider = "getAppealData", dependsOnMethods = "approveSendToCourtTest")
+	public void approveCourtAppealTest(Hashtable<String, String> data) {
+    	
 		//Court Accept Approve Appeal
 		ApproveByCourtAppealSelect CApprovePage = getTopMenu().gotoAppealApproveByCourt();
 

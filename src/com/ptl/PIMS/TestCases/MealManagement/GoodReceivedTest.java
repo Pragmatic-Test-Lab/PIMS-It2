@@ -35,7 +35,7 @@ public class GoodReceivedTest extends TestBase {
 	}
 	
 	@Test(dependsOnMethods="createGoodReceivedTest")
-	public void authorizeGoodTest(){
+	public void authorizeGoodReceivedTest(){
 
 		goodreceivedauthorizePage = topMenu.gotoGoodReceivedAuthorizePage();
 		goodreceivedauthorizePage = creategoodauthorizePage.ClickAuthorizeButton();

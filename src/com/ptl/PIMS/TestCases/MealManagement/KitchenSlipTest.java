@@ -48,7 +48,7 @@ public class KitchenSlipTest extends TestBase {
 
 
 	@Test (dependsOnMethods="createKitchenSlipTest")  
-	public void goToNewKitchenAuthorizePage(){
+	public void authorizeKitchenSlip(){
 
 		kitchenauthorizePage = topMenu.gotoNewKitchenAuthorizePage();
 		/*	Assert.assertTrue(createdemandauthorizePage.getActualPageTitle().equals(Constants.CreateDemandPageHeader),

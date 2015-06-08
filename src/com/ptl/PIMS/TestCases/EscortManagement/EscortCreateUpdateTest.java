@@ -2,7 +2,6 @@ package com.ptl.PIMS.TestCases.EscortManagement;
 
 import java.util.Hashtable;
 
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -37,7 +36,7 @@ public class EscortCreateUpdateTest extends TestBase{
     
 	    authorizeInmateSelect = authorizePage.doAuthorizeAdmission();
 		
-	    Assert.assertTrue(authorizeInmateSelect.successMessageAvaiable(), "Could not find Success Message in Admission Page.");
+	    assertTrue(authorizeInmateSelect.successMessageAvaiable(), "Could not find Success Message in Admission Page.");
 	    //	    
 	    
 		
@@ -47,7 +46,7 @@ public class EscortCreateUpdateTest extends TestBase{
 		AuthorizeRegPage authorizeRegPage = authorizeRegInmateSelect.clickFirstInmate();
 		authorizeRegInmateSelect = authorizeRegPage.authorizeInmate();
 		
-    	Assert.assertTrue(authorizeRegInmateSelect.successMessageAvaiable(), "Could not find Success Message in Registration Page.");
+    	assertTrue(authorizeRegInmateSelect.successMessageAvaiable(), "Could not find Success Message in Registration Page.");
 	}
 	
 	@Test(dataProvider = "getEscData", dependsOnMethods = "prepareEscortData")
@@ -59,7 +58,7 @@ public class EscortCreateUpdateTest extends TestBase{
 		
 		calendarPage = calendar.addCourtDates(data.get("caseNos"), data.get("NCDate"));
 		
-		Assert.assertTrue(calendarPage.successMessageAvaiable(), "Success message was not found in Add Court Date To Calendar.");		
+		assertTrue(calendarPage.successMessageAvaiable(), "Success message was not found in Add Court Date To Calendar.");		
 	}
 	
 	@Test(dataProvider = "getEscData", dependsOnMethods = "createCalendarRecord")
@@ -69,9 +68,9 @@ public class EscortCreateUpdateTest extends TestBase{
 		EscortAddPage escortAdd = escortAddUpdate.goToCreateNewEscort();
 		
 		escortAdd = escortAdd.pickDate(data.get("NCDate"));
-		//escortAdd.extraEscortDetails(registrationNo, Case, Court, EscortDetail);
+		escortAdd.extraEscortDetails(registrationNo, data.get("caseNos"), data.get("courts"), data.get("EscortDetail"));
 		
-		Assert.assertTrue(escortAddUpdate.successMessageAvaiable(), "Success message was not found in Escort Create.");		
+		assertTrue(escortAddUpdate.successMessageAvaiable(), "Success message was not found in Escort Create.");		
 	}
 	@DataProvider
 	public Object[][] getEscData() {

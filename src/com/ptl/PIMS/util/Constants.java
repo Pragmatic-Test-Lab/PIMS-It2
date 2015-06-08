@@ -239,12 +239,8 @@ public class Constants {
 	public static final String GoodReceivedAdd = ".//a[text()='Good Received Note Add/Update']";
 	public static final String AuthorizeGoodReceived_SuccessMessageText = "Saved .* successfully";
 	public static final String SuccessMessageGoodReceivedAuthorize = ".//div[@class='alert alert-success']";
-	public static final String AuthorizeGoodReceived = "//*[@class='btn btn-primary']";
+	public static final String AuthorizeGoodReceived = "//button[text()='Authorize']";
 	public static final String GoodReceivedAuthorized = ".//a[text()='Good Received Note Authorize']";
-
-
-
-
 
 	//
 
@@ -282,6 +278,7 @@ public class Constants {
 	public static final String RehabilitationManagement_APPrisonSearch = "//input[@name='RehabilitationActionPlanHeaderSearch[rph_institute_id]']";
 	public static final String RehabilitationManagement_APYearSearch = "//input[@name='RehabilitationActionPlanHeaderSearch[rph_year]']";
 	public static final String RehabilitationManagement_FirstRecord = "(.//span[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String RehabilitationManagement_APAuthFirstRecord = "(.//span[@class='glyphicon glyphicon-ok'])[1]";
 	public static final String RehabilitationManagement_NewAPButton = "//a[@href='/PIMS3/web/rehabilitation-action-plan-header/create']";
 	
 	public static final String RehabilitationManagement_APYear = "//*[@id='rehabilitationactionplanheader-rph_year']";
