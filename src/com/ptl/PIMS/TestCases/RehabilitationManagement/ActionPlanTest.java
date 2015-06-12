@@ -32,7 +32,7 @@ public class ActionPlanTest extends TestBase{
 		assertTrue(apPage.successMessageAvaiable(), "Success message was not found in Action Plan Add.");		
 	}
 	
-	@Test(dataProvider = "getRehabData", dependsOnMethods= "createVOCProgram")
+	@Test(dataProvider = "getRehabData", dependsOnMethods= "createActionPlan")
 	public void editActionPlan(Hashtable<String,String> data) {
 		
 		apPage = apPage.ActionPlanForSearch(data.get("year"), "");
@@ -46,7 +46,7 @@ public class ActionPlanTest extends TestBase{
 		assertTrue(apPage.successMessageAvaiable(), "Success message was not found in Action Plan Edit.");		
 	}
 	
-	@Test(dataProvider = "getRehabData", dependsOnMethods= "editVOCProgram")
+	@Test(dataProvider = "getRehabData", dependsOnMethods= "editActionPlan")
 	public void authorizeActionPlan(Hashtable<String,String> data) {
 		
 		AuthorizeActionPlanSelectPage authAPPage = getTopMenu().gotoActionPlanAuthorize();

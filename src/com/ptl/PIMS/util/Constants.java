@@ -60,8 +60,8 @@ public class Constants {
 	public static final String TopMenu_IncidenceRecaptureAddUpdateLink = "//a[text()='Re-capture Add']";
 	public static final String TopMenu_IncidenceRecaptureAuthorizeLink = "//a[text()='Re-capture Authorize']";
 	public static final String TopMenu_EscortCalendarTopLink= "//a[text()='Calendar']";
-	public static final String TopMenu_EscortManagementTopLink= "//a[text()='Movement Management']";
-	public static final String TopMenu_EscortListAddUpdateLink= "//a[text()='Movement Out Add/Update']";
+	public static final String TopMenu_EscortManagementTopLink= "//a[text()='Escort Management']";
+	public static final String TopMenu_EscortListAddUpdateLink= "//a[text()='Escort List Add/Update']";
 	public static final String TopMenu_EscortAuthorizeLink= "//a[text()='Escort Authorize']";
 	public static final String TopMenu_EscortOutLink= "//a[text()='Escort Out']";
 	public static final String TopMenu_EscortInLink= "//a[text()='Escort In']";
@@ -124,7 +124,7 @@ public class Constants {
 	public static final String AppealManagement_DateSearch = "//*[@name='AppealSearch[app_date]']";
 	public static final String AppealManagement_ReasonSearch = "//*[@name='AppealSearch[app_reason]']";
 	public static final String AppealManagement_NewAppealButton = "//*[@href='/PIMS3/web/appeal/selectadmission']";
-	public static final String AppealManagement_FirstAppeal = "(.//*[contains(@class, 'glyphicon')]//parent::a)[1]";
+	public static final String AppealManagement_FirstAppeal = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
 
 	public static final String AppealManagement_AppealDate = "//*[@id='appeal-app_date']";
 	public static final String AppealManagement_AppealCase = "//*[@id='appeal-app_case_id']";
@@ -239,12 +239,8 @@ public class Constants {
 	public static final String GoodReceivedAdd = ".//a[text()='Good Received Note Add/Update']";
 	public static final String AuthorizeGoodReceived_SuccessMessageText = "Saved .* successfully";
 	public static final String SuccessMessageGoodReceivedAuthorize = ".//div[@class='alert alert-success']";
-	public static final String AuthorizeGoodReceived = "//*[@class='btn btn-primary']";
+	public static final String AuthorizeGoodReceived = "//button[text()='Authorize']";
 	public static final String GoodReceivedAuthorized = ".//a[text()='Good Received Note Authorize']";
-
-
-
-
 
 	//
 
@@ -282,6 +278,7 @@ public class Constants {
 	public static final String RehabilitationManagement_APPrisonSearch = "//input[@name='RehabilitationActionPlanHeaderSearch[rph_institute_id]']";
 	public static final String RehabilitationManagement_APYearSearch = "//input[@name='RehabilitationActionPlanHeaderSearch[rph_year]']";
 	public static final String RehabilitationManagement_FirstRecord = "(.//span[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String RehabilitationManagement_APAuthFirstRecord = "(.//span[@class='glyphicon glyphicon-ok'])[1]";
 	public static final String RehabilitationManagement_NewAPButton = "//a[@href='/PIMS3/web/rehabilitation-action-plan-header/create']";
 	
 	public static final String RehabilitationManagement_APYear = "//*[@id='rehabilitationactionplanheader-rph_year']";
@@ -374,18 +371,19 @@ public class Constants {
 	
 	//Escort Management
 	
-	public static final String EscortManagement_CreateButton = "//button[text()='Create'']";
-	public static final String EscortManagement_UpdateButton = "//button[text()='Update'']";
-	public static final String EscortManagement_AuthorizeButton = "//button[text()='Authorize'']";
+	public static final String EscortManagement_CreateButton = "//button[text()='Create']";
+	public static final String EscortManagement_UpdateButton = "//button[text()='Update']";
+	public static final String EscortManagement_AuthorizeButton = "//button[text()='Authorize']";
 	public static final String EscortManagement_SearchID = "//input[@name='EscortHeaderSearch[esh_id]']";
 	public static final String EscortManagement_SearchDate = "//input[@name='EscortHeaderSearch[esh_date]']";
 	public static final String EscortManagement_FirstRecord = "(.//span[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String EscortManagement_EscortRecords = "(.//span[@class='glyphicon glyphicon-pencil'])";
 	
 	public static final String EscortManagement_CalendarCaseTable = "//*[@id='case_dates_grid']/tbody";
 	public static final String EscortManagement_CalendarAddNew = "//button[text()='Add New']";
-	public static final String EscortManagement_CalendarCaseDropdown = "(.//select[contains(@name,'cdt_case_id'])";
-	public static final String EscortManagement_CalendarCaseDate = "(.//input[contains(@name,'cdt_next_case_date'])";
-	public static final String EscortManagement_CalendarCaseIsCompleted = "(.//input[contains(@name,'cdt_is_completed'])";
+	public static final String EscortManagement_CalendarCaseDropdown = "(.//select[contains(@name,'cdt_case_id')])";
+	public static final String EscortManagement_CalendarCaseDate = "(.//input[contains(@name,'cdt_next_case_date')])";
+	public static final String EscortManagement_CalendarCaseIsCompleted = "(.//input[contains(@name,'cdt_is_completed')])";
 
 	public static final String EscortManagement_NewEscortButton = "//a[@href='/PIMS3/web/escort-header/create']";
 	public static final String EscortManagement_NewEscortCalendarField = "//*[@id='escortheader-esh_date']";
@@ -394,6 +392,8 @@ public class Constants {
 	public static final String EscortManagement_EscortRegistrationNo = "(.//select[contains(@id,'-esc_admission_id')]/option[@selected=''])";
 	public static final String EscortManagement_EscortCase = "(.//select[contains(@id,'-esc_case_id')]/option[@selected=''])";
 	public static final String EscortManagement_EscortCourt = "(.//input[contains(@id,'court-')])";
+	public static final String EscortManagement_EscortOutTime = "(.//input[contains(@id,'-esc_out_time')])";
+	public static final String EscortManagement_EscortInTime = "(.//input[contains(@id,'-esc_in_time')])";
 
 	
 	//

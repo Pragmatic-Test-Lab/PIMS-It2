@@ -22,12 +22,5 @@ public class CreateGoodAuthorizePage {
 		GoodReceivedAuthorizePage goodreceivedauthorizepage = PageFactory.initElements(driver, GoodReceivedAuthorizePage.class);
 		return goodreceivedauthorizepage;
 	}
-	public String getSuccessMessage(){
 
-		/*try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}*/
-
-		return successMessagegoodreceived.getText();
-	}	
 }

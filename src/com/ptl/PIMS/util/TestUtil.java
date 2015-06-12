@@ -182,4 +182,31 @@ public static String getTodaysDateandtimeOut(){
 	
 }
 
+public static String wordMonthToNumber(String date){
+	
+	String[] dates = date.split("-");
+	
+	String year = dates[0];
+	String month = dates[1];
+	String day = dates[2];
+	int Month = 0;
+	
+	switch(month){
+		case "Jan" :Month = 1; break;
+		case "Feb":Month = 2; break;
+		case "Mar":Month = 3; break;
+		case "Apr":Month = 4; break;
+		case "May":Month = 5; break;
+		case "Jun":Month = 6; break;
+		case "Jul":Month = 7; break;
+		case "Aug":Month = 8; break;
+		case "Sep":Month = 9; break;
+		case "Oct":Month = 10; break;
+		case "Nov":Month = 11; break;
+		case "Dec":Month = 12; break;		 
+	}
+	
+	return year + "-" +  Month + "-" + day;
+}
+
 }

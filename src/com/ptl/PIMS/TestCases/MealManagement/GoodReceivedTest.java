@@ -35,9 +35,10 @@ public class GoodReceivedTest extends TestBase {
 	}
 	
 	@Test(dependsOnMethods="createGoodReceivedTest")
-	public void authorizeGoodTest(){
+	public void authorizeGoodReceivedTest(){
 
 		goodreceivedauthorizePage = topMenu.gotoGoodReceivedAuthorizePage();
+		creategoodauthorizePage = goodreceivedauthorizePage.SearchGoodReceived(mealId);
 		goodreceivedauthorizePage = creategoodauthorizePage.ClickAuthorizeButton();
 
 		assertTrue(goodreceivedauthorizePage.successMessageAvaiable(), "Success Message not Found in Good Received Authorize.");

@@ -181,12 +181,13 @@ public class TestBase{
 	
 	public void assertTrue(boolean condition, String message){		
 
+		if(!condition){
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
 			FileUtils.copyFile(scrFile, new File("c:\\Selenium-TestRun\\Failure Screenshots\\Iteration 2\\" 
 							+ (new SimpleDateFormat("yyyy-MM-dd\\HH-mm-ss").format(Calendar.getInstance().getTime())) + " - " + message + ".png"));
 		} catch (IOException e1) {}		
-		
+		}
 		Assert.assertTrue(condition, message);
 		
 	}

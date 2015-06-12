@@ -36,14 +36,14 @@ public class EscortUpdatePage {
 		int dataRows = initialRowCount(escortTable);
 		
 		for (int j = 0; j < regNos.length; j++) {
-			for (int i = 0; i < dataRows; i++) {
+			for (int i = 1; i < dataRows; i++) {
 				
 				String EscRegNo = driver.findElement(By.xpath(Constants.EscortManagement_EscortRegistrationNo + "[" + i + "]")).getText();
 				String EscCase = driver.findElement(By.xpath(Constants.EscortManagement_EscortCase + "[" + i + "]")).getText();
 				String EscCourt = driver.findElement(By.xpath(Constants.EscortManagement_EscortCourt + "[" + i + "]")).getAttribute("value");
 				
 				if(regNos[j].equals(EscRegNo) && cases[j].equals(EscCase) && courts[j].equals(EscCourt) && !escortDetails.equals(""))
-					editElement(driver.findElement(By.xpath(Constants.EscortManagement_EscortDetails + "[" + i + "]")), escortDetails[i]);
+					editElement(driver.findElement(By.xpath(Constants.EscortManagement_EscortDetails + "[" + i + "]")), escortDetails[j]);
 			}
 		}		
 	}
