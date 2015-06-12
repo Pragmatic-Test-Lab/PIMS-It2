@@ -6,9 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.ptl.PIMS.Pages.CommonMethods;
 import com.ptl.PIMS.util.Constants;
 
-public class CreateIndustrialMorningPage {
+public class CreateIndustrialMorningPage extends CommonMethods{
+	
 	WebDriver driver;
 	@FindBy(xpath = Constants.CreateMorningButton)
 	WebElement create;
@@ -34,13 +36,6 @@ public class CreateIndustrialMorningPage {
 		IndustrialMorningPage morningpage = PageFactory.initElements(driver, IndustrialMorningPage.class);
 		return morningpage;
 	}
-	public String getSuccessMessage(){
 
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessageindustrialmorning.getText();
-	}	
 
 }

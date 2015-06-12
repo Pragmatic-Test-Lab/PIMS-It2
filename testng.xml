@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <!-- 
+<!--   
 	<test name="Meal Management">
 		<classes>
 			<class name="com.ptl.PIMS.TestCases.MealManagement.CreateSupplierTest" />
@@ -20,23 +20,22 @@
 	        <class name="com.ptl.PIMS.TestCases.AppealManagement.ApproveAppealTest" />	        			
 	    </classes>	    
 	</test>
-	 
+ 
 	<test name="Industrial Training">
 	    <classes>
 	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.IndustrialTrainingTest" />
-	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.IndustrialMorningTest" />	        			
-	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.IndustrialEveningTest" />	        			
+	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.IndustrialAttendanceTest" />        			
 	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.CreateWagesTest" />	        			
 	    </classes>	    
 	</test>
-		
+	-->		
 	<test name="Vocational Training">
 	    <classes>
 	        <class name="com.ptl.PIMS.TestCases.VocationalManagement.VOCProgramTest" />
 	        <class name="com.ptl.PIMS.TestCases.VocationalManagement.VOCParticipantTest" />	        			
 	    </classes>	    
 	</test>	
-	
+<!--  	
 	<test name="Rehabilitation Management">
 	    <classes>
 	        <class name="com.ptl.PIMS.TestCases.RehabilitationManagement.ActionPlanTest" />
@@ -55,7 +54,7 @@
 	        <class name="com.ptl.PIMS.TestCases.IncidenceManagement.IncidenceTest" />	        			
 	    </classes>	    
 	</test>
-	-->
+	
 	
 	<test name="Escort Management">
 	    <classes>
@@ -63,5 +62,5 @@
 	        <class name="com.ptl.PIMS.TestCases.EscortManagement.EscortRecordInOutTest" />	        			
 	    </classes>	    
 	</test>
-	
+-->
 </suite>

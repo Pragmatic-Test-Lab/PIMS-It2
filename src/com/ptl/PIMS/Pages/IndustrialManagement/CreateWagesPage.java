@@ -36,12 +36,5 @@ public class CreateWagesPage {
 		WagesPage wagespage = PageFactory.initElements(driver, WagesPage.class);
 		return wagespage;
 	}
-	public String getSuccessMessage(){
 
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessagewages.getText();
-	}	
 }

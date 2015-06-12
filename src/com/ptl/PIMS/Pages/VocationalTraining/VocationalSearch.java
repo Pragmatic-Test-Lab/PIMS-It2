@@ -22,7 +22,7 @@ public class VocationalSearch extends CommonMethods{
 	@FindBy(xpath = Constants.VOCManagement_SearchProgDuration)
 	public WebElement VOCSearch_ProgDuration;	
 	
-	@FindBy(xpath = Constants.AppealManagement_FirstAppeal)
+	@FindBy(xpath = Constants.VOCManagement_FirstRecord)
 	public WebElement VOCFirstRecord;	
 
 	@SuppressWarnings("unchecked")

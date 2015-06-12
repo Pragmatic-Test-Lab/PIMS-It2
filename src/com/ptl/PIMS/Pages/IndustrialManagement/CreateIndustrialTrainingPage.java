@@ -10,7 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.PIMS.Pages.CalendarPopup;
 import com.ptl.PIMS.util.Constants;
-import com.ptl.PIMS.util.TestUtil;
 
 public class CreateIndustrialTrainingPage {
 	WebDriver driver;
@@ -63,12 +62,4 @@ public class CreateIndustrialTrainingPage {
 		return size;
 	}
 
-	public String getSuccessMessage(){
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessageindustrialtraining.getText();
-	}	
 }

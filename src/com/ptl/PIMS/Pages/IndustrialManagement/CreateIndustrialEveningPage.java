@@ -1,7 +1,5 @@
 package com.ptl.PIMS.Pages.IndustrialManagement;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.ptl.PIMS.util.Constants;
 
 public class CreateIndustrialEveningPage {
+	
 	WebDriver driver;
 	@FindBy(xpath = Constants.CreateEveningButton)
 	WebElement create;
@@ -38,13 +37,6 @@ public class CreateIndustrialEveningPage {
 		IndustrialEveningPage eveningpage = PageFactory.initElements(driver, IndustrialEveningPage.class);
 		return eveningpage;
 	}
-	public String getSuccessMessage(){
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessageindustrialevening.getText();
-	}	
+	
 
 }

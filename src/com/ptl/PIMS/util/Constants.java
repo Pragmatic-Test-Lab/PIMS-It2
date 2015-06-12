@@ -249,6 +249,8 @@ public class Constants {
 	public static final String VOCManagement_SearchProgCode = "//input[@name='VocationalTrainingProgramSearch[vtp_program_code]']";
 	public static final String VOCManagement_SearchProgName = "//input[@name='VocationalTrainingProgramSearch[vtp_program_name]']";
 	public static final String VOCManagement_SearchProgDuration = "//input[@name='VocationalTrainingProgramSearch[vtp_duration]']";
+	public static final String VOCManagement_FirstRecord = "(.//span[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String VOCManagement_FirstAuthRecord = "(.//span[@class='glyphicon glyphicon-ok'])[1]";
 	public static final String VOCManagement_NewVOCProgButton = "//a[@href='/PIMS3/web/vocational-training-program/create']";
 
 	public static final String VOC_ProgCode = "//input[@name='VocationalTrainingProgram[vtp_program_code]']";
