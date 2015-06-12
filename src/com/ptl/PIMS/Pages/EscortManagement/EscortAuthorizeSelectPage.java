@@ -11,10 +11,9 @@ public class EscortAuthorizeSelectPage extends SearchEscort{
 		driver = dr;
 	}
 	
-	public EscortAuthorizePage selectFirstEscort(){
+	public EscortAuthorizePage selectLastEscort(){		
 		
-		EscortFirstRecord.click();
-		
+		getLastEscortInList().click();		
 		return PageFactory.initElements(driver, EscortAuthorizePage.class);
 	}
 	

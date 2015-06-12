@@ -1,5 +1,7 @@
 package com.ptl.PIMS.Pages.EscortManagement;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -9,10 +11,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.PIMS.Pages.CommonMethods;
 import com.ptl.PIMS.util.Constants;
+import com.ptl.PIMS.util.TestUtil;
 
 public class SearchEscort extends CommonMethods{
 
-	WebDriver driver;
+	protected WebDriver driver;
 	
 	@FindBy(xpath = Constants.EscortManagement_SearchID)
 	public WebElement EscortID;
@@ -23,12 +26,18 @@ public class SearchEscort extends CommonMethods{
 	public WebElement EscortFirstRecord;	
 
 	@SuppressWarnings("unchecked")
-	public <T extends SearchEscort>T EscortForSearch (String date, String id){
+	public <T extends SearchEscort>T EscortForSearch(String date, String id){
 		
-		EscortID.sendKeys(date);
-		EscortDate.sendKeys(id + Keys.ENTER);
+		EscortDate.sendKeys(TestUtil.wordMonthToNumber(date));
+		EscortID.sendKeys(id + Keys.ENTER);
 		
 		return (T)PageFactory.initElements(driver, this.getClass());
+	}
+	
+	public WebElement getLastEscortInList(){
+		
+		List<WebElement> listOfEscorts = driver.findElements(By.xpath(Constants.EscortManagement_EscortRecords));
+		return driver.findElement(By.xpath(Constants.EscortManagement_EscortRecords + "[" + listOfEscorts.size() +"]"));
 	}
 	
 	

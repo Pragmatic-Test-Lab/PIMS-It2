@@ -7,6 +7,9 @@ import org.testng.annotations.Test;
 
 import com.ptl.PIMS.Pages.EscortManagement.EscortAddPage;
 import com.ptl.PIMS.Pages.EscortManagement.EscortAddUpdatePage;
+import com.ptl.PIMS.Pages.EscortManagement.EscortAuthorizePage;
+import com.ptl.PIMS.Pages.EscortManagement.EscortAuthorizeSelectPage;
+import com.ptl.PIMS.Pages.EscortManagement.EscortUpdatePage;
 import com.ptl.PIMS.Pages.EscortManagement.Calendar.CalendarInmateSelectPage;
 import com.ptl.PIMS.Pages.EscortManagement.Calendar.CalendarPage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
@@ -49,6 +52,8 @@ public class EscortCreateUpdateTest extends TestBase{
     	assertTrue(authorizeRegInmateSelect.successMessageAvaiable(), "Could not find Success Message in Registration Page.");
 	}
 	
+	
+	
 	@Test(dataProvider = "getEscData", dependsOnMethods = "prepareEscortData")
 	public void createCalendarRecord(Hashtable<String,String> data) {
 		
@@ -57,6 +62,7 @@ public class EscortCreateUpdateTest extends TestBase{
 		CalendarPage calendar = calendarPage.selectFirstInmate();
 		
 		calendarPage = calendar.addCourtDates(data.get("caseNos"), data.get("NCDate"));
+		//calendarPage = calendar.addCourtDates("CASE001", data.get("NCDate"));
 		
 		assertTrue(calendarPage.successMessageAvaiable(), "Success message was not found in Add Court Date To Calendar.");		
 	}
@@ -69,9 +75,37 @@ public class EscortCreateUpdateTest extends TestBase{
 		
 		escortAdd = escortAdd.pickDate(data.get("NCDate"));
 		escortAdd.extraEscortDetails(registrationNo, data.get("caseNos"), data.get("courts"), data.get("EscortDetail"));
+		escortAddUpdate = escortAdd.createEscort();
 		
 		assertTrue(escortAddUpdate.successMessageAvaiable(), "Success message was not found in Escort Create.");		
 	}
+	
+	
+	@Test(dataProvider = "getEscData", dependsOnMethods = "createEscortHeader")
+	public void editEscortHeader(Hashtable<String,String> data) {
+		
+		escortAddUpdate = escortAddUpdate.EscortForSearch(data.get("NCDate"), "");
+		EscortUpdatePage escortUpdate = escortAddUpdate.selectLastEscort();
+		
+		escortUpdate.editEscortDetails(registrationNo, data.get("caseNos"), data.get("courts"), data.get("New EscortDetail"));
+		escortAddUpdate = escortUpdate.clickUpdate();
+		
+		assertTrue(escortAddUpdate.successMessageAvaiable(), "Success message was not found in Escort Update.");		
+	}
+	
+	@Test(dataProvider = "getEscData", dependsOnMethods = "editEscortHeader")
+	public void authorizeEscortHeader(Hashtable<String,String> data) {
+		
+		EscortAuthorizeSelectPage escortAuthSelect = topMenu.gotoEscortAuthorize();
+		escortAuthSelect = escortAuthSelect.EscortForSearch(data.get("NCDate"), "");
+
+		EscortAuthorizePage escortAuth = escortAuthSelect.selectLastEscort();
+		escortAuthSelect = escortAuth.authorizeRecord();
+		
+		assertTrue(escortAuthSelect.successMessageAvaiable(), "Success message was not found in Escort Authorize.");		
+	}
+	
+	
 	@DataProvider
 	public Object[][] getEscData() {
 		return TestUtil.getTestData("Escort Test", xls);

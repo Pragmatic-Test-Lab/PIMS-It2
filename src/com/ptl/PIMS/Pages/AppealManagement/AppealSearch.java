@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.PIMS.Pages.CommonMethods;
-import com.ptl.PIMS.Pages.SelectInmatePage;
 import com.ptl.PIMS.util.Constants;
 
 public class AppealSearch  extends CommonMethods{

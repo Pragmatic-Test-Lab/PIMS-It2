@@ -20,7 +20,7 @@ public class AppealCreateUpdateTest extends TestBase {
 
 	AppealAddUpdatePage appealPage;
 	
-	@Test(dataProvider = "getAppealData", groups="AppealCreateUpdateTest")
+	@Test(dataProvider = "getAppealData")
 	public void createAppealTestData(Hashtable<String, String> data) {
 		
 		loginToApplication();

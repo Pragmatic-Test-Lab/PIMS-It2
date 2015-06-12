@@ -17,10 +17,9 @@ public class EscortAddUpdatePage extends SearchEscort{
 		driver = dr;
 	}
 	
-	public EscortUpdatePage selectFirstEscort(){
+	public EscortUpdatePage selectLastEscort(){		
 		
-		EscortFirstRecord.click();
-		
+		getLastEscortInList().click();
 		return PageFactory.initElements(driver, EscortUpdatePage.class);
 	}
 
