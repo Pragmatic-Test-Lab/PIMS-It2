@@ -23,7 +23,16 @@ public class CreateMovementOutTest extends TestBase {
 		TopMenu topMenu = getTopMenu();
 		movementoutPage = topMenu.gotoNewMovementOutPage();
 		selectmovementoutadmissionpage = movementoutPage.getCreateMovementOutAdmissionPage();
-		createmovementoutPage=selectmovementoutadmissionpage.SearchAdmissionID();
+		selectmovementoutadmissionpage = selectmovementoutadmissionpage.doSearch(Constants.admissionid, "", "");
+		
+	try {
+		Thread.sleep(3000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+
+		createmovementoutPage = selectmovementoutadmissionpage.GoToMovementOutPage();
 
 	}	
 

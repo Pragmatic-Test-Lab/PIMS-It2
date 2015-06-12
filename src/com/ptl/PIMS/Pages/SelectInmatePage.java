@@ -45,10 +45,8 @@ public abstract class SelectInmatePage extends CommonMethods {
 
 		RegNoSearchField.sendKeys(RegNo);
 		BiometricSearchField.sendKeys(Biometric);
-		NameSearchField.sendKeys(Name);
-		
-		NameSearchField.sendKeys(Keys.ENTER);
-		
+		NameSearchField.sendKeys(Name + Keys.ENTER);
+				
 		return (T)PageFactory.initElements(driver, this.getClass());
  
 	}

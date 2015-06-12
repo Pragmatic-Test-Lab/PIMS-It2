@@ -1,17 +1,14 @@
 package com.ptl.PIMS.Pages.MovementManagement;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.ptl.PIMS.Pages.MealManagement.CreateGoodAuthorizePage;
+import com.ptl.PIMS.Pages.SelectInmatePage;
 import com.ptl.PIMS.util.Constants;
 
-public class SelectMovementOutAdmissionPage {
-
-	WebDriver driver;
+public class SelectMovementOutAdmissionPage extends SelectInmatePage{
 
 	@FindBy(xpath = Constants.CreateMovementOut)
 	WebElement createmovementout;
@@ -20,14 +17,16 @@ public class SelectMovementOutAdmissionPage {
 	@FindBy(xpath = Constants.MovementAdmissionIdSearch)
 	WebElement admisssionidsearch;
 	
-
+	@FindBy(xpath = Constants.CreateMovementOut)
+	WebElement firstInmate;
+	
 	public SelectMovementOutAdmissionPage(WebDriver dr){
 		driver = dr;
 	}
-		
-	public CreateMovementOutPage SearchAdmissionID(){
-		admisssionidsearch.sendKeys(Constants.admissionid+ Keys.ENTER);
-		createmovementout.click();
+	
+	public CreateMovementOutPage GoToMovementOutPage(){
+				
+		firstInmate.click();
 		CreateMovementOutPage createmovementout = PageFactory.initElements(driver, CreateMovementOutPage.class);
 		return createmovementout;	
 	}
