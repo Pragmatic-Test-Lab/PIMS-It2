@@ -52,6 +52,8 @@ import com.ptl.PIMS.Pages.RehabilitationManagement.Participants.AuthorizeShedule
 import com.ptl.PIMS.Pages.RehabilitationManagement.RehabilitationProgram.AddUpdateRehabilitationProgram;
 import com.ptl.PIMS.Pages.RehabilitationManagement.Shedule.AddUpdateRehabShedule;
 import com.ptl.PIMS.Pages.RehabilitationManagement.Shedule.AuthorizeRehabSheduleSelectProg;
+import com.ptl.PIMS.Pages.TransferManagement.TransferOutAuthorizePage;
+import com.ptl.PIMS.Pages.TransferManagement.TransferOutPage;
 import com.ptl.PIMS.Pages.VocationalTraining.AddParticipantsVoc_ProgSelect;
 import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVocParticipants_ProgSelect;
 import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVoc_ProgSelect;
@@ -217,6 +219,13 @@ public class TopMenu {
 	WebElement escortInLink;
 	@FindBy(xpath = Constants.TopMenu_EscortInOutAuthorizeLink)
 	WebElement escortInOutAuthorizeLink;
+	
+	@FindBy(xpath = Constants.TopMenu_TransferLink)
+	WebElement  transfermanagement;
+	@FindBy(xpath = Constants.TopMenu_TransferOutLink)
+	WebElement  transferoutmanagement;
+	@FindBy(xpath = Constants.TopMenu_TransferOutAuthorizeLink)
+	WebElement  transferoutauthorizemanagement;
 	
 	@FindBy(xpath = Constants.TopMenu_LogOut)
 	WebElement logOut;
@@ -635,6 +644,20 @@ public class TopMenu {
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 		TestBase.isLoggedIn = false;
 		return loginPage;		
+	}
+
+	public TransferOutPage gotoNewTransferOutPage() {
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(transfermanagement).moveToElement(transferoutmanagement).click().build().perform();
+		TransferOutPage newtransferoutpage = PageFactory.initElements(driver, TransferOutPage.class);
+		return newtransferoutpage;
+	}
+
+	public TransferOutAuthorizePage gototransferAuthorizePage() {
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(transfermanagement).moveToElement(transferoutauthorizemanagement).click().build().perform();
+		TransferOutAuthorizePage newtransferoutauthorizepage = PageFactory.initElements(driver, TransferOutAuthorizePage.class);
+		return newtransferoutauthorizepage;
 	}
 
 
