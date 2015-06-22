@@ -529,8 +529,12 @@ public class Constants {
 	public static final String CreateTransferOut_SuccessMessageText = "Created .* successfully";
 	public static final String TopMenu_TransferOutAuthorizeLink = "//a[contains(text(),'Transfer Out Authorize')]";
 	public static final String AuthorizeTransferOut_SuccessMessageText = ".* Successfully Saved";
+	public static final String TransferInDate = "(.//*[@title='Select date & time'])[2]";
+	public static final String TopMenu_TransferInLink = "//a[contains(text(),'Transfer In Add/Update')]";
+	public static final String TopMenu_TransferInAuthorizeLink = "//a[contains(text(),'Transfer In Authorize')]";
+	public static final String TransferinAuthorize = "(//*[@class='glyphicon glyphicon-ok'])[1]";
 	
-
+	//*[@id='transfer-tra_in_time']
 
 
 	
