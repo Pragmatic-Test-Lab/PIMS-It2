@@ -182,6 +182,44 @@ public static String getTodaysDateandtimeOut(){
 	
 }
 
+
+public static String getPastDateandtime(String goBack){
+	
+	String[] goBackAmount = goBack.split("-");
+	
+	int year = Calendar.getInstance().get(Calendar.YEAR) - Integer.parseInt(goBackAmount[0]);
+	int month = Calendar.getInstance().get(Calendar.MONTH) - Integer.parseInt(goBackAmount[1]);
+	int day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH) - Integer.parseInt(goBackAmount[2]);
+	int hour= Calendar.getInstance().get(Calendar.HOUR_OF_DAY) - Integer.parseInt(goBackAmount[3]);
+	int minuteTemp= Calendar.getInstance().get(Calendar.MINUTE) - Integer.parseInt(goBackAmount[4]);
+
+	int minute = minuteTemp - (minuteTemp%5)-5;
+	
+	String Month = "";
+	
+	switch(month){
+		case 0:Month = "Jan"; break;
+		case 1:Month = "Feb"; break;
+		case 2:Month = "Mar"; break;
+		case 3:Month = "Apr"; break;
+		case 4:Month = "May"; break;
+		case 5:Month = "Jun"; break;
+		case 6:Month = "Jul"; break;
+		case 7:Month = "Aug"; break;
+		case 8:Month = "Sep"; break;
+		case 9:Month = "Oct"; break;
+		case 10:Month = "Nov"; break;
+		case 11:Month = "Dec"; break;		 
+	}
+	
+	if (String.valueOf(minute).length() == 1) {
+		return year + "-" +  Month + "-" + day + "-" + hour +"-0"+ minute;
+	}
+	
+	return year + "-" +  Month + "-" + day + "-" + hour +"-"+ minute;
+	
+}
+
 public static String wordMonthToNumber(String date){
 	
 	String[] dates = date.split("-");

@@ -9,10 +9,6 @@ import com.ptl.PIMS.Pages.AppealManagement.AppealAddUpdatePage;
 import com.ptl.PIMS.Pages.AppealManagement.EditAppealPage;
 import com.ptl.PIMS.Pages.AppealManagement.NewAppeal;
 import com.ptl.PIMS.Pages.AppealManagement.NewAppeal_InmateSelect;
-import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
-import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionPage;
-import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
-import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegPage;
 import com.ptl.PIMS.TestCases.TestBase;
 import com.ptl.PIMS.util.TestUtil;
 
@@ -25,35 +21,14 @@ public class AppealCreateUpdateTest extends TestBase {
 		
 		loginToApplication();
 		
-		//Authorize Admission with court details
-		AuthorizeAdmissionInmatePage authorizeInmateSelect = getTopMenu().gotoAuthorizeAdmissionPage();
-		AuthorizeAdmissionPage authorizePage = authorizeInmateSelect.clickFirstInmate();
-		
-		authorizePage.fillCase(data.get("courts"), data.get("caseNos"), TestUtil.getTodaysDate(), TestUtil.getTodaysDate());
-		authorizePage.changeInmateCategory("Convicted");
-		authorizePage.changeAdmissionDate(TestUtil.getTodaysDate());
-	    registrationNo = authorizePage.getRegistrationNumber();
-	    
-    
-	    authorizeInmateSelect = authorizePage.doAuthorizeAdmission();
-		
-	    assertTrue(authorizeInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Admission Page.");
-	    //	    
-	    
-		
-		//Authorize Registration with sentence details
-		AuthorizeRegInmatePage authorizeRegInmateSelect = getTopMenu().gotoAuthorizeRegistrationPage();
-		authorizeRegInmateSelect.doSearch(registrationNo, "", "");
-		AuthorizeRegPage authorizeRegPage = authorizeRegInmateSelect.clickFirstInmate();
-		authorizeRegPage.addcaseDetailsOfInmate(data.get("caseNos"), data.get("Offenses"), data.get("Sentences"), data.get("Days"), 
-				data.get("Months"), data.get("Years"), data.get("Fines"));
-		authorizeRegInmateSelect = authorizeRegPage.authorizeInmate();
-		
-    	assertTrue(authorizeRegInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Registration Page.");
+		createInmateForAppeal(data.get("courts"),data.get("caseNos"), TestUtil.getTodaysDate(), TestUtil.getTodaysDate(),
+				data.get("Offenses"), data.get("Sentences"), data.get("Days"), 	data.get("Months"), data.get("Years"), 
+				data.get("Fines"));
 
 	}
+
 	
-	@Test(dataProvider = "getAppealData", dependsOnMethods = "createAppealTestData", groups="AppealCreateUpdateTest")
+	//@Test(dataProvider = "getAppealData", dependsOnMethods = "createAppealTestData", groups="AppealCreateUpdateTest")
 	public void createAppealTest(Hashtable<String, String> data) {
 		
 		//Create New Appeal
@@ -70,7 +45,7 @@ public class AppealCreateUpdateTest extends TestBase {
 		//
 	}
 	
-	@Test(dataProvider = "getAppealData", dependsOnMethods = "createAppealTest", groups="AppealCreateUpdateTest" )
+	//@Test(dataProvider = "getAppealData", dependsOnMethods = "createAppealTest", groups="AppealCreateUpdateTest" )
 	public void updateAppealTest(Hashtable<String, String> data) {
 		
 		

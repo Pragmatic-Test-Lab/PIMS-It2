@@ -1,7 +1,6 @@
 package com.ptl.PIMS.TestCases.MealManagement;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.ptl.PIMS.Pages.TopMenu;
@@ -10,7 +9,6 @@ import com.ptl.PIMS.Pages.MealManagement.CreateKitchenSlipPage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenAuthorizePage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenSlipPage;
 import com.ptl.PIMS.TestCases.TestBase;
-import com.ptl.PIMS.util.Constants;
 
 public class KitchenSlipTest extends TestBase {
 	

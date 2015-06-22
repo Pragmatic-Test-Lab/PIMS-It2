@@ -54,7 +54,28 @@ public class AuthorizeAdmissionPage {
 		
 		CLNDR.selectDate(driver.findElement(By.xpath(Constants.Admission_InmateCourtDetail_DateConviction + "[" + (dataRows + i) + "]")), conviction[i]);
 		CLNDR.selectDate(driver.findElement(By.xpath(Constants.Admission_InmateCourtDetail_DateSentence + "[" + (dataRows + i) + "]")), sentence[i]);
-		}	}
+		}	
+		
+	}
+	
+	public void fillMultipleCases(String commonCourt, String casePrefix,
+			String commonCaseDate, String commonSenDate, int noOfCases) {
+		
+		int dataRows = initialRowCount(CaseTabTable);
+		CalendarPopup CLNDR = new CalendarPopup(driver);
+		
+		for(int i=0; i < noOfCases; i++){		
+			
+		AddNewCase.click();
+		
+		driver.findElement(By.xpath(Constants.Admission_InmateCourtDetail_Court + "[" + (dataRows + i) + "]")).sendKeys(commonCourt);
+		driver.findElement(By.xpath(Constants.Admission_InmateCourtDetail_CaseNumber + "[" + (dataRows + i) + "]")).sendKeys(casePrefix + i);
+		
+		CLNDR.selectDate(driver.findElement(By.xpath(Constants.Admission_InmateCourtDetail_DateConviction + "[" + (dataRows + i) + "]")), commonCaseDate);
+		CLNDR.selectDate(driver.findElement(By.xpath(Constants.Admission_InmateCourtDetail_DateSentence + "[" + (dataRows + i) + "]")), commonSenDate);
+		}	
+		
+	}
 	
 
 	public void changeInmateCategory(String category) {

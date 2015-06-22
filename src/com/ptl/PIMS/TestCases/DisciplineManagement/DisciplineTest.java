@@ -24,6 +24,8 @@ public class DisciplineTest extends TestBase{
 		loginToApplication();
  
 		addUpdateDiscPage = getTopMenu().gotoAddUpdateDiscipline();
+		try {	Thread.sleep(3000); 	} catch (InterruptedException e) {}
+		
 		SelectInmateForDisciplinePage inmateSelectionPage = addUpdateDiscPage.CreateNewDiscipline();
 		
 		inmateSelectionPage = inmateSelectionPage.doSearch(data.get("RegNo"), "", "");		

@@ -11,7 +11,6 @@ public class CreateGoodReceivedPage{
 	
 	WebDriver driver;
 
-
 	@FindBy(xpath = Constants.CreateGoodReceivedButton)
 	WebElement create;
 	@FindBy(xpath = Constants.GoodReceivedQuantity)

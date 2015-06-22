@@ -28,8 +28,13 @@ import org.testng.annotations.BeforeSuite;
 import com.ptl.PIMS.Pages.HomePage;
 import com.ptl.PIMS.Pages.LoginPage;
 import com.ptl.PIMS.Pages.TopMenu;
+import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
+import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionPage;
+import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
+import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegPage;
 import com.ptl.PIMS.util.Constants;
 import com.ptl.PIMS.util.ReadXLS;
+import com.ptl.PIMS.util.TestUtil;
 
 
 public class TestBase{
@@ -46,6 +51,7 @@ public class TestBase{
 	
 	//inmate data
 	public static String registrationNo = "";
+	public static String appealRegistrationNo = "", visitRegistrationNo = "";
 	public static String progCode = "";
 	public static String mealId = "";
 
@@ -190,6 +196,60 @@ public class TestBase{
 		}
 		Assert.assertTrue(condition, message);
 		
+	}
+	
+
+	public void createInmateForAppeal(String courts, String caseNos, String sentenceDate, String convictiondate,
+			String Offences, String Sentences, String Days, String Months, String Years, String Fines) {
+		
+		//Authorize Admission with court details
+		AuthorizeAdmissionInmatePage authorizeInmateSelect = getTopMenu().gotoAuthorizeAdmissionPage();
+		AuthorizeAdmissionPage authorizePage = authorizeInmateSelect.clickFirstInmate();
+		
+		authorizePage.fillCase(courts, caseNos, sentenceDate, convictiondate);
+		
+		authorizePage.changeInmateCategory("Convicted");
+		authorizePage.changeAdmissionDate(TestUtil.getTodaysDate());
+		appealRegistrationNo = authorizePage.getRegistrationNumber();	    
+    
+	    authorizeInmateSelect = authorizePage.doAuthorizeAdmission();		
+	    assertTrue(authorizeInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Admission Page.");
+	    //	    
+		
+		//Authorize Registration with sentence details
+		AuthorizeRegInmatePage authorizeRegInmateSelect = getTopMenu().gotoAuthorizeRegistrationPage();
+		authorizeRegInmateSelect.doSearch(appealRegistrationNo, "", "");
+		AuthorizeRegPage authorizeRegPage = authorizeRegInmateSelect.clickFirstInmate();
+		
+		authorizeRegPage.addcaseDetailsOfInmate(courts, Offences, Sentences, Days, Months, Years, Fines);
+		
+		authorizeRegInmateSelect = authorizeRegPage.authorizeInmate();		
+    	assertTrue(authorizeRegInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Registration Page.");
+	}
+	
+	public void createInmateForVisit() {
+		
+		//Authorize Admission with court details
+		AuthorizeAdmissionInmatePage authorizeInmateSelect = getTopMenu().gotoAuthorizeAdmissionPage();
+		AuthorizeAdmissionPage authorizePage = authorizeInmateSelect.clickFirstInmate();
+		
+		authorizePage.changeInmateCategory("Convicted");
+		authorizePage.changeAdmissionDate(TestUtil.getTodaysDate());
+		
+		visitRegistrationNo = authorizePage.getRegistrationNumber(); 
+		authorizeInmateSelect = authorizePage.doAuthorizeAdmission();
+	
+	    assertTrue(authorizeInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Admission Page.");
+	    //	    
+		
+		//Authorize Registration with sentence details
+		AuthorizeRegInmatePage authorizeRegInmateSelect = getTopMenu().gotoAuthorizeRegistrationPage();
+		authorizeRegInmateSelect.doSearch(visitRegistrationNo, "", "");
+		
+		AuthorizeRegPage authorizeRegPage = authorizeRegInmateSelect.clickFirstInmate();		
+		authorizeRegInmateSelect = authorizeRegPage.authorizeInmate();
+		
+    	assertTrue(authorizeRegInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Registration Page.");
 	}
 	
 	

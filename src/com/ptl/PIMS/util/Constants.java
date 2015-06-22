@@ -66,6 +66,11 @@ public class Constants {
 	public static final String TopMenu_EscortOutLink= "//a[text()='Escort Out']";
 	public static final String TopMenu_EscortInLink= "//a[text()='Escort In']";
 	public static final String TopMenu_EscortInOutAuthorizeLink= "//a[text()='Escort in/out Authorization']";
+	public static final String TopMenu_VisitTopLink= "//a[text()='Visit Management']";
+	public static final String TopMenu_VisitAddUpdateLink= "//a[text()='Visit Add/Update']";
+	public static final String TopMenu_VisitAuthorizeLink= "//a[text()='Visit Requests Authorize']";
+	public static final String TopMenu_VisitAdditionalVisitorsLink= "//a[text()='Additional Visitors']";
+	public static final String TopMenu_VisitFreqLink= "//a[text()='Config Visitor Frequency']";
 	
 	public static final String TopMenu_LogOut = "//a[contains(text(),'Logout')]";
 
@@ -154,7 +159,7 @@ public class Constants {
 	public static final String CreateDemand = ".//a[text()='Create Demand Order']";
 	public static final String CreateDemandHeader="//*[@class='stock-tranaction-header-create']/h1";
 	public static final String CreateDemandPageHeader="Create Demand Order";
-	public static final String CreateDemandButton = "//*[@class='btn btn-success']";
+	public static final String CreateDemandButton = "//button[text()='Create']";
 	public static final String DemandSuccessMessage="//*[@class='alert alert-success']";
 	public static final String CreateDemandOrder_SuccessMessageText = "Created .* successfully";
 	public static final String DemandOrderAuthorize = "//*[text()='Demand Order Authorize']";
@@ -167,13 +172,13 @@ public class Constants {
 
 	public static final String KitchenSlip = ".//a[text()='Kitchen Slip']";
 	public static final String KitchenSlipAdd = ".//a[text()='Kitchen Slip Add/Update']";
-	public static final String CreateKitchenSlip = "//*[@class='btn btn-success']";
+	public static final String CreateKitchenSlip = "//a[@href='/PIMS3/web/kitchen-slip/create']";
 	public static final String KitchenSlipId = "//*[@id='stocktranactionheader-sth_refference_no']";
-	public static final String CreateKitchenSlipButton = "//*[@class='btn btn-success']";
+	public static final String CreateKitchenSlipButton = "//button[text()='Create']";
 	public static final String SuccessMessageKitchen = "//*[@class='alert alert-success']";
 	public static final String CreateKitchenSlip_SuccessMessageText = "Created .* successfully";
 	public static final String Kitchenitemline ="//*[@id='stocktranactiondetails-1-std_kitchen_item_id']";
-	public static final String AddNewKitchenItem = "//*[@class='btn btn-success glyphicon glyphicon-plus']";
+	public static final String AddNewKitchenItem = "//*[contains(@class,'glyphicon-plus')]";
 	public static final String quantityline = "//*[@id='stocktranactiondetails-1-std_quantity']";
 	public static final String KitchenOrderNo = "//*[@name='StockTranactionHeaderSearch[sth_refference_no]']";
 	public static final String SelectKitchenOrder = "(//*[@class='glyphicon glyphicon-ok'])[1]";
@@ -186,7 +191,7 @@ public class Constants {
 	public static final String SupplierAdd = ".//a[text()='Supplier']";
 	public static final String CreateSupplier = "//*[text()='Create Supplier']";
 	public static final String SupplierName = "//*[@id='supplier-sup_name']";
-	public static final String CreateSupplierButton = "//*[@class='btn btn-success']";
+	public static final String CreateSupplierButton = "//button[text()='Create']";
 	public static final String CreateSupplier_SuccessMessageText = "Created .* successfully";
 	public static final String SupplierSuccessMessage = "//*[@class='alert alert-success']";
 
@@ -196,7 +201,7 @@ public class Constants {
 	public static final String KitchenItemNameTamil = "//*[@id='kitchenitem-kit_name_ta']";
 	public static final String Unit = "//*[@id='kitchenitem-kit_unit_id']";
 	public static final String Wastage = "//*[@id='kitchenitem-kit_wastage']";
-	public static final String CreateKitchenItemButton = "//*[@class='btn btn-success']";
+	public static final String CreateKitchenItemButton = "//button[text()='Create']";;
 	public static final String CreateKitchenItem="//*[text()='Create Kitchen Item']";
 	public static final String CreateKitchenItem_SuccessMessageText = "Created .* successfully";
 	public static final String KitchenSuccessMessage = "//*[@class='alert alert-success']";
@@ -204,7 +209,7 @@ public class Constants {
 	public static final String Recipe = ".//*[text()='Recipe']";
 	public static final String CreateRecipe="(.//*[@class='glyphicon glyphicon-pencil'])[1]";
 	public static final String KitchenItemName2 = "";
-	public static final String addnewrecipe = "//*[@class='btn btn-success glyphicon glyphicon-plus']";
+	public static final String addnewrecipe = "//*[contains(@class,'glyphicon-plus')]";
 	public static final String RecipeTableBody = "//*[@id='recepe_details_grid']/tbody";
 	public static final String RecipeCountitem = "(.//select[contains(@id, '-red_kitchen_item_id')])";
 	public static final String RecipeCountquantity = "(.//input[contains(@id, '-red_quantity')])";
@@ -219,8 +224,8 @@ public class Constants {
 	public static final String SupplierLine = "//*[@id='stocktranactionheader-sth_supplier_id']";
 	public static final String Kitchenitemline1 = "//*[@id='stocktranactiondetails-1-std_kitchen_item_id']";
 	public static final String quantityline1 = "//*[@id='stocktranactiondetails-1-std_quantity']";
-	public static final String AddNewPurchaseOrder = "//*[@class='btn btn-success glyphicon glyphicon-plus']";
-	public static final String PurchaseOrderCreate = "//*[@class='btn btn-success']";
+	public static final String AddNewPurchaseOrder = "//*[contains(@class,'glyphicon-plus')]";
+	public static final String PurchaseOrderCreate = "//button[text()='Create']";
 	public static final String SuccessMessagePurchaseOrder = "//*[@class='alert alert-success']";
 	public static final String CreatePurchaseOrder_SuccessMessageText = "Created .* successfully";
 	public static final String PurchaseOrderNo = "//*[@name='StockTranactionHeaderSearch[sth_order_no]']";
@@ -400,6 +405,44 @@ public class Constants {
 	
 	//
 	
+	//Visit Management
+	
+	public static final String VisitManagement_RegNoSearch = "//input[@name='VisitSearch[registration_no]']";
+	public static final String VisitManagement_BiometricSearch = "//input[@name='VisitSearch[biometric_id]']";
+	public static final String VisitManagement_NAWSearch = "//input[@name='VisitSearch[name_as_in_warrant]']";
+	public static final String VisitManagement_InTimeSearch = "//input[@name='VisitSearch[vis_in_time]']";
+	public static final String VisitManagement_FirstRecord = "(.//span[@class='glyphicon glyphicon-pencil'])[1]";
+	
+	public static final String VisitManagement_AuthorizeButton = "//button[text()='Authorize']";	
+	public static final String VisitManagement_UpdateButton = "//button[text()='Update']";
+	public static final String VisitManagement_CreateButton = "//button[text()='Create']";
+	
+	public static final String VisitManagement_CreateVisitButton = "//a[@href='/PIMS3/web/visit/selectadmission']";
+	public static final String VisitManagement_CreateVisitInTime = "//input[@name='Visit[vis_in_time]']";
+	public static final String VisitManagement_CreateVisitOutTime = "//input[@name='Visit[vis_out_time]']";
+	public static final String VisitManagement_VisitorTab = "//a[text()='Visitor Details']";
+	public static final String VisitManagement_VisitorTable = "//*[@id='visitor_details_grid']/tbody";
+	public static final String VisitManagement_VisitorAddNew = "(.//button[text()='Add New'])[1]";
+	public static final String VisitManagement_VisitorName = "(.//input[contains(@id,'-vid_visitor_name')])";
+	public static final String VisitManagement_VisitorNIC = "(.//input[contains(@id,'-vid_nic')])";
+	public static final String VisitManagement_VisitorRelationship = "(.//select[contains(@id,'-vid_relationship_id')])";
+	public static final String VisitManagement_VisitorPass = "(.//input[contains(@id,'-vid_pass_no')])";
+	public static final String VisitManagement_ItemsTab = "//a[text()='Items Details']";
+	public static final String VisitManagement_ItemsTable = "//*[@id='visit_details_item_grid']/tbody";
+	public static final String VisitManagement_ItemsAddNew = "(.//button[text()='Add New'])[2]";
+	public static final String VisitManagement_ItemDescription = "(.//input[contains(@id,'-vdi_item_description')])";
+	public static final String VisitManagement_ItemQuantity = "(.//input[contains(@id,'-vdi_quantity')])";
+	public static final String VisitManagement_ItemValue = "(.//input[contains(@id,'-vdi_value')])";
+	
+	public static final String VisitManagement_VisitFreqCategory = "//input[@name='VisitInmateFrequencySearch[vif_visit_inmate_category_type]']";
+	public static final String VisitManagement_VisitFreqFirstEditIcon = "(.//span[@class='glyphicon glyphicon-pencil'])[1]";
+	
+	public static final String VisitManagement_VisitFreqField = "//select[@id='visitinmatefrequency-vif_frequency']";
+	public static final String VisitManagement_VisitFreqNoOfVisitorsField = "//input[@id='visitinmatefrequency-vif_no_of_visitors_per_time']";
+
+	public static final String VisitManagement_ = "//*[@='']";
+	
+	//
 	//
 
 	// Inmate Search Pages
@@ -433,7 +476,7 @@ public class Constants {
 
 	public static final String IndustrialManagement = ".//a[text()='Industrial Training']";
 	public static final String IndustrialManagementMorning = ".//a[text()='Industrial Attendance Morning']";
-	public static final String CreateMorningButton = "(//*[@class='btn btn-success'])";
+	public static final String CreateMorningButton = "//button[text()='Create']";
 	public static final String attendancebox1 = "//*[@id='industrialattendance-0-ina_morning_attendance']";
 	public static final String attendanceline1 = "//*[@id='industrialattendance-0-ina_remarks']";
 	public static final String attendancebox3 = "//*[@id='industrialattendance-2-ina_morning_attendance']";
@@ -468,9 +511,9 @@ public class Constants {
 	public static final String TrainingRecord = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
 	public static final String SuccessMessageTraining = "(//*[@class='alert alert-success'])";
 	public static final String industrialtrainingperformances = ".//a[text()='Industrial Daily Performances']";
-	public static final String Addtrainingitem1 = "(.//*[@class='btn btn-success glyphicon glyphicon-plus'])[1]";
-	public static final String Addtrainingitem2 = "(.//*[@class='btn btn-success glyphicon glyphicon-plus'])[2]";
-	public static final String Addtrainingitem3 = "(.//*[@class='btn btn-success glyphicon glyphicon-plus'])[3]";
+	public static final String Addtrainingitem1 = "//*[contains(@class,'glyphicon-plus')][1]";
+	public static final String Addtrainingitem2 = "//*[contains(@class,'glyphicon-plus')][2]";
+	public static final String Addtrainingitem3 = "//*[contains(@class,'glyphicon-plus')][3]";
 	public static final String industrialproduct = "(.//input[contains(@id,'-idp_product_name')])";
 	public static final String noofpieces = "(.//input[contains(@id,'-idp_quantity')])";
 	public static final String industrialworkpromotions = ".//a[text()='Industrial Work Promotions']";
@@ -493,12 +536,12 @@ public class Constants {
 	//Movement Management
 	
 	
-	public static final String MovementOutCreate = "(.//*[@class='btn btn-success'])";
+	public static final String MovementOutCreate = "//button[text()='Create']";
 	public static final String CreateMovementOut = "(.//*[@class='glyphicon glyphicon-user'])[1]";
 	public static final String TopMenu_MovementLink = "//a[contains(text(),'Movement Management')]";
 	public static final String TopMenu_MovementOutLink = "//a[contains(text(),'Movement Out Add/Update')]";
 	public static final String MovementAdmissionId = "//*[@id='w1']/table/tbody/tr[1]/td[2]";
-	public static final String CreateMovementOutButton = "(.//*[@class='btn btn-success'])";
+	public static final String CreateMovementOutButton = "//button[text()='Create']";
 	public static final String MovementOutSuccessMessage = ".//*[@class='alert alert-success']";
 	public static final String CreateMovementOut_SuccessMessageText = "Created .* successfully";
 	public static final String MovementAdmissionIdSearch = "(.//*[@class='form-control'])[1]";

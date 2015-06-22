@@ -70,6 +70,34 @@ public class AuthorizeRegPage {
 
 	}
 	
+	public void addMultipleSentences(String casePrefix, String commonOffense, String commonSentence, String Day, String Month, 
+			String Year, String Fine){
+
+		CaseTab.click();
+
+		String[] Years = Year.split(",");		
+		String[] Months = Month.split(",");		
+		String[] Days = Day.split(",");		
+		String[] Fines = Fine.split(",");		
+
+		int dataRows = initialRowCount(CaseTabTableBody);
+		
+		for(int i=0; i< Years.length; i++){
+
+			AddNewCase.click();			
+			
+			driver.findElement(By.xpath(Constants.Registration_CaseDetail_CaseNumber + "[" + (dataRows + i) + "]")).sendKeys(casePrefix + i);
+			driver.findElement(By.xpath(Constants.Registration_CaseDetail_Offence + "[" + (dataRows + i) + "]")).sendKeys(commonOffense);
+			driver.findElement(By.xpath(Constants.Registration_CaseDetail_SentenceType + "[" + (dataRows + i) + "]")).sendKeys(commonSentence);
+			driver.findElement(By.xpath(Constants.Registration_CaseDetail_Years + "[" + (dataRows + i) + "]")).sendKeys(Years[i]);
+			driver.findElement(By.xpath(Constants.Registration_CaseDetail_Months + "[" + (dataRows + i) + "]")).sendKeys(Months[i]);
+			driver.findElement(By.xpath(Constants.Registration_CaseDetail_Days + "[" + (dataRows + i) + "]")).sendKeys(Days[i]);
+			driver.findElement(By.xpath(Constants.Registration_CaseDetail_Fine + "[" + (dataRows + i) + "]")).sendKeys(Fines[i]);
+			
+		}	
+
+	}
+	
 	private int initialRowCount(WebElement element) {
 		List<WebElement> rows = element.findElements(By.tagName("tr"));	
 		

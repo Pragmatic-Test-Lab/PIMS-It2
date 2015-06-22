@@ -52,6 +52,10 @@ import com.ptl.PIMS.Pages.RehabilitationManagement.Participants.AuthorizeShedule
 import com.ptl.PIMS.Pages.RehabilitationManagement.RehabilitationProgram.AddUpdateRehabilitationProgram;
 import com.ptl.PIMS.Pages.RehabilitationManagement.Shedule.AddUpdateRehabShedule;
 import com.ptl.PIMS.Pages.RehabilitationManagement.Shedule.AuthorizeRehabSheduleSelectProg;
+import com.ptl.PIMS.Pages.VisitManagement.VisitAddUpdatePage;
+import com.ptl.PIMS.Pages.VisitManagement.VisitAuthorizeSelectionPage;
+import com.ptl.PIMS.Pages.VisitManagement.AdditionalVisitAndFreq.AdditionalVisitAddUpdatePage;
+import com.ptl.PIMS.Pages.VisitManagement.AdditionalVisitAndFreq.VisitFreqAddUpdatePage;
 import com.ptl.PIMS.Pages.VocationalTraining.AddParticipantsVoc_ProgSelect;
 import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVocParticipants_ProgSelect;
 import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVoc_ProgSelect;
@@ -217,6 +221,17 @@ public class TopMenu {
 	WebElement escortInLink;
 	@FindBy(xpath = Constants.TopMenu_EscortInOutAuthorizeLink)
 	WebElement escortInOutAuthorizeLink;
+	
+	@FindBy(xpath = Constants.TopMenu_VisitTopLink)
+	WebElement VisitTopLink;
+	@FindBy(xpath = Constants.TopMenu_VisitAddUpdateLink)
+	WebElement VisitAddUpdateLink;
+	@FindBy(xpath = Constants.TopMenu_VisitAuthorizeLink)
+	WebElement VisitAuthorizeLink;
+	@FindBy(xpath = Constants.TopMenu_VisitAdditionalVisitorsLink)
+	WebElement VisitAdditionalVisitLink;
+	@FindBy(xpath = Constants.TopMenu_VisitFreqLink)
+	WebElement VisitFreqLink;
 	
 	@FindBy(xpath = Constants.TopMenu_LogOut)
 	WebElement logOut;
@@ -628,6 +643,34 @@ public class TopMenu {
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(escortTopLink).moveToElement(escortInOutAuthorizeLink).click().build().perform();
 		return PageFactory.initElements(driver, EscortOutInAuthorizeSelectPage.class);
+	}
+	
+	public VisitAddUpdatePage gotoVisitAddUpdate() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(VisitTopLink).moveToElement(VisitAddUpdateLink).click().build().perform();
+		return PageFactory.initElements(driver, VisitAddUpdatePage.class);
+	}
+	
+	public VisitAuthorizeSelectionPage gotoVisitAuthorization() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(VisitTopLink).moveToElement(VisitAuthorizeLink).click().build().perform();
+		return PageFactory.initElements(driver, VisitAuthorizeSelectionPage.class);
+	}
+	
+	public AdditionalVisitAddUpdatePage gotoVisitAdditional() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(VisitTopLink).moveToElement(VisitAdditionalVisitLink).click().build().perform();
+		return PageFactory.initElements(driver, AdditionalVisitAddUpdatePage.class);
+	}
+	
+	public VisitFreqAddUpdatePage gotoVisitFreq() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(VisitTopLink).moveToElement(VisitFreqLink).click().build().perform();
+		return PageFactory.initElements(driver, VisitFreqAddUpdatePage.class);
 	}
 	
 	public LoginPage doLogout(){
