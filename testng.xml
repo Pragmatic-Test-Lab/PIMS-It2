@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-   <!--  
+   <!-- --> 
 	<test name="Meal Management">
 		<classes>
 			<class name="com.ptl.PIMS.TestCases.MealManagement.CreateSupplierTest" />
@@ -13,14 +13,14 @@
 			<class name="com.ptl.PIMS.TestCases.MealManagement.GoodReceivedTest" />
 		</classes>
 	</test>
-
+<!--  
 	<test name="Appeal Management">
 	    <classes>
 	        <class name="com.ptl.PIMS.TestCases.AppealManagement.AppealCreateUpdateTest" />
 	        <class name="com.ptl.PIMS.TestCases.AppealManagement.ApproveAppealTest" />	        			
 	    </classes>	    
 	</test>
- 
+-->
 	<test name="Industrial Training">
 	    <classes>
 	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.IndustrialTrainingTest" />
@@ -28,7 +28,7 @@
 	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.CreateWagesTest" />	        			
 	    </classes>	    
 	</test>
-		
+	
 	<test name="Vocational Training">
 	    <classes>
 	        <class name="com.ptl.PIMS.TestCases.VocationalManagement.VOCProgramTest" />
@@ -67,5 +67,18 @@
 	        <class name="com.ptl.PIMS.TestCases.EscortManagement.EscortRecordInOutTest" />	        			
 	    </classes>	    
 	</test>
--->
+
+	<test name="Transfer Management">
+	    <classes>
+	        <class name="com.ptl.PIMS.TestCases.TransferManagement.TransferOutInTest" />	        			
+	    </classes>	    
+	</test>	
+
+	<test name="Visit Management">
+	    <classes>
+	        <class name="com.ptl.PIMS.TestCases.VisitManagement.VisitManagementTest" />	        			
+	        <class name="com.ptl.PIMS.TestCases.VisitManagement.AdditionalVisitTest" />	        			
+	    </classes>	    
+	</test>
+	
 </suite>

@@ -15,17 +15,14 @@ public class IndustrialAttendanceTest extends TestBase {
 	CreateIndustrialEveningPage createevening;
 	IndustrialEveningPage industrialevening;
 
-	@Test   
-	public void goToIndustrialMorningPage(){
 
-		loginToApplication();		
-		industrialmorning = topMenu.gotoNewIndustrialMorning();
-		createmorning = industrialmorning.ClickIndustryButton();
+	@Test
+	public void markIndustrialMorningTest() {
 		
-	}	
-
-	@Test(dependsOnMethods="goToIndustrialMorningPage")
-	public void submitIndustrialMorningTest() {
+		loginToApplication();	
+		
+		industrialmorning = getTopMenu().gotoNewIndustrialMorning();
+		createmorning = industrialmorning.ClickIndustryButton();
 		
 		createmorning.EnterAttendanceData("1 hour late","2 hour late");
 		industrialmorning = createmorning.ClickCreateButton();
@@ -34,8 +31,8 @@ public class IndustrialAttendanceTest extends TestBase {
 
 	}
 	
-	@Test(dependsOnMethods="submitIndustrialMorningTest")
-	public void submitIndustrialEveningTest() {
+	@Test(dependsOnMethods="markIndustrialMorningTest")
+	public void markIndustrialEveningTest() {
 		
 		industrialevening = topMenu.gotoNewIndustrialEvening();
 		createevening = industrialevening.ClickEveningRecordButton();

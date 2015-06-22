@@ -7,12 +7,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.PIMS.Pages.CalendarPopup;
-import com.ptl.PIMS.Pages.MovementManagement.MovementInPage;
 import com.ptl.PIMS.util.Constants;
 import com.ptl.PIMS.util.TestUtil;
 
 public class CreateTransferInPage {
-WebDriver driver;
+	
+	WebDriver driver;
 	
 	@FindBy(xpath = Constants.CreateMovementInButton)
 	WebElement create;
@@ -38,13 +38,4 @@ WebDriver driver;
 		return transferinpage;
 	}
 
-	public String getSuccessMessage(){
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessageMovementIn.getText();
-	}
-	
 }

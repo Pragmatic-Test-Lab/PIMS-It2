@@ -511,9 +511,9 @@ public class Constants {
 	public static final String TrainingRecord = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
 	public static final String SuccessMessageTraining = "(//*[@class='alert alert-success'])";
 	public static final String industrialtrainingperformances = ".//a[text()='Industrial Daily Performances']";
-	public static final String Addtrainingitem1 = "//*[contains(@class,'glyphicon-plus')][1]";
-	public static final String Addtrainingitem2 = "//*[contains(@class,'glyphicon-plus')][2]";
-	public static final String Addtrainingitem3 = "//*[contains(@class,'glyphicon-plus')][3]";
+	public static final String Addtrainingitem1 = "(//*[contains(@class,'glyphicon-plus')])[1]";
+	public static final String Addtrainingitem2 = "(//*[contains(@class,'glyphicon-plus')])[2]";
+	public static final String Addtrainingitem3 = "(//*[contains(@class,'glyphicon-plus')])[3]";
 	public static final String industrialproduct = "(.//input[contains(@id,'-idp_product_name')])";
 	public static final String noofpieces = "(.//input[contains(@id,'-idp_quantity')])";
 	public static final String industrialworkpromotions = ".//a[text()='Industrial Work Promotions']";
@@ -565,11 +565,10 @@ public class Constants {
 	
 	//Transfer Management
 	
-	public static final String TransferOutCreate = ".//*[@class='btn btn-success']";
+	public static final String TransferOutCreate = "//*[@href='/PIMS3/web/transfer/selectadmission']";
 	public static final String TransferLocationTo = "//*[@id='transfer-tra_to_institute_id']";
 	public static final String TopMenu_TransferOutLink = "//a[contains(text(),'Transfer Out Add/Update')]";
 	public static final String TopMenu_TransferLink = "//a[contains(text(),'Transfer Management')]";
-	public static String transferadmissionid = "T/10299/2015";
 	public static final String CreateTransferOut_SuccessMessageText = "Created .* successfully";
 	public static final String TopMenu_TransferOutAuthorizeLink = "//a[contains(text(),'Transfer Out Authorize')]";
 	public static final String AuthorizeTransferOut_SuccessMessageText = ".* Successfully Saved";

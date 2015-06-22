@@ -12,16 +12,12 @@ public class CreateWagesTest extends TestBase{
 	WagesPage wages;
 
 	@Test   
-	public void goToWagesPage(){
-
-		loginToApplication();
-		wages = topMenu.gotowages();
-		createwages = wages.ClickIndustrialWages();
-	}	
-
-	@Test(dependsOnMethods="goToWagesPage")
-	public void submitIndustrialWagesTest() {
+	public void industrialWagesTest() {
 		
+		loginToApplication();
+		wages = getTopMenu().gotowages();
+		
+		createwages = wages.ClickIndustrialWages();
 		createwages.EnterWagesData("8","1","0.5");
 		wages = createwages.ClickUpdateButton();
 

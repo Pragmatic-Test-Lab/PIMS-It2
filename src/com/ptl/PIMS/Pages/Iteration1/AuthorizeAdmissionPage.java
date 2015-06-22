@@ -97,6 +97,7 @@ public class AuthorizeAdmissionPage {
 	
 	public AuthorizeAdmissionInmatePage doAuthorizeAdmission(){
 		
+		try { Thread.sleep(2000); } catch (InterruptedException e) {}
 		AuthorizeInamteAdmissionButton.submit();
 		
 		AuthorizeAdmissionInmatePage authorizeAdmissionSelectPage = PageFactory.initElements(driver, AuthorizeAdmissionInmatePage.class);

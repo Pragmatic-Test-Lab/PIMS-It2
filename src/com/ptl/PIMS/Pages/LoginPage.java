@@ -31,6 +31,8 @@ public class LoginPage {
 		password.sendKeys(pWord);
 		login.click();
 		
+		try { Thread.sleep(3000); } catch (InterruptedException e) {}
+		
 		HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 		return homePage;
 	}

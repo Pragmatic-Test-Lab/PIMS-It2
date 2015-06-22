@@ -91,6 +91,12 @@ public class VisitCreatePage {
 		return PageFactory.initElements(driver, VisitAddUpdatePage.class);
 	}
 	
+	public VisitAddUpdatePage createVisit(){
+		
+		createButton.click();
+		return PageFactory.initElements(driver, VisitAddUpdatePage.class);
+	}
+	
 	private int initialRowCount(WebElement element) {
 		List<WebElement> rows = element.findElements(By.tagName("tr"));	
 		

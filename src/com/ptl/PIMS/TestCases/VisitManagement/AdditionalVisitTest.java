@@ -21,12 +21,9 @@ public class AdditionalVisitTest extends TestBase{
 		AdditionalVisitAddUpdatePage additionalAddUpdate = getTopMenu().gotoVisitAdditional();
 		
 		VisitAddSelectInmatePage visitInmateSelection = additionalAddUpdate.CreateNewVisit();
-		visitInmateSelection = visitInmateSelection.doSearch(registrationNo, "", "");		
-		
-		try {Thread.sleep(2000);} catch (InterruptedException e) {}
 		AdditionalVisitCreatePage additionalCreatePage = visitInmateSelection.selecFirstInmateforAdditionalVist();
 		
-		additionalCreatePage.fillVisitorDetails(data.get("Name"), data.get("NIC"), data.get("Relationship"),
+		additionalCreatePage.fillVisitorDetails(data.get("Name"), data.get("NIC"), data.get("Relationship"), 
 				data.get("Pass"));
 		additionalCreatePage.fillItemDetails(data.get("Description"), data.get("Quantity"), data.get("Value"));
 		

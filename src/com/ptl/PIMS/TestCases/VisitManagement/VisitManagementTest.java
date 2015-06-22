@@ -24,7 +24,7 @@ public class VisitManagementTest extends TestBase{
 		loginToApplication();
 		
 		//Uses appeal inmate if appeal test was run before or creates a new inmate for visit test
-		if(!appealRegistrationNo.equals(""))
+		if(appealRegistrationNo.equals(""))
 			createInmateForVisit();
 		else visitRegistrationNo = appealRegistrationNo;
 				
@@ -52,16 +52,15 @@ public class VisitManagementTest extends TestBase{
 		VisitAddUpdatePage visitPage = getTopMenu().gotoVisitAddUpdate();		
 		VisitAddSelectInmatePage visitInmateSelection = visitPage.CreateNewVisit();
 		
-		visitInmateSelection = visitInmateSelection.doSearch(data.get("registrationNo"), "", "");
+		visitInmateSelection = visitInmateSelection.doSearch(visitRegistrationNo, "", "");
 		
 		try {Thread.sleep(2000);} catch (InterruptedException e) {}
 		VisitCreatePage newVisit =  visitInmateSelection.selecFirstInmateforVist();
 		
-		newVisit.fillVisitorDetails(data.get("Name"), data.get("NIC"), data.get("Relationship"),
-				data.get("Pass"));
+		newVisit.fillVisitorDetails(data.get("Name"), data.get("NIC"), data.get("Relationship"),data.get("Pass"));
 		newVisit.fillItemDetails(data.get("Description"), data.get("Quantity"), data.get("Value"));
 		
-		visitPage = newVisit.createVisit(TestUtil.getPastDateandtime("0-0-1-0-0"));
+		visitPage = newVisit.createVisit();
 		
 		assertTrue(visitPage.successMessageAvaiable(), "Success message was not found in Visit Add.");		
 	}
@@ -71,7 +70,7 @@ public class VisitManagementTest extends TestBase{
 		
 		VisitAuthorizeSelectionPage visitAuthSelection = getTopMenu().gotoVisitAuthorization();
 		
-		visitAuthSelection = visitAuthSelection.doVisitSearch(data.get("registrationNo"), "", "", "");
+		visitAuthSelection = visitAuthSelection.doVisitSearch(visitRegistrationNo, "", "", "");
 		VisitAuthorizePage visitAuth = visitAuthSelection.AuthorizeFirstVisit();
 		
 		visitAuthSelection = visitAuth.authorizeVisit();
