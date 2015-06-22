@@ -39,21 +39,20 @@ public class CreateMovementOutPage {
 
 	}
 	
-	public String EnterMovementData(){
-		String b=locationfrom.getAttribute("value");
-		if (b.equals("1")){
+	public void EnterMovementData(){
+		
+		String currentLoc = locationfrom.getAttribute("value");
+		
+		if (currentLoc.equals("1")){
 			locationto.sendKeys("ward3");
 		}
 		else{
 			locationto.sendKeys("ward1");
 		}
 		
-		
-		CalendarPopup CLNDR = new CalendarPopup(driver);
-		
+		CalendarPopup CLNDR = new CalendarPopup(driver);		
 		CLNDR.selectDateTime(driver.findElement(By.xpath(Constants.MovementOutDate)), TestUtil.getTodaysDateandtimeOut());	
 	
-		return b;
 	}
 	
 	public MovementOutPage ClickCreateButton(){
@@ -61,16 +60,6 @@ public class CreateMovementOutPage {
 		MovementOutPage movementoutpage = PageFactory.initElements(driver, MovementOutPage.class);
 		return movementoutpage;
 	}
-
-	public String getSuccessMessage(){
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessageMovementOut.getText();
-	}
-	
 
 
 

@@ -49,6 +49,12 @@
 	    </classes>	    
 	</test>
 	
+	<test name="Movement Management">	
+		<classes>			
+			<class name="com.ptl.PIMS.TestCases.MovementManagement.MovementOutInTest" />
+		</classes>
+	</test>
+	
 	<test name="Incidence Management">
 	    <classes>
 	        <class name="com.ptl.PIMS.TestCases.IncidenceManagement.IncidenceTest" />	        			

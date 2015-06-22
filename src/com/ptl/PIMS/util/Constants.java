@@ -536,7 +536,7 @@ public class Constants {
 	//Movement Management
 	
 	
-	public static final String MovementOutCreate = "//button[text()='Create']";
+	public static final String MovementOutCreate = "//a[@href='/PIMS3/web/movement/selectadmission']";
 	public static final String CreateMovementOut = "(.//*[@class='glyphicon glyphicon-user'])[1]";
 	public static final String TopMenu_MovementLink = "//a[contains(text(),'Movement Management')]";
 	public static final String TopMenu_MovementOutLink = "//a[contains(text(),'Movement Out Add/Update')]";
@@ -562,7 +562,6 @@ public class Constants {
 	public static final String TopMenu_MovementInAuthorizeLink = "//a[contains(text(),'Movement In Authorize')]";
 	public static final String AuthorizeMovementIn_SuccessMessageText = "Saved .* successfully";
 	public static final String MovementOutDate = "//*[@id='movement-mov_out_time']";
-	public static String admissionid="T/10362/2015";
 	
 	//Transfer Management
 	

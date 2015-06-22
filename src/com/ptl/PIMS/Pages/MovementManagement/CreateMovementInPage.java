@@ -11,7 +11,8 @@ import com.ptl.PIMS.util.Constants;
 import com.ptl.PIMS.util.TestUtil;
 
 public class CreateMovementInPage {
-WebDriver driver;
+	
+	WebDriver driver;
 	
 	@FindBy(xpath = Constants.CreateMovementInButton)
 	WebElement create;
@@ -24,10 +25,8 @@ WebDriver driver;
 	}
 	public void EnterMovementData(){
 		
-		CalendarPopup CLNDR = new CalendarPopup(driver);
-	
-		CLNDR.selectDateTime(driver.findElement(By.xpath(Constants.MovementInDate)), TestUtil.getTodaysDateandtime());	
-		
+		CalendarPopup CLNDR = new CalendarPopup(driver);	
+		CLNDR.selectDateTime(driver.findElement(By.xpath(Constants.MovementInDate)), TestUtil.getTodaysDateandtime());		
 	}
 
 
@@ -37,13 +36,4 @@ WebDriver driver;
 		return movementinpage;
 	}
 
-	public String getSuccessMessage(){
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessageMovementIn.getText();
-	}
-	
 }

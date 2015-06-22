@@ -177,7 +177,11 @@ public static String getTodaysDateandtimeOut(){
 		case 10:Month = "Nov"; break;
 		case 11:Month = "Dec"; break;		 
 	}
-  System.out.println(year + "-" +  Month + "-" + day+ "-" + hour +"-"+ minute);		
+	
+	if (String.valueOf(minute).length() == 1) 
+		return year + "-" +  Month + "-" + day + "-" + hour +"-0"+ minute;
+	
+	
 	return year + "-" +  Month + "-" + day+ "-" + hour +"-"+ minute;
 	
 }
@@ -212,9 +216,8 @@ public static String getPastDateandtime(String goBack){
 		case 11:Month = "Dec"; break;		 
 	}
 	
-	if (String.valueOf(minute).length() == 1) {
-		return year + "-" +  Month + "-" + day + "-" + hour +"-0"+ minute;
-	}
+	if (String.valueOf(minute).length() == 1) 
+		return year + "-" +  Month + "-" + day + "-" + hour +"-0"+ minute;	
 	
 	return year + "-" +  Month + "-" + day + "-" + hour +"-"+ minute;
 	

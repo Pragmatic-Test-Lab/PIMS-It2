@@ -8,7 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import com.ptl.PIMS.util.Constants;
 
 public class CreateMovementInAuthorize {
-WebDriver driver;
+	
+	WebDriver driver;
 	
 	@FindBy(xpath = Constants.CreateMovementOutAuthorizeButton)
 	WebElement create;
@@ -27,13 +28,4 @@ WebDriver driver;
 		return movementinauthorizepage;
 	}
 
-	public String getSuccessMessage(){
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessageMovementInAuthorize.getText();
-	}
-	
 }

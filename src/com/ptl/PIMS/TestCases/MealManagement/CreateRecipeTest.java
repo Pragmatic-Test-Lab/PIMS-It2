@@ -31,8 +31,7 @@ public class CreateRecipeTest extends TestBase {
 		createrecipepage.EnterRecipeData("Dhal","200");	
 		recipepage = createrecipepage.ClickCreateButton();
 
-		assertTrue(recipepage.getSuccessMessage().matches(Constants.CreateRecipe_SuccessMessageText),
-				"Recipe not created");
+		assertTrue(recipepage.successMessageAvaiable(),	"Success Message not found in Recipe Create");
 	}
 
 

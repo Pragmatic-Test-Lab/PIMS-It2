@@ -2,14 +2,12 @@ package com.ptl.PIMS.TestCases.MealManagement;
 
 import java.util.Random;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.ptl.PIMS.Pages.TopMenu;
 import com.ptl.PIMS.Pages.MealManagement.CreateKitchenItemPage;
 import com.ptl.PIMS.Pages.MealManagement.KitchenItemPage;
 import com.ptl.PIMS.TestCases.TestBase;
-import com.ptl.PIMS.util.Constants;
 
 public class CreateKitchenItemTest extends TestBase {
 

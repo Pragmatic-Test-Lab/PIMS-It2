@@ -12,9 +12,6 @@ WebDriver driver;
 	
 	@FindBy(xpath = Constants.CreateMovementOutAuthorizeButton)
 	WebElement create;
-	@FindBy(xpath = Constants.MovementOutAuthorizeSuccessMessage)
-	WebElement successMessageMovementOutAuthorize;
-
 
 	public CreateMovementOutAuthorizePage(WebDriver dr){
 		driver = dr;
@@ -27,13 +24,5 @@ WebDriver driver;
 		return movementoutauthorizepage;
 	}
 
-	public String getSuccessMessage(){
-
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-
-		return successMessageMovementOutAuthorize.getText();
-	}
 	
 }
