@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -21,6 +22,7 @@ import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
@@ -38,7 +40,8 @@ import com.ptl.PIMS.util.TestUtil;
 
 
 public class TestBase{
-
+	@FindBy(xpath = Constants.TopMenu_LogOut)
+	WebElement logout;
 	public static Logger APPLICATION_LOGS = null;
 	public static Properties CONFIG = null;
 	public static WebDriver driver = null;
@@ -180,6 +183,44 @@ public class TestBase{
 		}
 		else
 			homePage = getTopMenu().gotoHomePage();
+		
+		return homePage;
+
+	}
+	
+	public HomePage loginAsWataraka(){
+		
+		HomePage homePage;
+				
+		if (!isLoggedIn) {
+			APPLICATION_LOGS.debug("Login into system");
+			driver.get(CONFIG.getProperty("BASE_URL"));
+			LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
+
+			homePage = lp
+					.doLogin("admin_wataraka", "test$123");
+
+			Assert.assertTrue(homePage.IsMainPageImageShown(),
+					"Homepage Image not found!");
+			
+			APPLICATION_LOGS.debug("Successfully logged in");
+			isLoggedIn = true;
+		}
+		else
+			logout.click();
+		//	homePage = getTopMenu().gotoHomePage();
+			APPLICATION_LOGS.debug("Login into system");
+			driver.get(CONFIG.getProperty("BASE_URL"));
+			LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
+
+			homePage = lp
+					.doLogin("admin_wataraka", "test$123");
+
+			Assert.assertTrue(homePage.IsMainPageImageShown(),
+					"Homepage Image not found!");
+			
+			APPLICATION_LOGS.debug("Successfully logged in");
+			isLoggedIn = true;
 		
 		return homePage;
 

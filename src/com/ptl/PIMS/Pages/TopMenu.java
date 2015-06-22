@@ -56,6 +56,10 @@ import com.ptl.PIMS.Pages.VisitManagement.VisitAddUpdatePage;
 import com.ptl.PIMS.Pages.VisitManagement.VisitAuthorizeSelectionPage;
 import com.ptl.PIMS.Pages.VisitManagement.AdditionalVisitAndFreq.AdditionalVisitAddUpdatePage;
 import com.ptl.PIMS.Pages.VisitManagement.AdditionalVisitAndFreq.VisitFreqAddUpdatePage;
+import com.ptl.PIMS.Pages.TransferManagement.TransferInAuthorizePage;
+import com.ptl.PIMS.Pages.TransferManagement.TransferInPage;
+import com.ptl.PIMS.Pages.TransferManagement.TransferOutAuthorizePage;
+import com.ptl.PIMS.Pages.TransferManagement.TransferOutPage;
 import com.ptl.PIMS.Pages.VocationalTraining.AddParticipantsVoc_ProgSelect;
 import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVocParticipants_ProgSelect;
 import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVoc_ProgSelect;
@@ -232,6 +236,17 @@ public class TopMenu {
 	WebElement VisitAdditionalVisitLink;
 	@FindBy(xpath = Constants.TopMenu_VisitFreqLink)
 	WebElement VisitFreqLink;
+	
+	@FindBy(xpath = Constants.TopMenu_TransferLink)
+	WebElement  transfermanagement;
+	@FindBy(xpath = Constants.TopMenu_TransferOutLink)
+	WebElement  transferoutmanagement;
+	@FindBy(xpath = Constants.TopMenu_TransferOutAuthorizeLink)
+	WebElement  transferoutauthorizemanagement;
+	@FindBy(xpath = Constants.TopMenu_TransferInLink)
+	WebElement transferinmanagement;
+	@FindBy(xpath = Constants.TopMenu_TransferInAuthorizeLink)
+	WebElement transferinauthorizemanagement;
 	
 	@FindBy(xpath = Constants.TopMenu_LogOut)
 	WebElement logOut;
@@ -672,6 +687,34 @@ public class TopMenu {
 		action.moveToElement(transactionManagementTopLink).moveToElement(VisitTopLink).moveToElement(VisitFreqLink).click().build().perform();
 		return PageFactory.initElements(driver, VisitFreqAddUpdatePage.class);
 	}
+
+	public TransferOutPage gotoNewTransferOutPage() {
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(transfermanagement).moveToElement(transferoutmanagement).click().build().perform();
+		TransferOutPage newtransferoutpage = PageFactory.initElements(driver, TransferOutPage.class);
+		return newtransferoutpage;
+	}
+
+	public TransferOutAuthorizePage gototransferAuthorizePage() {
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(transfermanagement).moveToElement(transferoutauthorizemanagement).click().build().perform();
+		TransferOutAuthorizePage newtransferoutauthorizepage = PageFactory.initElements(driver, TransferOutAuthorizePage.class);
+		return newtransferoutauthorizepage;
+	}
+
+	public TransferInPage gototransferInPage() {
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(transfermanagement).moveToElement(transferinmanagement).click().build().perform();
+		TransferInPage newtransferinpage = PageFactory.initElements(driver, TransferInPage.class);
+		return newtransferinpage;
+	}
+
+	public TransferInAuthorizePage gototransferInauthorizePage() {
+		Actions action = new Actions(driver);
+		action.moveToElement(transactionManagementTopLink).moveToElement(transfermanagement).moveToElement(transferinauthorizemanagement).click().build().perform();
+		TransferInAuthorizePage newtransferinauthorizepage = PageFactory.initElements(driver, TransferInAuthorizePage.class);
+		return newtransferinauthorizepage;
+	}
 	
 	public LoginPage doLogout(){
 		logOut.click();
@@ -679,8 +722,6 @@ public class TopMenu {
 		TestBase.isLoggedIn = false;
 		return loginPage;		
 	}
-
-
 
 
 

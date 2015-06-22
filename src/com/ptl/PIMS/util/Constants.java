@@ -562,8 +562,24 @@ public class Constants {
 	public static final String TopMenu_MovementInAuthorizeLink = "//a[contains(text(),'Movement In Authorize')]";
 	public static final String AuthorizeMovementIn_SuccessMessageText = "Saved .* successfully";
 	public static final String MovementOutDate = "//*[@id='movement-mov_out_time']";
-	public static String admissionid="T/10345/2015";
-
+	public static String admissionid="T/10362/2015";
+	
+	//Transfer Management
+	
+	public static final String TransferOutCreate = ".//*[@class='btn btn-success']";
+	public static final String TransferLocationTo = "//*[@id='transfer-tra_to_institute_id']";
+	public static final String TopMenu_TransferOutLink = "//a[contains(text(),'Transfer Out Add/Update')]";
+	public static final String TopMenu_TransferLink = "//a[contains(text(),'Transfer Management')]";
+	public static String transferadmissionid = "T/10299/2015";
+	public static final String CreateTransferOut_SuccessMessageText = "Created .* successfully";
+	public static final String TopMenu_TransferOutAuthorizeLink = "//a[contains(text(),'Transfer Out Authorize')]";
+	public static final String AuthorizeTransferOut_SuccessMessageText = ".* Successfully Saved";
+	public static final String TransferInDate = "(.//*[@title='Select date & time'])[2]";
+	public static final String TopMenu_TransferInLink = "//a[contains(text(),'Transfer In Add/Update')]";
+	public static final String TopMenu_TransferInAuthorizeLink = "//a[contains(text(),'Transfer In Authorize')]";
+	public static final String TransferinAuthorize = "(//*[@class='glyphicon glyphicon-ok'])[1]";
+	
+	//*[@id='transfer-tra_in_time']
 
 
 	
