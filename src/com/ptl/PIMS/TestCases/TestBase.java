@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -22,6 +23,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 
@@ -203,7 +206,12 @@ public class TestBase{
 		
 		return homePage;
 	}
-	
+
+public void waitForPageReload(){
+        WebDriverWait wait = new WebDriverWait(driver, Constants.PAGELOAD_TIMEOUT);        
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[not (.='')]"))));
+}
+
 	public void assertTrue(boolean condition, String message){		
 
 		if(!condition){
