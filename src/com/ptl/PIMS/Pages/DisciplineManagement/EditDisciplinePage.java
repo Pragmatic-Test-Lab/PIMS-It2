@@ -18,16 +18,32 @@ public class EditDisciplinePage extends CommonDisciplineElements{
 		driver = dr;
 	}
 	
-	public EditAddDisciplinePage addJudgementDetails(String doJudgement, String judgement, String remissionDeduction){
+//	public EditAddDisciplinePage addJudgementDetails(String doJudgement, String judgement, String remissionDeduction){
+//		
+//		JudgementTab.click();
+//		
+//		CalendarPopup CLNDR = new CalendarPopup(driver);		
+//		CLNDR.selectDate(JudgementDate, doJudgement);
+//		
+//		JudgementGuilty.click();
+//		Judgement.sendKeys(judgement);
+//		JudgementDeductedRemision.sendKeys(remissionDeduction);
+//		
+//		updateButton.click();
+//		return PageFactory.initElements(driver, EditAddDisciplinePage.class);
+//	}
+	
+	
+	public EditAddDisciplinePage addJudgementDetails( String judgement){
 		
 		JudgementTab.click();
 		
 		CalendarPopup CLNDR = new CalendarPopup(driver);		
-		CLNDR.selectDate(JudgementDate, doJudgement);
+//		CLNDR.selectDate(JudgementDate, doJudgement);
 		
 		JudgementGuilty.click();
 		Judgement.sendKeys(judgement);
-		JudgementDeductedRemision.sendKeys(remissionDeduction);
+		//JudgementDeductedRemision.sendKeys(remissionDeduction);
 		
 		updateButton.click();
 		return PageFactory.initElements(driver, EditAddDisciplinePage.class);

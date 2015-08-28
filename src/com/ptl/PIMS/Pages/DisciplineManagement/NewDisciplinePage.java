@@ -20,7 +20,7 @@ public class NewDisciplinePage extends CommonDisciplineElements{
 	
 	public EditAddDisciplinePage createDisciplineWithOnlyMandatoryData(String doIncident, String officer, String place, String complaint, String inquirer){
 		
-		ComplaintTab.click();
+	//	ComplaintTab.click();
 		
 		CalendarPopup CLNDR = new CalendarPopup(driver);		
 		CLNDR.selectDate(ComplaintDOIncident, doIncident);

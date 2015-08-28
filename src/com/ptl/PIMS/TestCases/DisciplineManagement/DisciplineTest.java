@@ -42,10 +42,12 @@ public class DisciplineTest extends TestBase{
 	public void editDisciplineRecord(Hashtable<String,String> data) {
 
 		addUpdateDiscPage = addUpdateDiscPage.DisciplineForSearch("", data.get("RegNo"), "", "");
+		try {	Thread.sleep(5000); 	} catch (InterruptedException e) {}
 		EditDisciplinePage editDisc  = addUpdateDiscPage.SelectFirstDiscipline();
-
-		addUpdateDiscPage = editDisc.addJudgementDetails(data.get("doJudgement"), data.get("judgement"), data.get("remissionDeduction"));
+		addUpdateDiscPage = editDisc.addJudgementDetails( data.get("judgement"));
 		
+//		addUpdateDiscPage = editDisc.addJudgementDetails(data.get("doJudgement"), data.get("judgement"), data.get("remissionDeduction"));
+//		
 		assertTrue(addUpdateDiscPage.successMessageAvaiable(), "Success message was not found in Edit Discipline.");		
 	}
 	
@@ -54,6 +56,7 @@ public class DisciplineTest extends TestBase{
 
 		AuthorizeDiscipline_SelectRecordPage authDisc = getTopMenu().gotoAuthorizeDiscipline();
 		authDisc = authDisc.DisciplineForSearch("", data.get("RegNo"), "", "");
+		try {	Thread.sleep(5000); 	} catch (InterruptedException e) {}
 		AuthorizeDisciplinePage authDiscPage  = authDisc.SelectFirstDiscipline();
 
 		authDisc = authDiscPage.authorizeRecord();
