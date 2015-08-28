@@ -28,6 +28,7 @@ public class KitchenAuthorizePage extends CommonMethods{
 	public CreateKitchenAuthorizePage SearchKitchenOrder(String id){
 		ordernosearch.sendKeys(id);
 		ordernosearch.sendKeys(Keys.ENTER);
+		try {	Thread.sleep(4000); 	} catch (InterruptedException e) {}
 		selectkitchenorder.click();
 		CreateKitchenAuthorizePage createNewKitchenauthorizePage = PageFactory.initElements(driver, CreateKitchenAuthorizePage.class);
 		return createNewKitchenauthorizePage;	

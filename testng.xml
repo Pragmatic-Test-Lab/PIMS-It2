@@ -7,7 +7,7 @@
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-   <!--  
+
 	<test name="Meal Management">
 		<classes>
 			<class name="com.ptl.PIMS.TestCases.MealManagement.CreateSupplierTest" />
@@ -19,14 +19,14 @@
 			<class name="com.ptl.PIMS.TestCases.MealManagement.GoodReceivedTest" />
 		</classes>
 	</test>
-  
+    <!-- 
 	<test name="Appeal Management">
 	    <classes>
 	        <class name="com.ptl.PIMS.TestCases.AppealManagement.AppealCreateUpdateTest" />
 	        <class name="com.ptl.PIMS.TestCases.AppealManagement.ApproveAppealTest" />	        			
 	    </classes>	    
 	</test>
-
+  
 	<test name="Industrial Training">
 	    <classes>
 	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.IndustrialTrainingTest" />
@@ -54,25 +54,25 @@
 	        <class name="com.ptl.PIMS.TestCases.DisciplineManagement.DisciplineTest" />	        			
 	    </classes>	    
 	</test>
--->	
+
 	<test name="Movement Management">	
 		<classes>			
 			<class name="com.ptl.PIMS.TestCases.MovementManagement.MovementOutInTest" />
 		</classes>
-	</test>
+	</test>-->	
 <!-- 	
 	<test name="Incidence Management">
 	    <classes>
 	        <class name="com.ptl.PIMS.TestCases.IncidenceManagement.IncidenceTest" />	        			
 	    </classes>	    
 	</test>	
-	 -->
+	
 	<test name="Escort Management">
 	    <classes>
 	        <class name="com.ptl.PIMS.TestCases.EscortManagement.EscortCreateUpdateTest" />	        			
 	        <class name="com.ptl.PIMS.TestCases.EscortManagement.EscortRecordInOutTest" />	        			
 	    </classes>	    
-	</test>
+	</test> -->
 <!-- 
 	<test name="Transfer Management">
 	    <classes>
@@ -80,11 +80,11 @@
 	    </classes>	    
 	</test>	
  -->
-	<test name="Visit Management">
+<!-- 	<test name="Visit Management">
 	    <classes>
 	        <class name="com.ptl.PIMS.TestCases.VisitManagement.VisitManagementTest" />	        			
 	        <class name="com.ptl.PIMS.TestCases.VisitManagement.AdditionalVisitTest" />	        			
 	    </classes>	    
-	</test>
-	
+	</test> -->
+
 </suite>

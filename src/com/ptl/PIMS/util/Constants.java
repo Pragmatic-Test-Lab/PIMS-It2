@@ -19,7 +19,7 @@ public class Constants {
 	public static final String Home_MainImage = ".//img[@src='../views/site/prison.jpg']";
 
 	// Top Menu Links
-	public static final String TopMenu_PIMSTopLink = "//a[text()='HOME']";
+	public static final String TopMenu_PIMSTopLink = "//*[text()='Home']";
 	public static final String TopMenu_RegistrationManagementTopLink = "//a[contains(text(),'Registration Management')]";
 	public static final String TopMenu_RegistrationManagement_AdmissionTopLink = "//*[text() = 'Admission']";
 	public static final String TopMenu_AuthorizeSubLink = "//*[text()='Authorize']";
@@ -178,7 +178,7 @@ public class Constants {
 	public static final String SuccessMessageKitchen = "//*[@class='alert alert-success']";
 	public static final String CreateKitchenSlip_SuccessMessageText = "Created .* successfully";
 	public static final String Kitchenitemline ="//*[@id='stocktranactiondetails-1-std_kitchen_item_id']";
-	public static final String AddNewKitchenItem = "//*[contains(@class,'glyphicon-plus')]";
+	public static final String AddNewKitchenItem = "//*[text()='Add New']";
 	public static final String quantityline = "//*[@id='stocktranactiondetails-1-std_quantity']";
 	public static final String KitchenOrderNo = "//*[@name='StockTranactionHeaderSearch[sth_refference_no]']";
 	public static final String SelectKitchenOrder = "(//*[@class='glyphicon glyphicon-ok'])[1]";
@@ -224,7 +224,7 @@ public class Constants {
 	public static final String SupplierLine = "//*[@id='stocktranactionheader-sth_supplier_id']";
 	public static final String Kitchenitemline1 = "//*[@id='stocktranactiondetails-1-std_kitchen_item_id']";
 	public static final String quantityline1 = "//*[@id='stocktranactiondetails-1-std_quantity']";
-	public static final String AddNewPurchaseOrder = "//*[contains(@class,'glyphicon-plus')]";
+	public static final String AddNewPurchaseOrder = "//*[text()='Add New']";
 	public static final String PurchaseOrderCreate = "//button[text()='Create']";
 	public static final String SuccessMessagePurchaseOrder = "//*[@class='alert alert-success']";
 	public static final String CreatePurchaseOrder_SuccessMessageText = "Created .* successfully";

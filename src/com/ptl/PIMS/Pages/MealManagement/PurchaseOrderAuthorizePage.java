@@ -24,6 +24,7 @@ public class PurchaseOrderAuthorizePage extends CommonMethods{
 	public CreatePurchaseAuthorizePage SearchPurchaseOrder(String id){
 		ordernosearch.sendKeys(id);
 		ordernosearch.sendKeys(Keys.ENTER);
+		try {	Thread.sleep(6000); 	} catch (InterruptedException e) {}
 		selectpurchaseorder.click();
 		CreatePurchaseAuthorizePage createNewPurchaseauthorizePage = PageFactory.initElements(driver, CreatePurchaseAuthorizePage.class);
 		return createNewPurchaseauthorizePage;	

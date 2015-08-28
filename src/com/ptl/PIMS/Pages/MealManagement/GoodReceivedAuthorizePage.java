@@ -24,6 +24,7 @@ public class GoodReceivedAuthorizePage extends CommonMethods {
 	public CreateGoodAuthorizePage SearchGoodReceived(String id) {
 		ordernosearch.sendKeys(id);
 		ordernosearch.sendKeys(Keys.ENTER);
+		try {	Thread.sleep(5000); 	} catch (InterruptedException e) {}
 		selectgoodreceived.click();
 		CreateGoodAuthorizePage createNewGoodauthorizePage = PageFactory
 				.initElements(driver, CreateGoodAuthorizePage.class);

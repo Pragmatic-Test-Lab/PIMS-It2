@@ -24,6 +24,7 @@ public class GoodReceivedPage extends CommonMethods{
 	public CreateGoodReceivedPage SearchGoodReceived(String id){
 		ordernosearch.sendKeys(id);
 		ordernosearch.sendKeys(Keys.ENTER);
+		try {	Thread.sleep(5000); 	} catch (InterruptedException e) {}
 		selectgoodreceived.click();
 		CreateGoodReceivedPage creategoodreceivedPage = PageFactory.initElements(driver, CreateGoodReceivedPage.class);
 		return creategoodreceivedPage;	
