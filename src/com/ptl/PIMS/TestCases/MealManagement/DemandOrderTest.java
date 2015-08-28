@@ -45,6 +45,7 @@ public class DemandOrderTest extends TestBase {
 		
 		demandauthorizePage = topMenu.gotoNewDemandAuthorizePage();
 		createdemandauthorizePage = demandauthorizePage.SearchDemandOrder(mealId);
+		try {	Thread.sleep(5000); 	} catch (InterruptedException e) {}
 		demandauthorizePage = createdemandauthorizePage.ClickAuthorizeButton();
 		
 		assertTrue(demandauthorizePage.successMessageAvaiable(), "Success message was not found  when Authorize Demand Order");				

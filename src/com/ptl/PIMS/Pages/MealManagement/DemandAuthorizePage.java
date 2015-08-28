@@ -29,6 +29,7 @@ public class DemandAuthorizePage extends CommonMethods{
 		
 		ordernosearch.sendKeys(id);
 		ordernosearch.sendKeys(Keys.ENTER);
+		try {	Thread.sleep(5000); 	} catch (InterruptedException e) {}
 		selectdemandorder.click();
 		CreateDemandAuthorizePage createNewDemandauthorizePage = PageFactory.initElements(driver, CreateDemandAuthorizePage.class);
 		return createNewDemandauthorizePage;	

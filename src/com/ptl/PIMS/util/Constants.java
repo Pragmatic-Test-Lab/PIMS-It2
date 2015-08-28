@@ -209,7 +209,7 @@ public class Constants {
 	public static final String Recipe = ".//*[text()='Recipe']";
 	public static final String CreateRecipe="(.//*[@class='glyphicon glyphicon-pencil'])[1]";
 	public static final String KitchenItemName2 = "";
-	public static final String addnewrecipe = "//*[contains(@class,'glyphicon-plus')]";
+	public static final String addnewrecipe = "//*[text()='Add New']";
 	public static final String RecipeTableBody = "//*[@id='recepe_details_grid']/tbody";
 	public static final String RecipeCountitem = "(.//select[contains(@id, '-red_kitchen_item_id')])";
 	public static final String RecipeCountquantity = "(.//input[contains(@id, '-red_quantity')])";
