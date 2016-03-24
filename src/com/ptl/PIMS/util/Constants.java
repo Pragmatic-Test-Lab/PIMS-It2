@@ -162,6 +162,7 @@ public class Constants {
 	public static final String DemandOrderId = "//*[@id='stocktranactionheader-sth_order_no']";
 	public static final String OrdernoSearch = "//*[@name='StockTranactionHeaderSearch[sth_order_no]']";
 	public static final String SelectDemandOrder = "(//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String SelectDemandOrder2 = "(//*[@class='glyphicon glyphicon-ok'])[1]";
 	public static final String AuthorizeDemand = "//*[@class='btn btn-primary']";
 	public static final String AuthorizeDemandSuccess = "//*[@class='alert alert-success']";
 	public static final String AuthorizeDemandOrder_SuccessMessageText = "Saved .* successfully";

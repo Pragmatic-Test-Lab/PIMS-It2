@@ -18,7 +18,7 @@ public class DemandAuthorizePage extends CommonMethods{
 	WebElement createdemand;
 	@FindBy(xpath = Constants.OrdernoSearch)
 	WebElement ordernosearch;
-	@FindBy(xpath = Constants.SelectDemandOrder)
+	@FindBy(xpath = Constants.SelectDemandOrder2)
 	WebElement selectdemandorder;
 
 	
