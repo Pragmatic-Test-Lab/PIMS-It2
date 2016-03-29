@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.ptl.PIMS.util.Constants;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class AuthorizeRegPage {
@@ -38,13 +40,18 @@ public class AuthorizeRegPage {
 				.initElements(driver, AuthorizeRegInmatePage.class);
 		return allocateLocationInmateSelect;
 	}
-	
-	public void addcaseDetailsOfInmate(String CaseNo, String Offense, String Sentence, String Day, String Month, 
+
+	public void waitForPageReload(){
+		WebDriverWait wait = new WebDriverWait(driver, Constants.PAGELOAD_TIMEOUT);
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[not (.='')]"))));
+	}
+	public void addcaseDetailsOfInmate(String CaseNo,String offensescode , String Offense, String Sentence, String Day, String Month,
 			String Year, String Fine){
 
 		CaseTab.click();
 		
 		String[] CaseNos = CaseNo.split(",");
+		String[] offensecode = offensescode.split(",");
 		String[] Offenses = Offense.split(",");
 		String[] Sentences = Sentence.split(",");
 		String[] Years = Year.split(",");		
@@ -56,9 +63,12 @@ public class AuthorizeRegPage {
 		
 		for(int i=0; i< Offenses.length; i++){
 
+
+
 			AddNewCase.click();			
 			
 			driver.findElement(By.xpath(Constants.Registration_CaseDetail_CaseNumber + "[" + (dataRows + i) + "]")).sendKeys(CaseNos[i]);
+			driver.findElement(By.xpath(Constants.Registration_CaseDetail_Offencecode + "[" + (dataRows + i) + "]")).sendKeys(offensecode[i]);
 			driver.findElement(By.xpath(Constants.Registration_CaseDetail_Offence + "[" + (dataRows + i) + "]")).sendKeys(Offenses[i]);
 			driver.findElement(By.xpath(Constants.Registration_CaseDetail_SentenceType + "[" + (dataRows + i) + "]")).sendKeys(Sentences[i]);
 			driver.findElement(By.xpath(Constants.Registration_CaseDetail_Years + "[" + (dataRows + i) + "]")).sendKeys(Years[i]);

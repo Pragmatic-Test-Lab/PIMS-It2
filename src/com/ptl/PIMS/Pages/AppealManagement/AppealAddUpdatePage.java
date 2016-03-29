@@ -11,6 +11,8 @@ public class AppealAddUpdatePage extends AppealSearch{
 	
 	@FindBy(xpath = Constants.AppealManagement_NewAppealButton)
 	public WebElement NewAppealButton;
+	@FindBy(xpath = Constants.InmateSearch_TableFirstInmate)
+	public WebElement firstInmateLink;
 	
 	public AppealAddUpdatePage(WebDriver dr) {
 		driver = dr;
@@ -18,9 +20,12 @@ public class AppealAddUpdatePage extends AppealSearch{
 
 	public EditAppealPage SelectFirstAppeal(){
 		
-		AppealFirstRecord.click();
+		//AppealFirstRecord.click();
+//		firstInmateLink.click();
+		clickFirstRecord();
 		EditAppealPage editAppealPage = PageFactory.initElements(driver, EditAppealPage.class);		
 		return editAppealPage;
+
 		
 	}	
 	

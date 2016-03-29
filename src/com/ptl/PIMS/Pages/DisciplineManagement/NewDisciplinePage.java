@@ -30,7 +30,7 @@ public class NewDisciplinePage extends CommonDisciplineElements{
 		ComplaintReoprtedByOfficerName.sendKeys(officer);
 		ComplaintPlace.sendKeys(place);
 		Complaint.sendKeys(complaint);
-		ComplaintInquiryBy.sendKeys(inquirer);
+		//ComplaintInquiryBy.sendKeys(inquirer);
 		
 		createButton.click();
 		return PageFactory.initElements(driver, EditAddDisciplinePage.class);

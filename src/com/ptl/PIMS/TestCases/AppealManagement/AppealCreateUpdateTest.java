@@ -21,36 +21,35 @@ public class AppealCreateUpdateTest extends TestBase {
 		
 		loginToApplication();
 		
-		createInmateForAppeal(data.get("courts"),data.get("caseNos"), TestUtil.getTodaysDate(), TestUtil.getTodaysDate(),
-				data.get("Offenses"), data.get("Sentences"), data.get("Days"), 	data.get("Months"), data.get("Years"), 
+		createInmateForAppeal(data.get("courts"),data.get("caseNos"), TestUtil.getTodaysDate(), TestUtil.getTodaysDate(), data.get("offensecode"),data.get("Offenses"),data.get("Sentences"), data.get("Days"), 	data.get("Months"), data.get("Years"),
 				data.get("Fines"));
 
 	}
 
 	
-	//@Test(dataProvider = "getAppealData", dependsOnMethods = "createAppealTestData", groups="AppealCreateUpdateTest")
+	@Test(dataProvider = "getAppealData", dependsOnMethods = "createAppealTestData", groups="AppealCreateUpdateTest")
 	public void createAppealTest(Hashtable<String, String> data) {
 		
 		//Create New Appeal
 		appealPage =  getTopMenu().gotoAppealAddUpdate();		
 		NewAppeal_InmateSelect inmateSelectionPage = appealPage.CreateNewAppeal();
-		inmateSelectionPage.doSearch(registrationNo, "", "");
+		inmateSelectionPage.doSearch(appealRegistrationNo, "", "");
 		
 		try {   Thread.sleep(2000);		} catch (InterruptedException e) {e.printStackTrace();}
-		
-		NewAppeal newAppealPage = inmateSelectionPage.clickFirstInmate();		
+
+		NewAppeal newAppealPage = inmateSelectionPage.clickFirstInmate();
 		appealPage = newAppealPage.AddNewAppeal(data.get("caseNos"), data.get("courts"), data.get("Reason"), data.get("Request"));
 		
     	assertTrue(appealPage.successMessageAvaiable(), "Could not find Success Message element in Appeal Add/Update Page.");
 		//
 	}
 	
-	//@Test(dataProvider = "getAppealData", dependsOnMethods = "createAppealTest", groups="AppealCreateUpdateTest" )
+	@Test(dataProvider = "getAppealData", dependsOnMethods = "createAppealTest", groups="AppealCreateUpdateTest" )
 	public void updateAppealTest(Hashtable<String, String> data) {
 		
 		
 		//Edit Created Appeal
-		appealPage = appealPage.AppealForSearch(registrationNo, "", "", "", data.get("Reason"));
+		appealPage = appealPage.AppealForSearch(appealRegistrationNo, "", "", "", data.get("Reason"));
 		EditAppealPage editAppealPage =  appealPage.SelectFirstAppeal();
 		appealPage = editAppealPage.EditAppealDetails(data.get("caseNos"), data.get("courts"), data.get("Updated Reason"), data.get("Updated Request"));
 		

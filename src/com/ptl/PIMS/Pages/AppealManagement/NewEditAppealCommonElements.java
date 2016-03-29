@@ -24,6 +24,8 @@ public class NewEditAppealCommonElements {
 	public WebElement WarrantUploadButton;
 	@FindBy(xpath = Constants.AppealManagement_AppealFormUpload)
 	public WebElement AppealFormUploadButton;
+	@FindBy(xpath = Constants.AppealManagement_AppealOffenseCode)
+	public WebElement appealoffensecode;
 	
 	@FindBy(xpath = Constants.AppealManagement_ReasonTab)
 	public WebElement ReasonTab;

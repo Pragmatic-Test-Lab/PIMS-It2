@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import com.ptl.PIMS.Pages.Iteration1.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -31,10 +32,6 @@ import org.testng.annotations.BeforeSuite;
 import com.ptl.PIMS.Pages.HomePage;
 import com.ptl.PIMS.Pages.LoginPage;
 import com.ptl.PIMS.Pages.TopMenu;
-import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
-import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionPage;
-import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
-import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegPage;
 import com.ptl.PIMS.util.Constants;
 import com.ptl.PIMS.util.ReadXLS;
 import com.ptl.PIMS.util.TestUtil;
@@ -226,8 +223,8 @@ public void waitForPageReload(){
 	}
 	
 
-	public void createInmateForAppeal(String courts, String caseNos, String sentenceDate, String convictiondate,
-			String Offences, String Sentences, String Days, String Months, String Years, String Fines) {
+	public void createInmateForAppeal(String courts, String caseNos, String sentenceDate, String convictiondate,String offensecode,
+			String Offences,  String Sentences, String Days, String Months, String Years, String Fines) {
 		
 		//Authorize Admission with court details
 		AuthorizeAdmissionInmatePage authorizeInmateSelect = getTopMenu().gotoAuthorizeAdmissionPage();
@@ -237,18 +234,27 @@ public void waitForPageReload(){
 		
 		authorizePage.changeInmateCategory("Convicted");
 		authorizePage.changeAdmissionDate(TestUtil.getTodaysDate());
+		try {   Thread.sleep(2000);		} catch (InterruptedException e) {e.printStackTrace();}
 		appealRegistrationNo = authorizePage.getRegistrationNumber();	    
     
 	    authorizeInmateSelect = authorizePage.doAuthorizeAdmission();		
 	    assertTrue(authorizeInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Admission Page.");
-	    //	    
+
+
+		//registration confirm
+		RegInmatePage reginmateselect = getTopMenu().gotoRegistrationPage();
+		reginmateselect.doSearch(appealRegistrationNo, "", "");
+				RegPage regPage = reginmateselect.clickFirstInmate();
+		waitForPageReload();
+		reginmateselect= regPage.registerInmate();
+		assertTrue(reginmateselect.successMessageAvaiable(), "Could not find Success Message element in Admission Page.");
 		
 		//Authorize Registration with sentence details
 		AuthorizeRegInmatePage authorizeRegInmateSelect = getTopMenu().gotoAuthorizeRegistrationPage();
 		authorizeRegInmateSelect.doSearch(appealRegistrationNo, "", "");
 		AuthorizeRegPage authorizeRegPage = authorizeRegInmateSelect.clickFirstInmate();
 		
-		authorizeRegPage.addcaseDetailsOfInmate(courts, Offences, Sentences, Days, Months, Years, Fines);
+		authorizeRegPage.addcaseDetailsOfInmate(courts, offensecode, Offences,  Sentences, Days, Months, Years, Fines);
 		
 		authorizeRegInmateSelect = authorizeRegPage.authorizeInmate();		
     	assertTrue(authorizeRegInmateSelect.successMessageAvaiable(), "Could not find Success Message element in Registration Page.");

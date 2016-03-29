@@ -1,5 +1,6 @@
 package com.ptl.PIMS.Pages;
 
+import com.ptl.PIMS.Pages.Iteration1.RegInmatePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -88,6 +89,10 @@ public class TopMenu {
 	WebElement postRegMain;
 	@FindBy(xpath = Constants.TopMenu_AuthorizePostRegSubLink)
 	WebElement postRegAuthorizeSub;
+	@FindBy(xpath = Constants.TopMenu_RegistrationLink)
+	WebElement registrationTopLink;
+
+
 	
 	@FindBy(xpath = Constants.TopMenu_TransactionManagementTopLink)
 	WebElement transactionManagementTopLink;
@@ -147,6 +152,8 @@ public class TopMenu {
 	WebElement appealSendToCourtApprovalLink;
 	@FindBy(xpath = Constants.TopMenu_AppealCourtApprovalLink)
 	WebElement appealCourtApprovalLink;
+
+	
 	
 	@FindBy(xpath = Constants.TopMenu_MovementLink)
 	WebElement movementmanagement;
@@ -271,6 +278,19 @@ public class TopMenu {
 		AuthorizeAdmissionInmatePage authorizeAdmissionSelectPage = PageFactory.initElements(driver, AuthorizeAdmissionInmatePage.class);
 		return authorizeAdmissionSelectPage;
 	}
+
+	public RegInmatePage gotoRegistrationPage() {
+
+
+		Actions action = new Actions(driver);
+		action.moveToElement(registrationManagementTopLink).moveToElement(registrationMainLink).moveToElement(registrationTopLink).click().build().perform();
+
+		RegInmatePage authorizeRegistrationSelectPage = PageFactory.initElements(driver, RegInmatePage.class);
+		return authorizeRegistrationSelectPage;
+	}
+
+
+
 
 	public AuthorizeRegInmatePage gotoAuthorizeRegistrationPage() {
 

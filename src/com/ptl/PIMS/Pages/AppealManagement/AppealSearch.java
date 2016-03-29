@@ -38,7 +38,8 @@ public class AppealSearch  extends CommonMethods{
 		AppealSearch_Name.sendKeys(Name);
 		AppealSearch_Date.sendKeys(Date);
 		AppealSearch_Reason.sendKeys(Reason + Keys.ENTER);
-		
+
+
 		return (T)PageFactory.initElements(driver, this.getClass());
 	}
 	
@@ -51,5 +52,12 @@ public class AppealSearch  extends CommonMethods{
 	public String getSuccessMessage(){
 		
 		return driver.findElement(By.xpath(Constants.SearchPage_SuccessMessage)).getText();
+	}
+
+	public void clickFirstRecord(){
+
+		//click first record
+		waitForJSandJQueryToLoad(driver);
+		waitAndClick(driver, Constants.AppealManagement_FirstAppeal);
 	}
 }

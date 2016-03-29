@@ -22,10 +22,11 @@ public class Constants {
 	public static final String TopMenu_PIMSTopLink = "//*[text()='Home']";
 	public static final String TopMenu_RegistrationManagementTopLink = "//a[contains(text(),'Registration Management')]";
 	public static final String TopMenu_RegistrationManagement_AdmissionTopLink = "//*[text() = 'Admission']";
-	public static final String TopMenu_AuthorizeSubLink = "//*[text()='Authorize']";
-	public static final String TopMenu_RegistrationManagement_RegistrationTopLink = "//*[text() = 'Registration']";
+	public static final String TopMenu_RegistrationLink="(//*[text() = 'Registration'])[2]";
+	public static final String TopMenu_AuthorizeSubLink = "//*[text()='Admission Authorize']";
+	public static final String TopMenu_RegistrationManagement_RegistrationTopLink = "(//*[text() = 'Registration'])[1]";
 	public static final String TopMenu_AuthorizeRegistrationSubLink = "//a[contains(@href,'/registration-authorization')]";
-	public static final String TopMenu_PostRegistrationTopLink = "(.//a[text()='Post Registration'])[1]";
+	public static final String TopMenu_PostRegistrationTopLink = "(//*[text() = 'Registration'])[2]";
 	public static final String TopMenu_AuthorizePostRegSubLink = "//a[contains(@href,'/post-registration-authorization')]";
 	public static final String TopMenu_TransactionManagementTopLink = "//a[text()='Transaction Management ']";
 	public static final String TopMenu_AppealTopLink = "//a[text()='Appeal Management']";
@@ -52,7 +53,7 @@ public class Constants {
 	public static final String TopMenu_RehabSheduleParticipants = "//a[text()='Rehabilitation Participants Add/Update']";
 	public static final String TopMenu_RehabSheduleParticipantAuth = "//a[text()='Rehabilitation Participants Authorizations']";
 	public static final String TopMenu_DisciplineTopLink = "//a[text()='Discipline Management']";
-	public static final String TopMenu_DisciplineAddUpdateLink = "//a[text()='Discipline Add/Update']";
+	public static final String TopMenu_DisciplineAddUpdateLink = "//a[text()='Discipline Complaints Add/Update']";
 	public static final String TopMenu_DisciplineAuthorizeLink = "//a[text()='Discipline Authorize']";
 	public static final String TopMenu_IncidenceTopLink = "//a[text()='Incidence Management']";
 	public static final String TopMenu_IncidenceAddLink = "//a[text()='Incidence Add/Update']";
@@ -96,20 +97,23 @@ public class Constants {
 	public static final String CalendarPopup_AdmissionYearText_LastPart = "' and @class='year active']";
 
 	public static final String AuthorizeButton = "//button[text() = 'Authorize']";
+	public static final String registerButton = "//button[text() = 'Update']";
+
 	//
 
 	// Authorize Registration
 
 	public static final String Registration_CaseDetailTab = "//a[text() = 'Inmate Case Details']";
 	public static final String Registration_CaseTableBody = "//*[@id='sentence_grid']/tbody";
-	public static final String Registration_CaseDetail_AddNew = "//button[text()='Add New']";
+	public static final String Registration_CaseDetail_AddNew = "(//button[text()='Add New'])[2]";
 	public static final String Registration_CaseDetail_CaseNumber = "(.//select[contains(@name, '[sen_case_id]')])";
 	public static final String Registration_CaseDetail_Offence = "(.//select[contains(@name, '[sen_offence_id]')])";
+	public static final String Registration_CaseDetail_Offencecode = "//*[@id='sentence-1-sen_offence_id']";
 	public static final String Registration_CaseDetail_SentenceType = "(.//select[contains(@name, '[sen_sentence_type_id]')])";
-	public static final String Registration_CaseDetail_Years = "(.//input[contains(@name, '[sen_years]')])";
-	public static final String Registration_CaseDetail_Months = "(.//input[contains(@name, '[sen_months]')])";
-	public static final String Registration_CaseDetail_Days = "(.//input[contains(@name, '[sen_days]')])";
-	public static final String Registration_CaseDetail_Fine = "(.//input[contains(@name, 'sen_fine_charges')])";
+	public static final String Registration_CaseDetail_Years = "//input[contains(@name, '[sen_years]')]";
+	public static final String Registration_CaseDetail_Months = "//input[contains(@name, '[sen_months]')]";
+	public static final String Registration_CaseDetail_Days = "//input[contains(@name, '[sen_days]')]";
+	public static final String Registration_CaseDetail_Fine = ".//input[contains(@name, 'sen_fine_charges')]";
 	//
 
 	//
@@ -140,7 +144,7 @@ public class Constants {
 	public static final String AppealManagement_RequestTab = "//a[text()='Request']";
 	public static final String AppealManagement_AppealRequest = "//*[@id='appeal-app_request']";
 	public static final String AppealManagement_AddUpdateButton = "//*[@type='submit']";
-	public static final String AppealManagement_UpdateSuccessMessage = "//*[@type='submit']";
+	public static final String AppealManagement_AppealOffenseCode="//*[@id='sentence-1-sen_offence_id']";
 
 	public static final String AppealManagement_ApproveAppealButton = "//button[text() = 'Authorize']";
 
@@ -443,6 +447,7 @@ public class Constants {
 	public static final String InmateSearch_BiometricSearchField = ".//*[contains(@name,'Search[adm_biometric_id]')]";
 	public static final String InmateSearch_NameSearchField = ".//*[contains(@name,'Search[adm_name_as_in_warrant]')]";
 	public static final String InmateSearch_TableFirstInmate = "(.//*[contains(@class, 'glyphicon')]//parent::a)[1]";
+	public static final String InmateSearch_TableFirstInmate2 = "(.//span[@class='glyphicon glyphicon-pencil'])[1]";
 	public static final String InmateSearchPage_NoSearchResultsFound = ".//*[text()='No results found.']";
 
 	public static final String SearchPage_SuccessMessage = ".//div[@class='alert alert-success']";

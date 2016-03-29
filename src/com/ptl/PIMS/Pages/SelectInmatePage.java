@@ -32,32 +32,22 @@ public abstract class SelectInmatePage extends CommonMethods {
 	//first Inmate Select Button
 	@FindBy(xpath = Constants.InmateSearch_TableFirstInmate)
 	public WebElement firstInmateLink;
+	@FindBy(xpath = Constants.InmateSearch_TableFirstInmate2)
+	public WebElement firstInmateLink2;
 	
 	public WebDriver driver;
 	
 	public String getHeader() {
 		return HeaderField.getText();
 	}
-	
-	//Searching with basic details Registration No, Biometric, Name
-	@SuppressWarnings("unchecked")
-	public <T extends SelectInmatePage>T doSearch(String RegNo, String Biometric, String Name) {
 
-		RegNoSearchField.sendKeys(RegNo);
-		BiometricSearchField.sendKeys(Biometric);
-		NameSearchField.sendKeys(Name + Keys.ENTER);
-				
-		return (T)PageFactory.initElements(driver, this.getClass());
- 
-	}
-	
 	public boolean successMessageAvaiable(){
-		
+
 		return checkElementIsPresent(driver, By.xpath(Constants.SearchPage_SuccessMessage));
 	}
-	
+
 	public String getSuccessMessage(){
-		
+
 		return driver.findElement(By.xpath(Constants.SearchPage_SuccessMessage)).getText();
 	}
 	
@@ -67,6 +57,23 @@ public abstract class SelectInmatePage extends CommonMethods {
 		return true;
 		else
 			return false;
+	}
+
+	public <T extends SelectInmatePage>T doSearch(String RegNo, String Biometric, String Name) {
+
+		waitAndReplaceKeys(driver, Constants.InmateSearch_RegNoSearchField, RegNo);
+		waitAndReplaceKeys(driver, Constants.InmateSearch_BiometricSearchField, Biometric);
+		waitAndReplaceKeys(driver, Constants.InmateSearch_NameSearchField, Name);
+
+		//NameSearchField.sendKeys(Keys.ENTER);
+		return (T)PageFactory.initElements(driver, this.getClass());
+	}
+
+	public void clickFirstRecord(){
+
+		//click first record
+		waitForJSandJQueryToLoad(driver);
+		waitAndClick(driver, Constants.InmateSearch_TableFirstInmate);
 	}
 
 	

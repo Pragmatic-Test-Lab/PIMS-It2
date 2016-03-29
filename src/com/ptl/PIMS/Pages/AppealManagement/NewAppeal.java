@@ -9,7 +9,7 @@ public class NewAppeal extends NewEditAppealCommonElements {
 		driver = dr;
 	}
 	
-	public AppealAddUpdatePage AddNewAppeal(String appealCase, String court, String reason, String request){
+	public AppealAddUpdatePage AddNewAppeal(String appealCase,   String court, String reason, String request){
 		
 		//addAppealDate(date);
 		AppealCase.sendKeys(appealCase);
@@ -18,6 +18,8 @@ public class NewAppeal extends NewEditAppealCommonElements {
 		Reason.sendKeys(reason);
 		RequestTab.click();
 		Request.sendKeys(request);
+		//appealoffensecode.sendKeys(Offensecode);
+
 		
 		SubmitButton.click();
 		
