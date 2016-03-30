@@ -202,7 +202,7 @@ public class Constants {
 	public static final String KitchenItemNameTamil = "//*[@id='kitchenitem-kit_name_ta']";
 	public static final String Unit = "//*[@id='kitchenitem-kit_unit_id']";
 	public static final String Wastage = "//*[@id='kitchenitem-kit_wastage']";
-	public static final String CreateKitchenItemButton = "//button[text()='Create']";;
+	public static final String CreateKitchenItemButton = "//button[text()='Create']";
 	public static final String CreateKitchenItem = "//*[text()='Create Kitchen Item']";
 	public static final String CreateKitchenItem_SuccessMessageText = "Created .* successfully";
 	public static final String KitchenSuccessMessage = "//*[@class='alert alert-success']";
