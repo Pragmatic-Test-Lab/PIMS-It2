@@ -1,11 +1,10 @@
 package com.ptl.PIMS.Pages.VocationalTraining;
 
+import com.ptl.PIMS.util.Constants;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import com.ptl.PIMS.util.Constants;
 
 public class VocationalTrainingAddUpdatePageCommonElements extends
 		VocationalSearch {
@@ -32,6 +31,8 @@ public class VocationalTrainingAddUpdatePageCommonElements extends
 	public WebElement Venue;
 	@FindBy(xpath = Constants.VOC_ResourcePerson)
 	public WebElement ResourcePerson;
+	@FindBy(xpath = Constants.VOC_NoOfParticipants)
+	public WebElement NoOfParticipants;
 
 	public void editField(WebElement element, String newText) {
 

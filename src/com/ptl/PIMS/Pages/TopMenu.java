@@ -1,12 +1,5 @@
 package com.ptl.PIMS.Pages;
 
-import com.ptl.PIMS.Pages.Iteration1.RegInmatePage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
 import com.ptl.PIMS.Pages.AppealManagement.AppealAddUpdatePage;
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveByCourtAppealSelect;
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveByJailorAppealSelect;
@@ -14,9 +7,9 @@ import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveBySPAppealSelect
 import com.ptl.PIMS.Pages.AppealManagement.ApprovalPages.ApproveSendToCourtAppealSelect;
 import com.ptl.PIMS.Pages.DisciplineManagement.AuthorizeDiscipline_SelectRecordPage;
 import com.ptl.PIMS.Pages.DisciplineManagement.EditAddDisciplinePage;
+import com.ptl.PIMS.Pages.EscortManagement.Calendar.CalendarInmateSelectPage;
 import com.ptl.PIMS.Pages.EscortManagement.EscortAddUpdatePage;
 import com.ptl.PIMS.Pages.EscortManagement.EscortAuthorizeSelectPage;
-import com.ptl.PIMS.Pages.EscortManagement.Calendar.CalendarInmateSelectPage;
 import com.ptl.PIMS.Pages.EscortManagement.TimeRecord.EscortOutInAuthorizeSelectPage;
 import com.ptl.PIMS.Pages.EscortManagement.TimeRecord.RecordEscortInSelectPage;
 import com.ptl.PIMS.Pages.EscortManagement.TimeRecord.RecordEscortOutSelectPage;
@@ -31,17 +24,8 @@ import com.ptl.PIMS.Pages.IndustrialManagement.WagesPage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeAdmissionInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizePostRegInmatePage;
 import com.ptl.PIMS.Pages.Iteration1.AuthorizeRegInmatePage;
-import com.ptl.PIMS.Pages.MealManagement.DemandAuthorizePage;
-import com.ptl.PIMS.Pages.MealManagement.DemandOrderPage;
-import com.ptl.PIMS.Pages.MealManagement.GoodReceivedAuthorizePage;
-import com.ptl.PIMS.Pages.MealManagement.GoodReceivedPage;
-import com.ptl.PIMS.Pages.MealManagement.KitchenAuthorizePage;
-import com.ptl.PIMS.Pages.MealManagement.KitchenItemPage;
-import com.ptl.PIMS.Pages.MealManagement.KitchenSlipPage;
-import com.ptl.PIMS.Pages.MealManagement.PurchaseOrderAuthorizePage;
-import com.ptl.PIMS.Pages.MealManagement.PurchaseOrderPage;
-import com.ptl.PIMS.Pages.MealManagement.RecipePage;
-import com.ptl.PIMS.Pages.MealManagement.SupplierPage;
+import com.ptl.PIMS.Pages.Iteration1.RegInmatePage;
+import com.ptl.PIMS.Pages.MealManagement.*;
 import com.ptl.PIMS.Pages.MovementManagement.MovementInAuthorizePage;
 import com.ptl.PIMS.Pages.MovementManagement.MovementInPage;
 import com.ptl.PIMS.Pages.MovementManagement.MovementOutAuthorizePage;
@@ -53,20 +37,25 @@ import com.ptl.PIMS.Pages.RehabilitationManagement.Participants.AuthorizeShedule
 import com.ptl.PIMS.Pages.RehabilitationManagement.RehabilitationProgram.AddUpdateRehabilitationProgram;
 import com.ptl.PIMS.Pages.RehabilitationManagement.Shedule.AddUpdateRehabShedule;
 import com.ptl.PIMS.Pages.RehabilitationManagement.Shedule.AuthorizeRehabSheduleSelectProg;
-import com.ptl.PIMS.Pages.VisitManagement.VisitAddUpdatePage;
-import com.ptl.PIMS.Pages.VisitManagement.VisitAuthorizeSelectionPage;
-import com.ptl.PIMS.Pages.VisitManagement.AdditionalVisitAndFreq.AdditionalVisitAddUpdatePage;
-import com.ptl.PIMS.Pages.VisitManagement.AdditionalVisitAndFreq.VisitFreqAddUpdatePage;
 import com.ptl.PIMS.Pages.TransferManagement.TransferInAuthorizePage;
 import com.ptl.PIMS.Pages.TransferManagement.TransferInPage;
 import com.ptl.PIMS.Pages.TransferManagement.TransferOutAuthorizePage;
 import com.ptl.PIMS.Pages.TransferManagement.TransferOutPage;
+import com.ptl.PIMS.Pages.VisitManagement.AdditionalVisitAndFreq.AdditionalVisitAddUpdatePage;
+import com.ptl.PIMS.Pages.VisitManagement.AdditionalVisitAndFreq.VisitFreqAddUpdatePage;
+import com.ptl.PIMS.Pages.VisitManagement.VisitAddUpdatePage;
+import com.ptl.PIMS.Pages.VisitManagement.VisitAuthorizeSelectionPage;
 import com.ptl.PIMS.Pages.VocationalTraining.AddParticipantsVoc_ProgSelect;
 import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVocParticipants_ProgSelect;
 import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVoc_ProgSelect;
 import com.ptl.PIMS.Pages.VocationalTraining.VocationalTrainingAddUpdatePage;
 import com.ptl.PIMS.TestCases.TestBase;
 import com.ptl.PIMS.util.Constants;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 
 public class TopMenu {
@@ -526,7 +515,7 @@ public class TopMenu {
 	}
 	
 	public AddParticipantsVoc_ProgSelect gotoVocationalParticipants() {
-		
+
 		Actions action = new Actions(driver);
 		action.moveToElement(transactionManagementTopLink).moveToElement(vocTopLink).moveToElement(vocParticipantsLink).click().build().perform();
 		

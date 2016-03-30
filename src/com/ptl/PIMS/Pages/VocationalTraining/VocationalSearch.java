@@ -1,14 +1,13 @@
 package com.ptl.PIMS.Pages.VocationalTraining;
 
+import com.ptl.PIMS.Pages.CommonMethods;
+import com.ptl.PIMS.util.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import com.ptl.PIMS.Pages.CommonMethods;
-import com.ptl.PIMS.util.Constants;
 
 public class VocationalSearch extends CommonMethods{
 
@@ -21,9 +20,7 @@ public class VocationalSearch extends CommonMethods{
 	public WebElement VOCSearch_ProgName;	
 	@FindBy(xpath = Constants.VOCManagement_SearchProgDuration)
 	public WebElement VOCSearch_ProgDuration;	
-	
-	@FindBy(xpath = Constants.VOCManagement_FirstRecord)
-	public WebElement VOCFirstRecord;	
+
 
 	@SuppressWarnings("unchecked")
 	public <T extends VocationalSearch>T VOCForSearch (String ProgCode,String ProgName,
@@ -37,17 +34,20 @@ public class VocationalSearch extends CommonMethods{
 	}
 
 	public boolean successMessageAvaiable(){
-		
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {}
-		
+
+		waitUntilVisible(driver, Constants.SearchPage_SuccessMessage);
 		return checkElementIsPresent(driver, By.xpath(Constants.SearchPage_SuccessMessage));
 	}
 	
 	public String getSuccessMessage(){
 		
 		return driver.findElement(By.xpath(Constants.SearchPage_SuccessMessage)).getText();
+	}
+
+	public void clickFirstRecord() {
+
+		waitForJSandJQueryToLoad(driver);
+		waitAndClick(driver, Constants.VOCManagement_FirstRecord);
 	}
 
 }

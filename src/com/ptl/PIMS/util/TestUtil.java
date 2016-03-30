@@ -1,18 +1,32 @@
 package com.ptl.PIMS.util;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Calendar;
-import java.util.Hashtable;
-
+import com.ptl.PIMS.TestCases.TestBase;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import com.ptl.PIMS.TestCases.TestBase;
+import java.io.File;
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.Hashtable;
+import java.util.Random;
 
 
 public class TestUtil {
+
+	private static final String RANDOM_CHAR_LIST =
+			"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+
+	public static String getRandomString(int length) {
+
+		StringBuffer randStr = new StringBuffer();
+		Random random = new Random();
+
+		for (int i = 0; i < length; i++) {
+			randStr.append(RANDOM_CHAR_LIST.charAt(random.nextInt(RANDOM_CHAR_LIST.length() - 1)));
+		}
+		return randStr.toString();
+	}
 
 	public static boolean isTestCaseRunmodeYes(String testCaseName,	ReadXLS xls) {
 
