@@ -1,41 +1,48 @@
 package com.ptl.PIMS.Pages;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.thoughtworks.selenium.webdriven.commands.Open;
-import org.junit.Assert;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 public class CommonMethods {
 
-	WebDriverWait wait;
+	protected WebDriverWait wait;
 
 	public boolean checkElementIsPresent(WebDriver driver , By byCondition){
 		try {
-			Thread.sleep(1500);
-		   driver.findElement(byCondition);
+			driver.findElement(byCondition);
 		} catch (Exception e) {
-		   return false;
-		}		
+			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			try {
+				FileUtils.copyFile(scrFile, new File("c:\\Selenium-TestRun\\Failure Screenshots\\Iteration 1\\"
+						+ (new SimpleDateFormat("yyyy-MM-dd\\HH-mm-ss").format(Calendar.getInstance().getTime())) + ".png"));
+			} catch (IOException e1) {
+			}
+
+			return false;
+		}
 		return true;
 	}
-	
+
 	public int NoOfElements(WebDriver driver, String xpath){
-		
+
 		List<WebElement> elements = driver.findElements(By.xpath(xpath));
-		
 		return elements.size();
 	}
 
 	public void waitAndSendKeys(WebDriver driver, String xpath, String value) {
 		getWait(driver).until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-		driver.findElement(By.xpath(xpath)).sendKeys(new CharSequence[]{value, Keys
-				.TAB});
+		driver.findElement(By.xpath(xpath)).sendKeys(new CharSequence[]{value, Keys.TAB});
 	}
 
 	public void waitAndReplaceKeys(WebDriver driver, String xpath, String value) {
@@ -56,6 +63,10 @@ public class CommonMethods {
 
 	public void waitForPageReload(WebDriver driver){
 		getWait(driver).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[not (.='')]"))));
+	}
+
+	public void waitUntilVisible(WebDriver driver, String xpath) {
+		getWait(driver).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 	}
 
 	public boolean waitForJSandJQueryToLoad(WebDriver driver) {
@@ -92,9 +103,9 @@ public class CommonMethods {
 		WebElement field = driver.findElement(By.xpath(xpath));
 
 		if(caseSensitive)
-			Assert.assertEquals(field.getAttribute("value"), matchText, "Field value did not match expected.");
+			org.testng.Assert.assertEquals(field.getAttribute("value"), matchText, "Field value did not match expected.");
 		else
-			Assert.assertEquals(field.getAttribute("value").toLowerCase(), matchText.toLowerCase(), "Field value did not match expected.");
+			org.testng.Assert.assertEquals(field.getAttribute("value").toLowerCase(), matchText.toLowerCase(), "Field value did not match expected.");
 	}
 
 	public void matchSelectedDropdownWithText(WebDriver driver, String dropdownXpath, String matchText, boolean caseSensitive){
@@ -102,9 +113,9 @@ public class CommonMethods {
 		WebElement selectedOption = driver.findElement(By.xpath(dropdownXpath + "/option[@selected='']"));
 
 		if(caseSensitive)
-			Assert.assertEquals(selectedOption.getText(), matchText, "Dropdown value did not match expected.");
+			org.testng.Assert.assertEquals(selectedOption.getText(), matchText, "Dropdown value did not match expected.");
 		else
-			Assert.assertEquals(selectedOption.getText().toLowerCase(), matchText.toLowerCase(), "Dropdown value did not match expected.");
+			org.testng.Assert.assertEquals(selectedOption.getText().toLowerCase(), matchText.toLowerCase(), "Dropdown value did not match expected.");
 
 	}
 
@@ -131,8 +142,4 @@ public class CommonMethods {
 		}
 		return wait;
 	}
-
-
-
-
 }

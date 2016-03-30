@@ -35,10 +35,10 @@ public class Constants {
 	public static final String TopMenu_AppealSPApprovalLink = "//a[text()='SP Approval']";
 	public static final String TopMenu_AppealSendToCourtApprovalLink = "//a[text()='Court Approval']";
 	public static final String TopMenu_AppealCourtApprovalLink = "//a[text()='Appeal Response']";
-	public static final String TopMenu_VOCTopLink = "//a[text()='Vocational Training']";
+	public static final String TopMenu_VOCTopLink = "//a[text()='Vocational Training Management']";
 	public static final String TopMenu_VOCAddUpdateLink = "//a[text()='Vocational Training Programs Add/Update']";
 	public static final String TopMenu_VOCAuth = "//a[text()='Vocational Training Programs Authorizations']";
-	public static final String TopMenu_VOCPart = "//a[text()='Vocational Training Programe Participants']";
+	public static final String TopMenu_VOCPart = "//a[text()='Vocational Training Program Participants']";
 	public static final String TopMenu_VOCAuthPart = "//a[text()='Vocational Training Program Participants Authorization']";
 
 	public static final String TopMenu_RehabTopLink = "//a[text()='Rehabilitation Management']";
@@ -268,6 +268,7 @@ public class Constants {
 	public static final String VOC_VOCEndDate = "//input[@name='VocationalTrainingProgram[vtp_end_date]']";
 	public static final String VOC_VOCVenue = "//input[@name='VocationalTrainingProgram[vtp_venue]']";
 	public static final String VOC_ResourcePerson = "//input[@name='VocationalTrainingProgram[vtp_resource_person]']";
+	public static final String VOC_NoOfParticipants = "//input[@id='vocationaltrainingprogram-vtp_no_of_participant']";
 	public static final String NewVOC_CreateButton = "//button[text()='Create']";
 	public static final String UpdateVOC_UpdateButton = "//button[text()='Update']";
 	public static final String AuthVOC_AuthorizeButton = "//button[text()='Authorize']";

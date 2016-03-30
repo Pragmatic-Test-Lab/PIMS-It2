@@ -1,19 +1,13 @@
 package com.ptl.PIMS.Pages.VocationalTraining;
 
+import com.ptl.PIMS.Pages.CommonMethods;
+import com.ptl.PIMS.util.Constants;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.ptl.PIMS.util.Constants;
-
-public class AuthorizeVoc {
+public class AuthorizeVoc extends CommonMethods {
 	
 	WebDriver driver;
-
-	@FindBy(xpath = Constants.AuthVOC_AuthorizeButton)
-	public WebElement AuthorizeButton;
-	
 	
 	public AuthorizeVoc(WebDriver dr){
 		driver = dr;		
@@ -21,8 +15,8 @@ public class AuthorizeVoc {
 	
 	
 	public AuthorizeVoc_ProgSelect doAuthorization(){
-		
-		AuthorizeButton.click();
+
+		waitAndClick(driver, Constants.AuthVOC_AuthorizeButton);
 		
 		AuthorizeVoc_ProgSelect vocAuthMainPage = PageFactory.initElements(driver, AuthorizeVoc_ProgSelect.class);		
 		return vocAuthMainPage;

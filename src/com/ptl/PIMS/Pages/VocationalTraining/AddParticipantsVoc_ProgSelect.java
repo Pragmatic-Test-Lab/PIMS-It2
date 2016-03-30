@@ -10,8 +10,8 @@ public class AddParticipantsVoc_ProgSelect extends VocationalSearch{
 	}
 
 	public AddParticipantsVoc SelectFirstVOC(){
-		
-		VOCFirstRecord.click();
+
+		clickFirstRecord();
 		AddParticipantsVoc VOCparticipantPage = PageFactory.initElements(driver, AddParticipantsVoc.class);		
 		return VOCparticipantPage;		
 	}	

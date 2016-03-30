@@ -1,22 +1,17 @@
 package com.ptl.PIMS.TestCases.VocationalManagement;
 
-import java.util.Hashtable;
-import java.util.Random;
-
+import com.ptl.PIMS.Pages.VocationalTraining.*;
+import com.ptl.PIMS.TestCases.TestBase;
+import com.ptl.PIMS.util.TestUtil;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVoc;
-import com.ptl.PIMS.Pages.VocationalTraining.AuthorizeVoc_ProgSelect;
-import com.ptl.PIMS.Pages.VocationalTraining.EditVocationalProgram;
-import com.ptl.PIMS.Pages.VocationalTraining.NewVocationalProgram;
-import com.ptl.PIMS.Pages.VocationalTraining.VocationalTrainingAddUpdatePage;
-import com.ptl.PIMS.TestCases.TestBase;
-import com.ptl.PIMS.util.TestUtil;
+import java.util.Hashtable;
 
 public class VOCProgramTest extends TestBase {
 
 	VocationalTrainingAddUpdatePage vocPage;
+	String vocProgramName;
 	
 	@Test(dataProvider = "getVOCData")
 	public void createVOCProgram(Hashtable<String, String> data) {
@@ -24,20 +19,20 @@ public class VOCProgramTest extends TestBase {
 		loginToApplication();
 		vocPage = getTopMenu().gotoVocationalAddUpdate();
 		NewVocationalProgram newVOC = vocPage.CreateNewVocProg();
-		
-		progCode = data.get("progCode") + (new Random()).nextInt(5000);
-		
-		vocPage = newVOC.createNewVOC(progCode, data.get("progName"), data.get("progDuration"), 
-					data.get("vocType"), data.get("vocTInstitute"),data.get("vocStartDate"), data.get("vocEndDate"), data.get("vocVenue"), 
-					data.get("resourcePerson"));
-		
+
+		vocProgramName = TestUtil.getRandomString(5);
+
+		vocPage = newVOC.createNewVOC(vocProgramName, data.get("progName"), data.get("progDuration"),
+					data.get("vocType"), data.get("vocTInstitute"),data.get("vocStartDate"), data.get("vocEndDate"), data.get("vocVenue"),
+				data.get("resourcePerson"), data.get("noOfParticipants"));
+
 		assertTrue(vocPage.successMessageAvaiable(), "Success message was not found in Vocational Training Add.");		
 	}
 	
 	@Test(dataProvider = "getVOCData", dependsOnMethods = "createVOCProgram")
 	public void editVOCProgram(Hashtable<String, String> data) {
-		
-		vocPage = vocPage.VOCForSearch(progCode, data.get("progName"), data.get("progDuration"));
+
+		vocPage = vocPage.VOCForSearch(vocProgramName, data.get("progName"), data.get("progDuration"));
 		EditVocationalProgram editVOC = vocPage.SelectFirstVOC();
 		
 		vocPage = editVOC.editVOC(data.get("EprogName"), data.get("EprogDuration"), 
@@ -51,11 +46,12 @@ public class VOCProgramTest extends TestBase {
 		
 		AuthorizeVoc_ProgSelect vocAuthPage = getTopMenu().gotoVocationalAuthorize();
 
-		vocAuthPage = vocAuthPage.VOCForSearch(progCode,"", "");
+		vocAuthPage = vocAuthPage.VOCForSearch(vocProgramName, "", "");
 		AuthorizeVoc authVOC = vocAuthPage.SelectFirstVOC();	
-		vocAuthPage = authVOC.doAuthorization();		
-		
-		assertTrue(vocAuthPage.successMessageAvaiable(), "Success message was not found in Vocational Training Authorize.");		
+		vocAuthPage = authVOC.doAuthorization();
+
+		assertTrue(vocAuthPage.successMessageAvaiable(), "Success message was not found in Vocational Training Authorize.");
+		progCode = vocProgramName;
 	}
 	
 	@DataProvider

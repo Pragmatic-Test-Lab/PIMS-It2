@@ -7,59 +7,59 @@
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
+    <!--
+    <test name="Meal Management" preserve-order="true">
+        <classes>
+            <class name="com.ptl.PIMS.TestCases.MealManagement.CreateSupplierTest" />
+            <class name="com.ptl.PIMS.TestCases.MealManagement.CreateKitchenItemTest" />
+            <class name="com.ptl.PIMS.TestCases.MealManagement.CreateRecipeTest" />
+            <class name="com.ptl.PIMS.TestCases.MealManagement.DemandOrderTest" />
+            <class name="com.ptl.PIMS.TestCases.MealManagement.KitchenSlipTest" />
+            <class name="com.ptl.PIMS.TestCases.MealManagement.PurchaseOrderTest" />
+            <class name="com.ptl.PIMS.TestCases.MealManagement.GoodReceivedTest" />
+        </classes>
+    </test>
 
-	<test name="Meal Management" preserve-order="true">
-		<classes>
-			<class name="com.ptl.PIMS.TestCases.MealManagement.CreateSupplierTest" />
-			<class name="com.ptl.PIMS.TestCases.MealManagement.CreateKitchenItemTest" />
-			<class name="com.ptl.PIMS.TestCases.MealManagement.CreateRecipeTest" />
-			<class name="com.ptl.PIMS.TestCases.MealManagement.DemandOrderTest" />
-			<class name="com.ptl.PIMS.TestCases.MealManagement.KitchenSlipTest" />
-			<class name="com.ptl.PIMS.TestCases.MealManagement.PurchaseOrderTest" />
-			<class name="com.ptl.PIMS.TestCases.MealManagement.GoodReceivedTest" />
-		</classes>
-	</test>
-    <!-- 
-	<test name="Appeal Management">
-	    <classes>
-	        <class name="com.ptl.PIMS.TestCases.AppealManagement.AppealCreateUpdateTest" />
-	        <class name="com.ptl.PIMS.TestCases.AppealManagement.ApproveAppealTest" />	        			
-	    </classes>	    
-	</test>
-  
-	<test name="Industrial Training">
-	    <classes>
-	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.IndustrialTrainingTest" />
-	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.IndustrialAttendanceTest" />        			
-	        <class name="com.ptl.PIMS.TestCases.IndustrialManagement.CreateWagesTest" />	        			
-	    </classes>	    
-	</test>
-	
-	<test name="Vocational Training">
-	    <classes>
-	        <class name="com.ptl.PIMS.TestCases.VocationalManagement.VOCProgramTest" />
-	        <class name="com.ptl.PIMS.TestCases.VocationalManagement.VOCParticipantTest" />	        			
-	    </classes>	    
-	</test>	
-  	
-	<test name="Rehabilitation Management">
-	    <classes>
-	        <class name="com.ptl.PIMS.TestCases.RehabilitationManagement.ActionPlanTest" />
-	        <class name="com.ptl.PIMS.TestCases.RehabilitationManagement.RehabilitationSheduleTest" />	        			
-	    </classes>	    
-	</test>	
+    <test name="Appeal Management">
+        <classes>
+            <class name="com.ptl.PIMS.TestCases.AppealManagement.AppealCreateUpdateTest" />
+            <class name="com.ptl.PIMS.TestCases.AppealManagement.ApproveAppealTest" />
+        </classes>
+    </test>
 
-	<test name="Discipline Management">
-	    <classes>
-	        <class name="com.ptl.PIMS.TestCases.DisciplineManagement.DisciplineTest" />	        			
-	    </classes>	    
-	</test>
+    <test name="Industrial Training">
+        <classes>
+            <class name="com.ptl.PIMS.TestCases.IndustrialManagement.IndustrialTrainingTest" />
+            <class name="com.ptl.PIMS.TestCases.IndustrialManagement.IndustrialAttendanceTest" />
+            <class name="com.ptl.PIMS.TestCases.IndustrialManagement.CreateWagesTest" />
+        </classes>
+    </test>
+    -->
+    <test name="Vocational Training">
+        <classes>
+            <class name="com.ptl.PIMS.TestCases.VocationalManagement.VOCProgramTest"/>
+            <class name="com.ptl.PIMS.TestCases.VocationalManagement.VOCParticipantTest"/>
+        </classes>
+    </test>
+    <!--
+  <test name="Rehabilitation Management">
+      <classes>
+          <class name="com.ptl.PIMS.TestCases.RehabilitationManagement.ActionPlanTest" />
+          <class name="com.ptl.PIMS.TestCases.RehabilitationManagement.RehabilitationSheduleTest" />
+      </classes>
+  </test>
 
-	<test name="Movement Management">	
-		<classes>			
-			<class name="com.ptl.PIMS.TestCases.MovementManagement.MovementOutInTest" />
-		</classes>
-	</test>-->	
+  <test name="Discipline Management">
+      <classes>
+          <class name="com.ptl.PIMS.TestCases.DisciplineManagement.DisciplineTest" />
+      </classes>
+  </test>
+
+  <test name="Movement Management">
+      <classes>
+          <class name="com.ptl.PIMS.TestCases.MovementManagement.MovementOutInTest" />
+      </classes>
+  </test>-->
 <!-- 	
 	<test name="Incidence Management">
 	    <classes>

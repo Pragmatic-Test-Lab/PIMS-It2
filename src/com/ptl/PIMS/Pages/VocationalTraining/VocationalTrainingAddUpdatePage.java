@@ -1,11 +1,10 @@
 package com.ptl.PIMS.Pages.VocationalTraining;
 
+import com.ptl.PIMS.util.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import com.ptl.PIMS.util.Constants;
 
 public class VocationalTrainingAddUpdatePage extends VocationalSearch{
 	
@@ -17,8 +16,8 @@ public class VocationalTrainingAddUpdatePage extends VocationalSearch{
 	}
 
 	public EditVocationalProgram SelectFirstVOC(){
-		
-		VOCFirstRecord.click();
+
+		clickFirstRecord();
 		EditVocationalProgram editVOCPage = PageFactory.initElements(driver, EditVocationalProgram.class);		
 		return editVOCPage;		
 	}	
