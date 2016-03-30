@@ -25,8 +25,8 @@ public class SelectMovementOutAdmissionPage extends SelectInmatePage{
 	}
 	
 	public CreateMovementOutPage GoToMovementOutPage(){
-				
-		firstInmate.click();
+
+		clickFirstRecord();
 		CreateMovementOutPage createmovementout = PageFactory.initElements(driver, CreateMovementOutPage.class);
 		return createmovementout;	
 	}

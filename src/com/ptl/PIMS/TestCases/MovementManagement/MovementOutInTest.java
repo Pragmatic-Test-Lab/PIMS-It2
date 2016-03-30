@@ -59,28 +59,28 @@ public class MovementOutInTest extends TestBase {
 		assertTrue(movementoutauthorizePage.successMessageAvaiable(),"Success Message not found in Authorize Movement Out.");				
 	}
 
-	@Test(dependsOnMethods="movementOutAuthorizeTest")
-	public void createMovementInTest(){
-		
-		movementinPage = topMenu.gotomovementInPage();		
-		createmovementinPage = movementinPage.getCreateMovementInPage(admissionId);
-		
-		createmovementinPage.EnterMovementData();
-		movementinPage = createmovementinPage.ClickCreateButton();
-
-		assertTrue(movementinPage.successMessageAvaiable(),	"Success Message not found in Movement In Update.");				
-	}
-
-	
-	@Test(dependsOnMethods="createMovementInTest")
-	public void movementInAuthorizeTest(){
-		
-		movementinauthorizePage = topMenu.gotomovementinAuthorizePage();		
-		createmovementinauthorizePage=movementinauthorizePage.getCreateMovementInAuthorizePage(admissionId);
-		
-		movementinauthorizePage = createmovementinauthorizePage.ClickAuthorizeButton();
-
-		assertTrue(movementinauthorizePage.successMessageAvaiable(),	"Success Message not found in Authorize Movement In.");				
-	}
+//	@Test(dependsOnMethods="movementOutAuthorizeTest")
+//	public void createMovementInTest(){
+//
+//		movementinPage = topMenu.gotomovementInPage();
+//		createmovementinPage = movementinPage.getCreateMovementInPage(admissionId);
+//
+//		createmovementinPage.EnterMovementData();
+//		movementinPage = createmovementinPage.ClickCreateButton();
+//
+//		assertTrue(movementinPage.successMessageAvaiable(),	"Success Message not found in Movement In Update.");
+//	}
+//
+//
+//	@Test(dependsOnMethods="createMovementInTest")
+//	public void movementInAuthorizeTest(){
+//
+//		movementinauthorizePage = topMenu.gotomovementinAuthorizePage();
+//		createmovementinauthorizePage=movementinauthorizePage.getCreateMovementInAuthorizePage(admissionId);
+//
+//		movementinauthorizePage = createmovementinauthorizePage.ClickAuthorizeButton();
+//
+//		assertTrue(movementinauthorizePage.successMessageAvaiable(),	"Success Message not found in Authorize Movement In.");
+//	}
 	
 }

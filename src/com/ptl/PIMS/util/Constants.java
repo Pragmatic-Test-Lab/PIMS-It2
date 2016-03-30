@@ -470,7 +470,7 @@ public class Constants {
 
 	// Industrial Management
 
-	public static final String IndustrialManagement = ".//a[text()='Industrial Training']";
+	public static final String IndustrialManagement = ".//a[text()='Industrial Training Management']";
 	public static final String IndustrialManagementMorning = ".//a[text()='Industrial Attendance Morning']";
 	public static final String CreateMorningButton = "//button[text()='Create']";
 	public static final String attendancebox1 = "//*[@id='industrialattendance-0-ina_morning_attendance']";
@@ -531,7 +531,7 @@ public class Constants {
 	public static final String MovementOutCreate = "//a[@href='/PIMS3/web/movement/selectadmission']";
 	public static final String CreateMovementOut = "(.//*[@class='glyphicon glyphicon-user'])[1]";
 	public static final String TopMenu_MovementLink = "//a[contains(text(),'Movement Management')]";
-	public static final String TopMenu_MovementOutLink = "//a[contains(text(),'Movement Out Add/Update')]";
+	public static final String TopMenu_MovementOutLink = "//a[contains(text(),'Movement Add/Update')]";
 	public static final String MovementAdmissionId = "//*[@id='w1']/table/tbody/tr[1]/td[2]";
 	public static final String CreateMovementOutButton = "//button[text()='Create']";
 	public static final String MovementOutSuccessMessage = ".//*[@class='alert alert-success']";
@@ -539,17 +539,17 @@ public class Constants {
 	public static final String MovementAdmissionIdSearch = "(.//*[@class='form-control'])[1]";
 	public static final String LocationFrom = "//*[@id='movement-mov_location_from_id']";
 	public static final String LocationTo = "//*[@id='movement-mov_location_to_id']";
-	public static final String AdmisssionIdAuthoriseSearch = "//*[@id='w0-filters']/td[2]/input";
+	public static final String AdmisssionIdAuthoriseSearch = ".//*[@name='MovementSearch[registration_no]']";
 	public static final String AuthoriseMovementOut = "(//*[@class='glyphicon glyphicon-ok'])[1]";
-	public static final String TopMenu_MovementOutAuthorizeLink = "//a[contains(text(),'Movement Out Authorize')]";
+	public static final String TopMenu_MovementOutAuthorizeLink = "//a[contains(text(),'Movement Authorize')]";
 	public static final String CreateMovementOutAuthorizeButton = "(.//*[@class='btn btn-primary'])";
 	public static final String MovementOutAuthorizeSuccessMessage = ".//*[@class='alert alert-success']";
 	public static final String AuthorizeMovement_SuccessMessageText = "Saved .* successfully";
-	public static final String MovementinCreate = "(.//*[@class='glyphicon glyphicon-pencil'])[1]";
+	public static final String MovementinCreate = "(//*[@class='glyphicon glyphicon-ok'])[1]";
 	public static final String CreateMovementInButton = "(.//*[@class='btn btn-primary'])";
 	public static final String MovementInSuccessMessage = "//*[@class='alert alert-success']";
 	public static final String MovementIn_SuccessMessageText = "Saved .* successfully";
-	public static final String TopMenu_MovementInLink = "//a[contains(text(),'Movement In Add/Update')]";
+	public static final String TopMenu_MovementInLink = "//a[contains(text(),'Movement Authorize')]";
 	public static final String MovementInDate = "//*[@id='movement-mov_in_time']";
 	public static final String TopMenu_MovementInAuthorizeLink = "//a[contains(text(),'Movement In Authorize')]";
 	public static final String AuthorizeMovementIn_SuccessMessageText = "Saved .* successfully";

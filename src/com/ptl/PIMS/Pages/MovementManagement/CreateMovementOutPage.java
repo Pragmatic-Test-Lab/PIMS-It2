@@ -42,14 +42,16 @@ public class CreateMovementOutPage {
 	public void EnterMovementData(){
 		
 		String currentLoc = locationfrom.getAttribute("value");
-		
-		if (currentLoc.equals("1")){
-			locationto.sendKeys("ward3");
+		System.out.print(currentLoc);
+		if (currentLoc.equals("61")){
+			locationto.sendKeys("Ward 1 / Cell 001");
 		}
 		else{
-			locationto.sendKeys("ward1");
+			locationto.sendKeys("Ward 2 / Cell 004");
 		}
-		
+
+    //    locationto.sendKeys("Ward 2 / Cell 003");
+
 		CalendarPopup CLNDR = new CalendarPopup(driver);		
 		CLNDR.selectDateTime(driver.findElement(By.xpath(Constants.MovementOutDate)), TestUtil.getTodaysDateandtimeOut());	
 	
